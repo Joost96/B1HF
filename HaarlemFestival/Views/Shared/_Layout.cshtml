@@ -16,14 +16,30 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a class="navbar-brand" rel="home" href="#" title="Haarlem Festival">
+                    <img style="max-width: 130px; margin-top: -12px;"
+                         src="/img/Header/HF_logo_header.png"> 
+                </a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Jazz", "Index", "Jazz")</li>
+                    <li>@Html.ActionLink("Dinner", "Index", "Dinner")</li>
+                    <li>@Html.ActionLink("Talking", "Index", "Talking")</li>
+                    <li>@Html.ActionLink("Historic", "Index", "Historic")</li>
+                    <li>@Html.ActionLink("Agenda", "Index", "Agenda")</li>
+                    <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                    <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                </ul>
+                <a class="navbar-right" rel="home" href="#" title="Haarlem Festival">
+                    <img style="max-width: 130px; margin-top: -12px;"
+                         src="/img/Header/Shopping_cart_header.png">
+                    @* Needs sizing!!!! *@
+                </a>
             </div>
         </div>
     </div>
