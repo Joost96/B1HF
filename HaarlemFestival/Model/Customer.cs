@@ -8,5 +8,7 @@ namespace HaarlemFestival.Model
     public class Customer : Account 
     {
         public string Country { get; set; }
+
+
     }
 }
