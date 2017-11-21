@@ -9,7 +9,8 @@ namespace HaarlemFestival.Model
     {
         public int Id { get; set; }
         public DateTime Date { get; set; }
-
         public Customer Customer { get; set; }
+
+        public List<OrderHasTickets> OrderHasTickets { get; set; }
     }
 }

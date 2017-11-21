@@ -150,9 +150,18 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\Activity.cs" />
+    <Compile Include="Model\ActivityDescription.cs" />
     <Compile Include="Model\Customer.cs" />
+    <Compile Include="Model\Description.cs" />
     <Compile Include="Model\Employee.cs" />
+    <Compile Include="Model\Location.cs" />
     <Compile Include="Model\Order.cs" />
+    <Compile Include="Model\OrderHasTickets.cs" />
+    <Compile Include="Model\Page.cs" />
+    <Compile Include="Model\PageDescription.cs" />
+    <Compile Include="Model\Ticket.cs" />
+    <Compile Include="Model\TimeSlot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
