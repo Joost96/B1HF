@@ -21,5 +21,14 @@ namespace HaarlemFestival.Model
         [Required]
         public string Password { get; set; }
 
+        public Account(string email, string firstName, string lastName, string password)
+        {
+            this.Email = email;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Password = password;
+        }
+        public Account() { }
+
     }
 }

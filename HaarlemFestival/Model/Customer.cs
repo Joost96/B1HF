@@ -13,5 +13,10 @@ namespace HaarlemFestival.Model
         public string Country { get; set; }
 
         public List<Order> Orders { get; set; }
+
+        public Customer(string email, string firstName, string lastName, string password, string Country) : base(email, firstName, lastName, password)
+        {
+            this.Country = Country;
+        }
     }
 }
