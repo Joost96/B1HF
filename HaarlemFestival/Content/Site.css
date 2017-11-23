@@ -24,6 +24,50 @@ textarea {
     max-width: 280px;
 }
 
+nav {
+    font-weight: bold;
+}
+
+footer {
+    background-color: #F8473E;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 150px;
+}
+
+    footer li {
+        list-style: none;
+        color: white;
+        margin-right: 50px;
+        width: 50px;
+        font-weight: bold;
+    }
+
+    footer ul {
+        display: inline-block;
+        margin-left: 300px;
+        padding: 0px;
+    }
+
+    footer a {
+        color: white;
+    }
+
+.footer-list-right {
+    width: 400px;
+    height: 150px;
+    margin: 0px 300px 0px 0px;
+    display: inline-block;
+    float: right;
+    text-align: right;
+}
+
+    .footer-list-right li {
+        width: inherit;
+    }
+
 .contact_page_section{
     color : white;
 }

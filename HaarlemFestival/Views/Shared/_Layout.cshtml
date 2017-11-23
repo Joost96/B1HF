@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
+    <header class="navbar navbar-inverse navbar-fixed-top">
+        <nav class="container">
+            <nav class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -22,8 +22,9 @@
                     @* Swap href to actionlink???? *@
 
                 </a>
-            </div>
-            <div class="navbar-collapse collapse">
+            </nav>
+
+            <nav class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Jazz", "Index", "Jazz")</li>
@@ -41,15 +42,30 @@
                     <img style="width: 33px; height: 28px; margin-top: 10px;"
                          src="/img/Header/Shopping_cart_header.png">    
                 </a>
-            </div>
-        </div>
-    </div>
+            </nav>
+        </nav>
+    </header>
+
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-        </footer>
     </div>
+    <footer>
+        <ul>
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li>@Html.ActionLink("Jazz", "Index", "Jazz")</li>
+            <li>@Html.ActionLink("Dinner", "Index", "Dinner")</li>
+            <li>@Html.ActionLink("Talking", "Index", "Talking")</li>
+            <li>@Html.ActionLink("Historic", "Index", "Historic")</li>
+            <li>@Html.ActionLink("Agenda", "Index", "Agenda")</li>
+            <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
+        </ul>
+
+        <ul class="footer-list-right">
+            <li>Email: @Html.ActionLink("haarlemfestival@haarlem.nl", "Index", "Contact")</li>
+            <li>Phone: 06 - 448 28 711</li>
+            <li>&copy; @DateTime.Now.Year - Haarlem Festival</li>
+        </ul>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
