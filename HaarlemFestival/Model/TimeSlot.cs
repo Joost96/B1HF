@@ -24,5 +24,7 @@ namespace HaarlemFestival.Model
 
         public string Hall { get; set; }   // somige locaties hebben verschillende hallen binnen die locatie
 
+        public List<Ticket> Tickets { get; set; }
+
     }
 }

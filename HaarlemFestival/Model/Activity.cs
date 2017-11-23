@@ -24,5 +24,7 @@ namespace HaarlemFestival.Model
         public virtual Location Location { get; set; }
 
         public List<ActivityDescription> ActivityDescriptions { get; set; }
+
+        public List<TimeSlot> Timeslots { get; set; }
     }
 }
