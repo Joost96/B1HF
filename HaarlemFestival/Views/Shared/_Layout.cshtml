@@ -31,7 +31,7 @@
                     <li>@Html.ActionLink("Talking", "Index", "Talking")</li>
                     <li>@Html.ActionLink("Historic", "Index", "Historic")</li>
                     <li>@Html.ActionLink("Agenda", "Index", "Agenda")</li>
-                    <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Contact")</li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
@@ -48,7 +48,6 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
 

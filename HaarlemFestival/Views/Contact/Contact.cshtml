@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+}
+
+<section class="contact_page_section">
+    <h2 class="contact_header">Contact</h2>
+    <hr class="contact_separation_header">
+
+    <section class="contact_info">
+        <h3 class="contact_info_header">Address</h3>
+        <p>Final Draft <br />Zijlweg 7<br />1234 AA Haarlem</p>
+        <h3 class="contact_info_header">Phone</h3>
+        <p>0251-255689</p>
+    </section>
+        
+    <section class="contact_section">
+        <h3 class="contact_form_header">Send us a message</h3>
+        <form>
+            <p class="contact_required_text">*= required field!</p>
+            <fieldset>
+                <label class="contact_name_label">Name: *</label>
+                <input class="contact_name_field" type="text" tabindex="1" required="required">
+            </fieldset>
+            <fieldset>
+                <label class="contact_email_label">Email address: *</label>
+                <input class="contact_email_field" type="text" tabindex="2" required="required" />
+            </fieldset>
+            <fieldset class="contact_message_label">
+                <label class="contact_message_label">Message: *</label>
+                <textarea class="contact_message_field" tabindex="3" required="required"></textarea>
+            </fieldset>
+            <fieldset>
+                <button name="send" type="submit" class="contact_submit_btn" tabindex="4">Send</button>
+            </fieldset>
+        </form>
+    </section>
+    
+
+</section>
