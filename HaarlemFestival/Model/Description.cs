@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -8,11 +9,11 @@ namespace HaarlemFestival.Model
 {
     public abstract class Description
     {
-        [Key]
+        [Key, Column(Order = 0)]        
         public Language Language { get; set; }
-        [Key]
+        [Key, Column(Order = 1)]
         public int Section { get; set; }
-        
+        [Required]
         public string Title { get; set; }
         [Required]
         public string DescriptionText { get; set; }

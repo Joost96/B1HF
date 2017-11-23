@@ -19,6 +19,18 @@ namespace HaarlemFestival.Model
         {
         }
 
-        public System.Data.Entity.DbSet<HaarlemFestival.Model.Account> Accounts { get; set; }
+        public DbSet<Account> Accounts { get; set; }
+        public DbSet<Activity> Activity { get; set; }
+        public DbSet<ActivityDescription> ActivityDescription { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Location> Locations { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderHasTickets> OrderHasTickets { get; set; }
+        public DbSet<Page> Pages { get; set; }
+        public DbSet<PageDescription> PageDescriptions { get; set; }
+        public DbSet<Ticket> Tickets { get; set; }
+        public DbSet<TimeSlot> TimeSlots { get; set; }
+
     }
 }
