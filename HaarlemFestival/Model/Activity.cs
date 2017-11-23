@@ -20,7 +20,8 @@ namespace HaarlemFestival.Model
         public EventType Type { get; set; }
 
         [Required, ForeignKey("Location")]
-        public int Location_ID { get; set; }
+        public int Location_Id { get; set; }
+        public virtual Location Location { get; set; }
 
         public List<ActivityDescription> ActivityDescriptions { get; set; }
     }
