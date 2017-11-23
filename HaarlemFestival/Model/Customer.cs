@@ -9,7 +9,7 @@ namespace HaarlemFestival.Model
 {
     public class Customer : Account
     {
-        
+        [Required]
         public string Country { get; set; }
 
         public List<Order> Orders { get; set; }

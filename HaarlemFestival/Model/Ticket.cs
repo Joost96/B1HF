@@ -10,13 +10,14 @@ namespace HaarlemFestival.Model
     public class Ticket
     {
         [Key]
-        public int ActivityId { get; set; }
+        public TimeSlot TimeSlot { get; set; }
         [Key]
-        public DateTime StartTime { get; set; }
+        public TicketType Type { get; set; }
+
+
         [Required]
         public decimal Price { get; set; }
-        [Required]
-        public TicketType Type { get; set; }
+              
 
         public List<OrderHasTickets> OrderHasTickets { get; set; }
 

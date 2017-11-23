@@ -10,11 +10,10 @@ namespace HaarlemFestival.Model
     public class OrderHasTickets
     {
         [Key]
-        public int OrderId { get; set; }
+        public Order Order { get; set; }
+
         [Key]
-        public int ActivityId { get; set; }
-        [Key]
-        public DateTime StartTime { get; set; }
+        public Ticket Ticket { get; set; }
 
         [Required]
         public int Amount { get; set; }
