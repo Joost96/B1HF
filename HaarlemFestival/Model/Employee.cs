@@ -13,6 +13,5 @@ namespace HaarlemFestival.Model
         [Required]
         public EmployeeType EmployeeType { get; set; }
 
-
     }
 }
