@@ -162,10 +162,19 @@
     <Compile Include="Migrations\201711231318482_initial.Designer.cs">
       <DependentUpon>201711231318482_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711271406134_cuisine.cs" />
+    <Compile Include="Migrations\201711271406134_cuisine.Designer.cs">
+      <DependentUpon>201711271406134_cuisine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711271417080_cuisines 2.cs" />
+    <Compile Include="Migrations\201711271417080_cuisines 2.Designer.cs">
+      <DependentUpon>201711271417080_cuisines 2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\Activity.cs" />
     <Compile Include="Model\ActivityDescription.cs" />
+    <Compile Include="Model\Cuisine.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\DBHF.cs" />
     <Compile Include="Model\Description.cs" />
@@ -254,6 +263,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201711231318482_initial.resx">
       <DependentUpon>201711231318482_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711271406134_cuisine.resx">
+      <DependentUpon>201711271406134_cuisine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711271417080_cuisines 2.resx">
+      <DependentUpon>201711271417080_cuisines 2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
