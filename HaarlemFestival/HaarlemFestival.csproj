@@ -153,6 +153,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CheckOutController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\ContentManagementController.cs" />
+    <Compile Include="Controllers\JazzController.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -169,6 +171,10 @@
     <Compile Include="Migrations\201711271417080_cuisines 2.cs" />
     <Compile Include="Migrations\201711271417080_cuisines 2.Designer.cs">
       <DependentUpon>201711271417080_cuisines 2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711271517211_locationupdate.cs" />
+    <Compile Include="Migrations\201711271517211_locationupdate.Designer.cs">
+      <DependentUpon>201711271517211_locationupdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Account.cs" />
@@ -193,6 +199,8 @@
     <Compile Include="Repositories\ActivityRepository.cs" />
     <Compile Include="Repositories\IAccountRepository.cs" />
     <Compile Include="Repositories\IActivityRepository.cs" />
+    <Compile Include="Repositories\IPageRepository.cs" />
+    <Compile Include="Repositories\PageRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -269,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711271417080_cuisines 2.resx">
       <DependentUpon>201711271417080_cuisines 2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711271517211_locationupdate.resx">
+      <DependentUpon>201711271517211_locationupdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
