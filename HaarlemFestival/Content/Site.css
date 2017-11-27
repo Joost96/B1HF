@@ -1,4 +1,9 @@
-﻿body {
+﻿html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
     background-color: #EDECD8;
@@ -67,39 +72,120 @@ footer {
     .footer-list-right li {
         width: inherit;
     }
+/*-------------------------------------------Home page---------------------------------------------*/
+/*--------------Sumup events-----------------*/
 
-.contact_page_section{
-    color : white;
+.event_summarys {
+    width: auto;
+    height: 350px;
+}
+
+.event_summary {
+    width: 25%;
+    height: 350px;
+    float: left;
+    display: inline-block;
+    /*margin: 0px 6px 0px 0px;*/
+    padding: 0px 8px 0px 0px;
+}
+
+.event_summary:hover{
+    opacity:0.5;
+}
+
+    .event_summary h1 {
+        color: white;
+        font-size: 26px;
+        height: 50px;
+        background-color: #F8473E;
+        text-align: center;
+        line-height: 50px;
+        margin-bottom: 0px;
+    }
+
+    .event_summary button {
+
+        display: block;
+        margin: 0 auto;
+        background-color: transparent;
+        border: none;
+        font-weight: bold;
+        color: white;
+    }
+    
+.event_summary_img {
+    width: auto;
+    text-align: center;
+    height: 250px;
+}
+/*--------------Info section-----------------*/
+
+.info_festival {
+    /*display: inline-block;*/
+    float:left;
+    width: 49%;
+    margin: 0px 4px 0px 0px;
+    height: 300px;
+}
+/*--------------Register section-----------------*/
+.register{
+    float:left;
+    width: 49%;
+    margin: 0px 4px 0px 0px;
+    height: 230px;
+}
+
+.register h1{
+    font-size: 20px;
+    text-align: center;
+}
+
+.register p{
+    text-align: center;
+}
+
+/*--------------Highlisghts section-----------------*/
+.event_highlights{
+    display: inline-block;
+    width: 49%;
+    margin: 0px 0px 0px 4px;
+}
+
+
+/*-------------------------------------------Contact page---------------------------------------------*/
+
+.contact_page_section {
+    color: white;
 }
 
 .contact_info {
     float: left;
     background-color: #CC6666;
-    padding : 20px;
+    padding: 20px;
 }
 
 .contact_section {
     background-color: #CC6666;
     padding: 0px;
-    margin-left : 200px;
-    height : 300px;
+    margin-left: 200px;
+    height: 300px;
 }
 
 .contact_form_header {
     background-color: #F6524A;
-    margin : 0px;
-    padding : 10px;
+    margin: 0px;
+    padding: 10px;
 }
 
-.contact_page_section form{
-    padding : 10px;
-    padding-top : 0px;
+.contact_page_section form {
+    padding: 10px;
+    padding-top: 0px;
 }
 
-.contact_info_header{
-    margin-top : 0px;
+.contact_info_header {
+    margin-top: 0px;
 }
 
-.contact_required_text{
-    float : right;
+.contact_required_text {
+    float: right;
 }
