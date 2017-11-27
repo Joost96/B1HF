@@ -14,6 +14,11 @@ namespace HaarlemFestival
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "ContentManagement",
+                url: "Admin/{action}/{id}",
+                defaults: new { controller = "ContentManagement", action = "Index", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
