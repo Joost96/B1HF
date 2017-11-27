@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HaarlemFestival.Model;
+using HaarlemFestival.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +12,11 @@ namespace HaarlemFestival.Controllers
     {
         public ActionResult Index()
         {
+            
+            DBHF db = new DBHF();
+            IActivityRepository repository = new ActivityRepository(db);
+            List<Activity> activity = repository.GetActivities(EventType.Talking).ToList();
+            //List<Activity> activities = new List<Activity>(activity);
             return View();
         }
 

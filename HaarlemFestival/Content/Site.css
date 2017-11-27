@@ -1,6 +1,12 @@
-﻿body {
+﻿html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #EDECD8;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -23,41 +29,163 @@ textarea {
     max-width: 280px;
 }
 
-/* CHECKOUT PAGE */
-.CheckOut {
-    border-width: 2px;
-    border-radius: 20px;
-    margin-top: 50px;
-    border-style: solid;
-    background-color: #EDECD8;
+nav {
+    font-weight: bold;
 }
 
-.CheckOut ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        border-bottom-style: solid;
-        border-bottom-width: 2px;
-        padding: 0px 0px 45px 10px;
+footer {
+    background-color: #F8473E;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 150px;
+}
+
+    footer li {
+        list-style: none;
+        color: white;
+        margin-right: 50px;
+        width: 50px;
+        font-weight: bold;
     }
 
-.CheckOut li {
-        float: left;
-        width: 25%;
+    footer ul {
+        display: inline-block;
+        margin-left: 300px;
+        padding: 0px;
+    }
+
+    footer a {
+        color: white;
+    }
+
+.footer-list-right {
+    width: 400px;
+    height: 150px;
+    margin: 0px 300px 0px 0px;
+    display: inline-block;
+    float: right;
+    text-align: right;
+}
+
+    .footer-list-right li {
+        width: inherit;
+    }
+/*-------------------------------------------Home page---------------------------------------------*/
+/*--------------Sumup events-----------------*/
+
+.event_summarys {
+    width: auto;
+    height: 350px;
+}
+
+.event_summary {
+    width: 25%;
+    height: 350px;
+    float: left;
+    display: inline-block;
+    /*margin: 0px 6px 0px 0px;*/
+    padding: 0px 8px 0px 0px;
+}
+
+.event_summary:hover{
+    opacity:0.5;
+}
+
+    .event_summary h1 {
+        color: white;
+        font-size: 26px;
+        height: 50px;
+        background-color: #F8473E;
         text-align: center;
-        margin: auto;
+        line-height: 50px;
+        margin-bottom: 0px;
     }
 
-.form p{
-    width: 30%;
+    .event_summary button {
+
+        display: block;
+        margin: 0 auto;
+        background-color: transparent;
+        border: none;
+        font-weight: bold;
+        color: white;
+    }
+    
+.event_summary_img {
+    width: auto;
     text-align: center;
-    margin: auto;
+    height: 250px;
 }
-.form {
-    text-align: center;
-    margin: auto;
+/*--------------Info section-----------------*/
+
+.info_festival {
+    /*display: inline-block;*/
+    float:left;
+    width: 49%;
+    margin: 0px 4px 0px 0px;
+    height: 300px;
+}
+/*--------------Register section-----------------*/
+.register{
+    float:left;
+    width: 49%;
+    margin: 0px 4px 0px 0px;
+    height: 230px;
 }
 
-.selected {
+.register h1{
+    font-size: 20px;
+    text-align: center;
+}
+
+.register p{
+    text-align: center;
+}
+
+/*--------------Highlisghts section-----------------*/
+.event_highlights{
+    display: inline-block;
+    width: 49%;
+    margin: 0px 0px 0px 4px;
+}
+
+
+/*-------------------------------------------Contact page---------------------------------------------*/
+
+.contact_page_section {
+    color: white;
+}
+
+.contact_info {
+    float: left;
     background-color: #CC6666;
+    padding: 20px;
+}
+
+.contact_section {
+    background-color: #CC6666;
+    padding: 0px;
+    margin-left: 200px;
+    height: 300px;
+}
+
+.contact_form_header {
+    background-color: #F6524A;
+    margin: 0px;
+    padding: 10px;
+}
+
+.contact_page_section form {
+    padding: 10px;
+    padding-top: 0px;
+}
+
+.contact_info_header {
+    margin-top: 0px;
+}
+
+.contact_required_text {
+    float: right;
 }

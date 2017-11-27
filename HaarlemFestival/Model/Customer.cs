@@ -18,5 +18,6 @@ namespace HaarlemFestival.Model
         {
             this.Country = Country;
         }
+        public Customer() { }
     }
 }

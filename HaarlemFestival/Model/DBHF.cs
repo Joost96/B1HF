@@ -20,8 +20,8 @@ namespace HaarlemFestival.Model
         }
 
         public DbSet<Account> Accounts { get; set; }
-        public DbSet<Activity> Activity { get; set; }
-        public DbSet<ActivityDescription> ActivityDescription { get; set; }
+        public DbSet<Activity> Activities { get; set; }
+        public DbSet<ActivityDescription> ActivityDescriptions { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Location> Locations { get; set; }
@@ -31,6 +31,8 @@ namespace HaarlemFestival.Model
         public DbSet<PageDescription> PageDescriptions { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<TimeSlot> TimeSlots { get; set; }
+        public DbSet<Cuisine> Cuisines { get; set; }
+        
 
     }
 }
