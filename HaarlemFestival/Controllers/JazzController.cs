@@ -13,5 +13,25 @@ namespace HaarlemFestival.Controllers
         {
             return View();
         }
+
+        public ActionResult JazzThursday()
+        {
+            return View();
+        }
+
+        public ActionResult JazzFriday()
+        {
+            return View();
+        }
+
+        public ActionResult JazzSaturday()
+        {
+            return View();
+        }
+
+        public ActionResult JazzSunday()
+        {
+            return View();
+        }
     }
 }
