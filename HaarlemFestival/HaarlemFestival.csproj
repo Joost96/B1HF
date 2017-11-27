@@ -164,14 +164,27 @@
     <Compile Include="Migrations\201711231318482_initial.Designer.cs">
       <DependentUpon>201711231318482_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711271346043_updateLocation.cs" />
-    <Compile Include="Migrations\201711271346043_updateLocation.Designer.cs">
-      <DependentUpon>201711271346043_updateLocation.cs</DependentUpon>
+    <Compile Include="Migrations\201711271406134_cuisine.cs" />
+    <Compile Include="Migrations\201711271406134_cuisine.Designer.cs">
+      <DependentUpon>201711271406134_cuisine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711271417080_cuisines 2.cs" />
+    <Compile Include="Migrations\201711271417080_cuisines 2.Designer.cs">
+      <DependentUpon>201711271417080_cuisines 2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711271517211_locationupdate.cs" />
+    <Compile Include="Migrations\201711271517211_locationupdate.Designer.cs">
+      <DependentUpon>201711271517211_locationupdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711271524434_locationupdate2.cs" />
+    <Compile Include="Migrations\201711271524434_locationupdate2.Designer.cs">
+      <DependentUpon>201711271524434_locationupdate2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\Activity.cs" />
     <Compile Include="Model\ActivityDescription.cs" />
+    <Compile Include="Model\Cuisine.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\DBHF.cs" />
     <Compile Include="Model\Description.cs" />
@@ -190,6 +203,8 @@
     <Compile Include="Repositories\ActivityRepository.cs" />
     <Compile Include="Repositories\IAccountRepository.cs" />
     <Compile Include="Repositories\IActivityRepository.cs" />
+    <Compile Include="Repositories\IPageRepository.cs" />
+    <Compile Include="Repositories\PageRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -258,7 +273,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\ContentManager\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -267,8 +281,17 @@
     <EmbeddedResource Include="Migrations\201711231318482_initial.resx">
       <DependentUpon>201711231318482_initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711271346043_updateLocation.resx">
-      <DependentUpon>201711271346043_updateLocation.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711271406134_cuisine.resx">
+      <DependentUpon>201711271406134_cuisine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711271417080_cuisines 2.resx">
+      <DependentUpon>201711271417080_cuisines 2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711271517211_locationupdate.resx">
+      <DependentUpon>201711271517211_locationupdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711271524434_locationupdate2.resx">
+      <DependentUpon>201711271524434_locationupdate2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace HaarlemFestival.Controllers
 {
+    [Authorize(Roles = "contentManager")]
     public class ContentManagementController : Controller
     {
 
@@ -14,6 +15,7 @@ namespace HaarlemFestival.Controllers
         // GET: ContentManager
         public ActionResult Index()
         {
+
             return View();
         }
     }
