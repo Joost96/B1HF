@@ -20,9 +20,9 @@ namespace HaarlemFestival.Model
         public string ZipCode { get; set; }
         [Required]
         [DataType("decimal(3 ,8")]
-        public double Lognitude { get; set; }
+        public decimal Lognitude { get; set; }
         [Required]
         [DataType("decimal(3 ,8")]
-        public double Latitude { get; set; }
+        public decimal Latitude { get; set; }
     }
 }

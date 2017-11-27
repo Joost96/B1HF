@@ -32,7 +32,12 @@ namespace HaarlemFestival.Model
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<TimeSlot> TimeSlots { get; set; }
         public DbSet<Cuisine> Cuisines { get; set; }
-        
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Location>().Property(x => x.Latitude).HasPrecision(11, 8);
+            modelBuilder.Entity<Location>().Property(x => x.Lognitude).HasPrecision(11, 8);
+        }
+
 
     }
 }
