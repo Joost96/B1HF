@@ -21,7 +21,7 @@ namespace HaarlemFestival.Controllers
             //IPageDescriptionRepository pageRepo = new PageDescription; 
             //List<Activity> activity = repository.GetActivities(EventType.Talking).ToList();
             //List<Activity> activities = new List<Activity>(activity);
-            return View(img.ToString());
+            return View();
         }
 
         public ActionResult About()

@@ -18,7 +18,8 @@ namespace HaarlemFestival.Repositories
 
         public PageDescription GetImg(string section, string title)
         {
-            return db.PageDescriptions.Single(a => a.Section.Equals(section) && a.Title.Equals(title));
+            //return db.PageDescriptions.Single(a => a.Section.Equals(section) && a.Title.Equals(title));
+            return null; 
         } 
     }
 }
