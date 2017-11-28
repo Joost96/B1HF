@@ -15,9 +15,13 @@ namespace HaarlemFestival.Controllers
             
             DBHF db = new DBHF();
             IActivityRepository repository = new ActivityRepository(db);
-            List<Activity> activity = repository.GetActivities(EventType.Talking).ToList();
+            IPageDescriptionRepository pageRepo = new PageDescriptionRepository(db);
+            PageDescription img = pageRepo.GetImg("1", "Jazz");
+            
+            //IPageDescriptionRepository pageRepo = new PageDescription; 
+            //List<Activity> activity = repository.GetActivities(EventType.Talking).ToList();
             //List<Activity> activities = new List<Activity>(activity);
-            return View();
+            return View(img.ToString());
         }
 
         public ActionResult About()

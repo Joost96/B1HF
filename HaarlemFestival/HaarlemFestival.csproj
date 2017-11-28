@@ -184,6 +184,8 @@
     <Compile Include="Repositories\ActivityRepository.cs" />
     <Compile Include="Repositories\IAccountRepository.cs" />
     <Compile Include="Repositories\IActivityRepository.cs" />
+    <Compile Include="Repositories\IPageDescriptionRepository.cs" />
+    <Compile Include="Repositories\PageDescriptionRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -270,7 +272,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>55850</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
