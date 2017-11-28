@@ -203,13 +203,10 @@
     <Compile Include="Repositories\ActivityRepository.cs" />
     <Compile Include="Repositories\IAccountRepository.cs" />
     <Compile Include="Repositories\IActivityRepository.cs" />
-<<<<<<< HEAD
     <Compile Include="Repositories\IPageDescriptionRepository.cs" />
     <Compile Include="Repositories\PageDescriptionRepository.cs" />
-=======
     <Compile Include="Repositories\IPageRepository.cs" />
     <Compile Include="Repositories\PageRepository.cs" />
->>>>>>> origin/master
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
