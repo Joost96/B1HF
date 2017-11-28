@@ -22,7 +22,7 @@ namespace HaarlemFestival.Repositories
         {
 
 
-            return db.Activity.Include(a => a.Location)
+            return db.Activities.Include(a => a.Location)
                 .Include(a => a.ActivityDescriptions)
                 .Include(a => a.Timeslots.Select(t => t.Tickets))
                 .Where(a => a.Type == type);
