@@ -229,3 +229,49 @@ footer {
 .contact_required_text {
     float: right;
 }
+
+/*--------------Check-Out-----------------*/
+
+.CheckOut1 {
+    position: center;
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    margin-top: 10%;
+    padding-bottom: 10%;
+}
+
+
+
+.CheckOut1 ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border-bottom-style: solid;
+}
+
+    .CheckOut1 li {
+        float: left;
+        padding-left: 9%;
+        padding-right: 9.8672%;
+    }
+.CheckOut1 h2{
+    position: center;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+.selected {
+    background-color: #F8473E;
+}
+.CheckOutLogin {
+    display: inline-block;
+    margin-right: 10%;
+}
+
+.CheckOutRegister {
+    display: inline-block;
+    margin-left: 10%;
+
+}
