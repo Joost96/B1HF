@@ -77,14 +77,14 @@ footer {
 
 .event_summarys {
     width: auto;
-    height: 370px;
+    height: 358px;
+    padding-top: 8px;
+    margin-bottom: 8px;
 }
 
 .event_summary {
     width: 25%;
-    height: 350px;
     float: left;
-    display: inline-block;
     padding: 0px 8px 0px 0px;
     position: relative;
 }
@@ -101,7 +101,7 @@ footer {
         background-color: #F8473E;
         text-align: center;
         line-height: 50px;
-        margin-bottom: 0px;
+        margin: 0px;
     }
 
     .event_summary button {
@@ -147,8 +147,21 @@ footer {
 .register{
     float: left;
     width: 100%;
-    height: 50%;
-        
+    height: 50%;        
+}
+
+.register button{
+    display: block;
+    margin: 0 auto;
+    margin: 0px auto 10px auto; 
+    color: white;
+    background-color: #1DBF3B; 
+    width: 100px;
+    height: 35px;
+}
+
+.register button:hover{
+    background-color: #137F28;
 }
 
 /*--------------Highlisghts section-----------------*/
