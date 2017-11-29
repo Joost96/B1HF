@@ -13,11 +13,9 @@ namespace HaarlemFestival.Model
         public Language Language { get; set; }
         [Key, Column(Order = 1)]
         public int Section { get; set; }
-        [Required]
-        public string Title { get; set; }
-        [Required]
-        public string DescriptionText { get; set; }
-        
+
+        public string Title { get; set; }      
+        public string DescriptionText { get; set; }      
         public string ImageUrl { get; set; }
 
     }

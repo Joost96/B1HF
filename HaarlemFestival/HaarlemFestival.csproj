@@ -180,6 +180,10 @@
     <Compile Include="Migrations\201711271524434_locationupdate2.Designer.cs">
       <DependentUpon>201711271524434_locationupdate2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711291114292_DescriptionFields Nullable.cs" />
+    <Compile Include="Migrations\201711291114292_DescriptionFields Nullable.Designer.cs">
+      <DependentUpon>201711291114292_DescriptionFields Nullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\Activity.cs" />
@@ -294,6 +298,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711271524434_locationupdate2.resx">
       <DependentUpon>201711271524434_locationupdate2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711291114292_DescriptionFields Nullable.resx">
+      <DependentUpon>201711291114292_DescriptionFields Nullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
