@@ -1,4 +1,5 @@
-﻿@{
+﻿@model HaarlemFestival.Model.Page
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -62,7 +63,7 @@
 
         <article class="event_highlight">
             <h2>@Html.ActionLink("text from db", "Login", "Account", new { @class = "event_hl_link_makeup" })</h2>
-            <p>@Html.ActionLink("text from db", "Login", "Account", new { @class = "event_hl_link_makeup" })</p>
+            <p>@Html.ActionLink(Model.PageDescriptions[0].DescriptionText, "Login", "Account", new { @class = "event_hl_link_makeup" })</p>
         </article>
     </article>
 </section>
