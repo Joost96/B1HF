@@ -202,19 +202,23 @@ footer {
     float: left;
     background-color: #CC6666;
     padding: 20px;
+    width : 18%;
 }
 
 .contact_section {
     background-color: #CC6666;
     padding: 0px;
-    margin-left: 200px;
+    margin-left: 25%;
     height: 300px;
+    width : 75%;
 }
 
 .contact_form_header {
     background-color: #F6524A;
     margin: 0px;
-    padding: 10px;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .contact_page_section form {
@@ -228,4 +232,37 @@ footer {
 
 .contact_required_text {
     float: right;
+}
+
+.contact_page_section form{
+    margin : 10px;
+}
+
+.contact_submit_btn {
+    float: right;
+    margin-top: 118px;
+    width: 101px;
+    height: 29px;
+    background-color: #199ED8;
+    border-style: hidden;
+    border-radius: 6px;
+}
+
+.contact_name_label {
+    padding-top: 20px;
+}
+
+.contact_name_field {
+    margin-left: 33px;
+}
+
+.contact_message_field {
+    margin-left: 40px;
+    width: 701px;
+    max-width: 701px;
+    height: 100px;
+}
+
+.contact_message_label{
+    float : left;
 }
