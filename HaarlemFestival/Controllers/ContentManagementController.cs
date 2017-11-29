@@ -24,7 +24,7 @@ namespace HaarlemFestival.Controllers
         // GET: ContentManager
         public ActionResult Index()
         {
-            Page homePage = pageRepository.GetPage("Home");
+            Page homePage = pageRepository.GetPage("Home" , Language.Eng);
             return View(homePage);
         }
     }

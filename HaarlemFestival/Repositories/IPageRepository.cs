@@ -8,7 +8,7 @@ namespace HaarlemFestival.Repositories
 {
     public interface IPageRepository
     {
-        Page GetPage(string name);
+        Page GetPage(string name, Language language);
         void UpdatePage(Page page);
     }
 }

@@ -15,7 +15,7 @@ namespace HaarlemFestival.Controllers
             
             DBHF db = new DBHF();
             IPageRepository pageRepo = new PageRepository(db);
-            Page page = pageRepo.GetPage("Home");
+            Page page = pageRepo.GetPage("Home" , Language.Eng);
             
             return View(page);
         }

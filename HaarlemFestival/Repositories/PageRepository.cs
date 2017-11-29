@@ -14,9 +14,15 @@ namespace HaarlemFestival.Repositories
         {
             this.db = db;
         }
-        public Page GetPage(string name)
+        public Page GetPage(string name , Language language)
         {
-            return db.Pages.Include(p => p.PageDescriptions).FirstOrDefault(p => p.Name.Equals(name));
+            return db.Pages.Where(p => p.Name.Equals(name))
+                .Select(p => new {
+                    p,
+                    d = p.PageDescriptions.Where(pd => pd.Language == language)
+                        .OrderBy(pd => pd.Section)
+                } ).AsEnumerable()
+                .Select(x => x.p).First();
         }
 
         public void UpdatePage(Page page)
