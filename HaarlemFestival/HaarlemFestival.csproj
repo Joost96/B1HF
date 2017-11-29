@@ -280,6 +280,8 @@
     <Content Include="Views\CheckOut\CheckOut2.cshtml" />
     <Content Include="Views\CheckOut\CheckOut3.cshtml" />
     <Content Include="Views\CheckOut\CheckOut4.cshtml" />
+    <Content Include="Views\ContentManagement\AdminNav.cshtml" />
+    <Content Include="Views\ContentManagement\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
