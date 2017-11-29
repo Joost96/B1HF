@@ -1,0 +1,68 @@
+﻿@model HaarlemFestival.Model.Page
+
+@{
+    ViewBag.Title = "Index";
+}
+@RenderPage("AdminNav.cshtml")
+<main class="col-sm-9 ml-sm-auto col-md-10">
+    <h2> </h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+    
+        <div class="form-horizontal">
+            <h4>Page</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Name)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Titel, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Titel, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Titel, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            @for (int i = 0; i < Model.PageDescriptions.Count; i++)
+            {
+                @Html.HiddenFor(model => model.PageDescriptions[i].Page_Name)
+                @Html.HiddenFor(model => model.PageDescriptions[i].Section)
+                @Html.HiddenFor(model => model.PageDescriptions[i].Language)
+                <div class="form-group">
+                    @Html.LabelFor(modelItem => Model.PageDescriptions[i].Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(modelItem => Model.PageDescriptions[i].Title, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(modelItem => Model.PageDescriptions[i].Title, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(modelItem => Model.PageDescriptions[i].DescriptionText, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(modelItem => Model.PageDescriptions[i].DescriptionText, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(modelItem => Model.PageDescriptions[i].DescriptionText, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(modelItem => Model.PageDescriptions[i].ImageUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(modelItem => Model.PageDescriptions[i].ImageUrl, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(modelItem => Model.PageDescriptions[i].ImageUrl, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            }
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</main>
+

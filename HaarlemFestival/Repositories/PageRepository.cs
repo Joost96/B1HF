@@ -27,7 +27,12 @@ namespace HaarlemFestival.Repositories
 
         public void UpdatePage(Page page)
         {
-            throw new NotImplementedException();
+            db.Entry(page).State = EntityState.Modified;
+            foreach(PageDescription dp in page.PageDescriptions)
+            {
+                db.Entry(dp).State = EntityState.Modified;
+            }
+            db.SaveChanges();
         }
     }
 }

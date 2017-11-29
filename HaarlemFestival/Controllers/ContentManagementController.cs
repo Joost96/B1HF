@@ -27,5 +27,17 @@ namespace HaarlemFestival.Controllers
             Page homePage = pageRepository.GetPage("Home" , Language.Eng);
             return View(homePage);
         }
+        // POST: Chat/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index([Bind(Include = "Name,Titel,PageDescriptions")] Page page)
+        {
+            if (ModelState.IsValid)
+            {
+                pageRepository.UpdatePage(page);
+                return RedirectToAction("index");
+            }
+            return View(page);
+        }
     }
 }
