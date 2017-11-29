@@ -1,69 +1,79 @@
-﻿@model HaarlemFestival.Model.Page
+﻿@*
+    -Register button fully clickable
+    -Event summ over whole body container
+    -Background to white
+    -Page should scroll, footer should stick
+    -Clickable per event highlight not per line of text
+    -From pixels to percentage
+*@
+
+
+@model HaarlemFestival.Model.Page
 @{
     ViewBag.Title = "Home Page";
 }
 
 <section class="event_summarys">
     <section class="event_summary">
-        <h1>text from db</h1>
-        <section class="event_summary_img"><img src="/img/Home/Event_Sum_Jazz.jpg" width="277" height="300" alt="Jazz" /></section>
+        <h1>@Model.PageDescriptions[0].Title</h1>
+        <section class="event_summary_img"><img src=@Model.PageDescriptions[0].ImageUrl width="277" height="300" alt="Jazz" /></section>
         <button>More info</button>
     </section>
 
     <section class="event_summary">
-        <h1>text from db</h1>
-        <section class="event_summary_img"><img src="#" alt="Dinner" /></section>
+        <h1>@Model.PageDescriptions[1].Title</h1>
+        <section class="event_summary_img"><img src=@Model.PageDescriptions[1].ImageUrl width="277" height="300" alt="Dinner" /></section>
         <button>More info</button>
     </section>
 
     <section class="event_summary">
-        <h1>text from db</h1>
-        <section class="event_summary_img"><img src="#" alt="Talking" /></section>
+        <h1>@Model.PageDescriptions[2].Title</h1>
+        <section class="event_summary_img"><img src=@Model.PageDescriptions[2].ImageUrl width="277" height="300" alt="Talking" /></section>
         <button>More info</button>
     </section>
 
     <section class="event_summary">
-        <h1>text from db</h1>
-        <section class="event_summary_img"><img src="#" alt="Historic" /></section>
+        <h1>@Model.PageDescriptions[3].Title</h1>
+        <section class="event_summary_img"><img src=@Model.PageDescriptions[3].ImageUrl width="277" height="300" alt="Historic" /></section>
         <button>More info</button>
     </section>
 </section>
 <section class="wrapper">
     <section class="wrapper_left">
         <article class="info_festival">
-            <h1>What is the Haarlem Festival</h1>
-            <p>Hier komt text uit db</p>
+            <h1>@Model.PageDescriptions[4].Title</h1>
+            <p>@Model.PageDescriptions[4].DescriptionText</p>
         </article>
 
         <article class="register">
-            <h1>Create your own festival</h1>
-            <p>Hier komt text uit db</p>
-            <button>Register</button>
-            <text>Already have an account? @Html.ActionLink("Log in", "Login", "Account")</text>
+            <h1>@Model.PageDescriptions[5].Title</h1>
+            <p>@Model.PageDescriptions[5].DescriptionText</p>
+            <button>@Html.ActionLink("Register", "Register", "Account", new { @class = "register_link_makeup" })</button>
+            <text>@Model.PageDescriptions[11].DescriptionText @Html.ActionLink("Log in", "Log in", "Account")</text>
         </article>
     </section>
 
     <article class="event_highlights">
-        <h1>Event Highlights</h1>
+        <h1>@Model.PageDescriptions[6].Title</h1>
 
         <article class="event_highlight">
-            <h2>@Html.ActionLink("text from db", "Login", "Account", new { @class = "event_hl_link_makeup" })</h2>
-            <p>@Html.ActionLink("text from db", "Login", "Account", new { @class = "event_hl_link_makeup" })</p>
+            <h2>@Html.ActionLink(@Model.PageDescriptions[7].Title, "Login", "Account", new { @class = "event_hl_link_makeup" })</h2>
+            <p>@Html.ActionLink(@Model.PageDescriptions[7].DescriptionText, "Login", "Account", new { @class = "event_hl_link_makeup" })</p>
         </article>
 
         <article class="event_highlight">
-            <h2>@Html.ActionLink("text from db", "Login", "Account", new { @class = "event_hl_link_makeup" })</h2>
-            <p>@Html.ActionLink("text from db", "Login", "Account", new { @class = "event_hl_link_makeup" })</p>
+            <h2>@Html.ActionLink(@Model.PageDescriptions[8].Title, "Login", "Account", new { @class = "event_hl_link_makeup" })</h2>
+            <p>@Html.ActionLink(@Model.PageDescriptions[8].DescriptionText, "Login", "Account", new { @class = "event_hl_link_makeup" })</p>
         </article>
 
         <article class="event_highlight">
-            <h2>@Html.ActionLink("text from db", "Login", "Account", new { @class = "event_hl_link_makeup" })</h2>
-            <p>@Html.ActionLink("text from db", "Login", "Account", new { @class = "event_hl_link_makeup" })</p>
+            <h2>@Html.ActionLink(@Model.PageDescriptions[9].Title, "Login", "Account", new { @class = "event_hl_link_makeup" })</h2>
+            <p>@Html.ActionLink(@Model.PageDescriptions[9].DescriptionText, "Login", "Account", new { @class = "event_hl_link_makeup" })</p>
         </article>
 
         <article class="event_highlight">
-            <h2>@Html.ActionLink("text from db", "Login", "Account", new { @class = "event_hl_link_makeup" })</h2>
-            <p>@Html.ActionLink(Model.PageDescriptions[0].DescriptionText, "Login", "Account", new { @class = "event_hl_link_makeup" })</p>
+            <h2>@Html.ActionLink(@Model.PageDescriptions[10].Title, "Login", "Account", new { @class = "event_hl_link_makeup" })</h2>
+            <p>@Html.ActionLink(@Model.PageDescriptions[10].DescriptionText, "Login", "Account", new { @class = "event_hl_link_makeup" })</p>
         </article>
     </article>
 </section>
