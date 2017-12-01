@@ -155,6 +155,7 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ContentManagementController.cs" />
     <Compile Include="Controllers\JazzController.cs" />
+    <Compile Include="Controllers\TalkingController.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -282,6 +283,7 @@
     <Content Include="Views\CheckOut\CheckOut4.cshtml" />
     <Content Include="Views\ContentManagement\AdminNav.cshtml" />
     <Content Include="Views\ContentManagement\Index.cshtml" />
+    <Content Include="Views\Talking\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
