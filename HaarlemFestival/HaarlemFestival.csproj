@@ -154,6 +154,7 @@
     <Compile Include="Controllers\CheckOutController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ContentManagementController.cs" />
+    <Compile Include="Controllers\HistoricController.cs" />
     <Compile Include="Controllers\JazzController.cs" />
     <Compile Include="Controllers\TalkingController.cs" />
     <Compile Include="Enums.cs" />
@@ -283,6 +284,7 @@
     <Content Include="Views\CheckOut\CheckOut4.cshtml" />
     <Content Include="Views\ContentManagement\AdminNav.cshtml" />
     <Content Include="Views\ContentManagement\Index.cshtml" />
+    <Content Include="Views\Historic\Historic.cshtml" />
     <Content Include="Views\Talking\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
