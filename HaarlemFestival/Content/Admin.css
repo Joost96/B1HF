@@ -1,5 +1,7 @@
-﻿.sidebar {
-    position: fixed;
+﻿.adminMain .imgUpload {
+    display: none;
+}
+.admin.sidebar {
     top: 51px;
     bottom: 0;
     left: 0;
@@ -7,5 +9,57 @@
     padding: 20px 0;
     overflow-x: hidden;
     overflow-y: auto;
-    border-right: 1px solid #eee;
+    border: 1px solid #bba8a8;
+    background: #f7f344;
+}
+.adminSection {
+    border: 1px solid #bba8a8;
+    background: white;
+    margin: 0px 0px 15px 0px;
+    padding: 15px;
+}
+.adminSection h2 {
+    text-align: center;
+}
+.adminSection .col-md-3 {
+    padding: 0;
+}
+.adminSection * textarea {
+    width: 100%;
+}
+.HomeImage {
+    display: inline-block;
+    padding: 6px;
+    margin: 2px;
+}
+.HomeHighlight {
+    padding: 6px;
+    margin: 2px;
+    border: 1px solid;
+}
+.HomeHighlight .move {
+    top: 50%;
+    font-size: 21px;
+    left: 17px;
+    margin-top: -0.5em;
+    position: absolute;
+    text-align: center;
+}
+.editImage {
+    width: 100%;
+}
+.adminMain {
+    top: 51px;
+}
+.admin.sidebar .nav-item {
+    width: 100%;
+}
+.admin.sidebar .nav-item a {
+    display: block;
+    padding: .5rem 1rem;
+    color: black;
+}
+.admin.sidebar .nav-item a:hover {
+    background-color: #696767;
+    color: white;
 }
