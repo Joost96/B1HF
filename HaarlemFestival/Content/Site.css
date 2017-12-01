@@ -352,3 +352,45 @@ footer {
 .middenstuk{
     display : inline-block;
 }
+
+/*--------------Historic Haarlem-----------------*/
+
+.HistoricTitle {
+    text-align: center;
+}
+
+.HistoricImageTop{
+    display: inline-block;
+    border: solid;
+    border-width: 1px;
+    width: 180px;
+    height: 125px;
+    margin-left: 5px;
+    margin-right: 5px;
+    float: left;
+}
+
+.HistoricIntro {
+    text-align: center;
+}
+
+.HistoricIntro button {
+        position: absolute;
+        top: 210px;
+        right: 420px;
+}
+
+.HistoricRoute h2 {
+    text-align: center;
+    display: inline;
+    margin-left: 412px;
+}
+.HistoricRoute p {
+    display: inline-block;
+    width: 49%;
+}
+.HistoricRoute hr {
+    margin-top: 20px;
+    margin-bottom: 0px;
+    border-top: 1px solid #000000;
+}

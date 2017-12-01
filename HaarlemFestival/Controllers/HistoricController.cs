@@ -9,7 +9,7 @@ namespace HaarlemFestival.Controllers
     public class HistoricController : Controller
     {
         // GET: Historic
-        public ActionResult Index()
+        public ActionResult Historic()
         {
             return View();
         }
