@@ -215,7 +215,48 @@ footer {
 .event_highlight :hover{
     color: red;
 }
+/*-------------------------------------------All restaurants page---------------------------------------------*/
 
+/*-------------------------------------------Restaurant detail page-------------------------------------------*/
+.restaurant_information{
+    background-color: blue; 
+    display: flex;
+    width: 100%;
+    height: 23em; 
+}
+
+.left_box{
+    background-color: green; 
+    width: 50%;
+    height: 100%
+}
+
+.right_box{
+    background-color: mediumpurple; 
+    width: 50%;
+    height: 100%;
+}
+
+.restaurant_description{
+    background-color: black;
+    width: 100%;
+    height: 7em;
+    text-align: center;
+}
+
+.restaurant_description p{
+    width: 88%;
+}
+
+.restaurant_reservation_form{
+    background-color: aqua; 
+    height: 23em;
+    width: 100%; 
+}
+
+.restaurant_form_label{
+
+}
 
 /*-------------------------------------------Contact page---------------------------------------------*/
 
@@ -302,7 +343,6 @@ footer {
     margin-top: 10%;
     padding-bottom: 10%;
 }
-
 
 
 .CheckOut1 ul {

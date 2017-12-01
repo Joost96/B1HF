@@ -1,0 +1,66 @@
+﻿@model HaarlemFestival.Model.Activity
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>text from db</h1>
+<div class="restaurant_information">
+    <div class="left_box">
+        <img src="dummie " alt="" />
+    </div>
+
+    <div class="right_box">
+
+    </div>
+</div>
+
+<div class="restaurant_description">
+    <h2></h2>
+    <p></p>
+</div>
+
+<div class="restaurant_reservation_form">
+    <h2></h2>
+    <text></text>
+    <form>
+        <fieldset>
+            <label class="restaurant_form_label" for="rday"></label>
+            <select class="restaurant_form_select_wide" id="rday">
+                <option></option>
+                <option></option>
+                <option></option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <label class="restaurant_form_label" for="rtime"></label>
+            <select class="restaurant_form_select_wide" id="rtime">
+                <option></option>
+                <option></option>
+                <option></option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <label class="restaurant_form_label" for="radults"></label>
+            <select class="restaurant_form_select_small" id="radults">
+                @for (int iAdults = 1; iAdults <= 10; iAdults++)
+                {
+                    <option value="@iAdults"> @iAdults</option>
+                }
+            </select>
+        </fieldset>
+        <fieldset>
+            <label class="restaurant_form_label" for="rkids"></label>
+            <select class="restaurant_form_select_small" id="rkids">
+                @for (int iKids = 0; iKids <= 10; iKids++)
+                {
+                    <option value="@iKids"> @iKids</option>
+                }
+            </select>
+        </fieldset>
+        <fieldset>
+            <label class="restaurant_form_label" for="rmisc"></label>
+            <textarea class="restaurant_form_txtarea" id="rmisc"></textarea>
+        </fieldset>
+    </form>
+</div>
