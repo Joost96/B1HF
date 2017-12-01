@@ -13,5 +13,20 @@ namespace HaarlemFestival.Controllers
         {
             return View();
         }
+
+        public ActionResult CheckOut2()
+        {
+            return View();
+        }
+
+        public ActionResult CheckOut3()
+        {
+            return View();
+        }
+
+        public ActionResult CheckOut4()
+        {
+            return View();
+        }
     }
 }
