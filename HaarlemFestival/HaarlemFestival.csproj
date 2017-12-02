@@ -201,6 +201,7 @@
     <Compile Include="Model\OrderHasTickets.cs" />
     <Compile Include="Model\Page.cs" />
     <Compile Include="Model\PageDescription.cs" />
+    <Compile Include="Model\PagePlusDescriptions.cs" />
     <Compile Include="Model\RegisterModel.cs" />
     <Compile Include="Model\Ticket.cs" />
     <Compile Include="Model\TimeSlot.cs" />
