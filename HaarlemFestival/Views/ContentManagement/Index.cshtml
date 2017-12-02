@@ -1,57 +1,114 @@
 ﻿@model HaarlemFestival.Model.Page
-
+@section AddToHead{
+    <link href="@Url.Content("~/Content/Admin.css")" rel="stylesheet" type="text/css" />
+    
+}
+@section AddToScripts{
+    <script src="@Url.Content("~/Scripts/Admin.js")"></script>
+}
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Èdit Homepage";
 }
 @RenderPage("AdminNav.cshtml")
-<main class="col-sm-9 ml-sm-auto col-md-10">
-    <h2> </h2>
+<main class="col-sm-9 ml-sm-auto col-md-10 adminMain">
 
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
-    
-        <div class="form-horizontal">
-            <h4>Page</h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.HiddenFor(model => model.Name)
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Titel, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Titel, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Titel, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            @for (int i = 0; i < Model.PageDescriptions.Count; i++)
+        @Html.HiddenFor(model => model.Name)
+        @Html.HiddenFor(model => model.Titel)
+        <section class="adminSection col-md-10">
+            <h2>Edit Links</h2>
+            @for (int i = 0; i < 4; i++)
             {
                 @Html.HiddenFor(model => model.PageDescriptions[i].Page_Name)
                 @Html.HiddenFor(model => model.PageDescriptions[i].Section)
                 @Html.HiddenFor(model => model.PageDescriptions[i].Language)
-                <div class="form-group">
-                    @Html.LabelFor(modelItem => Model.PageDescriptions[i].Title, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(modelItem => Model.PageDescriptions[i].Title, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(modelItem => Model.PageDescriptions[i].Title, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(modelItem => Model.PageDescriptions[i].DescriptionText, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(modelItem => Model.PageDescriptions[i].DescriptionText, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(modelItem => Model.PageDescriptions[i].DescriptionText, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(modelItem => Model.PageDescriptions[i].ImageUrl, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(modelItem => Model.PageDescriptions[i].ImageUrl, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(modelItem => Model.PageDescriptions[i].ImageUrl, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+                <section class="col-md-3">
+                    <section class="HomeImage">
+                        @Html.HiddenFor(model => model.PageDescriptions[i].ImageUrl)
+                        <img src=@Model.PageDescriptions[i].ImageUrl class="editImage" alt=@Model.PageDescriptions[i].Title id=@Html.Raw("PageDescriptions_"+i+ "__ImageUrl") />
+                        <input class='imgUpload' type='file' name='afbeelding' id=@Html.Raw("PageDescriptions_"+i+ "__ImageUrl")>
+                        <div class="form-group">
+                            @Html.LabelFor(modelItem => Model.PageDescriptions[i].Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="">
+                                @Html.EditorFor(modelItem => Model.PageDescriptions[i].Title, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(modelItem => Model.PageDescriptions[i].Title, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </section>
+                </section>
             }
+        </section>
+        <section class="adminSection col-md-10">
+            <h2>Edit HomePage</h2>
+            @for (int i = 4; i < 6; i++)
+            {
+                @Html.HiddenFor(model => model.PageDescriptions[i].Page_Name)
+                @Html.HiddenFor(model => model.PageDescriptions[i].Section)
+                @Html.HiddenFor(model => model.PageDescriptions[i].Language)
+                <section class="col-md-6">
+                    <section>
+                        <div class="form-group">
+                            @Html.LabelFor(modelItem => Model.PageDescriptions[i].Title, htmlAttributes: new { @class = "control-label col-md-12" })
+                            <div class="col-md-12">
+                                @Html.EditorFor(modelItem => Model.PageDescriptions[i].Title, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(modelItem => Model.PageDescriptions[i].Title, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(modelItem => Model.PageDescriptions[i].DescriptionText, htmlAttributes: new { @class = "control-label col-md-12" })
+                            <div class="col-md-12">
+                                @Html.TextAreaFor(modelItem => Model.PageDescriptions[i].DescriptionText,8,20, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(modelItem => Model.PageDescriptions[i].DescriptionText, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </section>
+                </section>
+            }
+        </section>
+        <section class="adminSection col-md-10">
+            <section class="col-md-12">
+                <h2>Edit Highlights</h2>
+                @Html.HiddenFor(model => model.PageDescriptions[6].Page_Name)
+                @Html.HiddenFor(model => model.PageDescriptions[6].Section)
+                @Html.HiddenFor(model => model.PageDescriptions[6].Language)
+                <div class="form-group">
+                    @Html.LabelFor(modelItem => Model.PageDescriptions[6].Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(modelItem => Model.PageDescriptions[6].Title, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(modelItem => Model.PageDescriptions[6].Title, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                @for(int i = 7;i <11;i++) {
+                    <section class="HomeHighlight col-md-12">
+                        @Html.HiddenFor(model => model.PageDescriptions[i].Page_Name)
+                        @Html.HiddenFor(model => model.PageDescriptions[i].Section)
+                        @Html.HiddenFor(model => model.PageDescriptions[i].Language)
+                        <span class="fa fa-arrows-v move"></span>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Html.LabelFor(modelItem => Model.PageDescriptions[i].Title, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-8">
+                                    @Html.EditorFor(modelItem => Model.PageDescriptions[i].Title, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(modelItem => Model.PageDescriptions[i].Title, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(modelItem => Model.PageDescriptions[i].DescriptionText, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-8">
+                                    @Html.EditorFor(modelItem => Model.PageDescriptions[i].DescriptionText, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(modelItem => Model.PageDescriptions[i].DescriptionText, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                }
+            </section>
+        </section>
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
@@ -60,9 +117,5 @@
             </div>
         </div>
     }
-
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
 </main>
 

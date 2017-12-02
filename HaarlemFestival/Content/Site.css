@@ -215,7 +215,48 @@ footer {
 .event_highlight :hover{
     color: red;
 }
+/*-------------------------------------------All restaurants page---------------------------------------------*/
 
+/*-------------------------------------------Restaurant detail page-------------------------------------------*/
+.restaurant_information{
+    background-color: blue; 
+    display: flex;
+    width: 100%;
+    height: 23em; 
+}
+
+.left_box{
+    background-color: green; 
+    width: 50%;
+    height: 100%
+}
+
+.right_box{
+    background-color: mediumpurple; 
+    width: 50%;
+    height: 100%;
+}
+
+.restaurant_description{
+    background-color: black;
+    width: 100%;
+    height: 7em;
+    text-align: center;
+}
+
+.restaurant_description p{
+    width: 88%;
+}
+
+.restaurant_reservation_form{
+    background-color: aqua; 
+    height: 23em;
+    width: 100%; 
+}
+
+.restaurant_form_label{
+
+}
 
 /*-------------------------------------------Contact page---------------------------------------------*/
 
@@ -304,7 +345,6 @@ footer {
 }
 
 
-
 .CheckOut1 ul {
     list-style-type: none;
     margin: 0;
@@ -351,6 +391,48 @@ footer {
 
 .middenstuk{
     display : inline-block;
+}
+
+/*--------------Historic Haarlem-----------------*/
+
+.HistoricTitle {
+    text-align: center;
+}
+
+.HistoricImageTop{
+    display: inline-block;
+    border: solid;
+    border-width: 1px;
+    width: 180px;
+    height: 125px;
+    margin-left: 5px;
+    margin-right: 5px;
+    float: left;
+}
+
+.HistoricIntro {
+    text-align: center;
+}
+
+.HistoricIntro button {
+        position: absolute;
+        top: 210px;
+        right: 420px;
+}
+
+.HistoricRoute h2 {
+    text-align: center;
+    display: inline;
+    margin-left: 412px;
+}
+.HistoricRoute p {
+    display: inline-block;
+    width: 49%;
+}
+.HistoricRoute hr {
+    margin-top: 20px;
+    margin-bottom: 0px;
+    border-top: 1px solid #000000;
 }
 
 /*--------------Talking-Haarlem-----------------*/
