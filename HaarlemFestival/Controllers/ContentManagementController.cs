@@ -29,7 +29,7 @@ namespace HaarlemFestival.Controllers
         }
         // POST: Chat/Edit/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public ActionResult Index([Bind(Include = "Name,Titel,PageDescriptions")] Page page)
         {
             if (ModelState.IsValid)
