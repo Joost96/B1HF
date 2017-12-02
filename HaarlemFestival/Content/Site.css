@@ -244,6 +244,10 @@ footer {
     text-align: center;
 }
 
+.restaurant_description h2{
+    margin-top: 0px;
+}
+
 .restaurant_description p{
     width: 88%;
 }
@@ -252,6 +256,10 @@ footer {
     background-color: aqua; 
     height: 23em;
     width: 100%; 
+}
+
+.restaurant_reservation_form h2{
+    margin-top: 0px; 
 }
 
 .restaurant_form_label{
