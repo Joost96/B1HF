@@ -158,6 +158,7 @@
     <Compile Include="Controllers\ContentManagementController.cs" />
     <Compile Include="Controllers\DinnerController.cs" />
     <Compile Include="Controllers\JazzController.cs" />
+    <Compile Include="Controllers\TalkingController.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
