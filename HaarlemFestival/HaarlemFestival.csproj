@@ -202,6 +202,7 @@
     <Compile Include="Model\OrderHasTickets.cs" />
     <Compile Include="Model\Page.cs" />
     <Compile Include="Model\PageDescription.cs" />
+    <Compile Include="Model\PagePlusDescriptions.cs" />
     <Compile Include="Model\RegisterModel.cs" />
     <Compile Include="Model\Ticket.cs" />
     <Compile Include="Model\TimeSlot.cs" />
@@ -275,10 +276,6 @@
     <Content Include="Views\Contact\Contact.cshtml" />
     <Content Include="Views\CheckOut\CheckOut1.cshtml" />
     <Content Include="Views\Jazz\Jazz.cshtml" />
-    <Content Include="Views\Jazz\JazzThursday.cshtml" />
-    <Content Include="Views\Jazz\JazzFriday.cshtml" />
-    <Content Include="Views\Jazz\JazzSaturday.cshtml" />
-    <Content Include="Views\Jazz\JazzSunday.cshtml" />
     <Content Include="Views\CheckOut\CheckOut2.cshtml" />
     <Content Include="Views\CheckOut\CheckOut3.cshtml" />
     <Content Include="Views\CheckOut\CheckOut4.cshtml" />
