@@ -155,6 +155,7 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ContentManagementController.cs" />
     <Compile Include="Controllers\DinnerController.cs" />
+    <Compile Include="Controllers\HistoricController.cs" />
     <Compile Include="Controllers\JazzController.cs" />
     <Compile Include="Controllers\TalkingController.cs" />
     <Compile Include="Enums.cs" />
@@ -283,6 +284,7 @@
     <Content Include="Views\Dinner\Details.cshtml" />
     <Content Include="Views\Dinner\Index.cshtml" />
     <Content Include="Views\Dinner\DinnerActivity.cshtml" />
+    <Content Include="Views\Historic.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
