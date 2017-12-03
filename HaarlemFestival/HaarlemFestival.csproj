@@ -154,7 +154,7 @@
     <Compile Include="Controllers\CheckOutController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ContentManagementController.cs" />
-    <Compile Include="Controllers\HistoricController.cs" />
+    <Compile Include="Controllers\DinnerController.cs" />
     <Compile Include="Controllers\JazzController.cs" />
     <Compile Include="Controllers\TalkingController.cs" />
     <Compile Include="Enums.cs" />
@@ -201,6 +201,7 @@
     <Compile Include="Model\OrderHasTickets.cs" />
     <Compile Include="Model\Page.cs" />
     <Compile Include="Model\PageDescription.cs" />
+    <Compile Include="Model\PagePlusDescriptions.cs" />
     <Compile Include="Model\RegisterModel.cs" />
     <Compile Include="Model\Ticket.cs" />
     <Compile Include="Model\TimeSlot.cs" />
@@ -220,13 +221,11 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\font-awesome.css" />
-    <Content Include="Content\font-awesome.min.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\Admin.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -240,11 +239,6 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="fonts\FontAwesome.otf" />
-    <Content Include="fonts\fontawesome-webfont.woff2" />
-    <Content Include="fonts\fontawesome-webfont.woff" />
-    <Content Include="fonts\fontawesome-webfont.ttf" />
-    <Content Include="fonts\fontawesome-webfont.eot" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
@@ -273,8 +267,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
@@ -283,17 +275,14 @@
     <Content Include="Views\Contact\Contact.cshtml" />
     <Content Include="Views\CheckOut\CheckOut1.cshtml" />
     <Content Include="Views\Jazz\Jazz.cshtml" />
-    <Content Include="Views\Jazz\JazzThursday.cshtml" />
-    <Content Include="Views\Jazz\JazzFriday.cshtml" />
-    <Content Include="Views\Jazz\JazzSaturday.cshtml" />
-    <Content Include="Views\Jazz\JazzSunday.cshtml" />
     <Content Include="Views\CheckOut\CheckOut2.cshtml" />
     <Content Include="Views\CheckOut\CheckOut3.cshtml" />
     <Content Include="Views\CheckOut\CheckOut4.cshtml" />
     <Content Include="Views\ContentManagement\AdminNav.cshtml" />
     <Content Include="Views\ContentManagement\Index.cshtml" />
-    <Content Include="Views\Historic\Historic.cshtml" />
-    <Content Include="Views\Talking\Index.cshtml" />
+    <Content Include="Views\Dinner\Details.cshtml" />
+    <Content Include="Views\Dinner\Index.cshtml" />
+    <Content Include="Views\Dinner\DinnerActivity.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

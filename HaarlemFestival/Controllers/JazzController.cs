@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HaarlemFestival.Model;
+using HaarlemFestival.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,29 +11,23 @@ namespace HaarlemFestival.Controllers
     public class JazzController : Controller
     {
         // GET: Jazz
-        public ActionResult Jazz()
+        public ActionResult Index()
         {
-            return View();
-        }
+            PagePlusDescriptions PageDescriptions = new PagePlusDescriptions();
 
-        public ActionResult JazzThursday()
-        {
-            return View();
-        }
+            DBHF db = new DBHF();
+            IPageRepository pageRepo = new PageRepository(db);
+            Page page = pageRepo.GetPage("Jazz", Language.Eng);
 
-        public ActionResult JazzFriday()
-        {
-            return View();
-        }
+            IActivityRepository activityRepo = new ActivityRepository(db);
+            IEnumerable<Activity> activities = activityRepo.GetActivities(EventType.Jazz);
 
-        public ActionResult JazzSaturday()
-        {
-            return View();
-        }
+            activities.OrderBy(Activitie => Activitie.Timeslots);
 
-        public ActionResult JazzSunday()
-        {
-            return View();
+            PageDescriptions.Page = page;
+            PageDescriptions.ActivityDescriptions = activities.ToList();
+
+            return View(PageDescriptions);
         }
     }
 }

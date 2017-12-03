@@ -5,7 +5,7 @@
 
 body {
     padding-top: 50px;
-    padding-bottom: 20px;
+    
     background-color: #EDECD8;
 }
 
@@ -35,7 +35,7 @@ nav {
 
 footer {
     background-color: #F8473E;
-    position: absolute;
+  
     left: 0;
     right: 0;
     bottom: 0;
@@ -215,7 +215,56 @@ footer {
 .event_highlight :hover{
     color: red;
 }
+/*-------------------------------------------All restaurants page---------------------------------------------*/
 
+/*-------------------------------------------Restaurant detail page-------------------------------------------*/
+.restaurant_information{
+    background-color: blue; 
+    display: flex;
+    width: 100%;
+    height: 23em; 
+}
+
+.left_box{
+    background-color: green; 
+    width: 50%;
+    height: 100%
+}
+
+.right_box{
+    background-color: mediumpurple; 
+    width: 50%;
+    height: 100%;
+}
+
+.restaurant_description{
+    background-color: black;
+    width: 100%;
+    height: 7em;
+    text-align: center;
+}
+
+.restaurant_description h2{
+    margin-top: 0px;
+}
+
+.restaurant_description p{
+    width: 88%;
+}
+
+.restaurant_reservation_form{
+    background-color: aqua; 
+    height: 23em;
+    width: 100%; 
+}
+
+.restaurant_reservation_form h2{
+    margin-top: 0px; 
+}
+
+.restaurant_form_label{
+
+}
 
 /*-------------------------------------------Contact page---------------------------------------------*/
 
@@ -302,7 +351,6 @@ footer {
     margin-top: 10%;
     padding-bottom: 10%;
 }
-
 
 
 .CheckOut1 ul {
@@ -405,7 +453,7 @@ footer {
     width: 100%;
     text-align: center;
     line-height: 2em;
-    margin-top: 0.5%;
+    margin-top: 4%;
     padding : 0px;
     border-top-style: solid;
     border-color: #F8473E;
@@ -427,7 +475,7 @@ footer {
 .TalkingEvent {
    /* background-color: blue;*/
     width: 100%;
-    height: 68em;
+    height: 60em;
     margin-bottom: 10em;
     border-top-style: solid;
     border-color: #F8473E;
@@ -439,13 +487,13 @@ footer {
     height: 14em;
     margin-left: 40%;
     margin-right: 40%;
-    margin-top: 0.5%;
+    margin-top: 4%;
     
 }
 
 .TalkingDagHeader {
     text-align: center;
-    padding-top: 20%;
+    padding-top: 15%;
     padding-bottom: 0px;
     font-size: 2em;
     font-weight: bold;
@@ -463,7 +511,7 @@ footer {
 .TalkingSprekerImg {
     background-color: purple; 
     width: 20%;
-    height: 20em;   
+    height: 18em;   
     margin-top: 4%;
     margin-right: 3%;
     margin-bottom: 2%;
@@ -472,11 +520,12 @@ footer {
 
 .TalkingSprekerUitleg {
     width: 50%;
-    height: 2em;
+    height: 20em;
     margin-top: 4%;
     margin-right: 10%;
     margin-bottom: 2%;
     float: left;
+    
 }
 
 .TalkingSprekerHeader{
@@ -490,7 +539,7 @@ footer {
 
 .TalkingButtonSpreker {
     font-size: 1.8em;
-    margin-top: 15%;
+    margin-top: 13%;
     margin-bottom: 15%;
     margin-left: 0;
     float: left;
@@ -508,7 +557,7 @@ footer {
 
 .TalkingSprekerImg2 {
     width: 20%;
-    height: 20em;
+    height: 18em;
     background-color: purple;
     margin-top: 1%;
     margin-right: 3%;
@@ -518,11 +567,12 @@ footer {
 
 .TalkingSprekerUitleg2 {
     width: 50%;
-    height: 2em;
-    margin-top: 4%;
+    height: 20em;
+    margin-top: 0%;
     margin-right: 10%;
     margin-bottom: 2%;
     float: left;
+    
 }
 
 .TalkingSprekerHeader2 {
@@ -535,10 +585,96 @@ footer {
 
 .TalkingButtonSpreker2 {
     font-size: 1.8em;
-    margin-top: 15%;
-    margin-bottom: 15%;
+    margin-top: 9%;
+    margin-bottom: 10%;
     margin-left: 0;
     float: left;
     background-color: #199ED8;
     border-radius: 15px, 15px;
+}
+
+.TalkingButtonBook {
+    font-size: 1.8em;
+    margin: 0%;
+    margin-right: 2.4%;
+    float: right;
+    background-color: #1DBF3B;
+    border-radius: 15px, 15px;
+}
+}
+
+/*-------------------------------JAZZ---------------------------------*/
+.jazz_page_info_hp{
+    width : 100%;
+}
+
+.jazz_page_info_h{
+    text-align: center;
+    padding-top : 25px;
+}
+
+.jazz_page_info_line {
+    display: block;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-style :inset;
+    border-width: 1px;
+    border-bottom-color : black;
+}
+
+.jazz_page_info_p{
+    padding : 0px 20%;
+}
+
+.jazz_page_info_locatiepatronaat{
+    float : left;
+    margin-left : 20%;
+}
+
+.jazz_page_info_locatiepatronaat_h, .jazz_page_info_locatiegrotemarkt_h {
+    font-weight: bold;
+}
+
+.jazz_page_info_locatiegrotemarkt{
+    display : inline-block;
+    margin-left : 20%;
+}
+
+.jazz_page_program_days{
+    border-width : 1px;
+    border-top-style : inset;
+    border-bottom-style : inset;
+    border-top-color : black;
+    border-bottom-color : black;
+    margin-top : 3%;
+    padding : 15px 0px;
+}
+
+.jazz_page_program_days_header{
+    float : left;
+    margin : 0px;
+    margin-right : 6%;
+    margin-left : 5%;
+    padding : 10px 0px;
+}
+
+.jazz_page_program_thursday{
+    margin-right : 4%;
+}
+
+.jazz_page_program_friday {
+    margin-right: 4%;
+}
+
+.jazz_page_program_saturday {
+    margin-right: 4%;
+}
+
+.jazz_page_program_sunday {
+    margin-right: 4%;
+}
+
+.jazz_page_program_passpartout{
+    float : right;
+    margin-top : 10px;
 }
