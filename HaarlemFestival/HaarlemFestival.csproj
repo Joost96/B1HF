@@ -421,14 +421,12 @@
     <Content Include="Views\Dinner\Index.cshtml" />
     <Content Include="Views\Dinner\DinnerActivity.cshtml" />
     <Content Include="Views\Historic.cshtml" />
-    <Content Include="Views\Historic--old\Historic.cshtml" />
     <Content Include="Views\Talking\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="Views\ContentManager\" />
-    <Folder Include="Views\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
