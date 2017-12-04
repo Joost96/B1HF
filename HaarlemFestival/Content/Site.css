@@ -601,7 +601,6 @@ footer {
     background-color: #1DBF3B;
     border-radius: 15px, 15px;
 }
-}
 
 /*-------------------------------JAZZ---------------------------------*/
 .jazz_page_info_hp{
@@ -623,7 +622,7 @@ footer {
 }
 
 .jazz_page_info_p{
-    padding : 0px 20%;
+    padding : 0px 19%;
 }
 
 .jazz_page_info_locatiepatronaat{
@@ -679,10 +678,24 @@ footer {
     margin-top : 10px;
 }
 
-.jazz_page_imgsection{
-    float : left;
+.jazz_page_imgsection {
+    float: left;
 }
 
-.jazz_page_actinfosection{
+.jazz_page_actinfosection {
+    margin-left: 30%;
+    margin-bottom: 8%;
+}
 
+.jazz_page_actinfosection_line {
+    display: block;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-style: inset;
+    border-width: 1px;
+    border-bottom-color: black;
+}
+
+.jazz_page_buybtn{
+    float : right;
 }
