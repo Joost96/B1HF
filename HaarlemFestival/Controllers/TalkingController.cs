@@ -30,11 +30,6 @@ namespace HaarlemFestival.Controllers
             return View(PageDescriptions);
         }
 
-        public ActionResult BookPopUp()
-        {
-
-        }
-
 
     }
 }

@@ -10,5 +10,7 @@ namespace HaarlemFestival.Repositories
     {
         IEnumerable<Activity> GetActivities(EventType type);
 
+        IEnumerable<Activity> GetActivities(EventType type, DateTime dag);
+
     }
 }
