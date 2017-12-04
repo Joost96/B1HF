@@ -155,6 +155,7 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ContentManagementController.cs" />
     <Compile Include="Controllers\DinnerController.cs" />
+    <Compile Include="Controllers\HistoricController.cs" />
     <Compile Include="Controllers\JazzController.cs" />
     <Compile Include="Controllers\TalkingController.cs" />
     <Compile Include="Enums.cs" />
@@ -165,6 +166,10 @@
     <Compile Include="Migrations\201711231318482_initial.cs" />
     <Compile Include="Migrations\201711231318482_initial.Designer.cs">
       <DependentUpon>201711231318482_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711271346043_updateLocation.cs" />
+    <Compile Include="Migrations\201711271346043_updateLocation.Designer.cs">
+      <DependentUpon>201711271346043_updateLocation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201711271406134_cuisine.cs" />
     <Compile Include="Migrations\201711271406134_cuisine.Designer.cs">
@@ -205,6 +210,9 @@
     <Compile Include="Model\RegisterModel.cs" />
     <Compile Include="Model\Ticket.cs" />
     <Compile Include="Model\TimeSlot.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
     <Compile Include="Repositories\ActivityRepository.cs" />
@@ -216,15 +224,134 @@
     <Compile Include="Repositories\PageRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\Antlr3.Runtime.pdb" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\EntityFramework.xml" />
+    <Content Include="bin\HaarlemFestival.dll" />
+    <Content Include="bin\HaarlemFestival.pdb" />
+    <Content Include="bin\Microsoft.AI.Agent.Intercept.dll" />
+    <Content Include="bin\Microsoft.AI.DependencyCollector.dll" />
+    <Content Include="bin\Microsoft.AI.DependencyCollector.xml" />
+    <Content Include="bin\Microsoft.AI.PerfCounterCollector.dll" />
+    <Content Include="bin\Microsoft.AI.ServerTelemetryChannel.dll" />
+    <Content Include="bin\Microsoft.AI.ServerTelemetryChannel.xml" />
+    <Content Include="bin\Microsoft.AI.Web.dll" />
+    <Content Include="bin\Microsoft.AI.Web.xml" />
+    <Content Include="bin\Microsoft.AI.WindowsServer.dll" />
+    <Content Include="bin\Microsoft.AI.WindowsServer.xml" />
+    <Content Include="bin\Microsoft.ApplicationInsights.dll" />
+    <Content Include="bin\Microsoft.ApplicationInsights.xml" />
+    <Content Include="bin\Microsoft.AspNet.TelemetryCorrelation.dll" />
+    <Content Include="bin\Microsoft.AspNet.TelemetryCorrelation.xml" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\csi.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="bin\roslyn\Microsoft.Win32.Primitives.dll" />
+    <Content Include="bin\roslyn\System.AppContext.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Console.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.FileVersionInfo.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.Process.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.StackTrace.dll" />
+    <Content Include="bin\roslyn\System.IO.Compression.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.DriveInfo.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="bin\roslyn\System.IO.Pipes.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\System.Security.AccessControl.dll" />
+    <Content Include="bin\roslyn\System.Security.Claims.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Algorithms.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Encoding.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Primitives.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.X509Certificates.dll" />
+    <Content Include="bin\roslyn\System.Security.Principal.Windows.dll" />
+    <Content Include="bin\roslyn\System.Text.Encoding.CodePages.dll" />
+    <Content Include="bin\roslyn\System.Threading.Thread.dll" />
+    <Content Include="bin\roslyn\System.ValueTuple.dll" />
+    <Content Include="bin\roslyn\System.Xml.ReaderWriter.dll" />
+    <Content Include="bin\roslyn\System.Xml.XmlDocument.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.XDocument.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\System.Diagnostics.DiagnosticSource.dll" />
+    <Content Include="bin\System.Diagnostics.DiagnosticSource.xml" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Helpers.xml" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Mvc.xml" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Optimization.xml" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.xml" />
+    <Content Include="bin\WebGrease.dll" />
     <Content Include="Content\Admin.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\Header\HF_logo_header.png" />
+    <Content Include="img\Header\Shopping_cart_header.png" />
+    <Content Include="img\Historic\TopImage1.JPG" />
+    <Content Include="img\Historic\TopImage2.jpg" />
+    <Content Include="img\Historic\TopImage3.jpg" />
+    <Content Include="img\Historic\TopImage4.jpg" />
+    <Content Include="img\Historic\TopImage5.jpg" />
+    <Content Include="img\Historic\TopImage6.jpg" />
+    <Content Include="img\Home\Event_Sum_Dinner.jpg" />
+    <Content Include="img\Home\Event_Sum_Historic.jpg" />
+    <Content Include="img\Home\Event_Sum_Jazz.jpg" />
+    <Content Include="img\Home\Event_Sum_Talking.jpg" />
+    <Content Include="img\Jazz\ChrisAllen.jpg" />
+    <Content Include="img\Jazz\Evolve.png" />
+    <Content Include="img\Jazz\FoxTheMayors.jpg" />
+    <Content Include="img\Jazz\GareDuNord.jpg" />
+    <Content Include="img\Jazz\GumboKings.png" />
+    <Content Include="img\Jazz\HanBennink.jpg" />
+    <Content Include="img\Jazz\JonnaFraser.jpg" />
+    <Content Include="img\Jazz\LilithMerlot.png" />
+    <Content Include="img\Jazz\MylesSanko.png" />
+    <Content Include="img\Jazz\NtjamRosie.jpg" />
+    <Content Include="img\Jazz\RilanTheBombadiers.png" />
+    <Content Include="img\Jazz\RuisSoundsystem.png" />
+    <Content Include="img\Jazz\SoulSix.png" />
+    <Content Include="img\Jazz\TheFamilyXL.png" />
+    <Content Include="img\Jazz\TheNordanians.png" />
+    <Content Include="img\Jazz\TomThomsomAssemble.png" />
+    <Content Include="img\Jazz\UncleSue.png" />
+    <Content Include="img\Jazz\WickedJazzSounds.png" />
+    <Content Include="obj\Debug\HaarlemFestival.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\HaarlemFestival.dll" />
+    <Content Include="obj\Debug\HaarlemFestival.pdb" />
     <Content Include="Scripts\Admin.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -239,6 +366,27 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="bin\ApplicationInsights.config" />
+    <Content Include="bin\HaarlemFestival.dll.config" />
+    <Content Include="bin\roslyn\csc.exe.config" />
+    <Content Include="bin\roslyn\csc.rsp" />
+    <Content Include="bin\roslyn\csi.exe.config" />
+    <Content Include="bin\roslyn\csi.rsp" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\vbc.exe.config" />
+    <Content Include="bin\roslyn\vbc.rsp" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="img\Header\Thumbs.db" />
+    <Content Include="img\Home\Thumbs.db" />
+    <Content Include="obj\Debug\CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\HaarlemFestival.csproj.GenerateResource.Cache" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
@@ -283,9 +431,12 @@
     <Content Include="Views\Dinner\Details.cshtml" />
     <Content Include="Views\Dinner\Index.cshtml" />
     <Content Include="Views\Dinner\DinnerActivity.cshtml" />
+    <Content Include="Views\Historic\Historic.cshtml" />
+    <Content Include="Views\Talking\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -293,6 +444,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201711231318482_initial.resx">
       <DependentUpon>201711231318482_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711271346043_updateLocation.resx">
+      <DependentUpon>201711271346043_updateLocation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711271406134_cuisine.resx">
       <DependentUpon>201711271406134_cuisine.cs</DependentUpon>
@@ -309,6 +463,12 @@
     <EmbeddedResource Include="Migrations\201711291114292_DescriptionFields Nullable.resx">
       <DependentUpon>201711291114292_DescriptionFields Nullable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.cuisine.resources" />
+    <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.cuisines2.resources" />
+    <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.DescriptionFieldsNullable.resources" />
+    <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.Initial.resources" />
+    <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.locationupdate.resources" />
+    <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.locationupdate2.resources" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
