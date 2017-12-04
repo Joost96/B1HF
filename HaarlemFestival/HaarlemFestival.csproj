@@ -387,6 +387,21 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="bin\ApplicationInsights.config" />
+    <Content Include="bin\HaarlemFestival.dll.config" />
+    <Content Include="bin\roslyn\csc.exe.config" />
+    <Content Include="bin\roslyn\csc.rsp" />
+    <Content Include="bin\roslyn\csi.exe.config" />
+    <Content Include="bin\roslyn\csi.rsp" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\vbc.exe.config" />
+    <Content Include="bin\roslyn\vbc.rsp" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\HaarlemFestival.csproj.CopyComplete" />
+    <Content Include="obj\Debug\HaarlemFestival.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\HaarlemFestival.csproj.GenerateResource.Cache" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
@@ -420,9 +435,9 @@
     <Content Include="Scripts\jquery-3.2.1.min.map" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Contact\Contact.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\CheckOut\CheckOut1.cshtml" />
-    <Content Include="Views\Jazz\Jazz.cshtml" />
+    <Content Include="Views\Jazz\Index.cshtml" />
     <Content Include="Views\CheckOut\CheckOut2.cshtml" />
     <Content Include="Views\CheckOut\CheckOut3.cshtml" />
     <Content Include="Views\CheckOut\CheckOut4.cshtml" />
@@ -437,6 +452,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="Views\ContentManager\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

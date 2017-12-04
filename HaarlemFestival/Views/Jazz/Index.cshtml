@@ -1,0 +1,46 @@
+﻿@model HaarlemFestival.Model.PagePlusDescriptions
+@{
+    ViewBag.Title = "Jazz";
+}
+
+<section class="jazz_page_section">
+    <section class="jazz_page_info">
+        <section class="jazz_page_info_hp">
+            <h3 class="jazz_page_info_h">@Model.Page.PageDescriptions[0].Title</h3>
+            <hr class="jazz_page_info_line"/>
+            <p class="jazz_page_info_p">@Model.Page.PageDescriptions[0].DescriptionText</p>
+        </section>
+        <section class="jazz_page_info_locatiepatronaat">
+            <h4 class="jazz_page_info_locatiepatronaat_h">@Model.Page.PageDescriptions[1].Title</h4>
+            <p class="jazz_page_info_locatiepatronaat_p">@Html.Raw(HttpUtility.HtmlDecode(Model.Page.PageDescriptions[1].DescriptionText))</p>
+        </section>
+        <section class="jazz_page_info_locatiegrotemarkt">
+            <h4 class="jazz_page_info_locatiegrotemarkt_h">@Model.Page.PageDescriptions[2].Title</h4>
+            <p class="jazz_page_info_locatiegrotemarkt_p">@Html.Raw(HttpUtility.HtmlDecode(Model.Page.PageDescriptions[2].DescriptionText))</p>
+        </section>
+    </section>
+
+    <section class="jazz_page_program_days">
+        <h3 class="jazz_page_program_days_header">@Model.Page.PageDescriptions[3].Title</h3>
+        <button name="thursday" type="submit" class="jazz_page_program_thursday" tabindex="1">@Model.Page.PageDescriptions[4].Title<br />@Model.Page.PageDescriptions[4].DescriptionText</button>
+        <button name="friday" type="submit" class="jazz_page_program_friday" tabindex="2">@Model.Page.PageDescriptions[5].Title<br />@Model.Page.PageDescriptions[5].DescriptionText</button>
+        <button name="saturday" type="submit" class="jazz_page_program_saturday" tabindex="3">@Model.Page.PageDescriptions[6].Title<br />@Model.Page.PageDescriptions[6].DescriptionText</button>
+        <button name="sunday" type="submit" class="jazz_page_program_sunday" tabindex="4">@Model.Page.PageDescriptions[7].Title<br />@Model.Page.PageDescriptions[7].DescriptionText</button>
+        <button name="passpartout" type="submit" class="jazz_page_program_passpartout" tabindex="5">@Model.Page.PageDescriptions[8].Title</button>
+    </section>
+
+    @for (int i = 0; i < Model.ActivityDescriptions.Count; i++)
+    {
+        <section class="jazz_page_acts">
+            <section class="jazz_page_imgsection">
+                <img src=@Model.ActivityDescriptions[i].ActivityDescriptions[0].ImageUrl width="277" height="300" alt="Jazz @Model.ActivityDescriptions[i].ActivityDescriptions[0].Title" />
+            </section>
+            <section class="jazz_page_actinfosection">
+                <section></section>
+                <section></section>
+            </section>
+        </section>
+    }
+    
+</section>
+

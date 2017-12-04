@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
+    
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
@@ -33,12 +34,12 @@
             <nav class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Jazz", "Jazz", "Jazz")</li>
+                    <li>@Html.ActionLink("Jazz", "Index", "Jazz")</li>
                     <li>@Html.ActionLink("Dinner", "Index", "Dinner")</li>
                     <li>@Html.ActionLink("Talking", "Index", "Talking")</li>
                     <li>@Html.ActionLink("Historic", "Index", "Historic")</li>
                     <li>@Html.ActionLink("Agenda", "Index", "Agenda")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Contact")</li>
+                    <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>

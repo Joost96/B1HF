@@ -435,7 +435,7 @@ footer {
 }
 .HistoricRoute p {
     display: inline-block;
-    width: 49%;
+    width: 568px;
 }
 .HistoricRoute hr {
     margin-top: 20px;
@@ -600,4 +600,89 @@ footer {
     float: right;
     background-color: #1DBF3B;
     border-radius: 15px, 15px;
+}
+}
+
+/*-------------------------------JAZZ---------------------------------*/
+.jazz_page_info_hp{
+    width : 100%;
+}
+
+.jazz_page_info_h{
+    text-align: center;
+    padding-top : 25px;
+}
+
+.jazz_page_info_line {
+    display: block;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-style :inset;
+    border-width: 1px;
+    border-bottom-color : black;
+}
+
+.jazz_page_info_p{
+    padding : 0px 20%;
+}
+
+.jazz_page_info_locatiepatronaat{
+    float : left;
+    margin-left : 20%;
+}
+
+.jazz_page_info_locatiepatronaat_h, .jazz_page_info_locatiegrotemarkt_h {
+    font-weight: bold;
+}
+
+.jazz_page_info_locatiegrotemarkt{
+    display : inline-block;
+    margin-left : 20%;
+}
+
+.jazz_page_program_days{
+    border-width : 1px;
+    border-top-style : inset;
+    border-bottom-style : inset;
+    border-top-color : black;
+    border-bottom-color : black;
+    margin-top : 3%;
+    padding : 15px 0px;
+}
+
+.jazz_page_program_days_header{
+    float : left;
+    margin : 0px;
+    margin-right : 6%;
+    margin-left : 5%;
+    padding : 10px 0px;
+}
+
+.jazz_page_program_thursday{
+    margin-right : 4%;
+}
+
+.jazz_page_program_friday {
+    margin-right: 4%;
+}
+
+.jazz_page_program_saturday {
+    margin-right: 4%;
+}
+
+.jazz_page_program_sunday {
+    margin-right: 4%;
+}
+
+.jazz_page_program_passpartout{
+    float : right;
+    margin-top : 10px;
+}
+
+.jazz_page_imgsection{
+    float : left;
+}
+
+.jazz_page_actinfosection{
+
 }
