@@ -167,6 +167,10 @@
     <Compile Include="Migrations\201711231318482_initial.Designer.cs">
       <DependentUpon>201711231318482_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711271346043_updateLocation.cs" />
+    <Compile Include="Migrations\201711271346043_updateLocation.Designer.cs">
+      <DependentUpon>201711271346043_updateLocation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201711271406134_cuisine.cs" />
     <Compile Include="Migrations\201711271406134_cuisine.Designer.cs">
       <DependentUpon>201711271406134_cuisine.cs</DependentUpon>
@@ -311,6 +315,7 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -372,6 +377,27 @@
     <Content Include="bin\roslyn\vbc.exe.config" />
     <Content Include="bin\roslyn\vbc.rsp" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="img\Header\Thumbs.db" />
+    <Content Include="img\Home\Thumbs.db" />
+    <Content Include="obj\Debug\CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\HaarlemFestival.csproj.GenerateResource.Cache" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="bin\ApplicationInsights.config" />
+    <Content Include="bin\HaarlemFestival.dll.config" />
+    <Content Include="bin\roslyn\csc.exe.config" />
+    <Content Include="bin\roslyn\csc.rsp" />
+    <Content Include="bin\roslyn\csi.exe.config" />
+    <Content Include="bin\roslyn\csi.rsp" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\vbc.exe.config" />
+    <Content Include="bin\roslyn\vbc.rsp" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="obj\Debug\HaarlemFestival.csproj.CopyComplete" />
     <Content Include="obj\Debug\HaarlemFestival.csproj.CoreCompileInputs.cache" />
@@ -422,9 +448,6 @@
     <Content Include="Views\Dinner\DinnerActivity.cshtml" />
     <Content Include="Views\Historic\Historic.cshtml" />
     <Content Include="Views\Talking\Index.cshtml" />
-    <Content Include="Views\Historic.cshtml" />
-    <Content Include="Views\Historic--old\Historic.cshtml" />
-    <Content Include="Views\Talking\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -437,6 +460,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201711231318482_initial.resx">
       <DependentUpon>201711231318482_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711271346043_updateLocation.resx">
+      <DependentUpon>201711271346043_updateLocation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711271406134_cuisine.resx">
       <DependentUpon>201711271406134_cuisine.cs</DependentUpon>
