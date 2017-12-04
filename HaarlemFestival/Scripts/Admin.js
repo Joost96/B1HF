@@ -7,7 +7,7 @@ $('main img').click(function () {
 
 $("main .imgUpload").change(function () {
     var file = event.target.files[0];
-    var id = $(this).attr("id")
+    var id = $(this).attr("id");
     // Ensure it's an image
     if (file.type.match(/image.*/)) {
         console.log('An image has been loaded');
@@ -33,9 +33,9 @@ $("main .imgUpload").change(function () {
                 var dataUrl = canvas.toDataURL('image/jpeg');
                 $('img#' + id).attr('src', dataUrl);
                 $('input[type=hidden]#' + id).attr('value', dataUrl);
-            }
+            };
             image.src = readerEvent.target.result;
-        }
+        };
         reader.readAsDataURL(file);
     }
 });

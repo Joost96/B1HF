@@ -42,7 +42,7 @@ namespace HaarlemFestival.Controllers
 
                     Session["loggedin_account"] = account;
 
-                    return RedirectToAction("Index", "Contact");
+                    return RedirectToAction("Index", "ContentManagement");
                 }
                 else
                 {
@@ -74,7 +74,7 @@ namespace HaarlemFestival.Controllers
 
                     Session["loggedin_account"] = account;
 
-                    return RedirectToAction("Index", "Contact");
+                    return RedirectToAction("Index", "ContentManagement");
                 }
                 else
                 {
