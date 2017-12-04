@@ -29,22 +29,18 @@
         <button name="passpartout" type="submit" class="jazz_page_program_passpartout" tabindex="5">@Model.Page.PageDescriptions[8].Title</button>
     </section>
 
-    @*@foreach (var activiteit in Model)
+    @for (int i = 0; i < Model.ActivityDescriptions.Count; i++)
     {
-        <section class="jazz_page_gumbokings">
-            <section>
-
+        <section class="jazz_page_acts">
+            <section class="jazz_page_imgsection">
+                <img src=@Model.ActivityDescriptions[i].ActivityDescriptions[0].ImageUrl width="277" height="300" alt="Jazz @Model.ActivityDescriptions[i].ActivityDescriptions[0].Title" />
             </section>
-            <section>
-                <section>
-
-                </section>
-                <section>
-
-                </section>
+            <section class="jazz_page_actinfosection">
+                <section></section>
+                <section></section>
             </section>
         </section>
-    }*@
+    }
     
 </section>
 
