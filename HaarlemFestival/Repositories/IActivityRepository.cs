@@ -8,9 +8,9 @@ namespace HaarlemFestival.Repositories
 {
     interface IActivityRepository
     {
-        IEnumerable<Activity> GetActivities(EventType type);
+        IEnumerable<Activity> GetActivities(EventType type, Language language);
 
-        IEnumerable<Activity> GetActivities(EventType type, DateTime dag);
+        IEnumerable<Activity> GetActivities(EventType type, Language language, DateTime dag);
 
     }
 }
