@@ -32,7 +32,7 @@ namespace HaarlemFestival.Controllers
 
         public ActionResult BookPopUp()
         {
-
+            return View();
         }
 
 
