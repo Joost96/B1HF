@@ -191,6 +191,10 @@
     <Compile Include="Migrations\201711291114292_DescriptionFields Nullable.Designer.cs">
       <DependentUpon>201711291114292_DescriptionFields Nullable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712051328154_title,remarks,isPayed,rating.cs" />
+    <Compile Include="Migrations\201712051328154_title,remarks,isPayed,rating.Designer.cs">
+      <DependentUpon>201712051328154_title,remarks,isPayed,rating.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\Activity.cs" />
@@ -527,6 +531,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711291114292_DescriptionFields Nullable.resx">
       <DependentUpon>201711291114292_DescriptionFields Nullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712051328154_title,remarks,isPayed,rating.resx">
+      <DependentUpon>201712051328154_title,remarks,isPayed,rating.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.cuisine.resources" />
     <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.cuisines2.resources" />
