@@ -1,4 +1,5 @@
 ﻿@model HaarlemFestival.Model.PagePlusDescriptions
+
 @{
     ViewBag.Title = "Jazz";
 }
@@ -22,11 +23,13 @@
 
     <section class="jazz_page_program_days">
         <h3 class="jazz_page_program_days_header">@Model.Page.PageDescriptions[3].Title</h3>
-        <button name="thursday" type="submit" class="jazz_page_program_thursday" tabindex="1">@Model.Page.PageDescriptions[4].Title<br />@Model.Page.PageDescriptions[4].DescriptionText</button>
-        <button name="friday" type="submit" class="jazz_page_program_friday" tabindex="2">@Model.Page.PageDescriptions[5].Title<br />@Model.Page.PageDescriptions[5].DescriptionText</button>
-        <button name="saturday" type="submit" class="jazz_page_program_saturday" tabindex="3">@Model.Page.PageDescriptions[6].Title<br />@Model.Page.PageDescriptions[6].DescriptionText</button>
-        <button name="sunday" type="submit" class="jazz_page_program_sunday" tabindex="4">@Model.Page.PageDescriptions[7].Title<br />@Model.Page.PageDescriptions[7].DescriptionText</button>
-        <button name="passpartout" type="submit" class="jazz_page_program_passpartout" tabindex="5">@Model.Page.PageDescriptions[8].Title</button>
+
+        <button name="thursday" type="submit" class="jazz_page_program_thursday" tabindex="1" onclick="location.href='@Url.Action("Index", "Jazz", new { id=1})'">@Model.Page.PageDescriptions[4].Title<br />@Model.Page.PageDescriptions[4].DescriptionText</button>
+        <button name="friday" type="submit" class="jazz_page_program_friday" tabindex="2" onclick="location.href='@Url.Action("Index", "Jazz", new { id=2})'">@Model.Page.PageDescriptions[5].Title<br />@Model.Page.PageDescriptions[5].DescriptionText</button>
+        <button name="saturday" type="submit" class="jazz_page_program_saturday" tabindex="3" onclick="location.href='@Url.Action("Index", "Jazz", new { id=3})'">@Model.Page.PageDescriptions[6].Title<br />@Model.Page.PageDescriptions[6].DescriptionText</button>
+        <button name="sunday" type="submit" class="jazz_page_program_sunday" tabindex="4" onclick="location.href='@Url.Action("Index", "Jazz", new { id=4})'">@Model.Page.PageDescriptions[7].Title<br />@Model.Page.PageDescriptions[7].DescriptionText</button>
+        
+       <button name="passpartout" type="submit" class="jazz_page_program_passpartout" tabindex="5">@Model.Page.PageDescriptions[8].Title</button>
     </section>
 
     @for (int i = 0; i < Model.ActivityDescriptions.Count; i++)
