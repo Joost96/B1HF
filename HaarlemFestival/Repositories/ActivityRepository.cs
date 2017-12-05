@@ -18,14 +18,37 @@ namespace HaarlemFestival.Repositories
              
         }
 
-        public IEnumerable<Activity> GetActivities(EventType type)
+        public IEnumerable<Activity> GetActivities(EventType type, Language language)
         {
+            return db.Activities
+                .Include(a => a.Location)
+                .Where(a => a.Type == type)
+                .Select(a => new {
+                    a,
+                    d = a.ActivityDescriptions.Where(ad => ad.Language == language)
+                                .OrderBy(ad => ad.Section),
+                    ts = a.Timeslots,
+                    ti = a.Timeslots.Select(ts => ts.Tickets)
+                }).AsEnumerable()
+                .Select(x => x.a);
+        }
 
+        public IEnumerable<Activity> GetActivities(EventType type, Language language, DateTime dag)
+        {
+            return db.Activities
+                .Include(a => a.Location)
+                .Where(a => a.Type == type)
+                
+                .Select(a => new {
+                    a,
+                    d = a.ActivityDescriptions.Where(ad => ad.Language == language)
+                                .OrderBy(ad => ad.Section),
+                    ts = a.Timeslots,
+                    ti = a.Timeslots.Select(ts => ts.Tickets)
+                }).AsEnumerable()
+                .Where(a => a.a.Timeslots[0].StartTime.ToString("dd/MM/yyyy").Equals(dag.ToString("dd/MM/yyyy")))
+                .Select(x => x.a);
 
-            return db.Activities.Include(a => a.Location)
-                .Include(a => a.ActivityDescriptions)
-                .Include(a => a.Timeslots.Select(t => t.Tickets))
-                .Where(a => a.Type == type);
         }
     }
 }

@@ -20,7 +20,7 @@ namespace HaarlemFestival.Controllers
             Page page = pageRepo.GetPage("Talking", Language.Eng);
 
             IActivityRepository activityRepo = new ActivityRepository(db);
-            IEnumerable<Activity> activities = activityRepo.GetActivities(EventType.Talking);
+            IEnumerable<Activity> activities = activityRepo.GetActivities(EventType.Talking, Language.Eng);
 
             activities.OrderBy(Activitie => Activitie.Timeslots);
 
@@ -28,11 +28,6 @@ namespace HaarlemFestival.Controllers
             PageDescriptions.ActivityDescriptions = activities.ToList();
 
             return View(PageDescriptions);
-        }
-
-        public ActionResult BookPopUp()
-        {
-            return View();
         }
 
 
