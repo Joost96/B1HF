@@ -29,22 +29,28 @@
         <button name="passpartout" type="submit" class="jazz_page_program_passpartout" tabindex="5">@Model.Page.PageDescriptions[8].Title</button>
     </section>
 
-    @*@foreach (var activiteit in Model)
+    @for (int i = 0; i < Model.ActivityDescriptions.Count; i++)
     {
-        <section class="jazz_page_gumbokings">
-            <section>
-
+        <section class="jazz_page_acts">
+            <section class="jazz_page_imgsection">
+                <img src=@Model.ActivityDescriptions[i].ActivityDescriptions[0].ImageUrl width="280" height="280" alt="Jazz @Model.ActivityDescriptions[i].ActivityDescriptions[0].Title" />
             </section>
-            <section>
+            <section class="jazz_page_actinfosection">
                 <section>
-
+                    <h3>@Model.ActivityDescriptions[i].ActivityDescriptions[0].Title</h3>
+                    <p>@Model.ActivityDescriptions[i].ActivityDescriptions[0].DescriptionText</p>
                 </section>
+                <hr class="jazz_page_actinfosection_line"/>
                 <section>
-
+                    <p>@Model.Page.PageDescriptions[9].Title PatronaatDB</p>
+                    <p>@Model.Page.PageDescriptions[10].Title @Model.ActivityDescriptions[i].Timeslots[0].Hall</p>
+                    <p>@Model.Page.PageDescriptions[11].Title €@Model.ActivityDescriptions[i].Timeslots[0].Tickets[0].Price</p>
+                    <p>@Model.Page.PageDescriptions[12].Title @Model.ActivityDescriptions[i].Timeslots[0].StartTime.ToString("HH:mm") - @Model.ActivityDescriptions[i].Timeslots[0].EndTime.ToString("HH:mm")</p>
+                    <button class="jazz_page_buybtn" type="button">@Model.Page.PageDescriptions[13].Title</button>
                 </section>
             </section>
         </section>
-    }*@
+    }
     
 </section>
 
