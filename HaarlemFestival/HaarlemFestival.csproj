@@ -448,7 +448,6 @@
     <Content Include="Views\Dinner\DinnerActivity.cshtml" />
     <Content Include="Views\Historic\Historic.cshtml" />
     <Content Include="Views\Talking\Index.cshtml" />
-    <Content Include="Views\Jazz\Index2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
