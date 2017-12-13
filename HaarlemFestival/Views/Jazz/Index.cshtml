@@ -4,6 +4,10 @@
     ViewBag.Title = "Jazz";
 }
 
+@section AddToScripts{
+    <script src="@Url.Content("~/Scripts/Jazz.js")"></script>
+}
+
 <section class="jazz_page_section">
     <section class="jazz_page_info">
         <section class="jazz_page_info_hp">
@@ -49,11 +53,49 @@
                     <p>@Model.Page.PageDescriptions[10].Title @Model.ActivityDescriptions[i].Timeslots[0].Hall</p>
                     <p>@Model.Page.PageDescriptions[11].Title €@Model.ActivityDescriptions[i].Timeslots[0].Tickets[0].Price</p>
                     <p>@Model.Page.PageDescriptions[12].Title @Model.ActivityDescriptions[i].Timeslots[0].StartTime.ToString("HH:mm") - @Model.ActivityDescriptions[i].Timeslots[0].EndTime.ToString("HH:mm")</p>
-                    <button class="jazz_page_buybtn" type="button">@Model.Page.PageDescriptions[13].Title</button>
+                    <button class="myBtn" type="button">@Model.Page.PageDescriptions[13].Title</button>
                 </section>
             </section>
         </section>
     }
+
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Some text in the Modal..</p>
+        </div>
+
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementsByClassName("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementsByClassName("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
     
 </section>
 

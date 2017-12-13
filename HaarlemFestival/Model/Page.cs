@@ -11,7 +11,7 @@ namespace HaarlemFestival.Model
         [Key]
         public string Name { get; set; }
         [Required]
-        public string Titel { get; set; }
+        public string Title { get; set; }
 
         public List<PageDescription> PageDescriptions { get; set; }
     }

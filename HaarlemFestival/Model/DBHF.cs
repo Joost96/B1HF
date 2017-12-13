@@ -36,6 +36,12 @@ namespace HaarlemFestival.Model
         {
             modelBuilder.Entity<Location>().Property(x => x.Latitude).HasPrecision(11, 8);
             modelBuilder.Entity<Location>().Property(x => x.Lognitude).HasPrecision(11, 8);
+            modelBuilder.Entity<Activity>().HasMany<Cuisine>(a => a.Cuisines).WithMany(c => c.Activities)
+                .Map(ac => {
+                    ac.MapRightKey("Cuisine_Id");
+                    ac.MapLeftKey("Activity_Id");
+                    ac.ToTable("ActivityCuisines");
+                });
         }
 
 

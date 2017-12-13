@@ -191,6 +191,26 @@
     <Compile Include="Migrations\201711291114292_DescriptionFields Nullable.Designer.cs">
       <DependentUpon>201711291114292_DescriptionFields Nullable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712051328154_title,remarks,isPayed,rating.cs" />
+    <Compile Include="Migrations\201712051328154_title,remarks,isPayed,rating.Designer.cs">
+      <DependentUpon>201712051328154_title,remarks,isPayed,rating.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712081249409_cuisine-Update.cs" />
+    <Compile Include="Migrations\201712081249409_cuisine-Update.Designer.cs">
+      <DependentUpon>201712081249409_cuisine-Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712081255371_cuisine mapping.cs" />
+    <Compile Include="Migrations\201712081255371_cuisine mapping.Designer.cs">
+      <DependentUpon>201712081255371_cuisine mapping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712081257261_cuisine mapping2.cs" />
+    <Compile Include="Migrations\201712081257261_cuisine mapping2.Designer.cs">
+      <DependentUpon>201712081257261_cuisine mapping2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712131310386_naam bij locatie toegevoegd.cs" />
+    <Compile Include="Migrations\201712131310386_naam bij locatie toegevoegd.Designer.cs">
+      <DependentUpon>201712131310386_naam bij locatie toegevoegd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\Activity.cs" />
@@ -206,6 +226,7 @@
     <Compile Include="Model\OrderHasTickets.cs" />
     <Compile Include="Model\Page.cs" />
     <Compile Include="Model\PageDescription.cs" />
+    <Compile Include="Model\PagePlusActivitiesPlusCuisines.cs" />
     <Compile Include="Model\PagePlusDescriptions.cs" />
     <Compile Include="Model\RegisterModel.cs" />
     <Compile Include="Model\Ticket.cs" />
@@ -224,8 +245,10 @@
     <Compile Include="Repositories\IAccountRepository.cs" />
     <Compile Include="Repositories\IActivityRepository.cs" />
     <Compile Include="Repositories\IPageDescriptionRepository.cs" />
+    <Compile Include="Repositories\ICuisineRepository.cs" />
     <Compile Include="Repositories\PageDescriptionRepository.cs" />
     <Compile Include="Repositories\IPageRepository.cs" />
+    <Compile Include="Repositories\CuisineRepository.cs" />
     <Compile Include="Repositories\PageRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -450,6 +473,7 @@
     <Content Include="obj\Debug\HaarlemFestival.csproj.GenerateResource.Cache" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="Scripts\Jazz.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.js" />
@@ -526,6 +550,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711291114292_DescriptionFields Nullable.resx">
       <DependentUpon>201711291114292_DescriptionFields Nullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712051328154_title,remarks,isPayed,rating.resx">
+      <DependentUpon>201712051328154_title,remarks,isPayed,rating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712081249409_cuisine-Update.resx">
+      <DependentUpon>201712081249409_cuisine-Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712081255371_cuisine mapping.resx">
+      <DependentUpon>201712081255371_cuisine mapping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712081257261_cuisine mapping2.resx">
+      <DependentUpon>201712081257261_cuisine mapping2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712131310386_naam bij locatie toegevoegd.resx">
+      <DependentUpon>201712131310386_naam bij locatie toegevoegd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.cuisine.resources" />
     <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.cuisines2.resources" />
