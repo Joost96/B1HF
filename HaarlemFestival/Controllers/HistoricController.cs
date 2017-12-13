@@ -21,7 +21,7 @@ namespace HaarlemFestival.Controllers
             Page page = pageRepository.GetPage("Historic", Language.Eng);
 
             IActivityRepository activityRepository = new ActivityRepository(db);
-            IEnumerable<Activity> activities = activityRepository.GetActivities(EventType.Historic);
+            IEnumerable<Activity> activities = activityRepository.GetActivities(EventType.Historic, Language.Eng);
 
             pagePlusDescriptions.Page = page;
             pagePlusDescriptions.ActivityDescriptions = activities.ToList();
