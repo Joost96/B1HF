@@ -1,25 +1,21 @@
-﻿
+﻿@model HaarlemFestival.Model.PagePlusDescriptions
+
 @{
     ViewBag.Title = "Historic";
 }
 
 <section class="HistoricTitle">
 
-    <h1>HISTORIC HAARLEM</h1>
+    <h1>@Model.Page.Titel</h1>
 
-    <h2>Walking through the ages</h2>
+    <h2>@Model.Page.PageDescriptions[0].Title</h2>
 
 </section>
 
 <section class="HistoricIntro">
 
     <p>
-        The event Historic Haarlem is a great experience for first-time visitors to Haarlem and culture lovers.<br />
-        You will visit the most famous historical buildings and monuments in the centre of Haarlem,<br />
-        from the magnificent Church of St. Bavo to the beautiful Amsterdam Gate.<br />
-        <br />
-        The event will run from Thursday 26th to Saturday 28th of July and will be given in English, Dutch and Chinese.<br />
-        The available timeslots are: 10:00, 13:00 and 16:00. One tour will take two and a half hour.
+        @Html.Raw(Model.Page.PageDescriptions[0].DescriptionText)
     </p>
 
     <button>Click here to book now!</button>
@@ -38,25 +34,27 @@
 
 <section class="HistoricRoute">
 
-    <h2>The Route & The Sights</h2>
+    <h2>@Model.Page.PageDescriptions[1].Title</h2>
     <hr />
     <p>
-        The route that you will take through the centre of Haarlem will be a fun and adventurous route.
-        You will begin at the Church of St. Bavo, and afterwards go to all the different venues numbered on the right. <br />
-        <br />
-        Every venue has a rich history, which will be told  extensively by tour guides in the languages: English, Dutch and Chinese.
+        @Html.Raw(Model.Page.PageDescriptions[1].DescriptionText)    
     </p>
 
     <p>
-        Venues to visit are: <br />
-        1. Church of St. Bavo    6. Waalse Kerk Haarlem <br />
-        2. Grote Markt               7. Molen de Adriaan<br />
-        3. De Hallen                  8. Amsterdamse Poort<br />
-        4. Proveniershof            9. Hof van Bakenes<br />
-        5. Jopenkerk
+        @Html.Raw(Model.Page.PageDescriptions[2].DescriptionText)
     </p>
     <hr />
-    <p>TO DO: INTERACTIVE MAP</p>
+    <img class="HistoricImageRoute" src="/img/Historic/HistoricRoute.png" alt="" />
+
+    <img class="HistoricImageDropMarker1" src="/img/Historic/HistoricDropMarker.png" alt="" />
+    <img class="HistoricImageDropMarker2" src="/img/Historic/HistoricDropMarker.png" alt="" />
+    <img class="HistoricImageDropMarker3" src="/img/Historic/HistoricDropMarker.png" alt="" />
+    <img class="HistoricImageDropMarker4" src="/img/Historic/HistoricDropMarker.png" alt="" />
+    <img class="HistoricImageDropMarker5" src="/img/Historic/HistoricDropMarker.png" alt="" />
+    <img class="HistoricImageDropMarker6" src="/img/Historic/HistoricDropMarker.png" alt="" />
+    <img class="HistoricImageDropMarker7" src="/img/Historic/HistoricDropMarker.png" alt="" />
+    <img class="HistoricImageDropMarker8" src="/img/Historic/HistoricDropMarker.png" alt="" />
+    <img class="HistoricImageDropMarker9" src="/img/Historic/HistoricDropMarker.png" alt="" />
 
     <button>Book now!</button>
 
