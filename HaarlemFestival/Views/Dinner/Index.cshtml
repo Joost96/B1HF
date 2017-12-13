@@ -9,48 +9,16 @@
 
 <h1>@Model.Page.Name</h1>
 <aside class="filter">
-    <h3>@Model.Page.PageDescriptions[0].Title</h3>   
+    <h3>@Model.Page.PageDescriptions[0].Title hallo</h3>   
     <input type="radio" name="foo"> All()
 
 
         @foreach (Cuisine cuisine in Model.Cuisines)
         {
-            <input type="radio" name="foo"> @Model.Cuisines@
+            <input type="radio" name="@cuisine.Name"> @cuisine.Name Html.Raw("()");
 
         }  
 </aside>
-
-@*@for (int numActivity = 0; numActivity < 9; numActivity++)
-{
-    if (numActivity % 4 == 0)
-    {
-        <div class="row">
-            @for (int numActivityRow = numActivity; numActivityRow < numActivity + 4; numActivityRow++)
-            {
-                if (numActivityRow < Model.Activities.Count())
-                {
-                    <div class="restaurant">
-                        <div class="restaurant_sum_description">
-                            <h4>@Model.Activities[numActivityRow].Name</h4>
-                            <label class="rating">@Model.Activities[numActivityRow].Rating</label>
-                            <label>
-                                @for (int cuisine = 0; cuisine < Model.cuisines.Count; cuisine++)
-                                    {
-                                        //activity.Cuisines[cuisine].Name.ToString();
-                                    }
-                            </label>
-                            <label></label>
-                        </div>
-
-                        <div class="restaurant_img"></div>
-                        <button class="btn_more_info">@Model.Activities[numActivityRow].Cuisines text from db</button>
-                        <button class="btn_booknow">text from db</button>
-                    </div>
-                }
-            }
-        </div>
-    }
-}*@
 
 @foreach (Activity activity in Model.Activities)
     {
