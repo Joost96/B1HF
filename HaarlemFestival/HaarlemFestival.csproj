@@ -207,6 +207,10 @@
     <Compile Include="Migrations\201712081257261_cuisine mapping2.Designer.cs">
       <DependentUpon>201712081257261_cuisine mapping2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712131310386_naam bij locatie toegevoegd.cs" />
+    <Compile Include="Migrations\201712131310386_naam bij locatie toegevoegd.Designer.cs">
+      <DependentUpon>201712131310386_naam bij locatie toegevoegd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\Activity.cs" />
@@ -558,6 +562,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712081257261_cuisine mapping2.resx">
       <DependentUpon>201712081257261_cuisine mapping2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712131310386_naam bij locatie toegevoegd.resx">
+      <DependentUpon>201712131310386_naam bij locatie toegevoegd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.cuisine.resources" />
     <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.cuisines2.resources" />
