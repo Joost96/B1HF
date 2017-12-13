@@ -93,7 +93,7 @@ namespace HaarlemFestival.Migrations
                 .Index(t => t.Location_Id);
             
             CreateTable(
-                "dbo.ActivityDescriptions",
+                "dbo.Activities",
                 c => new
                     {
                         Language = c.Int(nullable: false),
@@ -154,11 +154,11 @@ namespace HaarlemFestival.Migrations
             DropForeignKey("dbo.Tickets", new[] { "TimeSlot_Activity_Id", "TimeSlot_StartTime" }, "dbo.TimeSlots");
             DropForeignKey("dbo.TimeSlots", "Activity_Id", "dbo.Activities");
             DropForeignKey("dbo.Activities", "Location_Id", "dbo.Locations");
-            DropForeignKey("dbo.ActivityDescriptions", "Activity_ID", "dbo.Activities");
+            DropForeignKey("dbo.Activities", "Activity_ID", "dbo.Activities");
             DropForeignKey("dbo.OrderHasTickets", "Order_Id", "dbo.Orders");
             DropForeignKey("dbo.Orders", "CustomerId", "dbo.Accounts");
             DropIndex("dbo.PageDescriptions", new[] { "Page_Name" });
-            DropIndex("dbo.ActivityDescriptions", new[] { "Activity_ID" });
+            DropIndex("dbo.Activities", new[] { "Activity_ID" });
             DropIndex("dbo.Activities", new[] { "Location_Id" });
             DropIndex("dbo.TimeSlots", new[] { "Activity_Id" });
             DropIndex("dbo.Tickets", new[] { "TimeSlot_Activity_Id", "TimeSlot_StartTime" });
@@ -168,7 +168,7 @@ namespace HaarlemFestival.Migrations
             DropTable("dbo.Pages");
             DropTable("dbo.PageDescriptions");
             DropTable("dbo.Locations");
-            DropTable("dbo.ActivityDescriptions");
+            DropTable("dbo.Activities");
             DropTable("dbo.Activities");
             DropTable("dbo.TimeSlots");
             DropTable("dbo.Tickets");

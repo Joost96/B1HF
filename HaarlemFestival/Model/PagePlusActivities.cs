@@ -5,10 +5,10 @@ using System.Web;
 
 namespace HaarlemFestival.Model
 {
-    public class PagePlusDescriptions
+    public class PagePlusActivities
     {
         public Page Page { get; set; }
-        public List<Activity> ActivityDescriptions { get; set; }
+        public List<Activity> Activities { get; set; }
        
     }
 }

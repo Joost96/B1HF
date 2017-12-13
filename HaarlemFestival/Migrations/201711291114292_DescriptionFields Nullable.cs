@@ -7,8 +7,8 @@ namespace HaarlemFestival.Migrations
     {
         public override void Up()
         {
-            AlterColumn("dbo.ActivityDescriptions", "Title", c => c.String());
-            AlterColumn("dbo.ActivityDescriptions", "DescriptionText", c => c.String());
+            AlterColumn("dbo.Activities", "Title", c => c.String());
+            AlterColumn("dbo.Activities", "DescriptionText", c => c.String());
             AlterColumn("dbo.PageDescriptions", "Title", c => c.String());
             AlterColumn("dbo.PageDescriptions", "DescriptionText", c => c.String());
         }
@@ -17,8 +17,8 @@ namespace HaarlemFestival.Migrations
         {
             AlterColumn("dbo.PageDescriptions", "DescriptionText", c => c.String(nullable: false));
             AlterColumn("dbo.PageDescriptions", "Title", c => c.String(nullable: false));
-            AlterColumn("dbo.ActivityDescriptions", "DescriptionText", c => c.String(nullable: false));
-            AlterColumn("dbo.ActivityDescriptions", "Title", c => c.String(nullable: false));
+            AlterColumn("dbo.Activities", "DescriptionText", c => c.String(nullable: false));
+            AlterColumn("dbo.Activities", "Title", c => c.String(nullable: false));
         }
     }
 }
