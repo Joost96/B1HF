@@ -1,5 +1,4 @@
-﻿console.log("loaded");
-$('main img').click(function () {
+﻿$('main img').click(function () {
     var id = $(this).attr("id");
     $(".imgUpload#" + id).click();
     console.log("here");

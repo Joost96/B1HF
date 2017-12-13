@@ -139,7 +139,6 @@ footer {
         margin-top: 0px;
     }
 
-}
 /*--------------Info section-----------------*/
 
 .info_festival {
@@ -537,6 +536,76 @@ footer {
     margin-top: 20px;
     margin-bottom: 0px;
     border-top: 1px solid #000000;
+}
+
+.HistoricImageRoute {
+    width: 770px;
+    height: 390px;
+    border-style: solid;
+    border-width: 1px;
+    margin-top: 5px;
+}
+img.HistoricImageDropMarker1 {
+    width: 13px;
+    position: relative;
+    bottom: 32px;
+    right: 409px;
+}
+
+img.HistoricImageDropMarker2 {
+    width: 13px;
+    position: relative;
+    bottom: 47px;
+    right: 461px;
+}
+
+img.HistoricImageDropMarker3 {
+    width: 13px;
+    position: relative;
+    bottom: 34px;
+    right: 487px;
+}
+
+img.HistoricImageDropMarker4 {
+    width: 13px;
+    position: relative;
+    bottom: -178px;
+    right: 670px;
+}
+
+img.HistoricImageDropMarker5 {
+    width: 13px;
+    position: relative;
+    bottom: 41px;
+    right: 744px;
+}
+
+img.HistoricImageDropMarker6 {
+    width: 13px;
+    position: relative;
+    bottom: 115px;
+    right: 426px;
+}
+
+img.HistoricImageDropMarker7 {
+    width: 13px;
+    position: relative;
+    bottom: 191px;
+    right: 319px;
+}
+
+img.HistoricImageDropMarker8 {
+    width: 13px;
+    position: relative;
+    bottom: 5px;
+    right: 205px;
+}
+
+img.HistoricImageDropMarker9 {
+    width: 13px;
+    position: relative;
+    bottom: 62px;
+    right: 458px;
 }
 
 /*--------------Talking-Haarlem-----------------*/
