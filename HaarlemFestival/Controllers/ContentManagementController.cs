@@ -23,13 +23,13 @@ namespace HaarlemFestival.Controllers
             pageRepository = new PageRepository(db);
         }
 
-        // GET: ContentManager
+        // GET: HomePage
         public ActionResult Index()
         {
             Page homePage = pageRepository.GetPage("Home" , Language.Eng);
             return View(homePage);
         }
-        // POST: Chat/Edit/5
+        // POST: HomePage
         [HttpPost]
         //[ValidateAntiForgeryToken]
         public ActionResult Index([Bind(Include = "Name,Titel,PageDescriptions")] Page page)
@@ -41,6 +41,25 @@ namespace HaarlemFestival.Controllers
             }
             return View(page);
         }
+        // GET: Contact
+        public ActionResult Contact()
+        {
+            Page homePage = pageRepository.GetPage("Contact", Language.Eng);
+            return View(homePage);
+        }
+        // POST: Contact
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public ActionResult Contact([Bind(Include = "Name,Titel,PageDescriptions")] Page page)
+        {
+            if (ModelState.IsValid)
+            {
+                UpdatePage(page, "Contact");
+                return RedirectToAction("Contact");
+            }
+            return View(page);
+        }
+
         public void UpdatePage(Page page, string imgFolder)
         {
             foreach (Description desc in page.PageDescriptions)

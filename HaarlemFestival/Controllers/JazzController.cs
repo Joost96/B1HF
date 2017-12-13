@@ -34,7 +34,7 @@ namespace HaarlemFestival.Controllers
                 }
             }
 
-            PagePlusDescriptions PageDescriptions = new PagePlusDescriptions();
+            PagePlusActivities PageDescriptions = new PagePlusActivities();
 
             DBHF db = new DBHF();
             IPageRepository pageRepo = new PageRepository(db);
@@ -46,7 +46,7 @@ namespace HaarlemFestival.Controllers
             activities.OrderBy(Activitie => Activitie.Timeslots);
 
             PageDescriptions.Page = page;
-            PageDescriptions.ActivityDescriptions = activities.ToList();
+            PageDescriptions.Activities = activities.ToList();
 
             return View(PageDescriptions);
         }

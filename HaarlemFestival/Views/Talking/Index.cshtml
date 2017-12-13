@@ -1,5 +1,5 @@
 ﻿@using HaarlemFestival.Model;
-@model HaarlemFestival.Model.PagePlusDescriptions
+@model HaarlemFestival.Model.PagePlusActivities
 @{
     ViewBag.Title = "Index";
 }
@@ -11,16 +11,18 @@
     <h2 class="TalkingHeader">@Model.Page.PageDescriptions[0].Title</h2>
 
     <p class="TalkingIntroText">
-       @Html.Raw(Model.Page.PageDescriptions[0].DescriptionText + " " + Model.ActivityDescriptions[0].Location.) 
+       @Html.Raw(Model.Page.PageDescriptions[0].DescriptionText + " " + Model.Activities[0].Location.Name) 
+        
+        @*misschien van location hierboven een link maken*@
+
     </p>
 
 </section>
 
 
-
-@foreach (Activity a in Model.ActivityDescriptions)
+@foreach (Activity a in Model.Activities)
 {
-    
+
 
 <section class="TalkingEvent">
     
@@ -35,7 +37,12 @@
 
     <section class="TalkingSpreker">
 
-        <img class="TalkingSprekerImg" />
+        <section class="TalkingSprekerImgContainer">
+
+            <img class="TalkingSprekerImg" src="@a.ActivityDescriptions[0].ImageUrl" alt="spreker" />
+
+        </section>
+
 
         <section class="TalkingSprekerUitleg">
 
@@ -49,13 +56,17 @@
 
         </section>
 
-        <button id = @Html.Raw(a.ActivityDescriptions[0].Title + "Button") name="AskAQuestion" type="button" class="TalkingButtonSpreker">Ask Question</button>
+        <button id = @Html.Raw(a.ActivityDescriptions[0].Title) name="AskAQuestion" type="button" class="TalkingButtonSpreker">Ask Question</button>
 
     </section>
 
     <section class="TalkingSpreker2">
+        <section class="TalkingSprekerImg2Container">
 
-        <img class="TalkingSprekerImg2" />
+            <img class="TalkingSprekerImg2" src="@a.ActivityDescriptions[1].ImageUrl" alt="spreker" />
+
+        </section>
+        
 
         <section class="TalkingSprekerUitleg2">
 
@@ -68,8 +79,8 @@
 
         </section>
 
-        <button id = @Html.Raw(a.ActivityDescriptions[1].Title + "Button") name="AskAQuestion" type="button" class="TalkingButtonSpreker2">Ask Question</button>
-        <button id = @Html.Raw(a.Name + "Button") name="BookNow" type="button" class="TalkingButtonBook">Book Now</button>
+        <button id = @Html.Raw(a.ActivityDescriptions[1].Title) name="AskAQuestion" type="button" class="TalkingButtonSpreker2">Ask Question</button>
+        <button id = @Html.Raw(a.Id) name="BookNow" type="button" class="TalkingButtonBook">Book Now</button>
     </section>
     
 

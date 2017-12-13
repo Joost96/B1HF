@@ -139,6 +139,7 @@ footer {
         margin-top: 0px;
     }
 
+
 /*--------------Info section-----------------*/
 
 .info_festival {
@@ -694,7 +695,7 @@ button.TalkingButtonBook2 {
     margin-bottom: 1em;
 }
 
-.TalkingSprekerImg {
+.TalkingSprekerImgContainer {
     background-color: purple;
     width: 20%;
     height: 18em;
@@ -702,6 +703,11 @@ button.TalkingButtonBook2 {
     margin-right: 3%;
     margin-bottom: 2%;
     float: left;
+}
+
+.TalkingSprekerImg {
+    width: 100%;
+    height: 100%;
 }
 
 .TalkingSprekerUitleg {
@@ -739,7 +745,7 @@ button.TalkingButtonBook2 {
     margin-bottom: 1em;
 }
 
-.TalkingSprekerImg2 {
+.TalkingSprekerImg2Container {
     width: 20%;
     height: 18em;
     background-color: purple;
@@ -747,6 +753,11 @@ button.TalkingButtonBook2 {
     margin-right: 3%;
     margin-bottom: 2%;
     float: left;
+}
+
+.TalkingSprekerImg2{
+    width: 100%;
+    height: 100%;
 }
 
 .TalkingSprekerUitleg2 {
