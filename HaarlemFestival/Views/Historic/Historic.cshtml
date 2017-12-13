@@ -1,0 +1,73 @@
+﻿@model HaarlemFestival.Model.PagePlusActivities
+
+@{
+    ViewBag.Title = "Historic";
+}
+
+<section class="HistoricTitle">
+
+    <h1>@Model.Page.Title</h1>
+
+    <h2>@Model.Page.PageDescriptions[0].Title</h2>
+
+</section>
+
+<section class="HistoricIntro">
+
+    <p>
+        @Html.Raw(Model.Page.PageDescriptions[0].DescriptionText)
+    </p>
+
+    <button>Click here to book now!</button>
+</section>
+
+<section>
+
+    <img class="HistoricImageTop" src="/img/Historic/TopImage1.jpg" alt="" />
+    <img class="HistoricImageTop" src="/img/Historic/TopImage2.jpg" alt="" />
+    <img class="HistoricImageTop" src="/img/Historic/TopImage3.jpg" alt="" />
+    <img class="HistoricImageTop" src="/img/Historic/TopImage4.jpg" alt="" />
+    <img class="HistoricImageTop" src="/img/Historic/TopImage5.jpg" alt="" />
+    <img class="HistoricImageTop" src="/img/Historic/TopImage6.jpg" alt="" />
+
+</section>
+
+<section class="HistoricRoute">
+
+    <h2>@Model.Page.PageDescriptions[1].Title</h2>
+    <hr />
+    <p>
+        @Html.Raw(Model.Page.PageDescriptions[1].DescriptionText)    
+    </p>
+
+    <p>
+        @Html.Raw(Model.Page.PageDescriptions[2].DescriptionText)
+    </p>
+    <hr />
+    <img class="HistoricImageRoute" src="/img/Historic/HistoricRoute.png" alt="" />
+
+    <img class="HistoricImageDropMarker1" src="/img/Historic/HistoricDropMarker.png" alt="The Grote Kerk or St.-Bavokerk" onmouseover="ShowHideLocation()"/>
+    <img class="HistoricImageDropMarker2" src="/img/Historic/HistoricDropMarker.png" alt="" onmouseover="ShowHideLocation()"/>
+    <img class="HistoricImageDropMarker3" src="/img/Historic/HistoricDropMarker.png" alt="" onmouseover="ShowHideLocation()"/>
+    <img class="HistoricImageDropMarker4" src="/img/Historic/HistoricDropMarker.png" alt="" onmouseover="ShowHideLocation()"/>
+    <img class="HistoricImageDropMarker5" src="/img/Historic/HistoricDropMarker.png" alt="" onmouseover="ShowHideLocation()"/> 
+    <img class="HistoricImageDropMarker6" src="/img/Historic/HistoricDropMarker.png" alt="" onmouseover="ShowHideLocation()"/>
+    <img class="HistoricImageDropMarker7" src="/img/Historic/HistoricDropMarker.png" alt="" onmouseover="ShowHideLocation()"/>
+    <img class="HistoricImageDropMarker8" src="/img/Historic/HistoricDropMarker.png" alt="" onmouseover="ShowHideLocation()"/>
+    <img class="HistoricImageDropMarker9" src="/img/Historic/HistoricDropMarker.png" alt="" onmouseover="ShowHideLocation()"/>
+
+    <button class="TalkingButtonBook2">Book now!</button>
+
+    <section class="HistoricRouteInfo">
+        <p class="DropMarkerGuide">Please hover over the drop markers on the map to the left</p>
+        <img class="HistoricImageDropMarker10" src="/img/Historic/HistoricDropMarker.png" alt="Hover over these drop markers on the map to the left" />
+    </section>
+
+    <section class="HistoricRouteInfo1">
+        <p>The Grote Kerk or St.-Bavokerk is a Protestant church and former Catholic cathedral located on the central market square in the Dutch city of Haarlem.
+        The Cathedral of Saint Bavo now serves as the main cathedral for the Roman Catholic Diocese of Haarlem-Amsterdam.</p>
+        <img src="/img/Historic/Info1.png" alt="The Grote Kerk or St.-Bavokerk" />
+    </section>
+
+    <hr />
+</section>

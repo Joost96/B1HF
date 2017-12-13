@@ -15,7 +15,7 @@ namespace HaarlemFestival.Controllers
         // GET: Historic
         public ActionResult Historic()
         {
-            PagePlusDescriptions pagePlusDescriptions = new PagePlusDescriptions();
+            PagePlusActivities pagePlusActivities = new PagePlusActivities();
             DBHF db = new DBHF();
             IPageRepository pageRepository = new PageRepository(db);
             Page page = pageRepository.GetPage("Historic", Language.Eng);
@@ -23,10 +23,10 @@ namespace HaarlemFestival.Controllers
             IActivityRepository activityRepository = new ActivityRepository(db);
             IEnumerable<Activity> activities = activityRepository.GetActivities(EventType.Historic, Language.Eng);
 
-            pagePlusDescriptions.Page = page;
-            pagePlusDescriptions.ActivityDescriptions = activities.ToList();
+            pagePlusActivities.Page = page;
+            pagePlusActivities.Activities = activities.ToList();
 
-            return View(pagePlusDescriptions);
+            return View(pagePlusActivities);
         }
     }
 }
