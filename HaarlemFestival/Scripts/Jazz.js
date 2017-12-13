@@ -1,10 +1,16 @@
-﻿
-// When the user clicks on <div>, open the popup
+﻿$(".jazzAbtn").click(function () {
+    var id = $(this).attr("id");
+    var title = $(".jazz_page_actinfosection h3#" + id).text();
+    console.log(title);
+    $(".modaltitle").text(title);
+
+});
+
 // Get the modal
 var modal = document.getElementById('myModal');
 
 // Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+var btn = document.getElementsByClassName("jazz_page_program_passpartout")[0];
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -24,4 +30,14 @@ window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
+}
+
+function myFunction0() {
+    var x = document.getElementsByClassName("example");
+    x[0].innerHTML = "Hello World! + 0";
+}
+
+function myFunction1() {
+    var x = document.getElementsByClassName("example");
+    x[0].innerHTML = "Hello World! + 1";
 }
