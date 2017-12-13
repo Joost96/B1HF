@@ -82,7 +82,7 @@
                 </div>
 
                 @for(int i = 7;i <11;i++) {
-                    <section class="HomeHighlight col-md-12">
+                    <section class="HomeHighlight col-md-12" draggable="true">
                         @Html.HiddenFor(model => model.PageDescriptions[i].Page_Name)
                         @Html.HiddenFor(model => model.PageDescriptions[i].Section)
                         @Html.HiddenFor(model => model.PageDescriptions[i].Language)
