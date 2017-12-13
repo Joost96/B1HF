@@ -27,5 +27,6 @@ namespace HaarlemFestival.Model
 
         public List<TimeSlot> Timeslots { get; set; }
         public List<Cuisine> Cuisines { get; set; }
+        public int Rating { get; set; }
     }
 }
