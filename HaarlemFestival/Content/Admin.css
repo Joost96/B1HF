@@ -15,7 +15,7 @@
 .adminSection {
     border: 1px solid #bba8a8;
     background: white;
-    margin: 0px 0px 15px 0px;
+    margin: 0 0 15px 0;
     padding: 15px;
 }
 .adminSection h2 {

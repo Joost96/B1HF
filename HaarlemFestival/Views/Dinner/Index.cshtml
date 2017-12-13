@@ -1,60 +1,47 @@
-﻿@model IEnumerable<HaarlemFestival.Model.Activity>
+﻿@using HaarlemFestival.Model;
+@model HaarlemFestival.Model.PagePlusActivitiesPlusCuisine
+
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>text from db</h1>
+<h1>@Model.Page.Name</h1>
 <aside class="filter">
-    <h3>text from db</h3>
-    <ul>
-        <li class="filter_options"></li>
-        <li class="filter_options"></li>
-        <li class="filter_options"></li>
-        <li class="filter_options"></li>
-        <li class="filter_options"></li>
-        <li class="filter_options"></li>
-        <li class="filter_options"></li>
-        <li class="filter_options"></li>
-        <li class="filter_options"></li>
-        <li class="filter_options"></li>
-    </ul>
+    <h3>@Model.Page.PageDescriptions[0].Title hallo</h3>   
+    <input type="radio" name="foo"> All()
+
+
+        @foreach (Cuisine cuisine in Model.Cuisines)
+        {
+            <input type="radio" name="@cuisine.Name"> @cuisine.Name Html.Raw("()");
+
+        }  
 </aside>
 
-<div class="restaurants">
-    <div class="top_row">
+@foreach (Activity activity in Model.Activities)
+    {
         <div class="restaurant">
             <div class="restaurant_sum_description">
-                <h4>text from db</h4>
-                <label></label>
-                <label></label>
+                <h4>@activity.Name</h4>
+                <label class="rating">@activity.Rating</label>
+                <label>
+                    @*@for (int cuisine = 0; cuisine < Model.cuisines.Count; cuisine++)
+                        {
+                            activity.Cuisines[cuisine].Name.ToString();
+                        }*@
+                </label>
                 <label></label>
             </div>
 
             <div class="restaurant_img"></div>
-            <button>text from db</button>
-            <button>text from db</button>
+            <button class="btn_more_info">@activity.Cuisines text from db</button>
+            <button class="btn_booknow">text from db</button>
         </div>
-    </div>
-
-    <div class="bottom_row">
-        <div class="restaurant">
-            <div class="restaurant_sum_description">
-                <h4>text from db</h4>
-                <label></label>
-                <label></label>
-                <label></label>
-            </div>
-
-            <div class="restaurant_img"></div>
-            <button>text from db</button>
-            <button>text fromd db</button>
-        </div>
-    </div>
-</div>
+    }
 
 <div class="dinner_description">
-    <h2>text from db</h2>
-    <p>text from db</p>
+    <h2>@Model.Page.PageDescriptions[1].Title</h2>
+    <p>@Model.Page.PageDescriptions[1].DescriptionText</p>
 </div>

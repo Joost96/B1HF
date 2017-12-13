@@ -167,6 +167,10 @@
     <Compile Include="Migrations\201711231318482_initial.Designer.cs">
       <DependentUpon>201711231318482_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711271346043_updateLocation.cs" />
+    <Compile Include="Migrations\201711271346043_updateLocation.Designer.cs">
+      <DependentUpon>201711271346043_updateLocation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201711271406134_cuisine.cs" />
     <Compile Include="Migrations\201711271406134_cuisine.Designer.cs">
       <DependentUpon>201711271406134_cuisine.cs</DependentUpon>
@@ -187,6 +191,26 @@
     <Compile Include="Migrations\201711291114292_DescriptionFields Nullable.Designer.cs">
       <DependentUpon>201711291114292_DescriptionFields Nullable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712051328154_title,remarks,isPayed,rating.cs" />
+    <Compile Include="Migrations\201712051328154_title,remarks,isPayed,rating.Designer.cs">
+      <DependentUpon>201712051328154_title,remarks,isPayed,rating.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712081249409_cuisine-Update.cs" />
+    <Compile Include="Migrations\201712081249409_cuisine-Update.Designer.cs">
+      <DependentUpon>201712081249409_cuisine-Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712081255371_cuisine mapping.cs" />
+    <Compile Include="Migrations\201712081255371_cuisine mapping.Designer.cs">
+      <DependentUpon>201712081255371_cuisine mapping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712081257261_cuisine mapping2.cs" />
+    <Compile Include="Migrations\201712081257261_cuisine mapping2.Designer.cs">
+      <DependentUpon>201712081257261_cuisine mapping2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712131310386_naam bij locatie toegevoegd.cs" />
+    <Compile Include="Migrations\201712131310386_naam bij locatie toegevoegd.Designer.cs">
+      <DependentUpon>201712131310386_naam bij locatie toegevoegd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\Activity.cs" />
@@ -202,6 +226,7 @@
     <Compile Include="Model\OrderHasTickets.cs" />
     <Compile Include="Model\Page.cs" />
     <Compile Include="Model\PageDescription.cs" />
+    <Compile Include="Model\PagePlusActivitiesPlusCuisines.cs" />
     <Compile Include="Model\PagePlusDescriptions.cs" />
     <Compile Include="Model\RegisterModel.cs" />
     <Compile Include="Model\Ticket.cs" />
@@ -210,13 +235,20 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Repositories\AccountRepository.cs" />
     <Compile Include="Repositories\ActivityRepository.cs" />
     <Compile Include="Repositories\IAccountRepository.cs" />
     <Compile Include="Repositories\IActivityRepository.cs" />
     <Compile Include="Repositories\IPageDescriptionRepository.cs" />
+    <Compile Include="Repositories\ICuisineRepository.cs" />
     <Compile Include="Repositories\PageDescriptionRepository.cs" />
     <Compile Include="Repositories\IPageRepository.cs" />
+    <Compile Include="Repositories\CuisineRepository.cs" />
     <Compile Include="Repositories\PageRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -310,7 +342,49 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -372,17 +446,41 @@
     <Content Include="bin\roslyn\vbc.exe.config" />
     <Content Include="bin\roslyn\vbc.rsp" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="img\Header\Thumbs.db" />
+    <Content Include="img\Home\Thumbs.db" />
+    <Content Include="obj\Debug\CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\HaarlemFestival.csproj.GenerateResource.Cache" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="bin\ApplicationInsights.config" />
+    <Content Include="bin\HaarlemFestival.dll.config" />
+    <Content Include="bin\roslyn\csc.exe.config" />
+    <Content Include="bin\roslyn\csc.rsp" />
+    <Content Include="bin\roslyn\csi.exe.config" />
+    <Content Include="bin\roslyn\csi.rsp" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\vbc.exe.config" />
+    <Content Include="bin\roslyn\vbc.rsp" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="obj\Debug\HaarlemFestival.csproj.CopyComplete" />
     <Content Include="obj\Debug\HaarlemFestival.csproj.CoreCompileInputs.cache" />
     <Content Include="obj\Debug\HaarlemFestival.csproj.GenerateResource.Cache" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="Scripts\Jazz.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -420,7 +518,7 @@
     <Content Include="Views\Dinner\Details.cshtml" />
     <Content Include="Views\Dinner\Index.cshtml" />
     <Content Include="Views\Dinner\DinnerActivity.cshtml" />
-    <Content Include="Views\Historic.cshtml" />
+    <Content Include="Views\Historic\Historic.cshtml" />
     <Content Include="Views\Talking\Index.cshtml" />
     <Content Include="Views\Historic\Historic.cshtml" />
   </ItemGroup>
@@ -435,6 +533,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201711231318482_initial.resx">
       <DependentUpon>201711231318482_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711271346043_updateLocation.resx">
+      <DependentUpon>201711271346043_updateLocation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711271406134_cuisine.resx">
       <DependentUpon>201711271406134_cuisine.cs</DependentUpon>
@@ -451,12 +552,31 @@
     <EmbeddedResource Include="Migrations\201711291114292_DescriptionFields Nullable.resx">
       <DependentUpon>201711291114292_DescriptionFields Nullable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712051328154_title,remarks,isPayed,rating.resx">
+      <DependentUpon>201712051328154_title,remarks,isPayed,rating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712081249409_cuisine-Update.resx">
+      <DependentUpon>201712081249409_cuisine-Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712081255371_cuisine mapping.resx">
+      <DependentUpon>201712081255371_cuisine mapping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712081257261_cuisine mapping2.resx">
+      <DependentUpon>201712081257261_cuisine mapping2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712131310386_naam bij locatie toegevoegd.resx">
+      <DependentUpon>201712131310386_naam bij locatie toegevoegd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.cuisine.resources" />
     <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.cuisines2.resources" />
     <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.DescriptionFieldsNullable.resources" />
     <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.Initial.resources" />
     <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.locationupdate.resources" />
     <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.locationupdate2.resources" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

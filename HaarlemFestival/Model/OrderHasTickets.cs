@@ -27,5 +27,6 @@ namespace HaarlemFestival.Model
         public int Amount { get; set; }
         [Required]
         public decimal TotalPrice { get; set; }
+        public string Remarks { get; set; }
     }
 }
