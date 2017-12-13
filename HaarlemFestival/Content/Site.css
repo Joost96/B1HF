@@ -609,6 +609,31 @@ img.HistoricImageDropMarker9 {
     right: 458px;
 }
 
+img.HistoricImageDropMarker10 {
+    width: 25px;
+    position: relative;
+    top: 10px;
+    right: -3px;
+}
+
+p.DropMarkerGuide {
+    width: 200px;
+    position: relative;
+    right: 67px;
+}
+
+section.HistoricRouteInfo {
+    width: 200px;
+    float: right;
+    margin-top: 150px;
+}
+
+button.TalkingButtonBook2 {
+    position: relative;
+    bottom: 25px;
+    left: 778px;
+}
+
 /*--------------Talking-Haarlem-----------------*/
 
 .TalkingIntro {
