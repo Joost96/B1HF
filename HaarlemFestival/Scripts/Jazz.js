@@ -4,6 +4,19 @@
     console.log(title);
     $(".modaltitle").text(title);
 
+    modal.style.display = "block";
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
 });
 
 // Get the modal
@@ -17,27 +30,11 @@ var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
 btn.onclick = function () {
-    modal.style.display = "block";
+    
 }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
 
 function myFunction0() {
     var x = document.getElementsByClassName("example");
     x[0].innerHTML = "Hello World! + 0";
-}
-
-function myFunction1() {
-    var x = document.getElementsByClassName("example");
-    x[0].innerHTML = "Hello World! + 1";
 }
