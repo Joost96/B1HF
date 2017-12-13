@@ -1,9 +1,14 @@
-﻿@model HaarlemFestival.Model.Activity
+﻿@*@model HaarlemFestival.Model.Activity*@
+@model HaarlemFestival.Model.PagePlusDescriptions
+
+
+@using HaarlemFestival.Model;
 
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <h1>text from db</h1>
 <div class="restaurant_information">
     <div class="left_box">
@@ -35,7 +40,7 @@
         <fieldset>
             <label class="restaurant_form_label" for="rtime">text from db</label>
             <select class="restaurant_form_select_wide" id="rtime">
-                <option></option>
+                <option>@*@Model.ActivityDescriptions[0].Timeslots[0].StartTime. - @Model.ActivityDescriptions[0].Timeslots[0].EndTime*@</option>
                 <option></option>
                 <option></option>
             </select>

@@ -189,7 +189,7 @@ footer {
     color: white;
 }
 
-/*--------------Highlisghts section-----------------*/
+/*--------------Highlights section-----------------*/
 .event_highlights {
     float: left;
     width: 49%;
@@ -220,6 +220,54 @@ footer {
 }
 /*-------------------------------------------All restaurants page---------------------------------------------*/
 
+.filter {
+    background-color: antiquewhite;
+}
+
+    .filter h3 {
+    }
+
+    .filter ul {
+    }
+
+    .filter li {
+    }
+
+.row {
+    background-color: purple;
+}
+
+.restaurant {
+    float: left;
+    background-color: azure;
+    width: 24%;
+    height: 26em;
+    margin: 0px 8px 8px 0px;
+}
+
+.rating {
+}
+
+.restaurant_sum_description {
+    background-color: gold;
+    height: 7em;
+}
+
+    .restaurant_sum_description h4 {
+        margin: 0px 0px 10px 0px;
+        padding: 4px 0px 0px 4px;
+        font-weight: bold;
+    }
+
+.restaurant_img {
+    background-color: gold;
+}
+
+.btn_more_info {
+}
+
+.btn_booknow {
+}
 /*-------------------------------------------Restaurant detail page-------------------------------------------*/
 .restaurant_information {
     background-color: blue;
@@ -737,6 +785,6 @@ footer {
     border-bottom-color: black;
 }
 
-.jazz_page_buybtn{
-    float : right;
+.jazz_page_buybtn {
+    float: right;
 }
