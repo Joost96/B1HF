@@ -11,14 +11,12 @@
     <h2 class="TalkingHeader">@Model.Page.PageDescriptions[0].Title</h2>
 
     <p class="TalkingIntroText">
-       @Model.Page.PageDescriptions[0].DescriptionText 
+       @Html.Raw(Model.Page.PageDescriptions[0].DescriptionText + " " + Model.ActivityDescriptions[0].Location.) 
     </p>
 
 </section>
 
-<div>
-    <
-</div>
+
 
 @foreach (Activity a in Model.ActivityDescriptions)
 {
