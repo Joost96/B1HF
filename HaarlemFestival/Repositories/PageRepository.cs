@@ -22,7 +22,7 @@ namespace HaarlemFestival.Repositories
                     d = p.PageDescriptions.Where(pd => pd.Language == language)
                         .OrderBy(pd => pd.Section)
                 } ).AsEnumerable()
-                .Select(x => x.p).First();
+                .Select(x => x.p).FirstOrDefault();
         }
 
         public void UpdatePage(Page page)
