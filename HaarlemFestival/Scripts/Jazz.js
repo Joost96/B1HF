@@ -1,40 +1,33 @@
-﻿$(".jazzAbtn").click(function () {
+﻿var modal = document.getElementById('myModal');
+
+$(".jazz_page_buybtn").click(function () {
     var id = $(this).attr("id");
-    var title = $(".jazz_page_actinfosection h3#" + id).text();
+    var title = $("#jazz_activity_title_" + id).text();
+    var location = $("#jazz_activity_location_" + id).text();
+    var hall = $("#jazz_activity_hall_" + id).text();
+    var price = $("#jazz_activity_price_" + id).text();
+    var time = $("#jazz_activity_time_" + id).text();
+    var datum = $("#jazz_activity_datum_" + id).text();
+    console.log(id);
     console.log(title);
+    console.log(location);
     $(".modaltitle").text(title);
+    $(".modallocation").text(location);
+    $(".modalhall").text(hall);
+    $(".modalprice").text(price);
+    $(".modaltime").text(time);
+    $(".modaldatum").text(datum);
 
-    modal.style.display = "block";
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
-        modal.style.display = "none";
-    }
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-
+    $("#myModal").show();
 });
 
-// Get the modal
-var modal = document.getElementById('myModal');
+$(".close").click(function () {
+    modal.style.display = "none";
+});
 
-// Get the button that opens the modal
-var btn = document.getElementsByClassName("jazz_page_program_passpartout")[0];
+$(window).click(function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+});
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function () {
-    
-}
-
-
-function myFunction0() {
-    var x = document.getElementsByClassName("example");
-    x[0].innerHTML = "Hello World! + 0";
-}

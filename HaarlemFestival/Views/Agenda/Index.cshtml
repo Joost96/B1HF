@@ -1,0 +1,57 @@
+﻿@model HaarlemFestival.Model.PagePlusActivities
+@section AddToHead{
+    <link href="@Url.Content("~/Content/Agenda.css")" rel="stylesheet" type="text/css" />
+}
+@{
+    ViewBag.Title = "Index";
+}
+
+<section class="AgendaIntro">
+
+    <h2 class="AgendaHeader">Agenda</h2>
+
+    <p class="AgendaIntroText">
+        Welcome to your personal agenda. Here you can see all the events that you have booked. You can also print out your program here if you like and please... Enjoy yourself at the Haarlem Festival.
+
+    </p>
+</section>
+
+
+
+<section class="AgendaOrders">
+    <ul class="AgendaOrderList">
+        <li class="OrderHeader">
+            <div class="col-md-1">Id</div>
+            <div class="col-md-2">Activity</div>
+            <div class="col-md-2">Event</div>
+            <div class="col-md-1">Prijs</div>
+            <div class="col-md-1">Aantal</div>
+            <div class="col-md-1">Totaalprijs</div>
+            <div class="col-md-1">Tijd/Datum</div>
+
+        </li>
+
+        @*foreach () {*@
+
+        <li class="AgendaOrder">
+            <div class="col-md-1">Id</div>
+            <div class="col-md-2">Activity</div>
+            <div class="col-md-2">Event</div>
+            <div class="col-md-1">Prijs</div>
+            <div class="col-md-1">Aantal</div>
+            <div class="col-md-1">Totaalprijs</div>
+            <div class="col-md-1">Tijd/Datum</div>
+        </li>
+        @*}*@
+
+
+    </ul>
+
+</section>
+
+
+
+<section class="Agenda">
+
+</section>
+
