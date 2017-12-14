@@ -222,6 +222,7 @@ footer {
 
 .filter {
     background-color: antiquewhite;
+    margin-bottom: 10px; 
 }
 
     .filter h3 {
@@ -250,7 +251,7 @@ footer {
 
 .restaurant_sum_description {
     background-color: gold;
-    height: 7em;
+    height: 6.5em;
 }
 
     .restaurant_sum_description h4 {
@@ -259,8 +260,16 @@ footer {
         font-weight: bold;
     }
 
-.restaurant_img {
+.restaurant_img_box{
     background-color: gold;
+    width: 100%;
+    height: 19.5em;
+
+}
+
+.restaurant_img {
+    width: 100%;
+    height: 100%;
 }
 
 .btn_more_info {

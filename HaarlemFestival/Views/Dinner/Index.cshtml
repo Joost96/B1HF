@@ -9,19 +9,18 @@
 
 <h1>@Model.Page.Name</h1>
 <aside class="filter">
-    <h3>@Model.Page.PageDescriptions[0].Title hallo</h3>   
-    <input type="radio" name="foo"> All()
+    <h3>@Model.Page.PageDescriptions[0].Title</h3>   
+    <input type="radio" name="foo" checked> All()
 
 
         @foreach (Cuisine cuisine in Model.Cuisines)
         {
-            <input type="radio" name="@cuisine.Name"> @cuisine.Name Html.Raw("()");
-
+            <input type="radio" name="foo"> @cuisine.Name @Html.Raw("()");
         }  
 </aside>
-
+@{int counter = 2; }
 @foreach (Activity activity in Model.Activities)
-    {
+{
         <div class="restaurant">
             <div class="restaurant_sum_description">
                 <h4>@activity.Name</h4>
@@ -34,12 +33,12 @@
                 </label>
                 <label></label>
             </div>
-
-            <div class="restaurant_img"></div>
-            <button class="btn_more_info">@activity.Cuisines text from db</button>
-            <button class="btn_booknow">text from db</button>
+            <div class="restaurant_img_box"><img class="restaurant_img" src=@Model.Page.PageDescriptions[counter].ImageUrl alt="@activity.Name" /></div>
+            <button class="btn_more_info">More info</button>
+            <button class="btn_booknow">Book now</button>
         </div>
-    }
+    counter++;
+}
 
 <div class="dinner_description">
     <h2>@Model.Page.PageDescriptions[1].Title</h2>
