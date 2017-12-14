@@ -622,16 +622,36 @@ p.DropMarkerGuide {
     right: 67px;
 }
 
+button.TalkingButtonBook2 {
+    position: relative;
+    bottom: 25px;
+    left: 778px;
+}
+
 section.HistoricRouteInfo {
     width: 200px;
     float: right;
     margin-top: 150px;
 }
 
-button.TalkingButtonBook2 {
-    position: relative;
-    bottom: 25px;
-    left: 778px;
+.HistoricRouteInfo1 {
+    display: none;
+}
+
+section.HistoricRouteInfo1 {
+    width: 200px;
+    float: right;
+    margin-top: 150px;
+    display: none;
+}
+
+p.HistoricRouteInfo1{
+    display: none;
+}
+
+img.HistoricRouteInfo1{
+    display: none;
+    width: 100px;
 }
 
 /*--------------Talking-Haarlem-----------------*/
