@@ -16,7 +16,7 @@
     {
         @Html.AntiForgeryToken()
         @Html.HiddenFor(model => model.Name)
-        @Html.HiddenFor(model => model.Titel)
+        @Html.HiddenFor(model => model.Title)
         <section class="adminSection col-md-10">
             <h2>Edit Links</h2>
             @for (int i = 0; i < 4; i++)
