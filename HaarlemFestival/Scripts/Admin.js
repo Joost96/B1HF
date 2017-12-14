@@ -1,4 +1,43 @@
-﻿$('main img').click(function () {
+﻿var dragStart = null;
+
+$(".HomeHighlight").on("dragstart", function (e) {
+    $(this).addClass("dragged");
+    dragStart = this;
+
+    e.originalEvent.dataTransfer.effectAllowed = 'move';
+    e.originalEvent.target.style.opacity = 1;
+    e.originalEvent.dataTransfer.setData('text/html', this.innerHTML);
+});
+$(".HomeHighlight").on("dragover", function (e) {
+    $(this).addClass("dragOver");
+});
+$(".HomeHighlight").on("dragleave", function (e) {
+    $(this).removeClass("dragOver");
+});
+$(".HomeHighlight").on("dragover", function (e) {
+    e.preventDefault();
+    e.originalEvent.dataTransfer.dropEffect = 'move';
+});
+$(".HomeHighlight").on("drop", function (e) {
+    console.log("drop");
+    if (e.stopPropagation) {
+        e.stopPropagation();
+    }
+
+    if (dragStart !== this) {
+        dragStart.innerHTML = this.innerHTML;
+        this.innerHTML = e.originalEvent.dataTransfer.getData('text/html');
+    }
+    return false;
+});
+$(".HomeHighlight").on("dragend", function () {
+    $(this).removeClass("dragged");
+    $(".dragover").each(function () {
+        $(this).removeClass("dragover");
+    })
+});
+
+$('main img').click(function () {
     var id = $(this).attr("id");
     $(".imgUpload#" + id).click();
     console.log("here");
