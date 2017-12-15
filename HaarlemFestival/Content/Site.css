@@ -533,7 +533,7 @@ footer {
     text-align: center;
 }
 
-    .HistoricIntro button {
+.HistoricIntro button {
         position: absolute;
         top: 210px;
         right: 420px;
@@ -629,20 +629,26 @@ footer {
 .HistoricImageDropMarker10 {
     width: 25px;
     position: relative;
-    top: 10px;
-    right: -3px;
+    top: 0px;
+    right: 46px;
 }
 
 .DropMarkerGuide {
     width: 200px;
     position: relative;
-    right: 67px;
+    right: 117px;
 }
 
-.HistoricRouteInfo {
-    width: 200px;
+button.HistoricButtonBook2 {
+    position: relative;
+    bottom: 25px;
+    left: 778px;
+}
+
+section.HistoricRouteInfo {
+    width: 132px;
     float: right;
-    margin-top: 150px;
+    margin-top: 147px;
 }
 
 .HistoricRouteInfo1 {
