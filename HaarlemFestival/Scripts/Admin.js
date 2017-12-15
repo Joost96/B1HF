@@ -34,7 +34,7 @@ $(".HomeHighlight").on("dragend", function () {
     $(this).removeClass("dragged");
     $(".dragover").each(function () {
         $(this).removeClass("dragover");
-    })
+    });
 });
 
 $('main img').click(function () {

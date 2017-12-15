@@ -1,10 +1,9 @@
 ﻿[draggable] {
+    -ms-user-select: none;
     -moz-user-select: none;
-    -khtml-user-select: none;
     -webkit-user-select: none;
     user-select: none;
     /* Required to make elements draggable in old WebKit */
-    -khtml-user-drag: element;
     -webkit-user-drag: element;
     transition: all 0.2s cubic-bezier(0.75, 0.0, 0.25, 1);
 }

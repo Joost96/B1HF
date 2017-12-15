@@ -15,12 +15,14 @@ namespace HaarlemFestival.Controllers
     public class AccountController : Controller
     {
         private DBHF db;
-        private IAccountRepository repository;
+        private IAccountRepository accountRepository;
+        private IPageRepository pageRepository;
 
         public AccountController()
         {
             db = new DBHF();
-            repository = new AccountRepository(db);
+            accountRepository = new AccountRepository(db);
+            pageRepository = new PageRepository(db);
         }
 
         // GET: login
@@ -35,7 +37,7 @@ namespace HaarlemFestival.Controllers
         {
             if (ModelState.IsValid)
             {
-                Account account = repository.GetAccount(model.Email, model.Password);
+                Account account = accountRepository.GetAccount(model.Email, model.Password);
                 if (account != null)
                 {
                     FormsAuthentication.SetAuthCookie(account.Id.ToString(), false);
@@ -64,11 +66,11 @@ namespace HaarlemFestival.Controllers
         {
             if (ModelState.IsValid)
             {
-                Account checkAccount = repository.GetAccount(model.Email);
+                Account checkAccount = accountRepository.GetAccount(model.Email);
                 if (checkAccount == null)
                 {
                     Account account = new Customer(model.Email,model.FirstName,model.LastName,model.Password,model.Country);
-                    repository.Register(account);
+                    accountRepository.Register(account);
 
                     FormsAuthentication.SetAuthCookie(account.Id.ToString(), false);
 
@@ -91,6 +93,5 @@ namespace HaarlemFestival.Controllers
 
             return RedirectToAction("Login", "Account");
         }
-
     }
 }

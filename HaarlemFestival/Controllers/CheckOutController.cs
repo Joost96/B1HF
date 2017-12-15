@@ -3,11 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using HaarlemFestival.Model;
+using HaarlemFestival.Repositories;
 
 namespace HaarlemFestival.Controllers
 {
     public class CheckOutController : Controller
     {
+        private DBHF db;
+        private IOrderRepository orderRepository;
+
+        public CheckOutController()
+        {
+            db = new DBHF();
+            orderRepository = new OrderRepository(db);
+        }
         // GET: CheckOut
         public ActionResult CheckOut1()
         {
@@ -21,12 +31,56 @@ namespace HaarlemFestival.Controllers
 
         public ActionResult CheckOut3()
         {
-            return View();
+            Order order = (Order)Session["order"];
+            return View(order);
+        }
+        [HttpPost]
+        public ActionResult CheckOut3(Order order)
+        {
+            order.CustomerId = ((Account)(Session["loggedin_account"])).Id;
+            order.Date = DateTime.Now;
+
+            orderRepository.CreateOrder(order);
+            return Redirect("CheckOut4");
         }
 
         public ActionResult CheckOut4()
         {
             return View();
+        }
+
+        public ActionResult Order(int activityId, int aantal, string commentaar=null)
+        {
+
+            Order order;
+
+            OrderHasTickets ticketOrder = new OrderHasTickets();
+            ticketOrder.Ticket_TimeSlot_Activity_Id = activityId;
+            ticketOrder.Amount = aantal;
+
+            if (commentaar != null)
+            {
+                ticketOrder.Remarks = commentaar;
+            }
+
+
+
+            if (Session["order"] == null)
+            {
+                order = new Order();
+                order.OrderHasTickets.Add(ticketOrder);
+                Session["order"] = order;
+                
+                
+            }
+            else
+            {
+                order = (Order)Session["order"];
+                order.OrderHasTickets.Add(ticketOrder);
+                Session["order"] = order;
+            }
+
+            return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
         }
     }
 }

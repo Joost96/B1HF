@@ -46,11 +46,16 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
                     <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                    <li><a href="@Url.Action("ChangeLanguage")"><img src="~/img/Language/gb-eng.svg" alt="eng" width="30" height="20"/></a></li>
+                    <li><a href="@Url.Action()"><img src="~/img/Language/nl.svg" alt="nl" width="30" height="20"/></a></li>
+
                 </ul>
                 <a class="navbar-right" rel="home" href="#" title="Haarlem Festival">
                     <img style="width: 33px; height: 28px; margin-top: 10px;"
                          src="/img/Header/Shopping_cart_header.png">    
                 </a>
+
+
             </nav>
         </nav>
     </header>
