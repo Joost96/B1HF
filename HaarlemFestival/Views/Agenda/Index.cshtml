@@ -1,4 +1,5 @@
-﻿@model HaarlemFestival.Model.Order
+﻿@model HaarlemFestival.Model.PagePlusOrders
+@using HaarlemFestival.Model
 @section AddToHead{
     <link href="@Url.Content("~/Content/Agenda.css")" rel="stylesheet" type="text/css" />
 }
@@ -8,11 +9,10 @@
 
 <section class="AgendaIntro">
 
-    <h2 class="AgendaHeader">Agenda</h2>
+    <h2 class="AgendaHeader">@Model.Page.Title</h2>
 
     <p class="AgendaIntroText">
-        Welcome to your personal agenda. Here you can see all the events that you have booked. You can also print out your program here if you like and please... Enjoy yourself at the Haarlem Festival.
-
+       @Model.Page.PageDescriptions
     </p>
 </section>
 
@@ -22,7 +22,7 @@
     <ul class="AgendaOrderList">
         <li class="OrderHeader">
             <div class="orderItem col-md-1">Id</div>
-            <div class="orderItem col-md-2">Activity</div>
+            <div class="orderItem col-md-2">Name</div>
             <div class="orderItem col-md-2">Event</div>
             <div class="orderItem col-md-1">Prijs</div>
             <div class="orderItem col-md-1">Aantal</div>
@@ -31,18 +31,23 @@
 
         </li>
 
-        @*foreach () {*@
+        
+
+        @foreach (Order order in Model.Orders) {
+            foreach (OrderHasTickets OHT in order.OrderHasTickets) {
+                
 
         <li class="AgendaOrder">
-            <div class="orderItem col-md-1">Id</div>
-            <div class="orderItem col-md-2">Activity</div>
-            <div class="orderItem col-md-2">Event</div>
-            <div class="orderItem col-md-1">Prijs</div>
-            <div class="orderItem col-md-1">Aantal</div>
-            <div class="orderItem col-md-2">Totaalprijs</div>
-            <div class="orderItem col-md-2">Tijd/Datum</div>
+            <div class="orderItem col-md-1">@OHT.Ticket_TimeSlot_Activity_Id</div>
+            <div class="orderItem col-md-2">@OHT.Ticket.TimeSlot.Activity.Name</div>
+            <div class="orderItem col-md-2">@OHT.Ticket.TimeSlot.Activity.Type</div>
+            <div class="orderItem col-md-1">@OHT.Ticket.Price</div>
+            <div class="orderItem col-md-1">@OHT.Amount</div>
+            <div class="orderItem col-md-2">@OHT.TotalPrice</div>
+            <div class="orderItem col-md-2">@OHT.Ticket.TimeSlot.StartTime</div>
         </li>
-        @*}*@
+                }
+            }
 
 
     </ul>

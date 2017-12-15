@@ -26,7 +26,7 @@ namespace HaarlemFestival.Controllers
         {
             PagePlusOrders pagePlusOrders = new PagePlusOrders
             {
-                Page = pageRepository.GetPage("PersonalAganda", Language.Eng),
+                Page = pageRepository.GetPage("PersonalAgenda", Language.Eng),
                 Orders = orderRepository.GetOrdersCustomer(2).ToList()
             };
             return View(pagePlusOrders);

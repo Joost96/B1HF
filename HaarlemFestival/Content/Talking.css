@@ -1,0 +1,162 @@
+﻿
+/*--------------------------------------------------Talking-Haarlem---------------------------------------------------------*/
+
+.TalkingIntro {
+    background-color: #EDECD8;
+    color: black;
+    font-size: 1em;
+    height: 20em;
+    width: 100%;
+    text-align: center;
+    line-height: 2em;
+    margin-top: 4%;
+    padding: 0;
+    border-top-style: solid;
+    border-color: #F8473E;
+}
+
+.TalkingHeader {
+    font-weight: bold;
+}
+
+.TalkingIntroText {
+    font-size: 1.5em;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 0;
+}
+
+.TalkingEvent {
+    /* background-color: blue;*/
+    width: 100%;
+    height: 60em;
+    margin-bottom: 10em;
+    border-top-style: solid;
+    border-color: #F8473E;
+}
+
+.TalkingDag {
+    background-color: red;
+    width: 15em;
+    height: 14em;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 4%;
+}
+
+.TalkingDagHeader {
+    text-align: center;
+    padding-top: 15%;
+    padding-bottom: 0;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.TalkingSpreker {
+    /* background-color: yellow; */
+    width: 100%;
+    height: 24em;
+    margin-top: 1%;
+    margin-bottom: 1em;
+}
+
+.TalkingSprekerImgContainer {
+    background-color: purple;
+    width: 18%;
+    height: 18em;
+    margin-top: 4%;
+    margin-right: 3%;
+    margin-bottom: 2%;
+    float: left;
+}
+
+.TalkingSprekerImg {
+    width: 100%;
+    height: 100%;
+}
+
+.TalkingSprekerUitleg {
+    width: 50%;
+    height: 20em;
+    margin-top: 4%;
+    margin-right: 10%;
+    margin-bottom: 2%;
+    float: left;
+}
+
+.TalkingSprekerHeader {
+    font-weight: bold;
+}
+
+.TalkingSprekerText {
+    font-size: 1.5em;
+}
+
+.TalkingButtonSpreker {
+    font-size: 1.8em;
+    margin-top: 13%;
+    margin-bottom: 15%;
+    margin-left: 0;
+    float: left;
+    background-color: #199ED8;
+    border-radius: 15px, 15px;
+}
+
+.TalkingSpreker2 {
+    /* background-color: yellow; */
+    width: 100%;
+    height: 25em;
+    margin-top: 1%;
+    margin-bottom: 1em;
+}
+
+.TalkingSprekerImg2Container {
+    width: 18%;
+    height: 18em;
+    background-color: purple;
+    margin-top: 1%;
+    margin-right: 3%;
+    margin-bottom: 2%;
+    float: left;
+}
+
+.TalkingSprekerImg2 {
+    width: 100%;
+    height: 100%;
+}
+
+.TalkingSprekerUitleg2 {
+    width: 50%;
+    height: 20em;
+    margin-top: 0;
+    margin-right: 10%;
+    margin-bottom: 2%;
+    float: left;
+}
+
+.TalkingSprekerHeader2 {
+    font-weight: bold;
+}
+
+.TalkingSprekerText2 {
+    font-size: 1.5em;
+}
+
+.TalkingButtonSpreker2 {
+    font-size: 1.8em;
+    margin-top: 9%;
+    margin-bottom: 10%;
+    margin-left: 0;
+    float: left;
+    background-color: #199ED8;
+    border-radius: 15px, 15px;
+}
+
+.TalkingButtonBook {
+    font-size: 1.8em;
+    margin: 0;
+    margin-right: 2.4%;
+    float: right;
+    background-color: #1DBF3B;
+    border-radius: 15px, 15px;
+}
