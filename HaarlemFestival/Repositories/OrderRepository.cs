@@ -15,6 +15,13 @@ namespace HaarlemFestival.Repositories
         {
             this.db = db;
         }
+
+        public void CreateOrder(Order order)
+        {
+            db.Orders.Add(order);
+            db.SaveChanges();
+        }
+
         public IEnumerable<Order> GetOrdersCustomer(int customerId)
         {
             return db.Orders

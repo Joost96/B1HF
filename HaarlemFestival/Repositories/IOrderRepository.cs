@@ -9,5 +9,6 @@ namespace HaarlemFestival.Repositories
     public interface IOrderRepository
     {
         IEnumerable<Order> GetOrdersCustomer(int customerId);
+        void CreateOrder(Order order);
     }
 }
