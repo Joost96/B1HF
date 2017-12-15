@@ -1,4 +1,5 @@
-﻿var dropMarker = document.getElementsByClassName("HistoricImageDropMarker1");
+﻿var info = document.getElementsByClassName("HistoricRouteInfo");
+var dropMarkerGuide = document.getElementsByClassName("HistoricImageDropMarker10");
 var info1 = document.getElementsByClassName("HistoricRouteInfo1");
 var info2 = document.getElementsByClassName("HistoricRouteInfo2");
 var info3 = document.getElementsByClassName("HistoricRouteInfo3");
@@ -12,6 +13,7 @@ var info9 = document.getElementsByClassName("HistoricRouteInfo9");
 function ShowHideLocation() {
     if (info1.style.class === "none") {
         info1.style.display = "block";
+        info.style.display = "none";
         //info2.style.display = "none";
         //info3.style.display = "none";
         //info4.style.display = "none";
