@@ -4,11 +4,20 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using HaarlemFestival.Model;
+using HaarlemFestival.Repositories;
 
 namespace HaarlemFestival.Controllers
 {
     public class CheckOutController : Controller
     {
+        private DBHF db;
+        private IOrderRepository orderRepository;
+
+        public CheckOutController()
+        {
+            db = new DBHF();
+            orderRepository = new OrderRepository(db);
+        }
         // GET: CheckOut
         public ActionResult CheckOut1()
         {
@@ -22,7 +31,17 @@ namespace HaarlemFestival.Controllers
 
         public ActionResult CheckOut3()
         {
-            return View();
+            Order order = (Order)Session["order"];
+            return View(order);
+        }
+        [HttpPost]
+        public ActionResult CheckOut3(Order order)
+        {
+            order.CustomerId = ((Account)(Session["loggedin_account"])).Id;
+            order.Date = DateTime.Now;
+
+            orderRepository.CreateOrder(order);
+            return Redirect("CheckOut4");
         }
 
         public ActionResult CheckOut4()
