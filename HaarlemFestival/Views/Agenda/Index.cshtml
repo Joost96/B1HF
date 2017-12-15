@@ -1,4 +1,4 @@
-﻿@model HaarlemFestival.Model.PagePlusActivities
+﻿@model HaarlemFestival.Model.Order
 @section AddToHead{
     <link href="@Url.Content("~/Content/Agenda.css")" rel="stylesheet" type="text/css" />
 }
@@ -21,26 +21,26 @@
 <section class="AgendaOrders">
     <ul class="AgendaOrderList">
         <li class="OrderHeader">
-            <div class="col-md-1">Id</div>
-            <div class="col-md-2">Activity</div>
-            <div class="col-md-2">Event</div>
-            <div class="col-md-1">Prijs</div>
-            <div class="col-md-1">Aantal</div>
-            <div class="col-md-1">Totaalprijs</div>
-            <div class="col-md-1">Tijd/Datum</div>
+            <div class="orderItem col-md-1">Id</div>
+            <div class="orderItem col-md-2">Activity</div>
+            <div class="orderItem col-md-2">Event</div>
+            <div class="orderItem col-md-1">Prijs</div>
+            <div class="orderItem col-md-1">Aantal</div>
+            <div class="orderItem col-md-2">Totaalprijs</div>
+            <div class="orderItem col-md-2">Tijd/Datum</div>
 
         </li>
 
         @*foreach () {*@
 
         <li class="AgendaOrder">
-            <div class="col-md-1">Id</div>
-            <div class="col-md-2">Activity</div>
-            <div class="col-md-2">Event</div>
-            <div class="col-md-1">Prijs</div>
-            <div class="col-md-1">Aantal</div>
-            <div class="col-md-1">Totaalprijs</div>
-            <div class="col-md-1">Tijd/Datum</div>
+            <div class="orderItem col-md-1">Id</div>
+            <div class="orderItem col-md-2">Activity</div>
+            <div class="orderItem col-md-2">Event</div>
+            <div class="orderItem col-md-1">Prijs</div>
+            <div class="orderItem col-md-1">Aantal</div>
+            <div class="orderItem col-md-2">Totaalprijs</div>
+            <div class="orderItem col-md-2">Tijd/Datum</div>
         </li>
         @*}*@
 

@@ -43,7 +43,7 @@ namespace HaarlemFestival
                     }
                     catch (Exception ex)
                     {
-
+                        ex.GetType();
                     }
                 }
             }

@@ -51,7 +51,7 @@ footer {
     footer ul {
         display: inline-block;
         margin-left: 300px;
-        padding: 0px;
+        padding: 0;
     }
 
     footer a {
@@ -61,8 +61,8 @@ footer {
 .footer-list-right {
     width: 400px;
     height: 150px;
-    margin: 0px 300px 0px 0px;
-    display: inline-block;
+    margin: 0 300px 0 0;
+    
     float: right;
     text-align: right;
 }
@@ -83,7 +83,7 @@ footer {
 .event_summary {
     width: 25%;
     float: left;
-    padding: 0px 8px 0px 0px;
+    padding: 0 8px 0 0;
     position: relative;
 }
 
@@ -99,7 +99,7 @@ footer {
         background-color: #F8473E;
         text-align: center;
         line-height: 50px;
-        margin: 0px;
+        margin: 0;
     }
 
     .event_summary button {
@@ -132,11 +132,11 @@ footer {
     float: left;
     width: 50%;
     height: inherit;
-    margin: 0px 4px 0px 0px;
+    margin: 0 4px 0 0;
 }
 
     .wrapper_left h1 {
-        margin-top: 0px;
+        margin-top: 0;
     }
 
 
@@ -174,7 +174,7 @@ footer {
     .register button {
         display: block;
         margin: 0 auto;
-        margin: 0px auto 10px auto;
+        margin: 0 auto 10px auto;
         color: white;
         background-color: #1DBF3B;
         width: 100px;
@@ -193,7 +193,7 @@ footer {
 .event_highlights {
     float: left;
     width: 49%;
-    margin: 0px 0px 0px 4px;
+    margin: 0 0 0 4px;
     height: inherit;
 }
 
@@ -225,12 +225,15 @@ footer {
 }
 
     .filter h3 {
+        margin: 0;
     }
 
     .filter ul {
+        margin: 0;
     }
 
     .filter li {
+        margin: 0;
     }
 
 .row {
@@ -242,10 +245,11 @@ footer {
     background-color: azure;
     width: 24%;
     height: 26em;
-    margin: 0px 8px 8px 0px;
+    margin: 0 8px 8px 0;
 }
 
 .rating {
+    margin: 0;
 }
 
 .restaurant_sum_description {
@@ -254,8 +258,8 @@ footer {
 }
 
     .restaurant_sum_description h4 {
-        margin: 0px 0px 10px 0px;
-        padding: 4px 0px 0px 4px;
+        margin: 0 0 10px 0;
+        padding: 4px 0 0 4px;
         font-weight: bold;
     }
 
@@ -264,10 +268,13 @@ footer {
 }
 
 .btn_more_info {
+    margin: 0;
 }
 
 .btn_booknow {
+    margin: 0;
 }
+
 /*-------------------------------------------Restaurant detail page-------------------------------------------*/
 .restaurant_information {
     background-color: blue;
@@ -296,7 +303,7 @@ footer {
 }
 
     .restaurant_description h2 {
-        margin-top: 0px;
+        margin-top: 0;
     }
 
     .restaurant_description p {
@@ -317,7 +324,7 @@ footer {
     }
 
     .restaurant_reservation_form h2 {
-        margin-top: 0px;
+        margin-top: 0;
         text-align: center;
     }
 
@@ -340,16 +347,17 @@ footer {
     }
 
 .restaurant_form_select_wide {
-    width: 150px;
+    margin: 0;
 }
 
 .restaurant_form_select_small {
+    width: 100%;
 }
 
 
 .restaurant_reservation_form button {
     display: block;
-    margin: 0px auto 10px auto;
+    margin: 0 auto 10px auto;
     color: white;
     background-color: #1DBF3B;
     width: 100px;
@@ -374,7 +382,7 @@ footer {
 
 .contact_section {
     background-color: #CC6666;
-    padding: 0px;
+    padding: 0;
     margin-left: 25%;
     height: 300px;
     width: 75%;
@@ -382,7 +390,7 @@ footer {
 
 .contact_form_header {
     background-color: #F6524A;
-    margin: 0px;
+    margin: 0;
     padding: 20px;
     font-size: 20px;
     font-weight: bold;
@@ -390,11 +398,11 @@ footer {
 
 .contact_page_section form {
     padding: 10px;
-    padding-top: 0px;
+    padding-top: 0;
 }
 
 .contact_info_header {
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 .contact_required_text {
@@ -502,7 +510,7 @@ footer {
 }
 
 .HistoricImageTop {
-    display: inline-block;
+    
     border: solid;
     border-width: 1px;
     width: 180px;
@@ -535,7 +543,7 @@ footer {
 
 .HistoricRoute hr {
     margin-top: 20px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     border-top: 1px solid #000000;
 }
 
@@ -546,89 +554,89 @@ footer {
     border-width: 1px;
     margin-top: 5px;
 }
-img.HistoricImageDropMarker1 {
+.HistoricImageDropMarker1 {
     width: 13px;
     position: relative;
     bottom: 32px;
     right: 409px;
 }
 
-img.HistoricImageDropMarker2 {
+.HistoricImageDropMarker2 {
     width: 13px;
     position: relative;
     bottom: 47px;
     right: 461px;
 }
 
-img.HistoricImageDropMarker3 {
+.HistoricImageDropMarker3 {
     width: 13px;
     position: relative;
     bottom: 34px;
     right: 487px;
 }
 
-img.HistoricImageDropMarker4 {
+.HistoricImageDropMarker4 {
     width: 13px;
     position: relative;
     bottom: -178px;
     right: 670px;
 }
 
-img.HistoricImageDropMarker5 {
+.HistoricImageDropMarker5 {
     width: 13px;
     position: relative;
     bottom: 41px;
     right: 744px;
 }
 
-img.HistoricImageDropMarker6 {
+.HistoricImageDropMarker6 {
     width: 13px;
     position: relative;
     bottom: 115px;
     right: 426px;
 }
 
-img.HistoricImageDropMarker7 {
+.HistoricImageDropMarker7 {
     width: 13px;
     position: relative;
     bottom: 191px;
     right: 319px;
 }
 
-img.HistoricImageDropMarker8 {
+.HistoricImageDropMarker8 {
     width: 13px;
     position: relative;
     bottom: 5px;
     right: 205px;
 }
 
-img.HistoricImageDropMarker9 {
+.HistoricImageDropMarker9 {
     width: 13px;
     position: relative;
     bottom: 62px;
     right: 458px;
 }
 
-img.HistoricImageDropMarker10 {
+.HistoricImageDropMarker10 {
     width: 25px;
     position: relative;
     top: 10px;
     right: -3px;
 }
 
-p.DropMarkerGuide {
+.DropMarkerGuide {
     width: 200px;
     position: relative;
     right: 67px;
 }
 
-section.HistoricRouteInfo {
+.HistoricRouteInfo {
     width: 200px;
     float: right;
     margin-top: 150px;
 }
 
-button.TalkingButtonBook2 {
+.TalkingButtonBook2 {
     position: relative;
     bottom: 25px;
     left: 778px;
@@ -645,7 +653,7 @@ button.TalkingButtonBook2 {
     text-align: center;
     line-height: 2em;
     margin-top: 4%;
-    padding: 0px;
+    padding: 0;
     border-top-style: solid;
     border-color: #F8473E;
 }
@@ -658,7 +666,7 @@ button.TalkingButtonBook2 {
     font-size: 1.5em;
     margin-left: 20%;
     margin-right: 20%;
-    padding: 0px;
+    padding: 0;
 }
 
 .TalkingEvent {
@@ -682,7 +690,7 @@ button.TalkingButtonBook2 {
 .TalkingDagHeader {
     text-align: center;
     padding-top: 15%;
-    padding-bottom: 0px;
+    padding-bottom: 0;
     font-size: 2em;
     font-weight: bold;
 }
@@ -697,7 +705,7 @@ button.TalkingButtonBook2 {
 
 .TalkingSprekerImgContainer {
     background-color: purple;
-    width: 20%;
+    width: 18%;
     height: 18em;
     margin-top: 4%;
     margin-right: 3%;
@@ -746,7 +754,7 @@ button.TalkingButtonBook2 {
 }
 
 .TalkingSprekerImg2Container {
-    width: 20%;
+    width: 18%;
     height: 18em;
     background-color: purple;
     margin-top: 1%;
@@ -763,7 +771,7 @@ button.TalkingButtonBook2 {
 .TalkingSprekerUitleg2 {
     width: 50%;
     height: 20em;
-    margin-top: 0%;
+    margin-top: 0;
     margin-right: 10%;
     margin-bottom: 2%;
     float: left;
@@ -789,7 +797,7 @@ button.TalkingButtonBook2 {
 
 .TalkingButtonBook {
     font-size: 1.8em;
-    margin: 0%;
+    margin: 0;
     margin-right: 2.4%;
     float: right;
     background-color: #1DBF3B;
@@ -816,7 +824,7 @@ button.TalkingButtonBook2 {
 }
 
 .jazz_page_info_p {
-    padding: 0px 20%;
+    padding: 0 20%;
 }
 
 .jazz_page_info_locatiepatronaat {
@@ -840,15 +848,15 @@ button.TalkingButtonBook2 {
     border-top-color: black;
     border-bottom-color: black;
     margin-top: 3%;
-    padding: 15px 0px;
+    padding: 15px 0;
 }
 
 .jazz_page_program_days_header {
     float: left;
-    margin: 0px;
+    margin: 0;
     margin-right: 6%;
     margin-left: 5%;
-    padding: 10px 0px;
+    padding: 10px 0;
 }
 
 .jazz_page_program_thursday {
