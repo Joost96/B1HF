@@ -12,11 +12,13 @@ namespace HaarlemFestival.Controllers
     {
         private DBHF db;
         private IOrderRepository orderRepository;
+        private IPageRepository pageRepository;
 
         public CheckOutController()
         {
             db = new DBHF();
             orderRepository = new OrderRepository(db);
+            pageRepository = new PageRepository(db);
         }
         // GET: CheckOut
         public ActionResult CheckOut1()
@@ -47,6 +49,20 @@ namespace HaarlemFestival.Controllers
         public ActionResult CheckOut4()
         {
             return View();
+        }
+
+        public ActionResult Basket()
+        {
+            PagePlusOrders pagePlusOrders = new PagePlusOrders
+            {
+                Page = pageRepository.GetPage("PersonalAganda", Language.Eng),
+                Orders = orderRepository.GetOrdersCustomer(2).ToList()
+            };
+            if(Session["order"] != null)
+            {
+                pagePlusOrders.Orders.Add((Order)Session["order"]);
+            }
+            return View(pagePlusOrders);
         }
 
         public ActionResult Order(int activityId, int aantal, string commentaar=null)
