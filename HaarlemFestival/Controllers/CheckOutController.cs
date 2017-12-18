@@ -65,29 +65,29 @@ namespace HaarlemFestival.Controllers
             return View(pagePlusOrders);
         }
 
-        public ActionResult Order(int activityId, int aantal, string commentaar=null)
+        public ActionResult Order(int activityId, DateTime timeslot, TicketType tickettype, int aantal, decimal totaalprijs, string commentaar=null)
         {
 
             Order order;
+            Ticket ticket = new Ticket();
 
             OrderHasTickets ticketOrder = new OrderHasTickets();
             ticketOrder.Ticket_TimeSlot_Activity_Id = activityId;
+            ticketOrder.Ticket_TimeSlot_StartTime = timeslot;
+            ticketOrder.Ticket_Type = tickettype;
             ticketOrder.Amount = aantal;
+            ticketOrder.TotalPrice = totaalprijs;
 
             if (commentaar != null)
             {
                 ticketOrder.Remarks = commentaar;
             }
 
-
-
             if (Session["order"] == null)
             {
                 order = new Order();
                 order.OrderHasTickets.Add(ticketOrder);
-                Session["order"] = order;
-                
-                
+                Session["order"] = order; 
             }
             else
             {
