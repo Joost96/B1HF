@@ -19,6 +19,7 @@ namespace HaarlemFestival.Repositories
         public void CreateOrder(Order order)
         {
             db.Orders.Add(order);
+            db.OrderHasTickets.AddRange(order.OrderHasTickets);
             db.SaveChanges();
         }
 

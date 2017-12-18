@@ -20,6 +20,7 @@ namespace HaarlemFestival.Model
         public PaymentMethod PaymentMethod { get; set; }
 
         public List<OrderHasTickets> OrderHasTickets { get; set; }
-        
+
+        public Order() => OrderHasTickets = new List<OrderHasTickets>();
     }
 }

@@ -1,0 +1,9 @@
+﻿@model HaarlemFestival.Model.PaymentMethod
+@foreach (var value in Enum.GetValues(typeof(HaarlemFestival.Model.PaymentMethod)))
+{
+    if (!value.Equals("none"))
+    {
+    @Html.RadioButtonFor(Model => Model, value)
+    @Html.Label(value.ToString())
+    }
+}

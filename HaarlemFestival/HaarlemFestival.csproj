@@ -159,7 +159,7 @@
     <Compile Include="Controllers\HistoricController.cs" />
     <Compile Include="Controllers\JazzController.cs" />
     <Compile Include="Controllers\TalkingController.cs" />
-    <Compile Include="Enums.cs" />
+    <Compile Include="Model\Enums.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -230,6 +230,7 @@
     <Compile Include="Model\PagePlusActivitiesPlusCuisines.cs" />
     <Compile Include="Model\PagePlusActivities.cs" />
     <Compile Include="Model\PagePlusOrders.cs" />
+    <Compile Include="Model\RegisterCheckoutModel.cs" />
     <Compile Include="Model\RegisterModel.cs" />
     <Compile Include="Model\Ticket.cs" />
     <Compile Include="Model\TimeSlot.cs" />
@@ -357,6 +358,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CheckOut.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\Agenda.css" />
@@ -533,12 +535,13 @@
     <Content Include="Views\Talking\Index.cshtml" />
     <Content Include="Views\ContentManagement\Contact.cshtml" />
     <Content Include="Views\Agenda\Index.cshtml" />
+    <Content Include="Views\CheckOut\_CheckOutLayout.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\PaymentMethod.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\themes\" />
     <Folder Include="obj\Release\TempPE\" />
-    <Folder Include="Views\ContentManager\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
