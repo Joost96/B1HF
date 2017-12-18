@@ -134,7 +134,7 @@ namespace HaarlemFestival.Controllers
         public ActionResult CheckOut4()
         {
             Order order = (Order)Session["order"];
-            if(order.PaymentMethod != PaymentMethod.none)
+            if(order.PaymentMethod != null)
                 Session["order"] = null;
             return View(order);
         }

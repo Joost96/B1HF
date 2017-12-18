@@ -4,7 +4,7 @@ namespace HaarlemFestival.Model
 {
     public enum EmployeeType { contentManager, salesManager}
 
-    public enum PaymentMethod { none, cash, pin, paypal, visa}
+    public enum PaymentMethod { cash, pin, paypal, visa}
 
     public enum TicketType { Single, Group, Child, free, DayPasspartout, WeekPasspartout, PasspartoutFree }
 
