@@ -16,6 +16,8 @@
 }
 .AgendaHeader {
     font-weight: bold;
+    margin-left: 6em;
+    margin-right: 6em;
 }
 
 .AgendaIntroText {
@@ -44,9 +46,9 @@
 
 .AgendaOrderList{
     margin-top: 3em;
-    margin-left: 6em;
+    margin-left: 7em;
     margin-right: 6em;
-    list-style-type: circle;
+    list-style-type: none;
     
 }
 
@@ -69,7 +71,37 @@
 .Agenda {
     margin-top: 2%;
     width: 100%;
-    min-height: 3em;
+    height: 35em;
     border-top-style: solid;
     border-color: #F8473E;
+    
+}
+
+.AgendaKop{
+    width: 98%;
+    height: 10%;
+    margin: 1% 1% 0 1%;
+    background-color: blue;
+}
+
+.AgendaDagen{
+    width: calc(98% / 8);
+    height: 85%;
+    margin: 0 0 0 1%;
+    background-color: darkcyan;
+    float: left;
+}
+
+.AgendaRaster{
+    
+    width: calc(98% / 8 * 7);
+    height: 85%;
+    background-color: darkblue;
+    margin: 0 1% 1% 0;
+    float: left;
+}
+
+.AgendaFoto{
+    width: 100%;
+    height: 100%;
 }
