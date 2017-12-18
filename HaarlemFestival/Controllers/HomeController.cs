@@ -33,5 +33,19 @@ namespace HaarlemFestival.Controllers
 
             return View();
         }
+
+        public ActionResult ChangeLanguage(int language)
+        {
+            if (language == 0)
+            {
+                Session["language"] = Language.Eng;
+            }
+            else
+            {
+                Session["language"] = Language.Ned;
+            }
+
+            return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
+        }
     }
 }
