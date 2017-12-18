@@ -48,5 +48,10 @@ namespace HaarlemFestival
                 }
             }
         }
+
+        void Session_Start(object sender, EventArgs e)
+        {
+            Session["language"] = Language.Eng; 
+        }
     }
 }
