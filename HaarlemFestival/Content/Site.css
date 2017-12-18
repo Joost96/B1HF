@@ -659,15 +659,14 @@ section.HistoricRouteInfo1 {
     width: 200px;
     float: right;
     margin-top: 150px;
-    display: none;
 }
 
 p.HistoricRouteInfo1{
-    display: none;
+    display: inherit;
 }
 
 img.HistoricRouteInfo1{
-    display: none;
+    display: inherit;
     width: 100px;
 }
 
