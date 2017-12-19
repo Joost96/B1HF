@@ -33,7 +33,7 @@ namespace HaarlemFestival.Controllers
 
         // POST: login
         [HttpPost]
-        public ActionResult Login(LoginModel model)
+        public ActionResult Login(LoginModel model, string returnUrl)
         {
             if (ModelState.IsValid)
             {
@@ -44,7 +44,10 @@ namespace HaarlemFestival.Controllers
 
                     Session["loggedin_account"] = account;
 
-                    return RedirectToAction("Index", "ContentManagement");
+                    if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/"))
+                        return Redirect(returnUrl);
+                    else
+                        return RedirectToAction("Index", "Home");
                 }
                 else
                 {
@@ -62,7 +65,7 @@ namespace HaarlemFestival.Controllers
 
         // POST: login
         [HttpPost]
-        public ActionResult Register(RegisterModel model)
+        public ActionResult Register(RegisterCheckoutModel model)
         {
             if (ModelState.IsValid)
             {
@@ -80,7 +83,7 @@ namespace HaarlemFestival.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("register-error", "The username is already taken");
+                    ModelState.AddModelError("register-error", "The email is already taken");
                 }
             }
             return View(model);

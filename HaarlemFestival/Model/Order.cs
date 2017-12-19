@@ -17,9 +17,10 @@ namespace HaarlemFestival.Model
         public int CustomerId { get; set; }
         public virtual Customer Customer { get; set; }
         [Required]
-        public PaymentMethod PaymentMethod { get; set; }
+        public PaymentMethod? PaymentMethod { get; set; }
 
         public List<OrderHasTickets> OrderHasTickets { get; set; }
-        
+
+        public Order() => OrderHasTickets = new List<OrderHasTickets>();
     }
 }

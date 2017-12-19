@@ -1,15 +1,23 @@
-﻿
+﻿@model HaarlemFestival.Model.Order
+
 @{
     ViewBag.Title = "CheckOut3";
 }
+@{
+    Layout = "_CheckOutLayout.cshtml";
+}
 
-<section class="CheckOut1">
+<section class="CheckOut3">
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.OrderHasTickets);
+    @Html.HiddenFor(m => m.CustomerId);
+    @Html.EditorFor(m => m.PaymentMethod)
 
-    <ul>
-        <li>Step 1<br>Login</li>
-        <li>Step 2<br>Personal info/Register</li>
-        <li class="selected">Step 3<br>Payment</li>
-        <li>Step 4<br>Tickets</li>
-    </ul>
-
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Continue to payment" class="btn btn-default" />
+        </div>
+    </div>
+}
 </section>
