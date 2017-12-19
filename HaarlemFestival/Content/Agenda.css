@@ -79,17 +79,40 @@
 
 .AgendaKop{
     width: 98%;
-    height: 10%;
+    height: 12%;
     margin: 1% 1% 0 1%;
-    background-color: blue;
+    background-color: #F8473E;
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+    font-weight: 400;
+  
+    
+    
 }
 
-.AgendaDagen{
+.AgendaKopHeader {
+    font-weight: bold;
+    margin: 0;
+    padding: 0.4em 0 0 0;
+}
+
+
+.AgendaDagen {
     width: calc(98% / 8);
     height: 85%;
     margin: 0 0 0 1%;
-    background-color: darkcyan;
+    background-color: #F8473E;
     float: left;
+    border-radius: 0 0 0 20px;
+}
+
+.Dagen{
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+    margin: 2em 0 0 25%;
+    max-width: 60%;
 }
 
 .AgendaRaster{
@@ -99,9 +122,11 @@
     background-color: darkblue;
     margin: 0 1% 1% 0;
     float: left;
+    border-radius: 0 0 20px 0;
 }
 
 .AgendaFoto{
     width: 100%;
     height: 100%;
+    border-radius: 0 0 20px 0;
 }
