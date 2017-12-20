@@ -8,6 +8,7 @@ namespace HaarlemFestival.Repositories
 {
     public interface ICuisineRepository
     {
-        List<Cuisine> GetCuisines();
+        IEnumerable<Cuisine> GetCuisines();
+        List<Cuisine> GetCuisines(Activity activity);
     }
 }

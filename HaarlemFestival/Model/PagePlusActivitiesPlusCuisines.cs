@@ -11,5 +11,8 @@ namespace HaarlemFestival.Model
         public Page Page { get;  set; }
         public List<Cuisine> Cuisines { get; set; }
         public List<Activity> Activities { get; set; }
+
+        public List<Cuisine> CuisinesPerActivity { get; set; }
+
     }
 }

@@ -25,13 +25,17 @@
             <div class="restaurant_sum_description">
                 <h4>@activity.Name</h4>
                 <label class="rating">@activity.Rating</label>
-                <label>
+                <label class="label_cuisine1">
                     @*@for (int cuisine = 0; cuisine < Model.cuisines.Count; cuisine++)
                         {
                             activity.Cuisines[cuisine].Name.ToString();
                         }*@
+                    @Model.CuisinesPerActivity[0].Activities[0].Cuisines
                 </label>
-                <label></label>
+
+                <label class="label_cuisine1">yoo</label>
+                <label class="label_cuisine1">wooow</label>
+
             </div>
             <div class="restaurant_img_box"><img class="restaurant_img" src=@Model.Page.PageDescriptions[counter].ImageUrl alt="@activity.Name" /></div>
             <button class="btn_more_info">More info</button>

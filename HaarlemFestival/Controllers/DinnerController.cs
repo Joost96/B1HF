@@ -31,8 +31,22 @@ namespace HaarlemFestival.Controllers
             ICuisineRepository cuisineRepo = new CuisineRepository(db);
             IEnumerable<Cuisine> cuisines = cuisineRepo.GetCuisines();
 
+
+            //Lijst met activiteiten
+            //Voor elke activiteit
+            //Voeg een item uit de list activities 
+            List<Cuisine> cuisinesPerActivity = new List<Cuisine>();
+
+
+            foreach (Activity a in activities)
+            {
+                cuisinesPerActivity.AddRange(cuisineRepo.GetCuisines(a));
+            }
+
+
             activities.OrderBy(Activity => Activity.Rating);
 
+            pagePlusActivitiesPlusCuisine.CuisinesPerActivity = cuisinesPerActivity.ToList();
             pagePlusActivitiesPlusCuisine.Cuisines = cuisines.ToList();
             pagePlusActivitiesPlusCuisine.Page = page;
             pagePlusActivitiesPlusCuisine.Activities = activities.ToList();

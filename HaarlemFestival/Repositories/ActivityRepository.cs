@@ -10,12 +10,10 @@ namespace HaarlemFestival.Repositories
     public class ActivityRepository : IActivityRepository
     {
         private DBHF db;
-        //private List<Activity> Activities { get; set; }
 
         public ActivityRepository(DBHF db)
         {
-            this.db = db;
-             
+            this.db = db;            
         }
 
         public IEnumerable<Activity> GetActivities(EventType type, Language language)
@@ -35,12 +33,6 @@ namespace HaarlemFestival.Repositories
                 }).AsEnumerable()
                 .Select(x => x.a);
         }
-        //Company data = dbContext.company.Include(x => x.companyPkdClassification.Select(y => y.company)).Include(x => x.companyPkdClassification.Select(y => y.pkdClassification)).Where(i => i.id == id).FirstOrDefault();
-
-        //public IEnumerable<Activity> GetActivities(EventType type, Language language)
-        //{
-        //    return db.Accounts
-        //}
 
         public IEnumerable<Activity> GetActivities(EventType type, Language language, DateTime dag)
         {
