@@ -380,11 +380,15 @@
     <Content Include="img\Dinner\Detailed\u83.png" />
     <Content Include="img\Dinner\Detailed\u86.png" />
     <Content Include="img\Dinner\Detailed\u89.jpg" />
+    <Content Include="img\Dinner\Summary\001-clock-circular-outline.svg" />
+    <Content Include="img\Dinner\Summary\002-fork-and-knife-in-cross.svg" />
     <Content Include="img\Dinner\Summary\FrenchyBistroToujours.jpg" />
     <Content Include="img\Dinner\Summary\GrandCafeBrinkman.jpg" />
     <Content Include="img\Dinner\Summary\Ratatouille.jpg" />
     <Content Include="img\Dinner\Summary\rate_0.png" />
     <Content Include="img\Dinner\Summary\rate_1.png" />
+    <Content Include="img\Dinner\Summary\Rating_empty.png" />
+    <Content Include="img\Dinner\Summary\Rating_full.png" />
     <Content Include="img\Dinner\Summary\RestaurantFris.jpg" />
     <Content Include="img\Dinner\Summary\RestaurantML.jpg" />
     <Content Include="img\Dinner\Summary\RestaurantMrandMrs.jpg" />
@@ -539,7 +543,7 @@
     <Content Include="Views\CheckOut\CheckOut4.cshtml" />
     <Content Include="Views\ContentManagement\AdminNav.cshtml" />
     <Content Include="Views\ContentManagement\Index.cshtml" />
-    <Content Include="Views\Dinner\Details.cshtml" />
+    <Content Include="Views\Dinner\Restaurant.cshtml" />
     <Content Include="Views\Dinner\Index.cshtml" />
     <Content Include="Views\Dinner\DinnerActivity.cshtml" />
     <Content Include="Views\Historic\Historic.cshtml" />

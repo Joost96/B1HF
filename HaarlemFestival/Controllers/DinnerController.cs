@@ -32,22 +32,14 @@ namespace HaarlemFestival.Controllers
             IEnumerable<Cuisine> cuisines = cuisineRepo.GetCuisines();
 
 
-            //Lijst met activiteiten
-            //Voor elke activiteit
-            //Voeg een item uit de list activities 
-            //List<Cuisine> cuisinesPerActivity = new List<Cuisine>();
-
-
             foreach (Activity a in activities)
             {
                 a.Cuisines = cuisineRepo.GetCuisines(a);
-                // cuisinesPerActivity.AddRange(cuisineRepo.GetCuisines(a));
             }
 
 
             activities.OrderBy(Activity => Activity.Rating);
 
-            //pagePlusActivitiesPlusCuisine.CuisinesPerActivity = cuisinesPerActivity.ToList();
             pagePlusActivitiesPlusCuisine.Cuisines = cuisines.ToList();
             pagePlusActivitiesPlusCuisine.Page = page;
             pagePlusActivitiesPlusCuisine.Activities = activities.ToList();
@@ -55,9 +47,8 @@ namespace HaarlemFestival.Controllers
         }
 
         // GET: Dinner/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Restaurant(int? id)
         {
-
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -68,7 +59,7 @@ namespace HaarlemFestival.Controllers
                 return HttpNotFound();
             }
 
-            return View();
+            return View(activity);
         }
 
     }

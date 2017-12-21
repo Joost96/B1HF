@@ -21,6 +21,6 @@ namespace HaarlemFestival.Model
 
         public List<OrderHasTickets> OrderHasTickets { get; set; }
 
-        public Order() => OrderHasTickets = new List<OrderHasTickets>();
+        //public Order() => OrderHasTickets = new List<OrderHasTickets>();
     }
 }

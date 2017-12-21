@@ -244,34 +244,59 @@ footer {
     float: left;
     background-color: azure;
     width: 24%;
-    height: 32em;
+    height: 33em;
     margin: 0 8px 8px 0;
     position: relative;
-    box-shadow: 3px 5px #888888;
-
 }
+
+    .restaurant:hover {
+        box-shadow: 3px 5px #888888;
+    }
 
 .rating {
     margin: 0;
     padding: 0;
     border: 0;
     display: block;
-    float: left;    
+    float: left;
 }
 
-.lrating{
-    margin: 0px;
-}
-.cuisine {
-    display:block;
-padding-left: 4px;
-    margin-bottom: 0px;
-    font-weight:normal;
+.lrating {
+    margin: 0;
 }
 
+.lcuisine {
+    float: left;
+    display: block;
+    padding-left: 10px;
+    margin-bottom: 0;
+    font-weight: normal;
+    width: 100%;
+}
+
+.ltime{
+    float: left;
+    display: block;
+    padding-left: 27px;
+    margin-bottom: 0;
+    font-weight: normal;
+    width: 100%;
+}
+
+
+.left_info {
+    float: left;
+    width: 50%;
+}
+
+.left_info img{
+    display: block;
+    margin: 0 auto;
+    
+}
 .restaurant_sum_description {
     background-color: #F8473E;
-    height: 7.5em;
+    height: 8.5em;
 }
 
     .restaurant_sum_description h4 {
