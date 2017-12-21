@@ -62,7 +62,6 @@ footer {
     width: 400px;
     height: 150px;
     margin: 0 300px 0 0;
-    
     float: right;
     text-align: right;
 }
@@ -222,7 +221,7 @@ footer {
 
 .filter {
     background-color: antiquewhite;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
 
     .filter h3 {
@@ -245,17 +244,34 @@ footer {
     float: left;
     background-color: azure;
     width: 24%;
-    height: 26em;
+    height: 32em;
     margin: 0 8px 8px 0;
+    position: relative;
+    box-shadow: 3px 5px #888888;
+
 }
 
 .rating {
     margin: 0;
+    padding: 0;
+    border: 0;
+    display: block;
+    float: left;    
+}
+
+.lrating{
+    margin: 0px;
+}
+.cuisine {
+    display:block;
+padding-left: 4px;
+    margin-bottom: 0px;
+    font-weight:normal;
 }
 
 .restaurant_sum_description {
-    background-color: gold;
-    height: 6.5em;
+    background-color: #F8473E;
+    height: 7.5em;
 }
 
     .restaurant_sum_description h4 {
@@ -264,11 +280,10 @@ footer {
         font-weight: bold;
     }
 
-.restaurant_img_box{
+.restaurant_img_box {
     background-color: gold;
     width: 100%;
-    height: 19.5em;
-
+    height: 24.5em;
 }
 
 .restaurant_img {
@@ -277,12 +292,46 @@ footer {
 }
 
 .btn_more_info {
+    position: absolute;
+    bottom: 8%;
+    left: 37%;
     margin: 0;
+    background-color: white;
+    border-color: white;
+    color: black;
+    font-size: 12px;
+    padding: 3px 14px;
+    border-radius: 4px;
+    border-style: solid;
+    width: 32%;
 }
 
+    .btn_more_info:hover {
+        text-decoration: underline;
+    }
+
 .btn_booknow {
+    position: absolute;
+    bottom: 1%;
+    left: 37%;
     margin: 0;
+    background-color: #1DBF3B;
+    border-color: #1DBF3B;
+    color: white;
+    font-size: 12px;
+    padding: 3px 14px;
+    border-radius: 4px;
+    border-style: solid;
+    width: 32%;
 }
+
+    .btn_booknow:hover {
+        text-decoration: underline;
+    }
+
+    .btn_booknow:active {
+    }
+
 
 /*-------------------------------------------Restaurant detail page-------------------------------------------*/
 .restaurant_information {
@@ -519,7 +568,6 @@ footer {
 }
 
 .HistoricImageTop {
-    
     border: solid;
     border-width: 1px;
     width: 180px;
@@ -533,7 +581,7 @@ footer {
     text-align: center;
 }
 
-.HistoricIntro button {
+    .HistoricIntro button {
         position: absolute;
         top: 210px;
         right: 420px;
@@ -563,6 +611,7 @@ footer {
     border-width: 1px;
     margin-top: 5px;
 }
+
 .HistoricImageDropMarker1 {
     width: 13px;
     position: relative;
@@ -661,11 +710,11 @@ section.HistoricRouteInfo1 {
     margin-top: 150px;
 }
 
-p.HistoricRouteInfo1{
+p.HistoricRouteInfo1 {
     display: inherit;
 }
 
-img.HistoricRouteInfo1{
+img.HistoricRouteInfo1 {
     display: inherit;
     width: 100px;
 }

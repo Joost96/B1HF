@@ -380,6 +380,17 @@
     <Content Include="img\Dinner\Detailed\u83.png" />
     <Content Include="img\Dinner\Detailed\u86.png" />
     <Content Include="img\Dinner\Detailed\u89.jpg" />
+    <Content Include="img\Dinner\Summary\FrenchyBistroToujours.jpg" />
+    <Content Include="img\Dinner\Summary\GrandCafeBrinkman.jpg" />
+    <Content Include="img\Dinner\Summary\Ratatouille.jpg" />
+    <Content Include="img\Dinner\Summary\rate_0.png" />
+    <Content Include="img\Dinner\Summary\rate_1.png" />
+    <Content Include="img\Dinner\Summary\RestaurantFris.jpg" />
+    <Content Include="img\Dinner\Summary\RestaurantML.jpg" />
+    <Content Include="img\Dinner\Summary\RestaurantMrandMrs.jpg" />
+    <Content Include="img\Dinner\Summary\Specktakel.jpg" />
+    <Content Include="img\Dinner\Summary\Star_Gold-512.png" />
+    <Content Include="img\Dinner\Summary\TheGoldenBull.jpg" />
     <Content Include="img\Header\HF_logo_header.png" />
     <Content Include="img\Header\Shopping_cart_header.png" />
     <Content Include="img\Historic\HistoricDropMarker - Copy.png" />

@@ -9,38 +9,44 @@
 
 <h1>@Model.Page.Name</h1>
 <aside class="filter">
-    <h3>@Model.Page.PageDescriptions[0].Title</h3>   
+    <h3>@Model.Page.PageDescriptions[0].Title</h3>
     <input type="radio" name="foo" checked> All()
 
-
-        @foreach (Cuisine cuisine in Model.Cuisines)
-        {
-            <input type="radio" name="foo"> @cuisine.Name @Html.Raw("()");
-        }  
+    @foreach (Cuisine cuisine in Model.Cuisines)
+    {
+        <input type="radio" name="foo"> @cuisine.Name @Html.Raw("()");
+    }
 </aside>
+
 @{int counter = 2; }
 @foreach (Activity activity in Model.Activities)
 {
-        <div class="restaurant">
-            <div class="restaurant_sum_description">
-                <h4>@activity.Name</h4>
-                <label class="rating">@activity.Rating</label>
-                <label class="label_cuisine1">
-                    @*@for (int cuisine = 0; cuisine < Model.cuisines.Count; cuisine++)
-                        {
-                            activity.Cuisines[cuisine].Name.ToString();
-                        }*@
-                    @Model.CuisinesPerActivity[0].Activities[0].Cuisines
+    <div class="restaurant">
+        <div class="restaurant_sum_description">
+            <h4>
+                @activity.Name
+                <label class="lrating">
+                    @for (int i = 0; i < activity.Rating; i++)
+                    {
+                        <img class="rating" src="~/img/Dinner/Summary/Star_Gold-512.png" width="14" height="17" />
+                    }
+
+                    @for (int i = activity.Rating; i < 5; i++)
+                    {
+                        <img class="rating" src="~/img/Dinner/Summary/Star_Gold-5123.png" width="14" height="17" />
+                    }
                 </label>
+            </h4>
+            <label class="cuisine">@activity.Cuisines[1]</label>
+            <label class="cuisine">@activity.Cuisines[2]</label>
+            <label class="timeslot">@activity.Timeslots[0]</label>
+            <label class="timeslot">@activity.Timeslots[1]</label>
 
-                <label class="label_cuisine1">yoo</label>
-                <label class="label_cuisine1">wooow</label>
-
-            </div>
-            <div class="restaurant_img_box"><img class="restaurant_img" src=@Model.Page.PageDescriptions[counter].ImageUrl alt="@activity.Name" /></div>
-            <button class="btn_more_info">More info</button>
-            <button class="btn_booknow">Book now</button>
-        </div>
+    </div>
+        <div class="restaurant_img_box"><img class="restaurant_img" src=@Model.Page.PageDescriptions[counter].ImageUrl alt="@activity.Name" /></div>
+        <button class="btn_more_info">More info</button>
+        <button class="btn_booknow">Book now</button>
+    </div>
     counter++;
 }
 
