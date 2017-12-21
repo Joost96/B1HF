@@ -35,14 +35,14 @@ namespace HaarlemFestival.Controllers
             //Lijst met activiteiten
             //Voor elke activiteit
             //Voeg een item uit de list activities 
-            List<Cuisine> cuisinesPerActivity = new List<Cuisine>();
+            //List<Cuisine> cuisinesPerActivity = new List<Cuisine>();
 
 
-            //foreach (Activity a in activities)
-            //{
-            //    a.Cuisines = cuisineRepo.GetCuisines(a);
-            //   // cuisinesPerActivity.AddRange(cuisineRepo.GetCuisines(a));
-            //}
+            foreach (Activity a in activities)
+            {
+                a.Cuisines = cuisineRepo.GetCuisines(a);
+                // cuisinesPerActivity.AddRange(cuisineRepo.GetCuisines(a));
+            }
 
 
             activities.OrderBy(Activity => Activity.Rating);
