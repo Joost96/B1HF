@@ -27,9 +27,9 @@
         <fieldset>
             <label class="restaurant_form_label" for="rday">text from db</label>
             <select class="restaurant_form_select_wide" id="rday">
-                <option>@Model.Timeslots[0].StartTime.Day</option>
+                @*<option>@Model.Timeslots[0].StartTime.ToShortTimeString()</option>
                 <option>@Model.Timeslots[3].StartTime.Day</option>
-                <option>@Model.Timeslots[6].StartTime.Day</option>
+                <option>@Model.Timeslots[6].StartTime.Day</option>*@
             </select> 
         </fieldset>
         <fieldset>
@@ -37,7 +37,7 @@
             <select class="restaurant_form_select_wide" id="rtime">
                 @for (int i = 0; i < 3; i++)
                 {
-                    <option>@Model.Timeslots[i].StartTime.ToShortTimeString() -@Model.Timeslots[i].EndTime.ToShortTimeString()</option>
+                    <option>@*@Model.Timeslots[i].StartTime.ToShortTimeString() -@Model.Timeslots[i].EndTime.ToShortTimeString()*@</option>
                 }
             </select>
         </fieldset>

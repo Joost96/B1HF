@@ -38,9 +38,9 @@ namespace HaarlemFestival.Controllers
             }
 
 
-            activities.OrderBy(Activity => Activity.Rating);
+            activities.OrderBy(a => a.Rating);
 
-            pagePlusActivitiesPlusCuisine.Cuisines = cuisines.ToList();
+            pagePlusActivitiesPlusCuisine.Cuisines = cuisines.OrderByDescending(c => c.Activities.Count()).ToList();
             pagePlusActivitiesPlusCuisine.Page = page;
             pagePlusActivitiesPlusCuisine.Activities = activities.ToList();
             return View(pagePlusActivitiesPlusCuisine);
