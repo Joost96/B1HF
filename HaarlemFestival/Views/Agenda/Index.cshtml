@@ -22,12 +22,12 @@
     <ul class="AgendaOrderList">
         <li class="OrderHeader">
             @*<div class="orderItem col-md-1">Id</div>*@
-            <div class="orderItem col-md-2">Name</div>
-            <div class="orderItem col-md-3">Event</div>
+            <div class="orderItem col-md-4">Name</div>
+            <div class="orderItem col-md-2">Event</div>
             <div class="orderItem col-md-1">Prijs</div>
             <div class="orderItem col-md-1">Aantal</div>
             <div class="orderItem col-md-2">Totaalprijs</div>
-            <div class="orderItem col-md-3">Start tijd/datum</div>
+            <div class="orderItem col-md-2">Start tijd/datum</div>
 
         </li>
 
@@ -39,12 +39,12 @@
 
         <li class="AgendaOrder">
             @*<div class="orderItem col-md-1">@OHT.Ticket_TimeSlot_Activity_Id</div>*@
-            <div class="orderItem col-md-2">@OHT.Ticket.TimeSlot.Activity.Name</div>
-            <div class="orderItem col-md-3">@OHT.Ticket.TimeSlot.Activity.Type</div>
+            <div class="orderItem col-md-4">@OHT.Ticket.TimeSlot.Activity.Name</div>
+            <div class="orderItem col-md-2">@OHT.Ticket.TimeSlot.Activity.Type</div>
             <div class="orderItem col-md-1">@OHT.Ticket.Price</div>
             <div class="orderItem col-md-1">@OHT.Amount</div>
             <div class="orderItem col-md-2">@OHT.TotalPrice</div>
-            <div class="orderItem col-md-3">@OHT.Ticket.TimeSlot.StartTime.ToString("hh:mm dd/MM/yyyy")</div>
+            <div class="orderItem col-md-2">@OHT.Ticket.TimeSlot.StartTime.ToString("hh:mm dd/MM/yyyy")</div>
         </li>
                 }
             }
@@ -75,6 +75,7 @@
     {
         foreach (OrderHasTickets OHT in order.OrderHasTickets)
         {
+           
             int aantaldagen = 0;
 
             if(OHT.Ticket.TimeSlot.StartTime.DayOfWeek == DayOfWeek.Thursday)
@@ -98,9 +99,10 @@
 
         <div class="AgendaItem" 
                  style="
-                 position: relative;
-                 left: calc(2.4% + 7.33% * ( @OHT.Ticket.TimeSlot.StartTime.Hour - 10 ) + @OHT.Ticket.TimeSlot.StartTime.Minute * 1.8% ); 
-                 bottom: calc( 81% - 20% *  @aantaldagen  );
+                 position: absolute;
+                 left: calc( 29.1% + 3.78% * ( @OHT.Ticket.TimeSlot.StartTime.Hour - 10 ) + @OHT.Ticket.TimeSlot.StartTime.Minute * 0.0629166666666667% ); 
+                 bottom: calc( 37.8% - 7.4% *  @aantaldagen  );
+                 width: calc( 3.78% * ( @OHT.Ticket.TimeSlot.EndTime.Hour - @OHT.Ticket.TimeSlot.StartTime.Hour ) + ( 0.0629166666666667% * ( @OHT.Ticket.TimeSlot.EndTime.Minute - @OHT.Ticket.TimeSlot.StartTime.Minute ) ) ); 
                  z-index: @OHT.Ticket_TimeSlot_Activity_Id;
                  ">
 

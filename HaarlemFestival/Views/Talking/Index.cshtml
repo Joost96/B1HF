@@ -4,6 +4,10 @@
     <link href="@Url.Content("~/Content/Talking.css")" rel="stylesheet" type="text/css" />
 }
 
+@section AddToScripts{
+    <script src="@Url.Content("~/Scripts/Talking.js")"></script>
+}
+
 @{
     ViewBag.Title = "Index";
 }
@@ -50,7 +54,7 @@
 
         <section class="TalkingSprekerUitleg">
 
-            <h2 class="TalkingSprekerHeader">
+            <h2 id= @Html.Raw("spreker1" + @a.Id ) class="TalkingSprekerHeader">
                 @a.ActivityDescriptions[0].Title
 
             </h2>
@@ -60,7 +64,7 @@
 
         </section>
 
-        <button id = @Html.Raw(a.ActivityDescriptions[0].Title) name="AskAQuestion" type="button" class="TalkingButtonSpreker">Ask Question</button>
+        <button id = @Html.Raw(a.Id) name="AskAQuestion" type="button" class="TalkingButtonSpreker">Ask Question</button>
 
     </section>
 
@@ -74,7 +78,7 @@
 
         <section class="TalkingSprekerUitleg2">
 
-            <h2 class="TalkingSprekerHeader2">
+            <h2 id= @Html.Raw("spreker2" + @a.Id ) class="TalkingSprekerHeader2">
                 @a.ActivityDescriptions[1].Title
             </h2>
             <p class="TalkingSprekerText2">
@@ -83,10 +87,26 @@
 
         </section>
 
-        <button id = @Html.Raw(a.ActivityDescriptions[1].Title) name="AskAQuestion" type="button" class="TalkingButtonSpreker2">Ask Question</button>
+        <button id = @Html.Raw(a.Id) name="AskAQuestion" type="button" class="TalkingButtonSpreker2">Ask Question</button>
         <button id = @Html.Raw(a.Id) name="BookNow" type="button" class="TalkingButtonBook">Book Now</button>
     </section>
     
+
+</section>
+
+<section id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <section class="modal-content">
+        <span class="close">&times;</span>
+        <p class="modaltitle">1</p>
+        <p>Ask <label class="modaltitle"> </label> a question here </p>
+        
+        
+        <input type="text" class="TalkingOrderAantal" />
+        <input type="submit"  value="Submit"/>
+        
+    </section>
 
 </section>
 }

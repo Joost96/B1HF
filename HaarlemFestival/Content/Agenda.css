@@ -142,26 +142,32 @@
 }
 
 .AgendaItem {
-    display: inline-block;
-    height: 15%;
-    width: 20%;
-    background-color: green;
+    /*position: absolute;*/
+    height: 6%;
+    /*width: 7.6%;*/
+    background-color: #EDECD8;
     margin: 0 0 0 0;
     padding: 0;
-    
-    
+    border-style: solid;
+    border-color: #F8473E;
+    border-width: thin;
+    border-radius: 5px;
+
 }
 
 .AgendaItemEvent {
     font-size: small;
     margin: 0;
     padding: 0;
+    
 }
 
 .AgendaItemAantal {
     font-size: small;
-    margin: 0 0 1em 0;
+    margin: 0 0 0.6em 0;
     padding: 0;
+    
+
 }
 
 .AgendaItemName {
@@ -169,4 +175,5 @@
     margin: 0;
     padding: 0;
     text-align: center;
+    
 }
