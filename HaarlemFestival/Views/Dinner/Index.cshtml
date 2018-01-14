@@ -14,12 +14,13 @@
 <h1>@Model.Page.Name</h1>
 <aside class="filter">
     <h3>@Model.Page.PageDescriptions[0].Title</h3>
-    <input type="radio" id ="radioFilter0" name="foo" checked> All(@Model.Activities.Count())
-
+    <input type="radio" id ="radioFilter0" name="cuisineFilter" checked> All(@Model.Activities.Count())
+    @*var model = @Html.Raw(Json.Encode(Model.Cuisines));*@
 @{int index = 1; }
     @foreach (Cuisine cuisine in Model.Cuisines)
     {
-        <input type="radio" id ="radioFilter@(index)" name="foo"> @cuisine.Name @:(@cuisine.Activities.Count())
+
+        <input type="radio" id ="radioFilter@(index)" name="cuisineFilter"> @cuisine.Name @:(@cuisine.Activities.Count())
         index++;
     }
 </aside>

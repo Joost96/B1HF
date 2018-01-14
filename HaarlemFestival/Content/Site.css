@@ -220,7 +220,6 @@ footer {
 /*-------------------------------------------All restaurants page---------------------------------------------*/
 
 .filter {
-    background-color: antiquewhite;
     margin-bottom: 10px;
 }
 
@@ -228,7 +227,7 @@ footer {
         margin: 0;
     }
 
-    .filter ul {
+    .filter ul {    
         margin: 0;
     }
 
@@ -236,13 +235,12 @@ footer {
         margin: 0;
     }
 
-.row {
-    background-color: purple;
-}
+    .filter input {
+        margin-left: 7px;
+    }
 
 .restaurant {
     float: left;
-    background-color: azure;
     width: 24%;
     height: 33em;
     margin: 0 8px 8px 0;
@@ -274,7 +272,7 @@ footer {
     width: 100%;
 }
 
-.ltime{
+.ltime {
     float: left;
     display: block;
     padding-left: 27px;
@@ -289,11 +287,11 @@ footer {
     width: 50%;
 }
 
-.left_info img{
-    display: block;
-    margin: 0 auto;
-    
-}
+    .left_info img {
+        display: block;
+        margin: 0 auto;
+    }
+
 .restaurant_sum_description {
     background-color: #F8473E;
     height: 8.5em;
@@ -306,7 +304,6 @@ footer {
     }
 
 .restaurant_img_box {
-    background-color: gold;
     width: 100%;
     height: 24.5em;
 }
@@ -354,8 +351,7 @@ footer {
         text-decoration: underline;
     }
 
-    .btn_booknow:active {
-    }
+
 
 
 /*-------------------------------------------Restaurant detail page-------------------------------------------*/
