@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section AddToHead{
+    <link href=@Url.Content("~/Content/CheckOut.css") rel="stylesheet" type="text/css" />
+
+}
+
+<section class="CheckOut">
+
+    <ul>
+        <li class="col-sm-3 @(ViewBag.Title.Equals("CheckOut1")? "selected" : "") ">Step 1<br>Login</li>
+        <li class="col-sm-3 @(ViewBag.Title.Equals("CheckOut2")? "selected" : "") ">Step 2<br>Personal info/Register</li>
+        <li class="col-sm-3 @(ViewBag.Title.Equals("CheckOut3")? "selected" : "") ">Step 3<br>Payment</li>
+        <li class="col-sm-3 @(ViewBag.Title.Equals("CheckOut4")? "selected" : "") ">Step 4<br>Tickets</li>
+    </ul>
+
+    @RenderBody()
+    
+</section>
+

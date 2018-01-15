@@ -1,0 +1,92 @@
+﻿@model HaarlemFestival.Model.Activity
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@Model.Name</h1>
+<div class="restaurant_information">
+    <div class="left_box">
+        <img src="dummie " alt="Ewa" />
+    </div>
+
+    <div class="right_box">
+            <label class="lrating">
+                @for (int i = 0; i < Model.Rating; i++)
+                {
+                    <img class="rating" src="~/img/Dinner/Summary/Rating_full.png" width="14" height="17" />
+                }
+
+                @for (int i = Model.Rating; i < 5; i++)
+                {
+                    <img class="rating" src="~/img/Dinner/Summary/Rating_empty.png" width="14" height="17" />
+                }
+            </label>
+        <label class="lprice">Price</label>
+        <label class="lprice">Cuisine</label>
+        @foreach (var item in Model.Cuisines)
+        {
+            <h6>@Model.Cuisines</h6>
+        }
+        <label class="lprice">Timeslots</label>
+        <h6>@Model.Timeslots[0].StartTime.ToShortTimeString() - @Model.Timeslots[0].StartTime.ToShortTimeString()</h6>
+        <label class="lprice">Adres</label>
+        <h6>@Model.Location.Street @Model.Location.StreetNr, @Model.Location.ZipCode @Model.Location.City </h6>
+
+
+        
+        
+    </div>
+</div>
+
+<div class="restaurant_description">
+    <h2>text from db</h2>
+    <p>text from db</p>
+</div>
+
+<div class="restaurant_reservation_form">
+    <h2>text from db</h2>
+    <text><span style="color: red">*</span> text from db</text>
+    <form>
+        <fieldset>
+            <label class="restaurant_form_label" for="rday">text from db</label>
+            <select class="restaurant_form_select_wide" id="rday">
+                @*<option>@Model.Timeslots[0].StartTime.ToShortTimeString()</option>
+                <option>@Model.Timeslots[3].StartTime.Day</option>
+                <option>@Model.Timeslots[6].StartTime.Day</option>*@
+            </select> 
+        </fieldset>
+        <fieldset>
+            <label class="restaurant_form_label" for="rtime">text from db</label>
+            <select class="restaurant_form_select_wide" id="rtime">
+                @for (int i = 0; i < 3; i++)
+                {
+                    <option>@*@Model.Timeslots[i].StartTime.ToShortTimeString() -@Model.Timeslots[i].EndTime.ToShortTimeString()*@</option>
+                }
+            </select>
+        </fieldset>
+        <fieldset>
+            <label class="restaurant_form_label" for="radults">text from db</label>
+            <select class="restaurant_form_select_small" id="radults">
+                @for (int iAdults = 1; iAdults <= 10; iAdults++)
+                {
+                    <option value="@iAdults"> @iAdults</option>
+                }
+            </select>
+        </fieldset>
+        <fieldset>
+            <label class="restaurant_form_label" for="rkids">text from db</label>
+            <select class="restaurant_form_select_small" id="rkids">
+                @for (int iKids = 0; iKids <= 10; iKids++)
+                {
+                    <option value="@iKids"> @iKids</option>
+                }
+            </select>
+        </fieldset>
+        <fieldset>
+            <label class="restaurant_form_label" for="rmisc">text from db</label>
+            <textarea class="restaurant_form_txtarea" id="rmisc" placeholder="Example: I am on a gluten-free diet"></textarea>
+        </fieldset>
+        <button>Reserve</button>
+    </form>
+</div>

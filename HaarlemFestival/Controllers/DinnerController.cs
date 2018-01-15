@@ -31,27 +31,52 @@ namespace HaarlemFestival.Controllers
             ICuisineRepository cuisineRepo = new CuisineRepository(db);
             IEnumerable<Cuisine> cuisines = cuisineRepo.GetCuisines();
 
-            activities.OrderBy(Activity => Activity.Rating);
 
-            pagePlusActivitiesPlusCuisine.Cuisines = cuisines.ToList();
+            foreach (Activity a in activities)
+            {
+                a.Cuisines = cuisineRepo.GetCuisines(a);
+            }
+
+
+            activities.OrderBy(a => a.Rating);
+
+            pagePlusActivitiesPlusCuisine.Cuisines = cuisines.OrderByDescending(c => c.Activities.Count()).ToList();
             pagePlusActivitiesPlusCuisine.Page = page;
             pagePlusActivitiesPlusCuisine.Activities = activities.ToList();
             return View(pagePlusActivitiesPlusCuisine);
         }
 
         // GET: Dinner/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Restaurant(int? id)
         {
-
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            PagePlusActivitiesPlusCuisine pagePlusActivitiesPlusCuisine = new PagePlusActivitiesPlusCuisine();
+
+            IPageRepository pageRepo = new PageRepository(db);
+            Page page = pageRepo.GetPage("Dinner", Language.Eng);
+
             Activity activity = db.Activities.Find(id);
+
+            ICuisineRepository cuisineRepo = new CuisineRepository(db);
+            activity.Cuisines = cuisineRepo.GetCuisines(activity);
+
+            pagePlusActivitiesPlusCuisine.Page = page;
+
             if (activity == null)
             {
                 return HttpNotFound();
             }
+
+
+            return View(pagePlusActivitiesPlusCuisine);
+        }
+
+        public ActionResult HideActivity(int id)
+        {
+            
 
             return View();
         }

@@ -22,12 +22,12 @@
     <ul class="AgendaOrderList">
         <li class="OrderHeader">
             @*<div class="orderItem col-md-1">Id</div>*@
-            <div class="orderItem col-md-2">Name</div>
-            <div class="orderItem col-md-3">Event</div>
+            <div class="orderItem col-md-4">Name</div>
+            <div class="orderItem col-md-2">Event</div>
             <div class="orderItem col-md-1">Prijs</div>
             <div class="orderItem col-md-1">Aantal</div>
             <div class="orderItem col-md-2">Totaalprijs</div>
-            <div class="orderItem col-md-3">Tijd/Start datum</div>
+            <div class="orderItem col-md-2">Start tijd/datum</div>
 
         </li>
 
@@ -39,12 +39,12 @@
 
         <li class="AgendaOrder">
             @*<div class="orderItem col-md-1">@OHT.Ticket_TimeSlot_Activity_Id</div>*@
-            <div class="orderItem col-md-2">@OHT.Ticket.TimeSlot.Activity.Name</div>
-            <div class="orderItem col-md-3">@OHT.Ticket.TimeSlot.Activity.Type</div>
+            <div class="orderItem col-md-4">@OHT.Ticket.TimeSlot.Activity.Name</div>
+            <div class="orderItem col-md-2">@OHT.Ticket.TimeSlot.Activity.Type</div>
             <div class="orderItem col-md-1">@OHT.Ticket.Price</div>
             <div class="orderItem col-md-1">@OHT.Amount</div>
             <div class="orderItem col-md-2">@OHT.TotalPrice</div>
-            <div class="orderItem col-md-3">@OHT.Ticket.TimeSlot.StartTime.ToString("hh:mm dd/MM/yyyy")</div>
+            <div class="orderItem col-md-2">@OHT.Ticket.TimeSlot.StartTime.ToString("hh:mm dd/MM/yyyy")</div>
         </li>
                 }
             }
@@ -58,13 +58,65 @@
 
 <section class="Agenda">
     <section class="AgendaKop">
-
+        <h2 class="AgendaKopHeader">Agenda</h2>
     </section>
     <section class="AgendaDagen">
-
+        
+        <h2 class="Dag1">Thursday <br /> 26-07-2018</h2>
+        <h2 class="Dagen">Friday <br /> 27-07-2018</h2>
+        <h2 class="Dagen">Saturday <br /> 28-07-2018</h2>
+        <h2 class="Dagen">Sunday <br /> 29-07-2018</h2>
     </section>
     <section class="AgendaRaster">
         <img class="AgendaFoto" src="@Model.Page.PageDescriptions[0].ImageUrl" alt="agenda" />
+       
+        
+    @foreach (Order order in Model.Orders)
+    {
+        foreach (OrderHasTickets OHT in order.OrderHasTickets)
+        {
+           
+            int aantaldagen = 0;
+
+            if(OHT.Ticket.TimeSlot.StartTime.DayOfWeek == DayOfWeek.Thursday)
+            {
+                aantaldagen = 0;
+            }
+            else if(OHT.Ticket.TimeSlot.StartTime.DayOfWeek == DayOfWeek.Friday)
+            {
+                aantaldagen = 1;
+            }
+            else if(OHT.Ticket.TimeSlot.StartTime.DayOfWeek == DayOfWeek.Saturday)
+            {
+                aantaldagen = 2;
+            }
+            else if(OHT.Ticket.TimeSlot.StartTime.DayOfWeek == DayOfWeek.Sunday)
+            {
+                aantaldagen = 3;
+            }
+
+
+
+        <div class="AgendaItem" 
+                 style="
+                 position: absolute;
+                 left: calc( 29.1% + 3.78% * ( @OHT.Ticket.TimeSlot.StartTime.Hour - 10 ) + @OHT.Ticket.TimeSlot.StartTime.Minute * 0.0629166666666667% ); 
+                 bottom: calc( 37.8% - 7.4% *  @aantaldagen  );
+                 width: calc( 3.78% * ( @OHT.Ticket.TimeSlot.EndTime.Hour - @OHT.Ticket.TimeSlot.StartTime.Hour ) + ( 0.0629166666666667% * ( @OHT.Ticket.TimeSlot.EndTime.Minute - @OHT.Ticket.TimeSlot.StartTime.Minute ) ) ); 
+                 z-index: @OHT.Ticket_TimeSlot_Activity_Id;
+                 ">
+
+            <h2 class="AgendaItemEvent">@OHT.Ticket.TimeSlot.Activity.Type</h2>
+
+            <h2 class="AgendaItemAantal">Tickets: @OHT.Amount</h2>
+
+            <h2 class="AgendaItemName">@OHT.Ticket.TimeSlot.Activity.Name</h2>
+
+        </div>
+
+        }
+    }
+
     </section>
 
 </section>

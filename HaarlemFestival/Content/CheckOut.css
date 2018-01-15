@@ -1,0 +1,50 @@
+﻿.CheckOut {
+    position: center;
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    margin-top: 10%;
+    padding-bottom: 10%;
+}
+
+
+.CheckOut ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+
+.CheckOut1 aside {
+    border-left: 1px;
+    height: 100px;
+    border-left-style: solid;
+    margin-left: 22px;
+    vertical-align: middle;
+}
+
+.CheckOut1 p {
+    margin-top: 20px;
+}
+
+.selected {
+    background-color: #F8473E;
+}
+
+.CheckOutLogin {
+    display: inline-block;
+    margin-right: 10%;
+    vertical-align: middle;
+}
+
+.CheckOutRegister {
+    display: inline-block;
+    margin-left: 10%;
+    vertical-align: middle;
+}
+
+.middenstuk {
+    display: inline-block;
+}
