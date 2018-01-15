@@ -29,16 +29,16 @@
 //    }
 //}
 
-var info = $(".HistoricRouteInfo")
+var info = $(".HistoricRouteInfo");
 var info1 = $(".HistoricRouteInfo1");
-var info1 = $(".HistoricRouteInfo2");
-var info1 = $(".HistoricRouteInfo3");
-var info1 = $(".HistoricRouteInfo4");
-var info1 = $(".HistoricRouteInfo5");
-var info1 = $(".HistoricRouteInfo6");
-var info1 = $(".HistoricRouteInfo7");
-var info1 = $(".HistoricRouteInfo8");
-var info1 = $(".HistoricRouteInfo9");
+var info2 = $(".HistoricRouteInfo2");
+var info3 = $(".HistoricRouteInfo3");
+var info4 = $(".HistoricRouteInfo4");
+var info5 = $(".HistoricRouteInfo5");
+var info6 = $(".HistoricRouteInfo6");
+var info7 = $(".HistoricRouteInfo7");
+var info8 = $(".HistoricRouteInfo8");
+var info9 = $(".HistoricRouteInfo9");
 
 function HideAll() {
     info.hide();

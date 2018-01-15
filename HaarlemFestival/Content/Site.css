@@ -655,7 +655,87 @@ section.HistoricRouteInfo {
     display: none;
 }
 
+.HistoricRouteInfo2 {
+    display: none;
+}
+
+.HistoricRouteInfo3 {
+    display: none;
+}
+
+.HistoricRouteInfo4 {
+    display: none;
+}
+
+.HistoricRouteInfo5 {
+    display: none;
+}
+
+.HistoricRouteInfo6 {
+    display: none;
+}
+
+.HistoricRouteInfo7 {
+    display: none;
+}
+
+.HistoricRouteInfo8 {
+    display: none;
+}
+
+.HistoricRouteInfo9 {
+    display: none;
+}
+
 section.HistoricRouteInfo1 {
+    width: 200px;
+    float: right;
+    margin-top: 150px;
+}
+
+section.HistoricRouteInfo2 {
+    width: 200px;
+    float: right;
+    margin-top: 150px;
+}
+
+section.HistoricRouteInfo3 {
+    width: 200px;
+    float: right;
+    margin-top: 150px;
+}
+
+section.HistoricRouteInfo4 {
+    width: 200px;
+    float: right;
+    margin-top: 150px;
+}
+
+section.HistoricRouteInfo5 {
+    width: 200px;
+    float: right;
+    margin-top: 150px;
+}
+
+section.HistoricRouteInfo6 {
+    width: 200px;
+    float: right;
+    margin-top: 150px;
+}
+
+section.HistoricRouteInfo7 {
+    width: 200px;
+    float: right;
+    margin-top: 150px;
+}
+
+section.HistoricRouteInfo8 {
+    width: 200px;
+    float: right;
+    margin-top: 150px;
+}
+
+section.HistoricRouteInfo9 {
     width: 200px;
     float: right;
     margin-top: 150px;
@@ -665,7 +745,79 @@ p.HistoricRouteInfo1{
     display: inherit;
 }
 
+p.HistoricRouteInfo2 {
+    display: inherit;
+}
+
+p.HistoricRouteInfo3 {
+    display: inherit;
+}
+
+p.HistoricRouteInfo4 {
+    display: inherit;
+}
+
+p.HistoricRouteInfo5 {
+    display: inherit;
+}
+
+p.HistoricRouteInfo6 {
+    display: inherit;
+}
+
+p.HistoricRouteInfo7 {
+    display: inherit;
+}
+
+p.HistoricRouteInfo8 {
+    display: inherit;
+}
+
+p.HistoricRouteInfo9 {
+    display: inherit;
+}
+
 img.HistoricRouteInfo1{
+    display: inherit;
+    width: 100px;
+}
+
+img.HistoricRouteInfo2 {
+    display: inherit;
+    width: 100px;
+}
+
+img.HistoricRouteInfo3 {
+    display: inherit;
+    width: 100px;
+}
+
+img.HistoricRouteInfo4 {
+    display: inherit;
+    width: 100px;
+}
+
+img.HistoricRouteInfo5 {
+    display: inherit;
+    width: 100px;
+}
+
+img.HistoricRouteInfo6 {
+    display: inherit;
+    width: 100px;
+}
+
+img.HistoricRouteInfo7 {
+    display: inherit;
+    width: 100px;
+}
+
+img.HistoricRouteInfo8 {
+    display: inherit;
+    width: 100px;
+}
+
+img.HistoricRouteInfo9 {
     display: inherit;
     width: 100px;
 }
