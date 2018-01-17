@@ -54,7 +54,7 @@
 
 </section>
 
-<hr />
+
 
 <section class="Agenda">
     <section class="AgendaKop">
@@ -67,7 +67,72 @@
         <h2 class="Dagen">Saturday <br /> 28-07-2018</h2>
         <h2 class="Dagen">Sunday <br /> 29-07-2018</h2>
     </section>
+
+
+
+
+
     <section class="AgendaRaster">
+        <img class="AgendaFoto" src="@Model.Page.PageDescriptions[0].ImageUrl" alt="agenda" />
+
+
+        @foreach (Order order in Model.Orders)
+        {
+            foreach (OrderHasTickets OHT in order.OrderHasTickets)
+            {
+
+                int aantaldagen = 0;
+
+                if (OHT.Ticket.TimeSlot.StartTime.DayOfWeek == DayOfWeek.Thursday)
+                {
+                    aantaldagen = 0;
+                }
+                else if (OHT.Ticket.TimeSlot.StartTime.DayOfWeek == DayOfWeek.Friday)
+                {
+                    aantaldagen = 1;
+                }
+                else if (OHT.Ticket.TimeSlot.StartTime.DayOfWeek == DayOfWeek.Saturday)
+                {
+                    aantaldagen = 2;
+                }
+                else if (OHT.Ticket.TimeSlot.StartTime.DayOfWeek == DayOfWeek.Sunday)
+                {
+                    aantaldagen = 3;
+                }
+
+
+
+                <div class="AgendaItem"
+                     style="
+                 position: absolute;
+                 left: calc( 2.2% + 7.35% * ( @OHT.Ticket.TimeSlot.StartTime.Hour - 10 ) + @OHT.Ticket.TimeSlot.StartTime.Minute * 0.12375% );
+                 bottom: calc( 64.2% - 20% *  @aantaldagen  );
+                 width: calc( 7.35% * ( @OHT.Ticket.TimeSlot.EndTime.Hour - @OHT.Ticket.TimeSlot.StartTime.Hour ) + ( 0.12375% * ( @OHT.Ticket.TimeSlot.EndTime.Minute - @OHT.Ticket.TimeSlot.StartTime.Minute ) ) );
+                 z-index: @OHT.Ticket_TimeSlot_Activity_Id;
+                 ">
+
+                    <h2 class="AgendaItemEvent">@OHT.Ticket.TimeSlot.Activity.Type</h2>
+
+                    <h2 class="AgendaItemAantal">Tickets: @OHT.Amount</h2>
+
+                    <h2 class="AgendaItemName">@OHT.Ticket.TimeSlot.Activity.Name</h2>
+
+                </div>
+
+            }
+        }
+
+    </section>
+
+
+
+
+
+
+
+
+
+    @*<section class="AgendaRaster">
         <img class="AgendaFoto" src="@Model.Page.PageDescriptions[0].ImageUrl" alt="agenda" />
        
         
@@ -117,7 +182,7 @@
         }
     }
 
-    </section>
+    </section>*@
 
 </section>
 
