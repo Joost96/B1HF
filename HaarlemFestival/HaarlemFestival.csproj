@@ -167,7 +167,6 @@
     <Compile Include="Migrations\201801042107581_opnieuw question.Designer.cs">
       <DependentUpon>201801042107581_opnieuw question.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\Enums.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -229,6 +228,7 @@
     <Compile Include="Model\DBHF.cs" />
     <Compile Include="Model\Description.cs" />
     <Compile Include="Model\Employee.cs" />
+    <Compile Include="Model\Enums.cs" />
     <Compile Include="Model\keyAttribute.cs" />
     <Compile Include="Model\Location.cs" />
     <Compile Include="Model\LoginModel.cs" />
