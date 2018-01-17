@@ -32,40 +32,51 @@ namespace HaarlemFestival.Controllers
             IEnumerable<Cuisine> cuisines = cuisineRepo.GetCuisines();
 
 
-            //Lijst met activiteiten
-            //Voor elke activiteit
-            //Voeg een item uit de list activities 
-            List<Cuisine> cuisinesPerActivity = new List<Cuisine>();
-
-
             foreach (Activity a in activities)
             {
-                cuisinesPerActivity.AddRange(cuisineRepo.GetCuisines(a));
+                a.Cuisines = cuisineRepo.GetCuisines(a);
             }
 
 
-            activities.OrderBy(Activity => Activity.Rating);
+            activities.OrderBy(a => a.Rating);
 
-            pagePlusActivitiesPlusCuisine.CuisinesPerActivity = cuisinesPerActivity.ToList();
-            pagePlusActivitiesPlusCuisine.Cuisines = cuisines.ToList();
+            pagePlusActivitiesPlusCuisine.Cuisines = cuisines.OrderByDescending(c => c.Activities.Count()).ToList();
             pagePlusActivitiesPlusCuisine.Page = page;
             pagePlusActivitiesPlusCuisine.Activities = activities.ToList();
             return View(pagePlusActivitiesPlusCuisine);
         }
 
         // GET: Dinner/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Restaurant(int? id)
         {
-
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            PagePlusActivitiesPlusCuisine pagePlusActivitiesPlusCuisine = new PagePlusActivitiesPlusCuisine();
+
+            IPageRepository pageRepo = new PageRepository(db);
+            Page page = pageRepo.GetPage("Dinner", Language.Eng);
+
             Activity activity = db.Activities.Find(id);
+
+            ICuisineRepository cuisineRepo = new CuisineRepository(db);
+            activity.Cuisines = cuisineRepo.GetCuisines(activity);
+
+            pagePlusActivitiesPlusCuisine.Page = page;
+
             if (activity == null)
             {
                 return HttpNotFound();
             }
+
+
+            return View(pagePlusActivitiesPlusCuisine);
+        }
+
+        public ActionResult HideActivity(int id)
+        {
+            
 
             return View();
         }

@@ -4,6 +4,10 @@
     <link href="@Url.Content("~/Content/Talking.css")" rel="stylesheet" type="text/css" />
 }
 
+@section AddToScripts{
+    <script src="@Url.Content("~/Scripts/Talking.js")"></script>
+}
+
 @{
     ViewBag.Title = "Index";
 }
@@ -15,7 +19,7 @@
     <h2 class="TalkingHeader">@Model.Page.PageDescriptions[0].Title</h2>
 
     <p class="TalkingIntroText">
-       @Html.Raw(Model.Page.PageDescriptions[0].DescriptionText + " " + Model.Activities[0].Location.Name) 
+       @Html.Raw(Model.Page.PageDescriptions[0].DescriptionText + " " + Model.Activities[0].Location.Name + ".")
         
         @*misschien van location hierboven een link maken*@
 
@@ -27,67 +31,97 @@
 @foreach (Activity a in Model.Activities)
 {
 
-
-<section class="TalkingEvent">
-    
-    <section class="TalkingDag">
-        <header class="TalkingDagHeader">
-        @a.Timeslots[0].StartTime.DayOfWeek
-        </header>
-        <header class="TalkingDagHeader">
-            @a.Timeslots[0].StartTime.ToString("dd/MM/yyyy")
-        </header>
-    </section>
-
-    <section class="TalkingSpreker">
-
-        <section class="TalkingSprekerImgContainer">
-
-            <img class="TalkingSprekerImg" src="@a.ActivityDescriptions[0].ImageUrl" alt="spreker" />
-
-        </section>
-
-
-        <section class="TalkingSprekerUitleg">
-
-            <h2 class="TalkingSprekerHeader">
-                @a.ActivityDescriptions[0].Title
-
-            </h2>
-            <p class="TalkingSprekerText">
-                @a.ActivityDescriptions[0].DescriptionText
-            </p>
-
-        </section>
-
-        <button id = @Html.Raw(a.ActivityDescriptions[0].Title) name="AskAQuestion" type="button" class="TalkingButtonSpreker">Ask Question</button>
-
-    </section>
-
-    <section class="TalkingSpreker2">
-        <section class="TalkingSprekerImg2Container">
-
-            <img class="TalkingSprekerImg2" src="@a.ActivityDescriptions[1].ImageUrl" alt="spreker" />
-
+    <section class="TalkingEvent">
+       
+        <section class="TalkingEventNameContainer">
+            <header class="TalkingEventName">
+                @a.Name
+            </header>
         </section>
         
+        
+        <section class="TalkingDag">
+            <header class="TalkingDagHeader">
+                @a.Timeslots[0].StartTime.DayOfWeek
+            </header>
+            <header class="TalkingDagHeader">
+                @a.Timeslots[0].StartTime.ToString("dd/MM/yyyy")
+            </header>
+        </section>
 
-        <section class="TalkingSprekerUitleg2">
+        <section class="TalkingSpreker">
 
-            <h2 class="TalkingSprekerHeader2">
-                @a.ActivityDescriptions[1].Title
-            </h2>
-            <p class="TalkingSprekerText2">
-                @a.ActivityDescriptions[1].DescriptionText
-            </p>
+            <section class="TalkingSprekerImgContainer">
+
+                <img class="TalkingSprekerImg" src="@a.ActivityDescriptions[0].ImageUrl" alt="spreker" />
+
+                <button id=@Html.Raw(a.Id) name="AskAQuestion" type="button" class="TalkingButtonSpreker">Ask Question</button>
+
+            </section>
+
+            
+
+
+            <section class="TalkingSprekerUitleg">
+
+                <h2 id=@Html.Raw("spreker1" + @a.Id ) class="TalkingSprekerHeader">
+                    @a.ActivityDescriptions[0].Title
+
+                </h2>
+                <p class="TalkingSprekerText">
+                    @a.ActivityDescriptions[0].DescriptionText
+                </p>
+
+            </section>
 
         </section>
 
-        <button id = @Html.Raw(a.ActivityDescriptions[1].Title) name="AskAQuestion" type="button" class="TalkingButtonSpreker2">Ask Question</button>
-        <button id = @Html.Raw(a.Id) name="BookNow" type="button" class="TalkingButtonBook">Book Now</button>
+
+        <section class="TalkingSpreker2">
+
+            <section class="TalkingSprekerImg2Container">
+
+                <img class="TalkingSprekerImg2" src="@a.ActivityDescriptions[1].ImageUrl" alt="spreker" />
+
+                <button id=@Html.Raw(a.Id) name="AskAQuestion" type="button" class="TalkingButtonSpreker2">Ask Question</button>
+
+            </section>
+
+
+            <section class="TalkingSprekerUitleg">
+
+                <h2 id=@Html.Raw("spreker2" + @a.Id ) class="TalkingSprekerHeader2">
+                    @a.ActivityDescriptions[1].Title
+
+                </h2>
+                <p class="TalkingSprekerText2">
+                    @a.ActivityDescriptions[1].DescriptionText
+                </p>
+
+            </section>
+
+        </section>
+
+        <button id=@Html.Raw(a.Id) name="BookNow" type="button" class="TalkingButtonBook">Book Now</button>
+
+
     </section>
-    
+
+}
+
+<section id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <section class="modal-content">
+        <span class="close">&times;</span>
+        <p class="modaltitle">1</p>
+        <p>Ask <label class="modaltitle"> </label> a question here </p>
+
+
+        <input type="text" class="TalkingOrderAantal" />
+        <input type="submit" value="Submit" />
+
+    </section>
 
 </section>
-}
 

@@ -7,44 +7,78 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@section AddToScripts{
+<script src="@Url.Content("~/Scripts/FilterOnCuisine.js")"></script>
+}
+
 <h1>@Model.Page.Name</h1>
 <aside class="filter">
-    <h3>@Model.Page.PageDescriptions[0].Title</h3>   
-    <input type="radio" name="foo" checked> All()
+    <h3>@Model.Page.PageDescriptions[0].Title</h3>
+    <input type="radio" id ="radioFilter0" name="cuisineFilter" checked> All(@Model.Activities.Count())
+    @*var model = @Html.Raw(Json.Encode(Model.Cuisines));*@
+@{int index = 1; }
+    @foreach (Cuisine cuisine in Model.Cuisines)
+    {
 
-
-        @foreach (Cuisine cuisine in Model.Cuisines)
-        {
-            <input type="radio" name="foo"> @cuisine.Name @Html.Raw("()");
-        }  
+        <input type="radio" id ="radioFilter@(index)" name="cuisineFilter"> @cuisine.Name @:(@cuisine.Activities.Count())
+        index++;
+    }
 </aside>
+
+<!--Pagedescriptions van activities begint op 2 -->
 @{int counter = 2; }
+@{int id = 1; }
+
+@*<script>
+    var ActivityListJson = @Html.Raw(Json.Encode(Model.Activities));
+</script>*@
+
 @foreach (Activity activity in Model.Activities)
 {
-        <div class="restaurant">
+    @*<div class="restaurant" id="@activity.Id">*@
+        <div class="restaurant" id="restaurantDivId@(id)">
             <div class="restaurant_sum_description">
-                <h4>@activity.Name</h4>
-                <label class="rating">@activity.Rating</label>
-                <label class="label_cuisine1">
-                    @*@for (int cuisine = 0; cuisine < Model.cuisines.Count; cuisine++)
+                <h4>
+                    @activity.Name
+                    <label class="lrating">
+                        @for (int i = 0; i < activity.Rating; i++)
                         {
-                            activity.Cuisines[cuisine].Name.ToString();
-                        }*@
-                    @Model.CuisinesPerActivity[0].Activities[0].Cuisines
-                </label>
+                            <img class="rating" src="~/img/Dinner/Summary/Rating_full.png" width="14" height="17" />
+                        }
 
-                <label class="label_cuisine1">yoo</label>
-                <label class="label_cuisine1">wooow</label>
+                        @for (int i = activity.Rating; i < 5; i++)
+                        {
+                            <img class="rating" src="~/img/Dinner/Summary/Rating_empty.png" width="14" height="17" />
+                        }
+                    </label>
+                </h4>
+                <div class="left_info">
+                    <img src="~/img/Dinner/Summary/002-fork-and-knife-in-cross.svg" width="18" height="18" alt="Cuisine icon" />
+                    @foreach (Cuisine cuisine in activity.Cuisines)
+                {
+                        <label class="lcuisine">@cuisine.Name</label>
+                    }
+
+                </div>
+                <div class="left_info">
+                    <img src="~/img/Dinner/Summary/001-clock-circular-outline.svg" width="18" height="18" alt="Time icon" />
+                    @for (int i = 0; i < 3; i++)
+                {
+                        <label class="ltime">@activity.Timeslots[i].StartTime.ToShortTimeString() - @activity.Timeslots[i].EndTime.ToShortTimeString()</label>
+                    }
+                </div>
+
 
             </div>
             <div class="restaurant_img_box"><img class="restaurant_img" src=@Model.Page.PageDescriptions[counter].ImageUrl alt="@activity.Name" /></div>
-            <button class="btn_more_info">More info</button>
+            <button class="btn_more_info" input="button" onclick="location.href= '@Url.Action("Restaurant", "Dinner", new { id = activity.Id})'" )>More info</button>
             <button class="btn_booknow">Book now</button>
         </div>
-    counter++;
-}
+        counter++;
+        id++;
+        }
 
-<div class="dinner_description">
-    <h2>@Model.Page.PageDescriptions[1].Title</h2>
-    <p>@Model.Page.PageDescriptions[1].DescriptionText</p>
-</div>
+        <div class="dinner_description">
+            <h2>@Model.Page.PageDescriptions[1].Title</h2>
+            <p>@Model.Page.PageDescriptions[1].DescriptionText</p>
+        </div>

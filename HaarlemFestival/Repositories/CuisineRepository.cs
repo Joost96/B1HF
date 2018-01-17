@@ -22,11 +22,9 @@ namespace HaarlemFestival.Repositories
         public List<Cuisine> GetCuisines(Activity activity)
         {
             return db.Cuisines
-                //.Include(c => c.Activities).AsEnumerable()
+                .Include(C => C.Activities).AsEnumerable()
                 .Where(c => c.Activities.Contains(activity)).ToList();
-            //.Where(c => c.Activities.Select(a => a.Id).Contains(activity.Id)).ToList(); 
-            //.Where(c => c.)
-        }
 
+        }
     }
 }
