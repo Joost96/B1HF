@@ -234,10 +234,12 @@
     <Compile Include="Model\LoginModel.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\OrderHasTickets.cs" />
+    <Compile Include="Model\OrderLocation.cs" />
     <Compile Include="Model\Page.cs" />
     <Compile Include="Model\PageDescription.cs" />
     <Compile Include="Model\PagePlusActivitiesPlusCuisines.cs" />
     <Compile Include="Model\PagePlusActivities.cs" />
+    <Compile Include="Model\PagePlusOrdersPlusOrderLocation.cs" />
     <Compile Include="Model\PagePlusOrders.cs" />
     <Compile Include="Model\RegisterCheckoutModel.cs" />
     <Compile Include="Model\RegisterModel.cs" />
