@@ -220,7 +220,6 @@ footer {
 /*-------------------------------------------All restaurants page---------------------------------------------*/
 
 .filter {
-    background-color: antiquewhite;
     margin-bottom: 10px;
 }
 
@@ -228,7 +227,7 @@ footer {
         margin: 0;
     }
 
-    .filter ul {
+    .filter ul {    
         margin: 0;
     }
 
@@ -236,13 +235,12 @@ footer {
         margin: 0;
     }
 
-.row {
-    background-color: purple;
-}
+    .filter input {
+        margin-left: 7px;
+    }
 
 .restaurant {
     float: left;
-    background-color: azure;
     width: 24%;
     height: 33em;
     margin: 0 8px 8px 0;
@@ -274,7 +272,7 @@ footer {
     width: 100%;
 }
 
-.ltime{
+.ltime {
     float: left;
     display: block;
     padding-left: 27px;
@@ -289,11 +287,11 @@ footer {
     width: 50%;
 }
 
-.left_info img{
-    display: block;
-    margin: 0 auto;
-    
-}
+    .left_info img {
+        display: block;
+        margin: 0 auto;
+    }
+
 .restaurant_sum_description {
     background-color: #F8473E;
     height: 8.5em;
@@ -306,7 +304,6 @@ footer {
     }
 
 .restaurant_img_box {
-    background-color: gold;
     width: 100%;
     height: 24.5em;
 }
@@ -354,8 +351,7 @@ footer {
         text-decoration: underline;
     }
 
-    .btn_booknow:active {
-    }
+
 
 
 /*-------------------------------------------Restaurant detail page-------------------------------------------*/
@@ -729,17 +725,169 @@ section.HistoricRouteInfo {
     display: none;
 }
 
+.HistoricRouteInfo2 {
+    display: none;
+}
+
+.HistoricRouteInfo3 {
+    display: none;
+}
+
+.HistoricRouteInfo4 {
+    display: none;
+}
+
+.HistoricRouteInfo5 {
+    display: none;
+}
+
+.HistoricRouteInfo6 {
+    display: none;
+}
+
+.HistoricRouteInfo7 {
+    display: none;
+}
+
+.HistoricRouteInfo8 {
+    display: none;
+}
+
+.HistoricRouteInfo9 {
+    display: none;
+}
+
 section.HistoricRouteInfo1 {
     width: 200px;
     float: right;
     margin-top: 150px;
 }
 
-p.HistoricRouteInfo1 {
+section.HistoricRouteInfo2 {
+    width: 200px;
+    float: right;
+    margin-top: 150px;
+}
+
+section.HistoricRouteInfo3 {
+    width: 200px;
+    float: right;
+    margin-top: 150px;
+}
+
+section.HistoricRouteInfo4 {
+    width: 200px;
+    float: right;
+    margin-top: 150px;
+}
+
+section.HistoricRouteInfo5 {
+    width: 200px;
+    float: right;
+    margin-top: 150px;
+}
+
+section.HistoricRouteInfo6 {
+    width: 200px;
+    float: right;
+    margin-top: 150px;
+}
+
+section.HistoricRouteInfo7 {
+    width: 200px;
+    float: right;
+    margin-top: 150px;
+}
+
+section.HistoricRouteInfo8 {
+    width: 200px;
+    float: right;
+    margin-top: 150px;
+}
+
+section.HistoricRouteInfo9 {
+    width: 200px;
+    float: right;
+    margin-top: 150px;
+}
+
+p.HistoricRouteInfo1{
     display: inherit;
 }
 
-img.HistoricRouteInfo1 {
+p.HistoricRouteInfo2 {
+    display: inherit;
+}
+
+p.HistoricRouteInfo3 {
+    display: inherit;
+}
+
+p.HistoricRouteInfo4 {
+    display: inherit;
+}
+
+p.HistoricRouteInfo5 {
+    display: inherit;
+}
+
+p.HistoricRouteInfo6 {
+    display: inherit;
+}
+
+p.HistoricRouteInfo7 {
+    display: inherit;
+}
+
+p.HistoricRouteInfo8 {
+    display: inherit;
+}
+
+p.HistoricRouteInfo9 {
+    display: inherit;
+}
+
+img.HistoricRouteInfo1{
+    display: inherit;
+    width: 100px;
+}
+
+img.HistoricRouteInfo2 {
+    display: inherit;
+    width: 100px;
+}
+
+img.HistoricRouteInfo3 {
+    display: inherit;
+    width: 100px;
+}
+
+img.HistoricRouteInfo4 {
+    display: inherit;
+    width: 100px;
+}
+
+img.HistoricRouteInfo5 {
+    display: inherit;
+    width: 100px;
+}
+
+img.HistoricRouteInfo6 {
+    display: inherit;
+    width: 100px;
+}
+
+img.HistoricRouteInfo7 {
+    display: inherit;
+    width: 100px;
+}
+
+img.HistoricRouteInfo8 {
+    display: inherit;
+    width: 100px;
+}
+
+img.HistoricRouteInfo9 {
     display: inherit;
     width: 100px;
 }

@@ -10,6 +10,9 @@
 //}
 
 // -----------------------------Fucking vies ik ga dit nog fixen, meer voor het idee---------------------------=
+//var model = Html.Raw(Json.Encode(Model));
+
+
 
 $("#radioFilter0").click(function () {
     $("#restaurantDivId1").show("slow", function () {
@@ -29,6 +32,9 @@ $("#radioFilter0").click(function () {
     $("#restaurantDivId8").show("slow", function () {
     })
 });
+
+//$("#radioFilter0").(function () {
+
 
 $("#radioFilter1").click(function () {
     $("#restaurantDivId1").show("slow", function () {
