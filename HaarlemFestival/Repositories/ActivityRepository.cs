@@ -51,5 +51,10 @@ namespace HaarlemFestival.Repositories
                 .Select(x => x.a);
 
         }
+
+        public Activity GetActivity(int id)
+        {
+            return db.Activities.Find(id);
+        }
     }
 }

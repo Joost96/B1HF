@@ -28,64 +28,60 @@
     <section class="jazz_page_program_days">
         <h3 class="jazz_page_program_days_header">@Model.Page.PageDescriptions[3].Title</h3>
 
-        @Html.ActionLink("Thursday", "Index", "Jazz", new { id=1}, new { @class = "btn btn-default jazz_page_program_thursday" });
+        @Html.ActionLink("Thursday", "Index", "Jazz", new { id = 1}, new { @class = "btn btn-default jazz_page_program_thursday" });
         @Html.ActionLink("Friday", "Index", "Jazz", new { id = 2 }, new { @class = "btn btn-default jazz_page_program_friday" });
         @Html.ActionLink("Saturday", "Index", "Jazz", new { id = 3 }, new { @class = "btn btn-default jazz_page_program_saturday" });
         @Html.ActionLink("Sunday", "Index", "Jazz", new { id = 4 }, new { @class = "btn btn-default jazz_page_program_sunday" });
 
-        @*<button name="thursday" type="submit" class="jazz_page_program_thursday" tabindex="1" onclick="location.href='@Url.Action("Index", "Jazz", new { id=1})'">@Model.Page.PageDescriptions[4].Title<br />@Model.Page.PageDescriptions[4].DescriptionText</button>
-        <button name="friday" type="submit" class="jazz_page_program_friday" tabindex="2" onclick="location.href='@Url.Action("Index", "Jazz", new { id=2})'">@Model.Page.PageDescriptions[5].Title<br />@Model.Page.PageDescriptions[5].DescriptionText</button>
-        <button name="saturday" type="submit" class="jazz_page_program_saturday" tabindex="3" onclick="location.href='@Url.Action("Index", "Jazz", new { id=3})'">@Model.Page.PageDescriptions[6].Title<br />@Model.Page.PageDescriptions[6].DescriptionText</button>
-        <button name="sunday" type="submit" class="jazz_page_program_sunday" tabindex="4" onclick="location.href='@Url.Action("Index", "Jazz", new { id=4})'">@Model.Page.PageDescriptions[7].Title<br />@Model.Page.PageDescriptions[7].DescriptionText</button>
-        *@
         <button name="passpartout" type="submit" class="jazz_page_program_passpartout" tabindex="5">@Model.Page.PageDescriptions[8].Title</button>
     </section>
 
     @for (int i = 0; i < Model.Activities.Count; i++)
     {
-        <section class="jazz_page_acts">
-            <section class="jazz_page_imgsection">
-                <img src=@Model.Activities[i].ActivityDescriptions[0].ImageUrl width="280" height="280" alt="Jazz @Model.Activities[i].ActivityDescriptions[0].Title" />
-            </section>
-            <section class="jazz_page_actinfosection">
-                <section>
-                    <h3 id="jazz_activity_title_@Model.Activities[i].Id" class="jazz_activiteit_title">@Model.Activities[i].ActivityDescriptions[0].Title</h3>
-                    <p>@Model.Activities[i].ActivityDescriptions[0].DescriptionText</p>
+            <section class="jazz_page_acts">
+                <section class="jazz_page_imgsection">
+                    <img src=@Model.Activities[i].ActivityDescriptions[0].ImageUrl width="280" height="280" alt="Jazz @Model.Activities[i].ActivityDescriptions[0].Title" />
                 </section>
-                <hr class="jazz_page_actinfosection_line"/>
-                <section>
-                    <p id="jazz_activity_location_@Model.Activities[i].Id" class="jazz_activiteit_location">@Model.Page.PageDescriptions[9].Title @Model.Activities[i].Location.Name</p>
-                    <p id="jazz_activity_hall_@Model.Activities[i].Id" class="jazz_activiteit_hall">@Model.Page.PageDescriptions[10].Title @Model.Activities[i].Timeslots[0].Hall</p>
-                    <p id="jazz_activity_price_@Model.Activities[i].Id" class="jazz_activiteit_price">@Model.Page.PageDescriptions[11].Title €@Model.Activities[i].Timeslots[0].Tickets[0].Price</p>
-                    <p id="jazz_activity_time_@Model.Activities[i].Id" class="jazz_activiteit_time">@Model.Page.PageDescriptions[12].Title @Model.Activities[i].Timeslots[0].StartTime.ToString("HH:mm") - @Model.Activities[i].Timeslots[0].EndTime.ToString("HH:mm")</p>
-                    <button id=@Model.Activities[i].Id class="jazz_page_buybtn" type="button">@Model.Page.PageDescriptions[13].Title</button>
+                <section class="jazz_page_actinfosection">
+                    <section>
+                        <h3 id="jazz_activity_title_@Model.Activities[i].Id" class="jazz_activiteit_title">@Model.Activities[i].ActivityDescriptions[0].Title</h3>
+                        <p>@Model.Activities[i].ActivityDescriptions[0].DescriptionText</p>
+                    </section>
+                    <hr class="jazz_page_actinfosection_line" />
+                    <section>
+                        <p id="jazz_activity_location_@Model.Activities[i].Id" class="jazz_activiteit_location">@Model.Page.PageDescriptions[9].Title @Model.Activities[i].Location.Name</p>
+                        <p id="jazz_activity_hall_@Model.Activities[i].Id" class="jazz_activiteit_hall">@Model.Page.PageDescriptions[10].Title @Model.Activities[i].Timeslots[0].Hall</p>
+                        <p id="jazz_activity_price_@Model.Activities[i].Id" class="jazz_activiteit_price">@Model.Page.PageDescriptions[11].Title €@Model.Activities[i].Timeslots[0].Tickets[0].Price</p>
+                        <p id="jazz_activity_time_@Model.Activities[i].Id" class="jazz_activiteit_time">@Model.Page.PageDescriptions[12].Title @Model.Activities[i].Timeslots[0].StartTime.ToString("HH:mm") - @Model.Activities[i].Timeslots[0].EndTime.ToString("HH:mm")</p>
+                        <button id=@Model.Activities[i].Id class="jazz_page_buybtn" type="button">@Model.Page.PageDescriptions[13].Title</button>
+                    </section>
                 </section>
             </section>
-        </section>
-        <p id="jazz_activity_datum_@Model.Activities[i].Id" style="visibility:hidden">@Model.Activities[i].Timeslots[0].StartTime.ToString("dd/MM/yyyy")</p>
-        <p id="jazz_activity_ticket_price_@Model.Activities[i].Id" style="visibility:hidden">@Model.Activities[i].Timeslots[0].Tickets[0].Price</p>
+            <p id="jazz_activity_datum_@Model.Activities[i].Id" style="visibility:hidden">@Model.Activities[i].Timeslots[0].StartTime.ToString("dd/MM/yyyy")</p>
+            <p id="jazz_activity_ticket_price_@Model.Activities[i].Id" style="visibility:hidden">@Model.Activities[i].Timeslots[0].Tickets[0].Price</p>
 
+        <!-- The Modal -->
+            <section id="myModal" class="modal">
+                
+            <!-- Modal content -->
+                    <section class="modal-content">
+                        <span class="close">&times;</span>
+                        <p class="modaltitle">1</p>
+                        <p class="modallocation">2</p>
+                        <p class="modalhall">3</p>
+                        <p class="modalprice">4</p>
+                        <p class="modaltime">5</p>
+                        <p class="modaldatum">6</p>
+                        <label>Aantal</label>
+                        <input type="text" id="aantal_text" name="search_query" class="jazz_order_aantal" />
+                        @*<input type="submit" id="Search" value="Place Order" />*@
+                        @Html.ActionLink("Place Order", "OrderJazz", "CheckOut", new { id = Model.Activities[i].Id, aantal = 5 }, null)
+                    </section>
+                
+            </section>
     }
 
-    <!-- The Modal -->
-    <section id="myModal" class="modal">
 
-        <!-- Modal content -->
-        <section class="modal-content">
-            <span class="close">&times;</span>
-            <p class="modaltitle">1</p>
-            <p class="modallocation">2</p>
-            <p class="modalhall">3</p>
-            <p class="modalprice">4</p>
-            <p class="modaltime">5</p>
-            <p class="modaldatum">6</p>
-            <label>Aantal</label>
-            <input type="text" class="jazz_order_aantal"/>
-            <a href="#" id="jazz_order_btn" class="jjazz_order_btn">link</a>
-            @Html.ActionLink("Home", "Order", "CheckOut", new { activityId = "activityid", timeslot = "timeslot", tickettype = 0, aantal = "aantal", totaalprijs = "totaalprijs" }, new { @class="jazz_order_btn"})
-        </section>
-
-    </section>
 
 </section>
 

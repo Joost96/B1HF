@@ -33,26 +33,10 @@ $(".jazz_page_buybtn").click(function () {
 
     var aantal = $('.jazz_order_aantal').val();
     console.log(aantal);
-    var totaalprijs = aantal * prijs;
-    console.log(totaalprijs);
-
-    var result = ("home", "Index", "Home");
-
-    $("#jazz_order_btn").click(function () {
-        $(".jjazz_order_btn").attr("href", result);
-    });
 
     $(".jjjazz_order_btn").click(function () {
         var aantal = $('.jazz_order_aantal').val();
         console.log(aantal);
-        var totaalprijs = aantal * prijs;
-        console.log(totaalprijs);
-
-
-        $(".jazz_order_btn").replace("activityid", id);
-        $(".jazz_order_btn").replace("timeslot", datum);
-        $(".jazz_order_btn").replace("aantal", aantal);
-        $(".jazz_order_btn").replace("totaalprijs", totaalprijs);
     });
 });
 
