@@ -13,7 +13,7 @@ namespace HaarlemFestival.Controllers
         
 
         // GET: Historic
-        public ActionResult Historic()
+        public ActionResult Index()
         {
             PagePlusActivities pagePlusActivities = new PagePlusActivities();
             DBHF db = new DBHF();

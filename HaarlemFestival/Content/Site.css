@@ -723,46 +723,63 @@ section.HistoricRouteInfo {
     display: none;
     width: 300px;
     float: left;
+    margin-left: 5px;
 }
 
 .HistoricRouteInfo2 {
     display: none;
     float: left;
+    width: 300px;
+    margin-left: 5px;
 }
 
 .HistoricRouteInfo3 {
     display: none;
     float: left;
+    width: 300px;
+    margin-left: 5px;
 }
 
 .HistoricRouteInfo4 {
     display: none;
     float: left;
+    width: 300px;
+    margin-left: 5px;
 }
 
 .HistoricRouteInfo5 {
     display: none;
     float: left;
+    width: 300px;
+    margin-left: 5px;
 }
 
 .HistoricRouteInfo6 {
     display: none;
     float: left;
+    width: 300px;
+    margin-left: 5px;
 }
 
 .HistoricRouteInfo7 {
     display: none;
     float: left;
+    width: 300px;
+    margin-left: 5px;
 }
 
 .HistoricRouteInfo8 {
     display: none;
     float: left;
+    width: 300px;
+    margin-left: 5px;
 }
 
 .HistoricRouteInfo9 {
     display: none;
     float: left;
+    width: 300px;
+    margin-left: 5px;
 }
 
 /*
@@ -803,84 +820,76 @@ section.HistoricRouteInfo9 {
 }
 */
 p.HistoricRouteInfo1{
-    display: inherit;
+    width: 100%;
 }
 
 p.HistoricRouteInfo2 {
-    display: inherit;
+    width: 100%;
 }
 
 p.HistoricRouteInfo3 {
-    display: inherit;
+    width: 100%;
 }
 
 p.HistoricRouteInfo4 {
-    display: inherit;
+    width: 100%;
 }
 
 p.HistoricRouteInfo5 {
-    display: inherit;
+    width: 100%;
 }
 
 p.HistoricRouteInfo6 {
-    display: inherit;
+    width: 100%;
 }
 
 p.HistoricRouteInfo7 {
-    display: inherit;
+    width: 100%;
 }
 
 p.HistoricRouteInfo8 {
-    display: inherit;
+    width: 100%;
 }
 
 p.HistoricRouteInfo9 {
-    display: inherit;
+    width: 100%;
 }
 
 img.HistoricRouteInfo1 {
-    display: inherit;
     width: 100%;
 }
 
 img.HistoricRouteInfo2 {
-    display: inherit;
     width: 100%;
 }
 
 img.HistoricRouteInfo3 {
-    display: inherit;
     width: 100%;
 }
 
 img.HistoricRouteInfo4 {
-    display: inherit;
     width: 100%;
 }
 
 img.HistoricRouteInfo5 {
-    display: inherit;
     width: 100%;
 }
 
 img.HistoricRouteInfo6 {
-    display: inherit;
-    width: 100%;
+    width: 69%;
+    height: 259px;
 }
 
 img.HistoricRouteInfo7 {
-    display: inherit;
     width: 100%;
 }
 
 img.HistoricRouteInfo8 {
-    display: inherit;
     width: 100%;
 }
 
 img.HistoricRouteInfo9 {
-    display: inherit;
-    width: 100%;
+    width: 93%;
 }
 
 .HistoricButtonBook2 {
