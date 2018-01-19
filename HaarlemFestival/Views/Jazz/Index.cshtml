@@ -73,9 +73,8 @@
                         <p class="modaltime">5</p>
                         <p class="modaldatum">6</p>
                         <label>Aantal</label>
-                        <input type="text" id="aantal_text" name="search_query" class="jazz_order_aantal" />
-                        @*<input type="submit" id="Search" value="Place Order" />*@
-                        @Html.ActionLink("Place Order", "OrderJazz", "CheckOut", new { id = Model.Activities[i].Id, aantal = 5 }, null)
+                        <input type="text" id="aantal_text" class="jazz_order_aantal" />
+                        @Html.ActionLink("Place Order", "OrderJazz", "CheckOut", new { id = Model.Activities[i].Id, aantal = 5 }, new { @class = "btn btn-default jazz_order_btn" })
                     </section>
                 
             </section>

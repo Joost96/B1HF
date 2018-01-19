@@ -18,7 +18,6 @@ $(".jazz_page_buybtn").click(function () {
     console.log(hall);
     console.log(time);
     console.log(datum);
-    console.log(price);
     console.log(prijs);
     
 
@@ -31,10 +30,7 @@ $(".jazz_page_buybtn").click(function () {
 
     $("#myModal").show();
 
-    var aantal = $('.jazz_order_aantal').val();
-    console.log(aantal);
-
-    $(".jjjazz_order_btn").click(function () {
+    $(".jazz_order_btn").click(function () {
         var aantal = $('.jazz_order_aantal').val();
         console.log(aantal);
     });
