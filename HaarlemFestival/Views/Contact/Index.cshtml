@@ -4,30 +4,30 @@
 }
 
 <section class="contact_page_section">
-    <h2 class="contact_header">@Model.PageDescriptions[0].Title</h2>
+    <h2 class="contact_header">@Model.Title</h2>
     <hr class="contact_separation_header">
 
     <section class="contact_info">
+        <h3 class="contact_info_header">@Model.PageDescriptions[0].Title</h3>
+        <p>@Html.Raw(HttpUtility.HtmlDecode(Model.PageDescriptions[0].DescriptionText))</p>
         <h3 class="contact_info_header">@Model.PageDescriptions[1].Title</h3>
-        <p>@Html.Raw(HttpUtility.HtmlDecode(Model.PageDescriptions[1].DescriptionText))</p>
-        <h3 class="contact_info_header">@Model.PageDescriptions[2].Title</h3>
-        <p>@Model.PageDescriptions[2].DescriptionText</p>
+        <p>@Model.PageDescriptions[1].DescriptionText</p>
     </section>
         
     <section class="contact_section">
-        <h3 class="contact_form_header">@Model.PageDescriptions[3].Title</h3>
+        <h3 class="contact_form_header">@Model.PageDescriptions[2].Title</h3>
         <form>
-            <p class="contact_required_text">@Model.PageDescriptions[3].DescriptionText</p>
+            <p class="contact_required_text">@Model.PageDescriptions[2].DescriptionText</p>
             <fieldset>
-                <label class="contact_name_label">@Model.PageDescriptions[4].Title</label>
+                <label class="contact_name_label">@Model.PageDescriptions[3].Title</label>
                 <input class="contact_name_field" type="text" tabindex="1" required="required">
             </fieldset>
             <fieldset>
-                <label class="contact_email_label">@Model.PageDescriptions[5].Title</label>
+                <label class="contact_email_label">@Model.PageDescriptions[4].Title</label>
                 <input class="contact_email_field" type="text" tabindex="2" required="required" />
             </fieldset>
             <fieldset class="contact_message_label">
-                <label class="contact_message_label">@Model.PageDescriptions[6].Title</label>
+                <label class="contact_message_label">@Model.PageDescriptions[5].Title</label>
                 <textarea class="contact_message_field" tabindex="3" required="required"></textarea>
             </fieldset>
             <fieldset>
