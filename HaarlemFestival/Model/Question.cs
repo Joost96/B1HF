@@ -11,6 +11,8 @@ namespace HaarlemFestival.Model
         [key]
         public int Id { get; set; }
         [Required]
+        public string Spreker { get; set; }
+        [Required]
         public string Message { get; set; }
     }
 }
