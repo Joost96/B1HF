@@ -263,6 +263,7 @@
     <Compile Include="Repositories\IOrderRepository.cs" />
     <Compile Include="Repositories\IPageDescriptionRepository.cs" />
     <Compile Include="Repositories\ICuisineRepository.cs" />
+    <Compile Include="Repositories\IQuestionRepository.cs" />
     <Compile Include="Repositories\OrderRepository.cs" />
     <Compile Include="Repositories\PageDescriptionRepository.cs" />
     <Compile Include="Repositories\IPageRepository.cs" />
