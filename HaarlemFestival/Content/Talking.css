@@ -232,11 +232,16 @@
 
 /* Question field */
 .TalkingOrderAantal {
-    max-height: 300px;
     width: 80%;
     height: 40%;
+    border-radius: 10px 0 0 10px;
+
 }
 
+.TalkingOrderButton{
+    width: 20%;
+    border-radius: 0 10px 10px 0;
+}
 
 
 /* The Close Button */

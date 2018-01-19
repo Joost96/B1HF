@@ -30,9 +30,17 @@ namespace HaarlemFestival.Controllers
             return View(PageDescriptions);
         }
 
-        // $(".TalkingButtonSpreker").click(function(){})
-        // $(".TalkingButtonSpreker2").click(function(){})
-        // $(".TalkingButtonBook").click(function(){})
+        public ActionResult StelVraag(string spreker, string message)
+        {
+            Question q = new Question();
+
+            q.Message = message;
+            q.Spreker = spreker;
+
+            return View();
+        }
+
+        
 
 
 
