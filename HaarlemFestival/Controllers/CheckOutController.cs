@@ -153,7 +153,7 @@ namespace HaarlemFestival.Controllers
             return View(pagePlusOrders);
         }
 
-        public ActionResult Order(int activityId, DateTime timeslot, TicketType tickettype, int aantal, decimal totaalprijs, string commentaar=null)
+        public ActionResult Order(int activityId, DateTime timeslot, TicketType tickettype, int aantal, decimal totaalprijs, string commentaar = null)
         {
 
             Order order;
