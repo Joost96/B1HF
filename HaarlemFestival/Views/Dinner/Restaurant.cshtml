@@ -1,92 +1,114 @@
-﻿@model HaarlemFestival.Model.Activity
+﻿@model HaarlemFestival.Model.PagePlusActivities
+
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>@Model.Name</h1>
+@section AddToScripts{
+    <script src="@Url.Content("~/Scripts/FilterOnCuisine.js")"></script>
+}
+
 <div class="restaurant_information">
+
     <div class="left_box">
-        <img src="dummie " alt="Ewa" />
+        <img src="@Model.Activity.ActivityDescriptions[0].ImageUrl" />
     </div>
 
     <div class="right_box">
+        <h1>
+            @Model.Activity.Name
             <label class="lrating">
-                @for (int i = 0; i < Model.Rating; i++)
+                @for (int i = 0; i < Model.Activity.Rating; i++)
                 {
-                    <img class="rating" src="~/img/Dinner/Summary/Rating_full.png" width="14" height="17" />
+                    <img class="rating" src="~/img/Dinner/Summary/Rating_full.png" width="22" height="29" />
                 }
 
-                @for (int i = Model.Rating; i < 5; i++)
+                @for (int i = Model.Activity.Rating; i < 5; i++)
                 {
-                    <img class="rating" src="~/img/Dinner/Summary/Rating_empty.png" width="14" height="17" />
+                    <img class="rating" src="~/img/Dinner/Summary/Rating_empty.png" width="22" height="29" />
                 }
             </label>
-        <label class="lprice">Price</label>
-        <label class="lprice">Cuisine</label>
-        @foreach (var item in Model.Cuisines)
+        </h1>
+
+        <label class="lprice">Price per menu*</label>
+        <h6>Adults: € @Model.Activity.Timeslots[0].Tickets[0].Price</h6>
+        <h6>Kids:   € @Model.Activity.Timeslots[0].Tickets[1].Price</h6>
+
+
+        <label class="lprice">Cuisine*</label>
+        @foreach (HaarlemFestival.Model.Cuisine cuisine in Model.Activity.Cuisines)
         {
-            <h6>@Model.Cuisines</h6>
+            <h6>@cuisine.Name</h6>
         }
-        <label class="lprice">Timeslots</label>
-        <h6>@Model.Timeslots[0].StartTime.ToShortTimeString() - @Model.Timeslots[0].StartTime.ToShortTimeString()</h6>
-        <label class="lprice">Adres</label>
-        <h6>@Model.Location.Street @Model.Location.StreetNr, @Model.Location.ZipCode @Model.Location.City </h6>
 
+        <label class="lprice">Timeslots for 26, 27, 28 and 29 of May*</label>
+        <h6>@Model.Activity.Timeslots[0].StartTime.ToShortTimeString() - @Model.Activity.Timeslots[0].EndTime.ToShortTimeString()</h6>
+        <h6>@Model.Activity.Timeslots[1].StartTime.ToShortTimeString() - @Model.Activity.Timeslots[1].EndTime.ToShortTimeString()</h6>
+        <h6>@Model.Activity.Timeslots[2].StartTime.ToShortTimeString() - @Model.Activity.Timeslots[2].EndTime.ToShortTimeString()</h6>
 
-        
-        
+        <label class="lprice">Practical information*</label>
+        <h6>@Model.Activity.Location.Street @Model.Activity.Location.StreetNr, @Model.Activity.Location.ZipCode @Model.Activity.Location.City </h6>
+        <h6>www.@(Model.Activity.Name).nl* </h6>
+
     </div>
 </div>
 
 <div class="restaurant_description">
-    <h2>text from db</h2>
-    <p>text from db</p>
+    <h2>Why we chose @Model.Activity.Name*</h2>
+    <p>@Model.Activity.ActivityDescriptions[0].DescriptionText </p>
 </div>
 
-<div class="restaurant_reservation_form">
-    <h2>text from db</h2>
-    <text><span style="color: red">*</span> text from db</text>
-    <form>
+<div id="restaurant_reservation_form" class="restaurant_reservation_form">
+
+    <h2>Make a reservation</h2>
+
+    @using (Html.BeginForm("Order", "CheckOut", FormMethod.Post))
+    {
+        <text><span style="color: red">*</span> = required field!*</text>
+
         <fieldset>
-            <label class="restaurant_form_label" for="rday">text from db</label>
-            <select class="restaurant_form_select_wide" id="rday">
-                @*<option>@Model.Timeslots[0].StartTime.ToShortTimeString()</option>
-                <option>@Model.Timeslots[3].StartTime.Day</option>
-                <option>@Model.Timeslots[6].StartTime.Day</option>*@
-            </select> 
+            <label class="restaurant_form_label" for="rday">For which day?*<span style="color: red">*</span></label>
+            <input type="radio" name="rday" value="@Model.Activity.Timeslots[0]" checked> @Model.Activity.Timeslots[0].StartTime.DayOfWeek @Model.Activity.Timeslots[0].StartTime.ToShortDateString()<br>
+            <input type="radio" name="rday" value="@Model.Activity.Timeslots[3]"> @Model.Activity.Timeslots[3].StartTime.DayOfWeek @Model.Activity.Timeslots[3].StartTime.ToShortDateString()<br>
+            <input type="radio" name="rday" value="@Model.Activity.Timeslots[6]"> @Model.Activity.Timeslots[6].StartTime.DayOfWeek @Model.Activity.Timeslots[6].StartTime.ToShortDateString()<br>
+            <input type="radio" name="rday" value="@Model.Activity.Timeslots[9]"> @Model.Activity.Timeslots[9].StartTime.DayOfWeek @Model.Activity.Timeslots[9].StartTime.ToShortDateString()<br>
+
         </fieldset>
+
         <fieldset>
-            <label class="restaurant_form_label" for="rtime">text from db</label>
-            <select class="restaurant_form_select_wide" id="rtime">
-                @for (int i = 0; i < 3; i++)
-                {
-                    <option>@*@Model.Timeslots[i].StartTime.ToShortTimeString() -@Model.Timeslots[i].EndTime.ToShortTimeString()*@</option>
-                }
-            </select>
+            <label class="restaurant_form_label" for="rtime">On which timeslot?*<span style="color: red">*</span></label>
+            <input type="radio" name="rtime" value="male" checked>@(Model.Activity.Timeslots[0].StartTime.ToShortTimeString() + " - " + Model.Activity.Timeslots[0].EndTime.ToShortTimeString()) <br>
+            <input type="radio" name="rtime" value="male">@(Model.Activity.Timeslots[1].StartTime.ToShortTimeString() + " - " + Model.Activity.Timeslots[1].EndTime.ToShortTimeString()) <br>
+            <input type="radio" name="rtime" value="male">@(Model.Activity.Timeslots[2].StartTime.ToShortTimeString() + " - " + Model.Activity.Timeslots[2].EndTime.ToShortTimeString()) <br>
         </fieldset>
+
         <fieldset>
-            <label class="restaurant_form_label" for="radults">text from db</label>
-            <select class="restaurant_form_select_small" id="radults">
+            <label class="restaurant_form_label" for="radults">For how many adults?*<span style="color: red">*</span></label>
+            <select class="restaurant_form_select_wide" id="radults">
                 @for (int iAdults = 1; iAdults <= 10; iAdults++)
                 {
                     <option value="@iAdults"> @iAdults</option>
                 }
             </select>
         </fieldset>
+
         <fieldset>
-            <label class="restaurant_form_label" for="rkids">text from db</label>
-            <select class="restaurant_form_select_small" id="rkids">
+            <label class="restaurant_form_label" for="rkids">And how many kids?* (Ages 12 and below)</label>
+            <select class="restaurant_form_select_wide" id="rkids">
                 @for (int iKids = 0; iKids <= 10; iKids++)
                 {
                     <option value="@iKids"> @iKids</option>
                 }
             </select>
         </fieldset>
+
         <fieldset>
-            <label class="restaurant_form_label" for="rmisc">text from db</label>
+            <label class="restaurant_form_label" for="rmisc">Anything we should know?*</label>
             <textarea class="restaurant_form_txtarea" id="rmisc" placeholder="Example: I am on a gluten-free diet"></textarea>
         </fieldset>
-        <button>Reserve</button>
-    </form>
+
+        <input type="submit" value="Order" />
+    }
+
 </div>

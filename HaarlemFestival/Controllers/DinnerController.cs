@@ -53,33 +53,27 @@ namespace HaarlemFestival.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PagePlusActivitiesPlusCuisine pagePlusActivitiesPlusCuisine = new PagePlusActivitiesPlusCuisine();
+
+            PagePlusActivities pagePlusActivity = new PagePlusActivities(); 
 
             IPageRepository pageRepo = new PageRepository(db);
-            Page page = pageRepo.GetPage("Dinner", Language.Eng);
+            Page page = pageRepo.GetPage("Dinner Restaurant", Language.Eng);
 
-            Activity activity = db.Activities.Find(id);
+            IActivityRepository activityRepo = new ActivityRepository(db);
+            Activity activity = activityRepo.GetActivity(id, Language.Eng);
 
             ICuisineRepository cuisineRepo = new CuisineRepository(db);
             activity.Cuisines = cuisineRepo.GetCuisines(activity);
 
-            pagePlusActivitiesPlusCuisine.Page = page;
+            pagePlusActivity.Page = page;
+            pagePlusActivity.Activity = activity;
 
             if (activity == null)
             {
                 return HttpNotFound();
             }
 
-
-            return View(pagePlusActivitiesPlusCuisine);
+            return View(pagePlusActivity);
         }
-
-        public ActionResult HideActivity(int id)
-        {
-            
-
-            return View();
-        }
-
     }
 }

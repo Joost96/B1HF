@@ -12,5 +12,6 @@ namespace HaarlemFestival.Repositories
 
         IEnumerable<Activity> GetActivities(EventType type, Language language, DateTime dag);
 
+        Activity GetActivity(int? activityId, Language language);
     }
 }

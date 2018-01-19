@@ -10,5 +10,6 @@ namespace HaarlemFestival.Model
         public Page Page { get; set; }
         public List<Activity> Activities { get; set; }
        
+        public Activity Activity { get; set; }
     }
 }

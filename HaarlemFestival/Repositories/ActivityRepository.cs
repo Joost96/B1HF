@@ -51,5 +51,16 @@ namespace HaarlemFestival.Repositories
                 .Select(x => x.a);
 
         }
+
+        public Activity GetActivity (int? activityId, Language language)
+        {
+            return db.Activities
+                .Include(a => a.Location)
+                .Include(a => a.Timeslots.Select(ts => ts.Tickets))
+                .Include(a => a.ActivityDescriptions)
+                .Where(a => a.Id == activityId)
+                .SingleOrDefault();
+
+        }
     }
 }
