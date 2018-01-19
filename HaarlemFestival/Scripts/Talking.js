@@ -9,6 +9,7 @@ $(".TalkingButtonSpreker").click(function () {
     console.log(title);
       
     $(".modaltitle").text(title);
+    $("#hahaha").attr("value", title);
    
     $("#myModal").show();
        
@@ -23,6 +24,7 @@ $(".TalkingButtonSpreker2").click(function () {
     console.log(title);
 
     $(".modaltitle").text(title);
+    $("#hahaha").attr("value", title);
 
     $("#myModal").show();
 

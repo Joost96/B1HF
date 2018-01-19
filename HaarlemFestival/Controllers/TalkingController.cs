@@ -10,34 +10,48 @@ namespace HaarlemFestival.Controllers
 {
     public class TalkingController : Controller
     {
+        private DBHF db;
+        private IPageRepository pageRepo;
+        private IActivityRepository activityRepo;
+        private IOrderRepository orderRepository;
+        private IQuestionRepository questionRepository;
+        public TalkingController()
+        {
+            db = new DBHF();
+            pageRepo = new PageRepository(db);
+            activityRepo = new ActivityRepository(db);
+            orderRepository = new OrderRepository(db);
+            questionRepository = new QuestionRepository(db);
+
+        }
         // GET: Talking
         public ActionResult Index()
         {
-            PagePlusActivities PageDescriptions = new PagePlusActivities();
-
-            DBHF db = new DBHF();
-            IPageRepository pageRepo = new PageRepository(db);
-            Page page = pageRepo.GetPage("Talking", Language.Eng);
-
-            IActivityRepository activityRepo = new ActivityRepository(db);
+            PagePlusActivities PagePLusActivities = new PagePlusActivities();
+            
+            Page page = pageRepo.GetPage("Talking", Language.Eng);            
             IEnumerable<Activity> activities = activityRepo.GetActivities(EventType.Talking, Language.Eng);
 
             activities.OrderBy(Activitie => Activitie.Timeslots);
 
-            PageDescriptions.Page = page;
-            PageDescriptions.Activities = activities.ToList();
+            PagePLusActivities.Page = page;
+            PagePLusActivities.Activities = activities.ToList();
 
-            return View(PageDescriptions);
+            return View(PagePLusActivities);
         }
 
-        public ActionResult StelVraag(string spreker, string message)
+
+        [HttpPost]
+        public ActionResult AskQuestion(PagePlusActivities pagePLusActivities)
         {
             Question q = new Question();
 
-            q.Message = message;
-            q.Spreker = spreker;
+            q.Message = pagePLusActivities.Question.Message;
+            q.Spreker = pagePLusActivities.Question.Spreker;
 
-            return View();
+            questionRepository.CreateQuestion(q);
+
+            return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
         }
 
         

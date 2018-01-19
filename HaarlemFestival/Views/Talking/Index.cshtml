@@ -64,10 +64,8 @@
 
             <section class="TalkingSprekerUitleg">
 
-                <h2 id=@Html.Raw("spreker1" + @a.Id ) class="TalkingSprekerHeader">
-                    @a.ActivityDescriptions[0].Title
+                <h2 id=@Html.Raw("spreker1" + @a.Id ) class="TalkingSprekerHeader">@a.ActivityDescriptions[0].Title</h2>
 
-                </h2>
                 <p class="TalkingSprekerText">
                     @a.ActivityDescriptions[0].DescriptionText
                 </p>
@@ -114,13 +112,18 @@
     <!-- Modal content -->
     <section class="modal-content">
         <span class="close">&times;</span>
-        <p class="modaltitle">1</p>
+        <p class="modaltitle"> </p>
         <p>Ask <label class="modaltitle"> </label> a question here </p>
 
+        @using (Html.BeginForm("AskQuestion", "Talking", FormMethod.Post))
+        {
+            @Html.HiddenFor(model => model.Question.Spreker, new { id = "hahaha"})
+            @Html.EditorFor(model => model.Question.Message, new { htmlAttributes = new { @class = "TalkingOrderAantal"} })
 
-        <input type="text" class="TalkingOrderAantal" />
-        <input type="submit" value="Submit" class="TalkingOrderButton" />
+            <input type="submit" value="Submit" class="TalkingOrderButton" />
         
+        }
+
 
     </section>
 
