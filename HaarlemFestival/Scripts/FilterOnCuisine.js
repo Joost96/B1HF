@@ -1,196 +1,119 @@
-﻿////Check if jQuery is loading
-//window.onload = function () {
-//    if (window.jQuery) {
-//        // jQuery is loaded  
-//        alert("Yeah!");
-//    } else {
-//        // jQuery is not loaded
-//        alert("Doesn't Work");
-//    }
-//}
-
-// -----------------------------Fucking vies ik ga dit nog fixen, meer voor het idee---------------------------=
-//var model = Html.Raw(Json.Encode(Model));
-
-
-
-$("#radioFilter0").click(function () {
-    $("#restaurantDivId1").show("slow", function () {
-    })
-    $("#restaurantDivId2").show("slow", function () {
-    })
-    $("#restaurantDivId3").show("slow", function () {
-    })
-    $("#restaurantDivId4").show("slow", function () {
-    })
-    $("#restaurantDivId5").show("slow", function () {
-    })
-    $("#restaurantDivId6").show("slow", function () {
-    })
-    $("#restaurantDivId7").show("slow", function () {
-    })
-    $("#restaurantDivId8").show("slow", function () {
-    })
+﻿$("#radioFilter0").click(function () {
+    $("#restaurantDivId1").show("slow");
+    $("#restaurantDivId2").show("slow");
+    $("#restaurantDivId3").show("slow");
+    $("#restaurantDivId4").show("slow");
+    $("#restaurantDivId5").show("slow");
+    $("#restaurantDivId6").show("slow");
+    $("#restaurantDivId7").show("slow");
+    $("#restaurantDivId8").show("slow");
 });
 
-//$("#radioFilter0").(function () {
-
-
 $("#radioFilter1").click(function () {
-    $("#restaurantDivId1").show("slow", function () {
-    })
-    $("#restaurantDivId2").show("slow", function () {
-    })
-    $("#restaurantDivId3").show("slow", function () {
-    })
-    $("#restaurantDivId4").show("slow", function () {
-    })
-    $("#restaurantDivId5").show("slow", function () {
-    })
-    $("#restaurantDivId6").show("slow", function () {
-    })
-    $("#restaurantDivId7").show("slow", function () {
-    })
-    $("#restaurantDivId8").show("slow", function () {
-    })
-
-
+    $("#restaurantDivId1").show("slow");
+    $("#restaurantDivId2").show("slow");
+    $("#restaurantDivId3").show("slow");
+    $("#restaurantDivId4").show("slow");
+    $("#restaurantDivId5").show("slow");
+    $("#restaurantDivId6").show("slow");
+    $("#restaurantDivId7").show("slow");
+    $("#restaurantDivId8").show("slow");
 });
 
 $("#radioFilter2").click(function () {
-    $("#restaurantDivId1").show("slow", function () {
-    })
-    $("#restaurantDivId2").hide("slow", function () {
-    })
-    $("#restaurantDivId3").show("slow", function () {
-    })
-    $("#restaurantDivId4").show("slow", function () {
-    })
-    $("#restaurantDivId5").hide("slow", function () {
-    })
-    $("#restaurantDivId6").show("slow", function () {
-    })
-    $("#restaurantDivId7").show("slow", function () {
-    })
-    $("#restaurantDivId8").hide("slow", function () {
-    })
+    $("#restaurantDivId1").show("slow");
+    $("#restaurantDivId2").hide("slow");
+    $("#restaurantDivId3").show("slow");
+    $("#restaurantDivId4").show("slow");
+    $("#restaurantDivId5").hide("slow");
+    $("#restaurantDivId6").show("slow");
+    $("#restaurantDivId7").show("slow");
+    $("#restaurantDivId8").show("slow");
 });
 
 $("#radioFilter3").click(function () {
-    $("#restaurantDivId1").show("slow", function () {
-    })
-    $("#restaurantDivId2").show("slow", function () {
-    })
-    $("#restaurantDivId3").show("slow", function () {
-    })
-    $("#restaurantDivId4").hide("slow", function () {
-    })
-    $("#restaurantDivId5").hide("slow", function () {
-    })
-    $("#restaurantDivId6").hide("slow", function () {
-    })
-    $("#restaurantDivId7").show("slow", function () {
-    })
-    $("#restaurantDivId8").hide("slow", function () {
-    })
+    $("#restaurantDivId1").show("slow");
+    $("#restaurantDivId2").show("slow");
+    $("#restaurantDivId3").show("slow");
+    $("#restaurantDivId4").hide("slow");
+    $("#restaurantDivId5").hide("slow");
+    $("#restaurantDivId6").hide("slow");
+    $("#restaurantDivId7").show("slow");
+    $("#restaurantDivId8").hide("slow");
 });
 
 $("#radioFilter4").click(function () {
-    $("#restaurantDivId1").hide("slow", function () {
-    })
-    $("#restaurantDivId2").show("slow", function () {
-    })
-    $("#restaurantDivId3").hide("slow", function () {
-    })
-    $("#restaurantDivId4").show("slow", function () {
-    })
-    $("#restaurantDivId5").hide("slow", function () {
-    })
-    $("#restaurantDivId6").hide("slow", function () {
-    })
-    $("#restaurantDivId7").hide("slow", function () {
-    })
-    $("#restaurantDivId8").hide("slow", function () {
-    })
+    $("#restaurantDivId1").hide("slow");
+    $("#restaurantDivId2").show("slow");
+    $("#restaurantDivId3").hide("slow");
+    $("#restaurantDivId4").show("slow");
+    $("#restaurantDivId5").hide("slow");
+    $("#restaurantDivId6").hide("slow");
+    $("#restaurantDivId7").hide("slow");
+    $("#restaurantDivId8").hide("slow");
 });
 
 $("#radioFilter5").click(function () {
-    $("#restaurantDivId1").hide("slow", function () {
-    })
-    $("#restaurantDivId2").hide("slow", function () {
-    })
-    $("#restaurantDivId3").hide("slow", function () {
-    })
-    $("#restaurantDivId4").hide("slow", function () {
-    })
-    $("#restaurantDivId5").hide("slow", function () {
-    })
-    $("#restaurantDivId6").show("slow", function () {
-    })
-    $("#restaurantDivId7").hide("slow", function () {
-    })
-    $("#restaurantDivId8").hide("slow", function () {
-    
-    });
+    $("#restaurantDivId1").hide("slow");
+    $("#restaurantDivId2").hide("slow");
+    $("#restaurantDivId3").hide("slow");
+    $("#restaurantDivId4").hide("slow");
+    $("#restaurantDivId5").hide("slow");
+    $("#restaurantDivId6").show("slow");
+    $("#restaurantDivId7").hide("slow");
+    $("#restaurantDivId8").hide("slow");   
+});
 
-    $("#radioFilter6").click(function () {
-        $("#restaurantDivId1").hide("slow", function () {
-        })
-        $("#restaurantDivId2").hide("slow", function () {
-        })
-        $("#restaurantDivId3").hide("slow", function () {
-        })
-        $("#restaurantDivId4").hide("slow", function () {
-        })
-        $("#restaurantDivId5").hide("slow", function () {
-        })
-        $("#restaurantDivId6").hide("slow", function () {
-        })
-        $("#restaurantDivId7").hide("slow", function () {
-        })
-        $("#restaurantDivId8").show("slow", function () {
-        })
-    });
+$("#radioFilter6").click(function () {
+    $("#restaurantDivId1").hide("slow");
+    $("#restaurantDivId2").hide("slow");
+    $("#restaurantDivId3").hide("slow");
+    $("#restaurantDivId4").hide("slow");
+    $("#restaurantDivId5").hide("slow");
+    $("#restaurantDivId6").hide("slow");
+    $("#restaurantDivId7").hide("slow");
+    $("#restaurantDivId8").show("slow"); 
+});
 
-    $("#radioFilter7").click(function () {
-        $("#restaurantDivId1").hide("slow", function () {
-        })
-        $("#restaurantDivId2").hide("slow", function () {
-        })
-        $("#restaurantDivId3").hide("slow", function () {
-        })
-        $("#restaurantDivId4").hide("slow", function () {
-        })
-        $("#restaurantDivId5").show("slow", function () {
-        })
-        $("#restaurantDivId6").hide("slow", function () {
-        })
-        $("#restaurantDivId7").hide("slow", function () {
-        })
-        $("#restaurantDivId8").hide("slow", function () {
-        })
-    });
+$("#radioFilter7").click(function () {
+    $("#restaurantDivId1").hide("slow");
+    $("#restaurantDivId2").hide("slow");
+    $("#restaurantDivId3").hide("slow");
+    $("#restaurantDivId4").hide("slow");
+    $("#restaurantDivId5").show("slow");
+    $("#restaurantDivId6").hide("slow");
+    $("#restaurantDivId7").hide("slow");
+    $("#restaurantDivId8").hide("slow"); 
+});
 
-    $("#radioFilter8").click(function () {
-        $("#restaurantDivId1").hide("slow", function () {
-        })
-        $("#restaurantDivId2").hide("slow", function () {
-        })
-        $("#restaurantDivId3").hide("slow", function () {
-        })
-        $("#restaurantDivId4").hide("slow", function () {
-        })
-        $("#restaurantDivId5").hide("slow", function () {
-        })
-        $("#restaurantDivId6").hide("slow", function () {
-        })
-        $("#restaurantDivId7").hide("slow", function () {
-        })
-        $("#restaurantDivId8").show("slow", function () {
-        })
-    })});
+$("#radioFilter8").click(function () {
+    $("#restaurantDivId1").hide("slow");
+    $("#restaurantDivId2").hide("slow");
+    $("#restaurantDivId3").hide("slow");
+    $("#restaurantDivId4").hide("slow");
+    $("#restaurantDivId5").show("slow");
+    $("#restaurantDivId6").hide("slow");
+    $("#restaurantDivId7").hide("slow");
+    $("#restaurantDivId8").hide("slow"); 
+})
 
+$("#radioFilter9").click(function () {
+    $("#restaurantDivId1").hide("slow");
+    $("#restaurantDivId2").hide("slow");
+    $("#restaurantDivId3").hide("slow");
+    $("#restaurantDivId4").hide("slow");
+    $("#restaurantDivId5").hide("slow");
+    $("#restaurantDivId6").hide("slow");
+    $("#restaurantDivId7").hide("slow");
+    $("#restaurantDivId8").show("slow");
+});
 
+$(".btn_booknow").click(function () {
+    $('html,body').animate({
+        scrollTop: $(window.location.hash).offset().top
+    },
+        1000, 'swing');
+});
 
 
 

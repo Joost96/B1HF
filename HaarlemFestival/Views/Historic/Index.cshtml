@@ -1,0 +1,123 @@
+﻿@model HaarlemFestival.Model.PagePlusActivities
+
+@section AddToScripts{
+    <script src="@Url.Content("~/Scripts/ShowHideLocation.js")"></script>
+}
+
+@{
+    ViewBag.Title = "Historic";
+}
+ 
+<section class="HistoricTitle">
+
+    <h1>@Model.Page.Title</h1>
+
+    <h2>@Model.Page.PageDescriptions[0].Title</h2>
+
+</section>
+
+<section class="HistoricIntro">
+
+    <p>
+        @Html.Raw(Model.Page.PageDescriptions[0].DescriptionText)
+    </p>
+
+    <button>Click here to book now!</button>
+</section>
+
+<section>
+
+    <img class="HistoricImageTop" src="/img/Historic/TopImage1.jpg" alt="" />
+    <img class="HistoricImageTop" src="/img/Historic/TopImage2.jpg" alt="" />
+    <img class="HistoricImageTop" src="/img/Historic/TopImage3.jpg" alt="" />
+    <img class="HistoricImageTop" src="/img/Historic/TopImage4.jpg" alt="" />
+    <img class="HistoricImageTop" src="/img/Historic/TopImage5.jpg" alt="" />
+    <img class="HistoricImageTop" src="/img/Historic/TopImage6.jpg" alt="" />
+
+</section>
+
+<section class="HistoricRoute">
+
+    <h2>@Model.Page.PageDescriptions[1].Title</h2>
+    <hr />
+    <p>
+        @Html.Raw(Model.Page.PageDescriptions[1].DescriptionText)    
+    </p>
+
+    <p>
+        @Html.Raw(Model.Page.PageDescriptions[2].DescriptionText)
+    </p>
+    <hr />
+
+
+        <img class="HistoricImageRoute" src="@Html.Raw(Model.Page.PageDescriptions[3].ImageUrl)" alt="" />
+
+        <img class="HistoricImageDropMarker1 showhide" id="his1" src="@Html.Raw(Model.Page.PageDescriptions[4].ImageUrl)" alt="The Grote Kerk or St.-Bavokerk" />
+        <img class="HistoricImageDropMarker2 showhide" id="his2" src="@Html.Raw(Model.Page.PageDescriptions[4].ImageUrl)" alt="" />
+        <img class="HistoricImageDropMarker3 showhide" id="his3" src="@Html.Raw(Model.Page.PageDescriptions[4].ImageUrl)" alt="" />
+        <img class="HistoricImageDropMarker4 showhide" id="his4" src="@Html.Raw(Model.Page.PageDescriptions[4].ImageUrl)" alt="" />
+        <img class="HistoricImageDropMarker5 showhide" id="his5" src="@Html.Raw(Model.Page.PageDescriptions[4].ImageUrl)" alt="" />
+        <img class="HistoricImageDropMarker6 showhide" id="his6" src="@Html.Raw(Model.Page.PageDescriptions[4].ImageUrl)" alt="" />
+        <img class="HistoricImageDropMarker7 showhide" id="his7" src="@Html.Raw(Model.Page.PageDescriptions[4].ImageUrl)" alt="" />
+        <img class="HistoricImageDropMarker8 showhide" id="his8" src="@Html.Raw(Model.Page.PageDescriptions[4].ImageUrl)" alt="" />
+        <img class="HistoricImageDropMarker9 showhide" id="his9" src="@Html.Raw(Model.Page.PageDescriptions[4].ImageUrl)" alt="" />
+
+    <section class="HistoricRouteInfo">
+        <p class="DropMarkerGuide">Please hover over the drop markers on the map to the left</p>
+        <img class="HistoricImageDropMarker10" src="/img/Historic/HistoricDropMarker.png" alt="Hover over these drop markers on the map to the left" />
+    </section>
+
+    <section class="HistoricRouteInfo1">
+        <p class="HistoricRouteInfo1">The Grote Kerk or St.-Bavokerk is a Protestant church and former Catholic cathedral located on the central market square in the Dutch city of Haarlem.
+        The Cathedral of Saint Bavo now serves as the main cathedral for the Roman Catholic Diocese of Haarlem-Amsterdam.</p>
+        <img src="/img/Historic/Info1.jpg" alt="The Grote Kerk or St.-Bavokerk" class="HistoricRouteInfo1"/>
+    </section>
+
+    <section class="HistoricRouteInfo2">
+        <p class="HistoricRouteInfo2">The Grote Markt is the central market square of the city Haarlem.
+
+            There are several old buildings to visit, for example:
+            De Vishal, De Vleeshal and the city hall.</p>
+        <img src="/img/Historic/Info2.jpg" alt="" class="HistoricRouteInfo2"/>
+    </section>
+
+    <section class="HistoricRouteInfo3">
+        <p class="HistoricRouteInfo3">The Hallen Haarlem is the name of the exhibition space on the Grote Markt, Haarlem, Netherlands, where modern and contemporary art is on display in alternating presentations.
+The emphasis is on contemporary photograph and video presentations, with the focus on Man and society.</p>
+        <img src="/img/Historic/Info3.jpg" alt="" class="HistoricRouteInfo3"/>
+    </section>
+
+    <section class="HistoricRouteInfo4">
+     <p class="HistoricRouteInfo4">The Proveniershof is a hofje and former schutterij on the Grote Houtstraat in Haarlem, Netherlands.
+        The complex of buildings surrounds a rectangular garden taking up a city block that is on the Haarlem hofje route.</p>
+        <img src="/img/Historic/Info4.jpg" alt="" class="HistoricRouteInfo4"/>
+    </section>
+
+    <section class="HistoricRouteInfo5">
+        <p class="HistoricRouteInfo5">Jopenkerk Brewery is a Dutch brewery from Haarlem, which originated from the Haarlem Beer Company, founded in 1992, and is owned by Jopen BV since December 1996.</p>
+        <img src="/img/Historic/Info5.jpg" alt="" class="HistoricRouteInfo5"/>
+    </section>
+
+    <section class="HistoricRouteInfo6">
+        <p class="HistoricRouteInfo6">The Waalse kerk is a Walloon church that was built in the middle of the 14th century. The church has an upper gallery built for the Beguines who lived there on the courtyard that still bear their name.</p>
+        <img src="/img/Historic/Info6.jpg" alt="" class="HistoricRouteInfo6"/>
+    </section>
+
+    <section class="HistoricRouteInfo7">
+        <p class="HistoricRouteInfo7">The Adriaan is a windmill in the Netherlands that burnt down in 1932 and was rebuilt in 2002. The original windmill dates from 1779 and the mill has been a distinctive part of the skyline of Haarlem for centuries.</p>
+        <img src="/img/Historic/Info7.jpg" alt="" class="HistoricRouteInfo7"/>
+    </section>
+
+    <section class="HistoricRouteInfo8">
+        <p class="HistoricRouteInfo8">The Amsterdamse Poort is an old city gate of Haarlem, Netherlands. It is located at the end of the old route from Amsterdam to Haarlem and the only gate left from the original twelve city gates.</p>
+        <img src="/img/Historic/Info8.jpg" alt="" class="HistoricRouteInfo8"/>
+    </section>
+
+    <section class="HistoricRouteInfo9">
+        <p class="HistoricRouteInfo9">The Hofje van Bakenes or Bakenesserkamer is a hofje in Haarlem, Netherlands, located between the Bakenessergracht and the Wijde Appelaarsteeg. The hofje was founded from the legacy of Dirck van Bakenes (or Dirc van Bakenesse) in 1395. This makes it the oldest hofje in the Netherlands.</p>
+        <img src="/img/Historic/Info9.jpg" alt="" class="HistoricRouteInfo9"/>
+    </section>
+
+    <button class="HistoricButtonBook2">Book now!</button>
+    
+</section>
