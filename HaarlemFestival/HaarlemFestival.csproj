@@ -565,6 +565,9 @@
     <Content Include="Views\Dinner\Restaurant.cshtml" />
     <Content Include="Views\Dinner\Index.cshtml" />
     <Content Include="Views\Historic\Historic.cshtml" />
+    <Content Include="Views\Historic\Index.cshtml">
+      <BrowseToURL>~/Historic</BrowseToURL>
+    </Content>
     <Content Include="Views\Talking\Index.cshtml" />
     <Content Include="Views\ContentManagement\Contact.cshtml" />
     <Content Include="Views\Agenda\Index.cshtml" />
