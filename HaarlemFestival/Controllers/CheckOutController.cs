@@ -15,6 +15,7 @@ namespace HaarlemFestival.Controllers
         private IOrderRepository orderRepository;
         private IPageRepository pageRepository;
         private IAccountRepository accountRepository;
+        private IActivityRepository activityRepository;
 
         public CheckOutController()
         {
@@ -22,6 +23,7 @@ namespace HaarlemFestival.Controllers
             orderRepository = new OrderRepository(db);
             pageRepository = new PageRepository(db);
             accountRepository = new AccountRepository(db);
+            activityRepository = new ActivityRepository(db);
         }
         // GET: CheckOut
         public ActionResult CheckOut1()
@@ -153,26 +155,19 @@ namespace HaarlemFestival.Controllers
             return View(pagePlusOrders);
         }
 
-        [HttpPost]
-        public ActionResult Order(int activityId, DateTime timeslot, TicketType tickettype, int aantal, decimal totaalprijs, string commentaar=null)
+        public ActionResult OrderJazz(int id, int aantal)
         {
-
-            Order order;
-            Ticket ticket = new Ticket();
+            Activity activity = activityRepository.GetActivity(id);
 
             OrderHasTickets ticketOrder = new OrderHasTickets();
-            ticketOrder.Ticket_TimeSlot_Activity_Id = activityId;
-            ticketOrder.Ticket_TimeSlot_StartTime = timeslot;
-            ticketOrder.Ticket_Type = tickettype;
+            ticketOrder.Ticket_TimeSlot_Activity_Id = activity.Id;
+            ticketOrder.Ticket_TimeSlot_StartTime = activity.Timeslots[0].StartTime;
+            ticketOrder.Ticket_Type = activity.Timeslots[0].Tickets[0].Type;
             ticketOrder.Amount = aantal;
-            ticketOrder.TotalPrice = totaalprijs;
+            ticketOrder.TotalPrice = aantal * activity.Timeslots[0].Tickets[0].Price;
 
-            if (commentaar != null)
-            {
-                ticketOrder.Remarks = commentaar;
-            }
-
-            if (Session["order"] == null)
+            Order order = (Order)Session["order"];
+            if (order == null)
             {
                 order = new Order();
                 order.OrderHasTickets.Add(ticketOrder);

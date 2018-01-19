@@ -61,6 +61,9 @@ namespace HaarlemFestival.Repositories
                 .Where(a => a.Id == activityId)
                 .SingleOrDefault();
 
+        public Activity GetActivity(int id)
+        {
+            return db.Activities.Find(id);
         }
     }
 }

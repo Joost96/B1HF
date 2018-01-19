@@ -684,11 +684,11 @@ footer {
     text-align: center;
 }
 
-    .HistoricIntro button {
-        position: absolute;
-        top: 210px;
-        right: 420px;
-    }
+.HistoricIntro button {
+    position: relative;
+    bottom: 141px;
+    left: 450px;
+}
 
 .HistoricRoute h2 {
     text-align: center;
@@ -713,116 +713,263 @@ footer {
     border-style: solid;
     border-width: 1px;
     margin-top: 5px;
+    float: left;
 }
 
 .HistoricImageDropMarker1 {
     width: 13px;
     position: relative;
-    bottom: 32px;
-    right: 409px;
+    top: 152px;
+    right: 405px;
 }
 
 .HistoricImageDropMarker2 {
     width: 13px;
     position: relative;
-    bottom: 47px;
-    right: 461px;
+    top: 136px;
+    right: 458px;
 }
 
 .HistoricImageDropMarker3 {
     width: 13px;
     position: relative;
-    bottom: 34px;
-    right: 487px;
+    top: 149px;
+    right: 484px;
 }
 
 .HistoricImageDropMarker4 {
     width: 13px;
     position: relative;
-    bottom: -178px;
-    right: 670px;
+    top: 361px;
+    right: 667px;
 }
 
 .HistoricImageDropMarker5 {
     width: 13px;
     position: relative;
-    bottom: 41px;
-    right: 744px;
+    top: 142px;
+    right: 741px;
 }
 
 .HistoricImageDropMarker6 {
     width: 13px;
     position: relative;
-    bottom: 115px;
-    right: 426px;
+    top: 69px;
+    right: 422px;
 }
 
 .HistoricImageDropMarker7 {
     width: 13px;
     position: relative;
-    bottom: 191px;
-    right: 319px;
+    bottom: 8px;
+    right: 315px;
 }
 
 .HistoricImageDropMarker8 {
     width: 13px;
     position: relative;
-    bottom: 5px;
-    right: 205px;
+    top: 178px;
+    right: 201px;
 }
 
 .HistoricImageDropMarker9 {
     width: 13px;
     position: relative;
-    bottom: 62px;
-    right: 458px;
+    top: 121px;
+    right: 453px;
 }
 
 .HistoricImageDropMarker10 {
     width: 25px;
     position: relative;
-    top: 0;
-    right: 46px;
+    left: 180px;
 }
 
 .DropMarkerGuide {
-    width: 200px;
-    position: relative;
-    right: 117px;
+    margin-left: 15px;
+    margin-top: 135px;
 }
 
-button.HistoricButtonBook2 {
+HistoricButtonBook2 {
     position: relative;
     bottom: 25px;
     left: 778px;
 }
 
 section.HistoricRouteInfo {
-    width: 132px;
-    float: right;
-    margin-top: 147px;
+    width: 300px;
+    float: left;
 }
 
 .HistoricRouteInfo1 {
     display: none;
+    width: 300px;
+    float: left;
 }
 
+.HistoricRouteInfo2 {
+    display: none;
+    float: left;
+}
+
+.HistoricRouteInfo3 {
+    display: none;
+    float: left;
+}
+
+.HistoricRouteInfo4 {
+    display: none;
+    float: left;
+}
+
+.HistoricRouteInfo5 {
+    display: none;
+    float: left;
+}
+
+.HistoricRouteInfo6 {
+    display: none;
+    float: left;
+}
+
+.HistoricRouteInfo7 {
+    display: none;
+    float: left;
+}
+
+.HistoricRouteInfo8 {
+    display: none;
+    float: left;
+}
+
+.HistoricRouteInfo9 {
+    display: none;
+    float: left;
+}
+
+/*
 section.HistoricRouteInfo1 {
-    width: 200px;
-    float: right;
-    margin-top: 150px;
+    width: 100%;
 }
 
-p.HistoricRouteInfo1 {
+section.HistoricRouteInfo2 {
+    width: 100%;
+}
+
+section.HistoricRouteInfo3 {
+    width: 100%;
+}
+
+section.HistoricRouteInfo4 {
+    width: 100%;
+}
+
+section.HistoricRouteInfo5 {
+    width: 100%;
+}
+
+section.HistoricRouteInfo6 {
+    width: 100%;
+}
+
+section.HistoricRouteInfo7 {
+    width: 100%;
+}
+
+section.HistoricRouteInfo8 {
+    width: 100%;
+}
+
+section.HistoricRouteInfo9 {
+    width: 100%;
+}
+*/
+p.HistoricRouteInfo1{
+    display: inherit;
+}
+
+p.HistoricRouteInfo2 {
+    display: inherit;
+}
+
+p.HistoricRouteInfo3 {
+    display: inherit;
+}
+
+p.HistoricRouteInfo4 {
+    display: inherit;
+}
+
+p.HistoricRouteInfo5 {
+    display: inherit;
+}
+
+p.HistoricRouteInfo6 {
+    display: inherit;
+}
+
+p.HistoricRouteInfo7 {
+    display: inherit;
+}
+
+p.HistoricRouteInfo8 {
+    display: inherit;
+}
+
+p.HistoricRouteInfo9 {
     display: inherit;
 }
 
 img.HistoricRouteInfo1 {
     display: inherit;
-    width: 100px;
+    width: 100%;
 }
 
+img.HistoricRouteInfo2 {
+    display: inherit;
+    width: 100%;
+}
 
+img.HistoricRouteInfo3 {
+    display: inherit;
+    width: 100%;
+}
+
+img.HistoricRouteInfo4 {
+    display: inherit;
+    width: 100%;
+}
+
+img.HistoricRouteInfo5 {
+    display: inherit;
+    width: 100%;
+}
+
+img.HistoricRouteInfo6 {
+    display: inherit;
+    width: 100%;
+}
+
+img.HistoricRouteInfo7 {
+    display: inherit;
+    width: 100%;
+}
+
+img.HistoricRouteInfo8 {
+    display: inherit;
+    width: 100%;
+}
+
+img.HistoricRouteInfo9 {
+    display: inherit;
+    width: 100%;
+}
+
+.HistoricButtonBook2 {
+    position: relative;
+    top: 368px;
+    left: 132px;
+}
 
 /*-------------------------------JAZZ---------------------------------*/
 .jazz_page_info_hp {
