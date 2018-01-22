@@ -385,6 +385,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\Agenda\AgendaRaster.PNG" />
     <Content Include="img\Dinner\Detailed\u103.jpg" />
     <Content Include="img\Dinner\Detailed\u111.png" />
     <Content Include="img\Dinner\Detailed\u115.png" />
@@ -454,6 +455,8 @@
     <Content Include="img\Jazz\TomThomsomAssemble.png" />
     <Content Include="img\Jazz\UncleSue.png" />
     <Content Include="img\Jazz\WickedJazzSounds.png" />
+    <Content Include="img\Language\gb.svg" />
+    <Content Include="img\Language\nl.svg" />
     <Content Include="img\Talking\BriggiteKaandorp.jpg" />
     <Content Include="img\Talking\FemkeHalsema.jpg" />
     <Content Include="img\Talking\GielBeelen.jpg" />
