@@ -16,11 +16,13 @@ namespace HaarlemFestival.Controllers
 
         private DBHF db;
         private IPageRepository pageRepository;
+        private IActivityRepository activityRepository;
 
         public ContentManagementController()
         {
             db = new DBHF();
             pageRepository = new PageRepository(db);
+            activityRepository = new ActivityRepository(db);
         }
 
         // GET: HomePage
@@ -51,6 +53,27 @@ namespace HaarlemFestival.Controllers
         [HttpPost]
         //[ValidateAntiForgeryToken]
         public ActionResult Contact([Bind(Include = "Name,Titel,PageDescriptions")] Page page)
+        {
+            if (ModelState.IsValid)
+            {
+                UpdatePage(page, "Contact");
+                return RedirectToAction("Contact");
+            }
+            return View(page);
+        }
+
+        // GET: Talking
+        public ActionResult Talking()
+        {
+            Page homePage = pageRepository.GetPage("Talking", Language.Eng);
+            List<Activity> activities = activityRepository.GetActivities(EventType.Talking,Language.Eng).ToList();
+            PagePlusActivities pagePlusActivities = new PagePlusActivities();
+            return View(homePage);
+        }
+        // POST: Talking
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public ActionResult Talking([Bind(Include = "Name,Titel,PageDescriptions")] Page page)
         {
             if (ModelState.IsValid)
             {

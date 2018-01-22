@@ -10,17 +10,25 @@ namespace HaarlemFestival.Controllers
 {
     public class HistoricController : Controller
     {
-        
+        private DBHF db;
+        private IPageRepository pageRepository;
+        private IActivityRepository activityRepository;
+
+        public HistoricController()
+        {
+            db = new DBHF();
+            pageRepository = new PageRepository(db);
+            activityRepository = new ActivityRepository(db);
+        }
 
         // GET: Historic
         public ActionResult Index()
         {
             PagePlusActivities pagePlusActivities = new PagePlusActivities();
-            DBHF db = new DBHF();
-            IPageRepository pageRepository = new PageRepository(db);
+            
             Page page = pageRepository.GetPage("Historic", Language.Eng);
 
-            IActivityRepository activityRepository = new ActivityRepository(db);
+            
             IEnumerable<Activity> activities = activityRepository.GetActivities(EventType.Historic, Language.Eng);
 
             pagePlusActivities.Page = page;
