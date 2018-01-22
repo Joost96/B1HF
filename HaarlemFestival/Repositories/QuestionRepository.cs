@@ -6,7 +6,7 @@ using System.Web;
 
 namespace HaarlemFestival.Repositories
 {
-    public class QuestionRepository
+    public class QuestionRepository : IQuestionRepository
     {
         DBHF db;
 

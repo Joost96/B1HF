@@ -24,7 +24,6 @@ namespace HaarlemFestival.Repositories
             return db.Cuisines
                 .Include(C => C.Activities).AsEnumerable()
                 .Where(c => c.Activities.Contains(activity)).ToList();
-
         }
     }
 }

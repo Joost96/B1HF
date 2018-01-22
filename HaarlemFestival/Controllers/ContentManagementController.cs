@@ -32,7 +32,7 @@ namespace HaarlemFestival.Controllers
         // POST: HomePage
         [HttpPost]
         //[ValidateAntiForgeryToken]
-        public ActionResult Index([Bind(Include = "Name,Titel,PageDescriptions")] Page page)
+        public ActionResult Index([Bind(Include = "Name,Title,PageDescriptions")] Page page)
         {
             if (ModelState.IsValid)
             {
