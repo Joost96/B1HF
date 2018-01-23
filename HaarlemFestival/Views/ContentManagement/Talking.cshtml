@@ -1,0 +1,114 @@
+﻿@model HaarlemFestival.Model.PagePlusActivities
+@section AddToHead{
+    <link href=@Url.Content("~/Content/Admin.css") rel="stylesheet" type="text/css" />
+
+}
+@section AddToScripts{
+    <script src=@Url.Content("~/Scripts/Admin.js")></script>
+}
+@{
+    ViewBag.Title = "Talking";
+}
+@RenderPage("AdminNav.cshtml")
+<main class="col-sm-9 ml-sm-auto col-md-10 adminMain">
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.Page.Name)
+        @Html.HiddenFor(model => model.Page.Title)
+        <section class="adminSection col-md-10">
+            <div class="form-group">
+                @Html.LabelFor(Model => Model.Page.PageDescriptions[0].Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="">
+                    @Html.EditorFor(Model => Model.Page.PageDescriptions[0].Title, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(Model => Model.Page.PageDescriptions[0].Title, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(modelItem => Model.Page.PageDescriptions[0].DescriptionText, htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-md-8">
+                    @Html.EditorFor(modelItem => Model.Page.PageDescriptions[0].DescriptionText, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(modelItem => Model.Page.PageDescriptions[0].DescriptionText, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </section>
+        <section class="adminSection col-md-10">
+            <section id="accordion">
+                @for(int i=0;i<Model.Activities.Count;i++)
+                {
+                    <div class="panel">
+                        <div class="panel-header" id="@Model.Activities[i].Id-header">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#@Model.Activities[i].Id-body">
+                                    @Model.Activities[i].Name
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="@Model.Activities[i].Id-body" class="panel-collapse collapse" aria-labelledby="@Model.Activities[i].Id-header" data-parent="#accordion">
+                            <div class="panel-body">
+                                @Html.HiddenFor(model => Model.Activities[i].Id)
+                                @Html.HiddenFor(model => Model.Activities[i].Location_Id)
+                                @Html.HiddenFor(model => Model.Activities[i].Type)
+                                @Html.HiddenFor(model => Model.Activities[i].Timeslots)
+
+                                <div class="form-group">
+                                    @Html.LabelFor(modelItem => Model.Activities[i].Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="">
+                                        @Html.EditorFor(modelItem => Model.Activities[i].Name, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(modelItem => Model.Activities[i].Name, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                @for(int j=0;j<Model.Activities[i].ActivityDescriptions.Count;j++)
+                                {
+                                    <section class="col-md-6">
+                                        @Html.HiddenFor(model => Model.Activities[i].ActivityDescriptions[j].Activity_ID)
+                                        @Html.HiddenFor(model => Model.Activities[i].ActivityDescriptions[j].Section)
+                                        @Html.HiddenFor(model => Model.Activities[i].ActivityDescriptions[j].Language)
+
+                                        @Html.HiddenFor(model => Model.Activities[i].ActivityDescriptions[j].ImageUrl)
+                                        <img src=@Model.Activities[i].ActivityDescriptions[j].ImageUrl class="editImage" alt=@Model.Activities[i].ActivityDescriptions[j].Title id=@Html.Raw("Activities_"+i+"__ActivityDescriptions_"+j+"__ImageUrl") />
+                                        <input class='imgUpload' type='file' name='afbeelding' id=@Html.Raw("Activities_"+ i +"__ActivityDescriptions_"+j+"__ImageUrl")>
+                                        <div class="form-group">
+                                            @Html.LabelFor(modelItem => Model.Activities[i].ActivityDescriptions[j].Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="">
+                                                @Html.EditorFor(modelItem => Model.Activities[i].ActivityDescriptions[j].Title, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(modelItem => Model.Activities[i].ActivityDescriptions[j].Title, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(modelItem => Model.Activities[i].ActivityDescriptions[j].DescriptionText, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="">
+                                                @Html.EditorFor(modelItem => Model.Activities[i].ActivityDescriptions[j].DescriptionText, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(modelItem => Model.Activities[i].ActivityDescriptions[j].DescriptionText, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </section>
+                                }
+                                <section>
+                                    @for(int j=0;j<Model.Activities[i].Timeslots.Count;j++)
+                                    {
+                                        @Html.HiddenFor(model => Model.Activities[i].Timeslots[j].Activity_Id)
+                                        @Html.HiddenFor(model => Model.Activities[i].Timeslots[j].)
+                                    }
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </section>
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+</main>
+

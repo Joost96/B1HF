@@ -223,6 +223,10 @@
     <Compile Include="Migrations\201801191142231_question aangepast.Designer.cs">
       <DependentUpon>201801191142231_question aangepast.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801231219450_timeslot seats change.cs" />
+    <Compile Include="Migrations\201801231219450_timeslot seats change.Designer.cs">
+      <DependentUpon>201801231219450_timeslot seats change.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\Activity.cs" />
@@ -261,11 +265,9 @@
     <Compile Include="Repositories\IAccountRepository.cs" />
     <Compile Include="Repositories\IActivityRepository.cs" />
     <Compile Include="Repositories\IOrderRepository.cs" />
-    <Compile Include="Repositories\IPageDescriptionRepository.cs" />
     <Compile Include="Repositories\ICuisineRepository.cs" />
     <Compile Include="Repositories\IQuestionRepository.cs" />
     <Compile Include="Repositories\OrderRepository.cs" />
-    <Compile Include="Repositories\PageDescriptionRepository.cs" />
     <Compile Include="Repositories\IPageRepository.cs" />
     <Compile Include="Repositories\CuisineRepository.cs" />
     <Compile Include="Repositories\PageRepository.cs" />
@@ -577,12 +579,12 @@
     <Content Include="Views\Agenda\Index.cshtml" />
     <Content Include="Views\CheckOut\_CheckOutLayout.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\PaymentMethod.cshtml" />
+    <Content Include="Views\ContentManagement\Talking.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\themes\" />
     <Folder Include="obj\Release\TempPE\" />
-    <Folder Include="Views\ContentManager\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -632,6 +634,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801191142231_question aangepast.resx">
       <DependentUpon>201801191142231_question aangepast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801231219450_timeslot seats change.resx">
+      <DependentUpon>201801231219450_timeslot seats change.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.cuisine.resources" />
     <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.cuisinemapping.resources" />

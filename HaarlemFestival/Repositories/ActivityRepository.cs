@@ -62,9 +62,17 @@ namespace HaarlemFestival.Repositories
                 .SingleOrDefault();
         }
 
-        public Activity GetActivity(int id)
+        
+        }
+
+        public void UpdateActivity(Activity activity)
         {
-            return db.Activities.Find(id);
+            db.Entry(activity).State = EntityState.Modified;
+            foreach (ActivityDescription dp in activity.ActivityDescriptions)
+            {
+                db.Entry(dp).State = EntityState.Modified;
+            }
+            db.SaveChanges();
         }
     }
 }

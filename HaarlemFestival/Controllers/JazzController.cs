@@ -10,6 +10,17 @@ namespace HaarlemFestival.Controllers
 {
     public class JazzController : Controller
     {
+        private DBHF db;
+        private IActivityRepository activityRepository;
+        private IPageRepository pageRepository;
+
+        public JazzController()
+        {
+            db = new DBHF();
+            activityRepository = new ActivityRepository(db);
+            pageRepository = new PageRepository(db);
+        }
+
         // GET: Jazz
         public ActionResult Index(int? id)
         {
@@ -36,12 +47,9 @@ namespace HaarlemFestival.Controllers
 
             PagePlusActivities PageDescriptions = new PagePlusActivities();
 
-            DBHF db = new DBHF();
-            IPageRepository pageRepo = new PageRepository(db);
-            Page page = pageRepo.GetPage("Jazz", Language.Eng); 
+            Page page = pageRepository.GetPage("Jazz", Language.Eng); 
 
-            IActivityRepository activityRepo = new ActivityRepository(db);
-            IEnumerable<Activity> activities = activityRepo.GetActivities(EventType.Jazz, Language.Eng, dDay);
+            IEnumerable<Activity> activities = activityRepository.GetActivities(EventType.Jazz, Language.Eng, dDay);
 
             activities.OrderBy(Activitie => Activitie.Timeslots);
 
@@ -54,9 +62,7 @@ namespace HaarlemFestival.Controllers
         [HttpPost]
         public ActionResult OrderJazz(OrderHasTickets model)
         {
-            DBHF db = new DBHF();
-            IActivityRepository activityRepository = new ActivityRepository(db);
-            Activity activity = activityRepository.GetActivity(model.Id, Language.Eng);
+            Activity activity = activityRepository.GetActivity(model.Ticket_TimeSlot_Activity_Id, Language.Eng);
 
             OrderHasTickets ticketOrder = new OrderHasTickets();
             ticketOrder.Ticket_TimeSlot_Activity_Id = activity.Id;
