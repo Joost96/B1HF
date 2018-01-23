@@ -66,5 +66,15 @@ namespace HaarlemFestival.Repositories
         {
             return db.Activities.Find(id);
         }
+
+        public void UpdateActivity(Activity activity)
+        {
+            db.Entry(activity).State = EntityState.Modified;
+            foreach (ActivityDescription dp in activity.ActivityDescriptions)
+            {
+                db.Entry(dp).State = EntityState.Modified;
+            }
+            db.SaveChanges();
+        }
     }
 }

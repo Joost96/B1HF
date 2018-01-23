@@ -65,22 +65,42 @@ namespace HaarlemFestival.Controllers
         // GET: Talking
         public ActionResult Talking()
         {
-            Page homePage = pageRepository.GetPage("Talking", Language.Eng);
+            Page page = pageRepository.GetPage("Talking", Language.Eng);
             List<Activity> activities = activityRepository.GetActivities(EventType.Talking,Language.Eng).ToList();
-            PagePlusActivities pagePlusActivities = new PagePlusActivities();
-            return View(homePage);
+            PagePlusActivities pagePlusActivities = new PagePlusActivities
+            {
+                Page = page,
+                Activities = activities
+            };
+            return View(pagePlusActivities);
         }
         // POST: Talking
         [HttpPost]
         //[ValidateAntiForgeryToken]
-        public ActionResult Talking([Bind(Include = "Name,Titel,PageDescriptions")] Page page)
+        public ActionResult Talking([Bind(Include = "Activities,Page")] PagePlusActivities pagePlusActivities)
         {
             if (ModelState.IsValid)
             {
-                UpdatePage(page, "Contact");
-                return RedirectToAction("Contact");
+                //UpdatePagePlusActivities(pagePlusActivities, "Talking");
+                return RedirectToAction("Talking");
             }
-            return View(page);
+            return View(pagePlusActivities);
+        }
+
+        public void UpdatePagePlusActivities(PagePlusActivities pagePlusActivities, string imgFolder)
+        {
+            foreach(Activity act in pagePlusActivities.Activities)
+            {
+                foreach (Description desc in act.ActivityDescriptions)
+                {
+                    if (desc.ImageUrl != null && desc.ImageUrl.Contains("image/"))
+                    {
+                        desc.ImageUrl = Saveimage(desc.ImageUrl, imgFolder);
+                    }
+                }
+                activityRepository.UpdateActivity(act);
+            }
+            UpdatePage(pagePlusActivities.Page, imgFolder);
         }
 
         public void UpdatePage(Page page, string imgFolder)
@@ -89,15 +109,19 @@ namespace HaarlemFestival.Controllers
             {
                 if (desc.ImageUrl != null && desc.ImageUrl.Contains("image/"))
                 {
-
-                    Bitmap image = new Bitmap(LoadImage(desc.ImageUrl.Substring(23)));
-                    string fileName = image.GetHashCode().ToString() + DateTime.Now.Ticks;
-                    string filePath = "/img/"+ imgFolder +"/" + fileName + ".jpeg";
-                    image.Save(Server.MapPath("~" + filePath));
-                    desc.ImageUrl = filePath;
+                    desc.ImageUrl = Saveimage(desc.ImageUrl,imgFolder);
                 }
             }
             pageRepository.UpdatePage(page);
+        }
+        public string Saveimage(string img, string imgFolder)
+        {
+
+            Bitmap image = new Bitmap(LoadImage(img.Substring(23)));
+            string fileName = image.GetHashCode().ToString() + DateTime.Now.Ticks;
+            string filePath = "/img/" + imgFolder + "/" + fileName + ".jpeg";
+            image.Save(Server.MapPath("~" + filePath));
+            return filePath;
         }
         public Image LoadImage(string base64string)
         {
