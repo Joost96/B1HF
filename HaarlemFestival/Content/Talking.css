@@ -221,7 +221,7 @@
     width: 25%;
 }
 
-.modal-content p TalkingOrderAantal {
+.modal-content p TalkingQuestionMessage {
     margin-left: 10%;
 }
 
@@ -231,17 +231,26 @@
 
 
 /* Question field */
-.TalkingOrderAantal {
+.TalkingQuestionMessage {
     width: 80%;
     height: 40%;
     border-radius: 10px 0 0 10px;
-
 }
 
-.TalkingOrderButton{
+.TalkingQuestionButton {
     width: 20%;
     border-radius: 0 10px 10px 0;
 }
+
+/* Thank you massage */
+
+
+
+
+
+
+
+
 
 
 /* The Close Button */

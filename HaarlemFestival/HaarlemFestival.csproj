@@ -579,7 +579,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\themes\" />
     <Folder Include="obj\Release\TempPE\" />
-    <Folder Include="Views\ContentManager\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
