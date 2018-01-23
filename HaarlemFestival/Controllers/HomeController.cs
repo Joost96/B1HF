@@ -10,28 +10,19 @@ namespace HaarlemFestival.Controllers
 {
     public class HomeController : Controller
     {
+        private DBHF db = new DBHF();
+        IPageRepository pageRepository;
+
+        public HomeController()
+        {
+            db = new DBHF();
+            pageRepository = new PageRepository(db);
+        }
         public ActionResult Index()
         {
-            
-            DBHF db = new DBHF();
-            IPageRepository pageRepo = new PageRepository(db);
-            Page page = pageRepo.GetPage("Home" , Language.Eng);
+            Page page = pageRepository.GetPage("Home" , Language.Eng);
             
             return View(page);
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
         }
 
         public ActionResult ChangeLanguage(int language)

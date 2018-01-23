@@ -113,17 +113,15 @@
     <section class="modal-content">
         <span class="close">&times;</span>
         <p class="modaltitle"> </p>
-        <p>Ask <label class="modaltitle"> </label> a question here </p>
+        <p>What is your question for <label class="modaltitle"> </label>?</p>
 
         @using (Html.BeginForm("AskQuestion", "Talking", FormMethod.Post))
         {
-            @Html.HiddenFor(model => model.Question.Spreker, new { id = "hahaha"})
-            @Html.EditorFor(model => model.Question.Message, new { htmlAttributes = new { @class = "TalkingOrderAantal"} })
+            @Html.HiddenFor(model => model.Question.Spreker, new { id = "sprekerNaam"})
+            @Html.EditorFor(model => model.Question.Message, new { @class = "TalkingQuestionMessage" })
 
-            <input type="submit" value="Submit" class="TalkingOrderButton" />
-        
+            <input type="submit" value="Submit" class="TalkingQuestionButton" />
         }
-
 
     </section>
 

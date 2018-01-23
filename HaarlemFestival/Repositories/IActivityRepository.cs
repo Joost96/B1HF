@@ -14,6 +14,6 @@ namespace HaarlemFestival.Repositories
 
         Activity GetActivity(int? activityId, Language language);
 
-        Activity GetActivity(int id);
+        void UpdateActivity(Activity activity);
     }
 }

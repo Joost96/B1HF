@@ -20,7 +20,7 @@ namespace HaarlemFestival.Model
         [Required]
         public int TotalSeats { get; set; }
         [Required]
-        public int FreeSeats { get; set; }
+        public int OccupiedSeats { get; set; }
 
         public string Hall { get; set; }   // somige locaties hebben verschillende hallen binnen die locatie
 

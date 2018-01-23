@@ -1,0 +1,1296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="HaarlemFestival.Controllers.AccountController">
+    <Position X="11.25" Y="2.25" Width="1.5" />
+    <AssociationLine Name="accountRepository" Type="HaarlemFestival.Repositories.IAccountRepository" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.625" Y="4.06" />
+        <Point X="12.625" Y="5.96" />
+        <Point X="12.375" Y="5.96" />
+        <Point X="12.375" Y="6.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="pageRepository" Type="HaarlemFestival.Repositories.IPageRepository" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.125" Y="4.06" />
+        <Point X="12.125" Y="5.221" />
+        <Point X="9.27" Y="5.221" Type="JumpStart" />
+        <Point X="9.104" Y="5.221" Type="JumpEnd" />
+        <Point X="8.879" Y="5.221" Type="JumpStart" />
+        <Point X="8.488" Y="5.221" Type="JumpEnd" />
+        <Point X="7.486" Y="5.221" />
+        <Point X="7.486" Y="5.897" />
+        <Point X="7.125" Y="5.897" />
+        <Point X="7.125" Y="6.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.091" Y="0.06" Height="0.182" Width="0.5" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="db" Type="HaarlemFestival.Model.DBHF" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.562" Y="2.25" />
+        <Point X="12.562" Y="1.26" />
+        <Point X="14.229" Y="1.26" Type="JumpStart" />
+        <Point X="14.396" Y="1.26" Type="JumpEnd" />
+        <Point X="15.979" Y="1.26" Type="JumpStart" />
+        <Point X="16.146" Y="1.26" Type="JumpEnd" />
+        <Point X="17.667" Y="1.26" Type="JumpStart" />
+        <Point X="17.833" Y="1.26" Type="JumpEnd" />
+        <Point X="18.553" Y="1.26" />
+        <Point X="18.553" Y="5.938" />
+        <Point X="19.5" Y="5.938" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.096" Y="0.092" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAQAAAAAAAAAAAAAAABAAAAAAAQgAQAAAA=</HashCode>
+      <FileName>Controllers\AccountController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="accountRepository" />
+      <Field Name="pageRepository" />
+      <Field Name="db" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HaarlemFestival.Controllers.AgendaController">
+    <Position X="14.75" Y="2.25" Width="1.5" />
+    <AssociationLine Name="db" Type="HaarlemFestival.Model.DBHF" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="16.062" Y="2.25" />
+        <Point X="16.062" Y="1.008" />
+        <Point X="18.721" Y="1.008" />
+        <Point X="18.721" Y="5.938" />
+        <Point X="19.5" Y="5.938" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.033" Y="0.084" Height="0.182" Width="0.5" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="orderRepository" Type="HaarlemFestival.Repositories.IOrderRepository" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="15.75" Y="3.867" />
+        <Point X="15.75" Y="5.781" />
+        <Point X="14.458" Y="5.781" Type="JumpStart" />
+        <Point X="14.292" Y="5.781" Type="JumpEnd" />
+        <Point X="12.708" Y="5.781" Type="JumpStart" />
+        <Point X="12.542" Y="5.781" Type="JumpEnd" />
+        <Point X="10.625" Y="5.781" />
+        <Point X="10.625" Y="6.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="pageRepository" Type="HaarlemFestival.Repositories.IPageRepository" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.875" Y="3.867" />
+        <Point X="14.875" Y="5.304" />
+        <Point X="14.458" Y="5.304" Type="JumpStart" />
+        <Point X="14.292" Y="5.304" Type="JumpEnd" />
+        <Point X="14.146" Y="5.304" Type="JumpStart" />
+        <Point X="13.979" Y="5.304" Type="JumpEnd" />
+        <Point X="12.708" Y="5.304" Type="JumpStart" />
+        <Point X="12.542" Y="5.304" Type="JumpEnd" />
+        <Point X="9.27" Y="5.304" Type="JumpStart" />
+        <Point X="9.104" Y="5.304" Type="JumpEnd" />
+        <Point X="8.879" Y="5.304" Type="JumpStart" />
+        <Point X="8.488" Y="5.304" Type="JumpEnd" />
+        <Point X="7.587" Y="5.304" />
+        <Point X="7.587" Y="5.983" />
+        <Point X="7.125" Y="5.983" />
+        <Point X="7.125" Y="6.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.087" Y="0.057" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAABAAAAAABAAAAAAAAAAAAEAgAAAAAA=</HashCode>
+      <FileName>Controllers\AgendaController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+      <Field Name="orderRepository" />
+      <Field Name="pageRepository" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HaarlemFestival.Controllers.CheckOutController">
+    <Position X="13" Y="2.25" Width="1.5" />
+    <AssociationLine Name="accountRepository" Type="HaarlemFestival.Repositories.IAccountRepository" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.375" Y="4.637" />
+        <Point X="14.375" Y="6.088" />
+        <Point X="12.375" Y="6.088" />
+        <Point X="12.375" Y="6.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="activityRepository" Type="HaarlemFestival.Repositories.IActivityRepository" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="13.312" Y="4.637" />
+        <Point X="13.312" Y="4.953" />
+        <Point X="13.271" Y="4.953" Type="JumpStart" />
+        <Point X="13.104" Y="4.953" Type="JumpEnd" />
+        <Point X="12.708" Y="4.953" Type="JumpStart" />
+        <Point X="12.542" Y="4.953" Type="JumpEnd" />
+        <Point X="12.208" Y="4.953" Type="JumpStart" />
+        <Point X="12.042" Y="4.953" Type="JumpEnd" />
+        <Point X="9.708" Y="4.953" Type="JumpStart" />
+        <Point X="9.542" Y="4.953" Type="JumpEnd" />
+        <Point X="9.187" Y="4.953" />
+        <Point X="9.187" Y="6.021" />
+        <Point X="8.875" Y="6.021" />
+        <Point X="8.875" Y="6.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="db" Type="HaarlemFestival.Model.DBHF" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.312" Y="2.25" />
+        <Point X="14.312" Y="1.128" />
+        <Point X="15.979" Y="1.128" Type="JumpStart" />
+        <Point X="16.146" Y="1.128" Type="JumpEnd" />
+        <Point X="17.667" Y="1.128" Type="JumpStart" />
+        <Point X="17.833" Y="1.128" Type="JumpEnd" />
+        <Point X="18.639" Y="1.128" />
+        <Point X="18.639" Y="5.938" />
+        <Point X="19.5" Y="5.938" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.092" Y="0.078" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="orderRepository" Type="HaarlemFestival.Repositories.IOrderRepository" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.062" Y="4.637" />
+        <Point X="14.062" Y="5.666" />
+        <Point X="12.708" Y="5.666" Type="JumpStart" />
+        <Point X="12.542" Y="5.666" Type="JumpEnd" />
+        <Point X="10.625" Y="5.666" />
+        <Point X="10.625" Y="6.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="pageRepository" Type="HaarlemFestival.Repositories.IPageRepository" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="13.188" Y="4.637" />
+        <Point X="13.188" Y="5.267" />
+        <Point X="12.708" Y="5.267" Type="JumpStart" />
+        <Point X="12.542" Y="5.267" Type="JumpEnd" />
+        <Point X="9.27" Y="5.267" Type="JumpStart" />
+        <Point X="9.104" Y="5.267" Type="JumpEnd" />
+        <Point X="8.879" Y="5.267" Type="JumpStart" />
+        <Point X="8.488" Y="5.267" Type="JumpEnd" />
+        <Point X="7.525" Y="5.267" />
+        <Point X="7.525" Y="5.937" />
+        <Point X="7.125" Y="5.937" />
+        <Point X="7.125" Y="6.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.074" Y="0.06" Height="0.182" Width="0.5" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAQhAAAAAAAABAAQAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Controllers\CheckOutController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="accountRepository" />
+      <Field Name="activityRepository" />
+      <Field Name="db" />
+      <Field Name="orderRepository" />
+      <Field Name="pageRepository" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HaarlemFestival.Controllers.ContactController">
+    <Position X="9.5" Y="2.25" Width="1.5" />
+    <AssociationLine Name="db" Type="HaarlemFestival.Model.DBHF" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.812" Y="2.25" />
+        <Point X="10.812" Y="1.376" />
+        <Point X="12.479" Y="1.376" Type="JumpStart" />
+        <Point X="12.646" Y="1.376" Type="JumpEnd" />
+        <Point X="14.229" Y="1.376" Type="JumpStart" />
+        <Point X="14.396" Y="1.376" Type="JumpEnd" />
+        <Point X="15.979" Y="1.376" Type="JumpStart" />
+        <Point X="16.146" Y="1.376" Type="JumpEnd" />
+        <Point X="17.667" Y="1.376" Type="JumpStart" />
+        <Point X="17.833" Y="1.376" Type="JumpEnd" />
+        <Point X="18.486" Y="1.376" />
+        <Point X="18.486" Y="5.938" />
+        <Point X="19.5" Y="5.938" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.072" Y="0.074" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="pageRepository" Type="HaarlemFestival.Repositories.IPageRepository" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="9.625" Y="3.675" />
+        <Point X="9.625" Y="5.174" />
+        <Point X="9.27" Y="5.174" Type="JumpStart" />
+        <Point X="9.104" Y="5.174" Type="JumpEnd" />
+        <Point X="8.879" Y="5.174" Type="JumpStart" />
+        <Point X="8.488" Y="5.174" Type="JumpEnd" />
+        <Point X="7.439" Y="5.174" />
+        <Point X="7.439" Y="5.875" />
+        <Point X="7.125" Y="5.875" />
+        <Point X="7.125" Y="6.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.268" Y="0.04" Height="0.182" Width="0.537" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAEAgAAAAAA=</HashCode>
+      <FileName>Controllers\ContactController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+      <Field Name="pageRepository" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HaarlemFestival.Controllers.ContentManagementController">
+    <Position X="6" Y="2.25" Width="1.5" />
+    <AssociationLine Name="activityRepository" Type="HaarlemFestival.Repositories.IActivityRepository" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.375" Y="4.444" />
+        <Point X="6.375" Y="4.634" />
+        <Point X="7.932" Y="4.634" Type="JumpStart" />
+        <Point X="8.099" Y="4.634" Type="JumpEnd" />
+        <Point X="8.76" Y="4.634" />
+        <Point X="8.76" Y="5.747" />
+        <Point X="8.875" Y="5.747" />
+        <Point X="8.875" Y="6.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="pageRepository" Type="HaarlemFestival.Repositories.IPageRepository" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.125" Y="4.444" />
+        <Point X="6.125" Y="4.634" />
+        <Point X="6.129" Y="4.634" />
+        <Point X="6.129" Y="5.717" />
+        <Point X="7.125" Y="5.717" />
+        <Point X="7.125" Y="6.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.11" Y="0.06" Height="0.182" Width="0.521" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="db" Type="HaarlemFestival.Model.DBHF" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.312" Y="2.25" />
+        <Point X="7.312" Y="1.619" />
+        <Point X="8.979" Y="1.619" Type="JumpStart" />
+        <Point X="9.146" Y="1.619" Type="JumpEnd" />
+        <Point X="10.729" Y="1.619" Type="JumpStart" />
+        <Point X="10.896" Y="1.619" Type="JumpEnd" />
+        <Point X="12.479" Y="1.619" Type="JumpStart" />
+        <Point X="12.646" Y="1.619" Type="JumpEnd" />
+        <Point X="14.229" Y="1.619" Type="JumpStart" />
+        <Point X="14.396" Y="1.619" Type="JumpEnd" />
+        <Point X="15.979" Y="1.619" Type="JumpStart" />
+        <Point X="16.146" Y="1.619" Type="JumpEnd" />
+        <Point X="17.667" Y="1.619" Type="JumpStart" />
+        <Point X="17.833" Y="1.619" Type="JumpEnd" />
+        <Point X="18.326" Y="1.619" />
+        <Point X="18.326" Y="5.938" />
+        <Point X="19.5" Y="5.938" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.066" Y="0.044" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAADAAAAAAAQAAQAAAAAQEAgAAAAAA=</HashCode>
+      <FileName>Controllers\ContentManagementController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="activityRepository" />
+      <Field Name="pageRepository" />
+      <Field Name="db" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HaarlemFestival.Controllers.DinnerController">
+    <Position X="4" Y="2.25" Width="1.5" />
+    <AssociationLine Name="activityRepository" Type="HaarlemFestival.Repositories.IActivityRepository" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.438" Y="3.867" />
+        <Point X="4.438" Y="4.682" />
+        <Point X="5.292" Y="4.682" Type="JumpStart" />
+        <Point X="5.458" Y="4.682" Type="JumpEnd" />
+        <Point X="7.932" Y="4.682" Type="JumpStart" />
+        <Point X="8.099" Y="4.682" Type="JumpEnd" />
+        <Point X="8.711" Y="4.682" />
+        <Point X="8.711" Y="5.824" />
+        <Point X="8.875" Y="5.824" />
+        <Point X="8.875" Y="6.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="cuisineRepository" Type="HaarlemFestival.Repositories.ICuisineRepository" FixedFromPoint="true">
+      <Path>
+        <Point X="5.375" Y="3.867" />
+        <Point X="5.375" Y="6.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="pageRepository" Type="HaarlemFestival.Repositories.IPageRepository" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.188" Y="3.867" />
+        <Point X="4.188" Y="5.758" />
+        <Point X="5.292" Y="5.758" Type="JumpStart" />
+        <Point X="5.458" Y="5.758" Type="JumpEnd" />
+        <Point X="7.125" Y="5.758" />
+        <Point X="7.125" Y="6.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.11" Y="0.06" Height="0.182" Width="0.505" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="db" Type="HaarlemFestival.Model.DBHF" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.375" Y="2.25" />
+        <Point X="5.375" Y="1.747" />
+        <Point X="7.229" Y="1.747" Type="JumpStart" />
+        <Point X="7.396" Y="1.747" Type="JumpEnd" />
+        <Point X="8.979" Y="1.747" Type="JumpStart" />
+        <Point X="9.146" Y="1.747" Type="JumpEnd" />
+        <Point X="10.729" Y="1.747" Type="JumpStart" />
+        <Point X="10.896" Y="1.747" Type="JumpEnd" />
+        <Point X="12.479" Y="1.747" Type="JumpStart" />
+        <Point X="12.646" Y="1.747" Type="JumpEnd" />
+        <Point X="14.229" Y="1.747" Type="JumpStart" />
+        <Point X="14.396" Y="1.747" Type="JumpEnd" />
+        <Point X="15.979" Y="1.747" Type="JumpStart" />
+        <Point X="16.146" Y="1.747" Type="JumpEnd" />
+        <Point X="17.667" Y="1.747" Type="JumpStart" />
+        <Point X="17.833" Y="1.747" Type="JumpEnd" />
+        <Point X="18.252" Y="1.747" />
+        <Point X="18.252" Y="5.938" />
+        <Point X="19.5" Y="5.938" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.08" Y="0.06" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>IAEAAAAAAAAQAAAAAAAAAAAAQAAAAAAAAAEAgAAAAAA=</HashCode>
+      <FileName>Controllers\DinnerController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="activityRepository" />
+      <Field Name="cuisineRepository" />
+      <Field Name="pageRepository" />
+      <Field Name="db" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HaarlemFestival.Controllers.HistoricController">
+    <Position X="0.5" Y="2.25" Width="1.5" />
+    <AssociationLine Name="activityRepository" Type="HaarlemFestival.Repositories.IActivityRepository" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="0.875" Y="3.675" />
+        <Point X="0.875" Y="4.795" />
+        <Point X="2.354" Y="4.795" Type="JumpStart" />
+        <Point X="2.521" Y="4.795" Type="JumpEnd" />
+        <Point X="3.479" Y="4.795" Type="JumpStart" />
+        <Point X="3.646" Y="4.795" Type="JumpEnd" />
+        <Point X="4.104" Y="4.795" Type="JumpStart" />
+        <Point X="4.271" Y="4.795" Type="JumpEnd" />
+        <Point X="5.292" Y="4.795" Type="JumpStart" />
+        <Point X="5.458" Y="4.795" Type="JumpEnd" />
+        <Point X="6.046" Y="4.795" Type="JumpStart" />
+        <Point X="6.213" Y="4.795" Type="JumpEnd" />
+        <Point X="7.932" Y="4.795" Type="JumpStart" />
+        <Point X="8.099" Y="4.795" Type="JumpEnd" />
+        <Point X="8.571" Y="4.795" />
+        <Point X="8.571" Y="5.929" />
+        <Point X="8.875" Y="5.929" />
+        <Point X="8.875" Y="6.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.109" Y="0.061" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="db" Type="HaarlemFestival.Model.DBHF" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.812" Y="2.25" />
+        <Point X="1.812" Y="1.974" />
+        <Point X="3.479" Y="1.974" Type="JumpStart" />
+        <Point X="3.646" Y="1.974" Type="JumpEnd" />
+        <Point X="5.292" Y="1.974" Type="JumpStart" />
+        <Point X="5.458" Y="1.974" Type="JumpEnd" />
+        <Point X="7.229" Y="1.974" Type="JumpStart" />
+        <Point X="7.396" Y="1.974" Type="JumpEnd" />
+        <Point X="8.979" Y="1.974" Type="JumpStart" />
+        <Point X="9.146" Y="1.974" Type="JumpEnd" />
+        <Point X="10.729" Y="1.974" Type="JumpStart" />
+        <Point X="10.896" Y="1.974" Type="JumpEnd" />
+        <Point X="12.479" Y="1.974" Type="JumpStart" />
+        <Point X="12.646" Y="1.974" Type="JumpEnd" />
+        <Point X="14.229" Y="1.974" Type="JumpStart" />
+        <Point X="14.396" Y="1.974" Type="JumpEnd" />
+        <Point X="15.979" Y="1.974" Type="JumpStart" />
+        <Point X="16.146" Y="1.974" Type="JumpEnd" />
+        <Point X="17.667" Y="1.974" Type="JumpStart" />
+        <Point X="17.833" Y="1.974" Type="JumpEnd" />
+        <Point X="18.107" Y="1.974" />
+        <Point X="18.107" Y="5.938" />
+        <Point X="19.5" Y="5.938" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.104" Y="0.066" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="pageRepository" Type="HaarlemFestival.Repositories.IPageRepository" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="0.625" Y="3.675" />
+        <Point X="0.625" Y="5.867" />
+        <Point X="3.479" Y="5.867" Type="JumpStart" />
+        <Point X="3.646" Y="5.867" Type="JumpEnd" />
+        <Point X="5.292" Y="5.867" Type="JumpStart" />
+        <Point X="5.458" Y="5.867" Type="JumpEnd" />
+        <Point X="7.125" Y="5.867" />
+        <Point X="7.125" Y="6.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.103" Y="0.053" Height="0.182" Width="0.5" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAQAAAAAAAAAEAgAAAAAA=</HashCode>
+      <FileName>Controllers\HistoricController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="activityRepository" />
+      <Field Name="db" />
+      <Field Name="pageRepository" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HaarlemFestival.Controllers.HomeController">
+    <Position X="16.5" Y="2.25" Width="1.5" />
+    <AssociationLine Name="db" Type="HaarlemFestival.Model.DBHF" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17.75" Y="2.25" />
+        <Point X="17.75" Y="0.937" />
+        <Point X="18.81" Y="0.937" />
+        <Point X="18.81" Y="5.938" />
+        <Point X="19.5" Y="5.938" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.104" Y="0.084" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="pageRepository" Type="HaarlemFestival.Repositories.IPageRepository" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="16.688" Y="3.867" />
+        <Point X="16.688" Y="5.373" />
+        <Point X="15.833" Y="5.373" Type="JumpStart" />
+        <Point X="15.667" Y="5.373" Type="JumpEnd" />
+        <Point X="14.458" Y="5.373" Type="JumpStart" />
+        <Point X="14.292" Y="5.373" Type="JumpEnd" />
+        <Point X="14.146" Y="5.373" Type="JumpStart" />
+        <Point X="13.979" Y="5.373" Type="JumpEnd" />
+        <Point X="12.708" Y="5.373" Type="JumpStart" />
+        <Point X="12.542" Y="5.373" Type="JumpEnd" />
+        <Point X="9.27" Y="5.373" Type="JumpStart" />
+        <Point X="9.104" Y="5.373" Type="JumpEnd" />
+        <Point X="8.879" Y="5.373" Type="JumpStart" />
+        <Point X="8.488" Y="5.373" Type="JumpEnd" />
+        <Point X="7.658" Y="5.373" />
+        <Point X="7.658" Y="6.041" />
+        <Point X="7.125" Y="6.041" />
+        <Point X="7.125" Y="6.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.042" Y="-1.269" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAEAgAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+      <Field Name="pageRepository" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HaarlemFestival.Controllers.JazzController">
+    <Position X="7.75" Y="2.25" Width="1.5" />
+    <AssociationLine Name="activityRepository" Type="HaarlemFestival.Repositories.IActivityRepository" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.25" Y="3.867" />
+        <Point X="8.25" Y="4.566" />
+        <Point X="8.795" Y="4.566" />
+        <Point X="8.795" Y="5.673" />
+        <Point X="8.875" Y="5.673" />
+        <Point X="8.875" Y="6.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="db" Type="HaarlemFestival.Model.DBHF" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="9.062" Y="2.25" />
+        <Point X="9.062" Y="1.501" />
+        <Point X="10.729" Y="1.501" Type="JumpStart" />
+        <Point X="10.896" Y="1.501" Type="JumpEnd" />
+        <Point X="12.479" Y="1.501" Type="JumpStart" />
+        <Point X="12.646" Y="1.501" Type="JumpEnd" />
+        <Point X="14.229" Y="1.501" Type="JumpStart" />
+        <Point X="14.396" Y="1.501" Type="JumpEnd" />
+        <Point X="15.979" Y="1.501" Type="JumpStart" />
+        <Point X="16.146" Y="1.501" Type="JumpEnd" />
+        <Point X="17.667" Y="1.501" Type="JumpStart" />
+        <Point X="17.833" Y="1.501" Type="JumpEnd" />
+        <Point X="18.411" Y="1.501" />
+        <Point X="18.411" Y="5.938" />
+        <Point X="19.5" Y="5.938" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.062" Y="0.048" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="pageRepository" Type="HaarlemFestival.Repositories.IPageRepository" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.016" Y="3.867" />
+        <Point X="8.016" Y="5.13" />
+        <Point X="7.376" Y="5.13" />
+        <Point X="7.376" Y="5.831" />
+        <Point X="7.125" Y="5.831" />
+        <Point X="7.125" Y="6.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.068" Y="0.053" Height="0.182" Width="0.546" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAACAAAAAQAAAAAAAAAEAgAAAAAA=</HashCode>
+      <FileName>Controllers\JazzController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="activityRepository" />
+      <Field Name="db" />
+      <Field Name="pageRepository" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HaarlemFestival.Controllers.TalkingController">
+    <Position X="2.25" Y="2.25" Width="1.5" />
+    <AssociationLine Name="activityRepo" Type="HaarlemFestival.Repositories.IActivityRepository" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.688" Y="3.867" />
+        <Point X="2.688" Y="4.722" />
+        <Point X="3.479" Y="4.722" Type="JumpStart" />
+        <Point X="3.646" Y="4.722" Type="JumpEnd" />
+        <Point X="4.104" Y="4.722" Type="JumpStart" />
+        <Point X="4.271" Y="4.722" Type="JumpEnd" />
+        <Point X="5.292" Y="4.722" Type="JumpStart" />
+        <Point X="5.458" Y="4.722" Type="JumpEnd" />
+        <Point X="6.046" Y="4.722" Type="JumpStart" />
+        <Point X="6.213" Y="4.722" Type="JumpEnd" />
+        <Point X="7.932" Y="4.722" Type="JumpStart" />
+        <Point X="8.099" Y="4.722" Type="JumpEnd" />
+        <Point X="8.646" Y="4.722" />
+        <Point X="8.646" Y="5.862" />
+        <Point X="8.875" Y="5.862" />
+        <Point X="8.875" Y="6.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="pageRepo" Type="HaarlemFestival.Repositories.IPageRepository" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.438" Y="3.867" />
+        <Point X="2.438" Y="5.821" />
+        <Point X="3.479" Y="5.821" Type="JumpStart" />
+        <Point X="3.646" Y="5.821" Type="JumpEnd" />
+        <Point X="5.292" Y="5.821" Type="JumpStart" />
+        <Point X="5.458" Y="5.821" Type="JumpEnd" />
+        <Point X="7.125" Y="5.821" />
+        <Point X="7.125" Y="6.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.275" Y="0.06" Height="0.182" Width="0.5" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="db" Type="HaarlemFestival.Model.DBHF" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.562" Y="2.25" />
+        <Point X="3.562" Y="1.855" />
+        <Point X="5.292" Y="1.855" Type="JumpStart" />
+        <Point X="5.458" Y="1.855" Type="JumpEnd" />
+        <Point X="7.229" Y="1.855" Type="JumpStart" />
+        <Point X="7.396" Y="1.855" Type="JumpEnd" />
+        <Point X="8.979" Y="1.855" Type="JumpStart" />
+        <Point X="9.146" Y="1.855" Type="JumpEnd" />
+        <Point X="10.729" Y="1.855" Type="JumpStart" />
+        <Point X="10.896" Y="1.855" Type="JumpEnd" />
+        <Point X="12.479" Y="1.855" Type="JumpStart" />
+        <Point X="12.646" Y="1.855" Type="JumpEnd" />
+        <Point X="14.229" Y="1.855" Type="JumpStart" />
+        <Point X="14.396" Y="1.855" Type="JumpEnd" />
+        <Point X="15.979" Y="1.855" Type="JumpStart" />
+        <Point X="16.146" Y="1.855" Type="JumpEnd" />
+        <Point X="17.667" Y="1.855" Type="JumpStart" />
+        <Point X="17.833" Y="1.855" Type="JumpEnd" />
+        <Point X="18.168" Y="1.855" />
+        <Point X="18.168" Y="5.938" />
+        <Point X="19.5" Y="5.938" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.084" Y="0.092" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="questionRepository" Type="HaarlemFestival.Repositories.IQuestionRepository" FixedFromPoint="true">
+      <Path>
+        <Point X="3.562" Y="3.867" />
+        <Point X="3.562" Y="6.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAACIAAAAQAEAAAAEAAA=</HashCode>
+      <FileName>Controllers\TalkingController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="activityRepo" />
+      <Field Name="pageRepo" />
+      <Field Name="questionRepository" />
+      <Field Name="db" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HaarlemFestival.Model.Account">
+    <Position X="20" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAEAAACAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAg=</HashCode>
+      <FileName>Model\Account.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HaarlemFestival.Model.Activity">
+    <Position X="35" Y="7.25" Width="1.5" />
+    <AssociationLine Name="Cuisines" Type="HaarlemFestival.Model.Cuisine" FixedFromPoint="true">
+      <Path>
+        <Point X="36.5" Y="7.438" />
+        <Point X="37.75" Y="7.438" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="ActivityDescriptions" Type="HaarlemFestival.Model.ActivityDescription" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="35.25" Y="7.25" />
+        <Point X="35.25" Y="5.863" />
+        <Point X="29.812" Y="5.863" />
+        <Point X="29.812" Y="4.483" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.498" Y="0.035" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Location" Type="HaarlemFestival.Model.Location" FixedFromPoint="true">
+      <Path>
+        <Point X="35.375" Y="7.25" />
+        <Point X="35.375" Y="5.2" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Timeslots" Type="HaarlemFestival.Model.TimeSlot" FixedToPoint="true">
+      <Path>
+        <Point X="35" Y="7.812" />
+        <Point X="33.75" Y="7.812" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AgACAAQABAAAAAAAAAIAAAQAAAAAAAEAAQAEAAAAAAA=</HashCode>
+      <FileName>Model\Activity.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Location" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Cuisines" />
+      <Property Name="ActivityDescriptions" />
+      <Property Name="Timeslots" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="HaarlemFestival.Model.ActivityDescription">
+    <Position X="28.5" Y="3.25" Width="1.5" />
+    <InheritanceLine Type="HaarlemFestival.Model.Description" ManuallyRouted="true">
+      <Path>
+        <Point X="27.5" Y="2.623" />
+        <Point X="27.5" Y="3.01" />
+        <Point X="29.25" Y="3.01" />
+        <Point X="29.25" Y="3.25" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="Activity" Type="HaarlemFestival.Model.Activity" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="29.688" Y="4.483" />
+        <Point X="29.688" Y="5.976" />
+        <Point X="35.125" Y="5.976" />
+        <Point X="35.125" Y="7.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.088" Y="0.136" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Model\ActivityDescription.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Activity" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HaarlemFestival.Model.Cuisine">
+    <Position X="37.75" Y="7.25" Width="1.5" />
+    <AssociationLine Name="Activities" Type="HaarlemFestival.Model.Activity" FixedToPoint="true">
+      <Path>
+        <Point X="37.75" Y="7.812" />
+        <Point X="36.5" Y="7.812" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Model\Cuisine.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Activities" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="HaarlemFestival.Model.Customer">
+    <Position X="21.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HaarlemFestival.Model.DBHF">
+    <Position X="19.5" Y="5.25" Width="1.5" />
+    <AssociationLine Name="Accounts" Type="HaarlemFestival.Model.Account" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21" Y="6.5" />
+        <Point X="21.609" Y="6.5" />
+        <Point X="21.609" Y="7.179" />
+        <Point X="20.188" Y="7.179" />
+        <Point X="20.188" Y="7.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Activities" Type="HaarlemFestival.Model.Activity" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21" Y="6.125" />
+        <Point X="22.089" Y="6.125" />
+        <Point X="22.089" Y="6.398" />
+        <Point X="35.042" Y="6.398" Type="JumpStart" />
+        <Point X="35.458" Y="6.398" Type="JumpEnd" />
+        <Point X="36.375" Y="6.398" />
+        <Point X="36.375" Y="7.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="ActivityDescriptions" Type="HaarlemFestival.Model.ActivityDescription" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.812" Y="5.25" />
+        <Point X="20.812" Y="5.029" />
+        <Point X="28.75" Y="5.029" />
+        <Point X="28.75" Y="4.483" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Cuisines" Type="HaarlemFestival.Model.Cuisine" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21" Y="6.062" />
+        <Point X="22.2" Y="6.062" />
+        <Point X="22.2" Y="6.277" />
+        <Point X="35.042" Y="6.277" Type="JumpStart" />
+        <Point X="35.458" Y="6.277" Type="JumpEnd" />
+        <Point X="39.062" Y="6.277" />
+        <Point X="39.062" Y="7.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Customers" Type="HaarlemFestival.Model.Customer" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21" Y="6.438" />
+        <Point X="21.703" Y="6.438" />
+        <Point X="21.703" Y="9.945" />
+        <Point X="22.562" Y="9.945" />
+        <Point X="22.562" Y="10.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Employees" Type="HaarlemFestival.Model.Employee" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21" Y="6.562" />
+        <Point X="21.505" Y="6.562" />
+        <Point X="21.505" Y="7.05" />
+        <Point X="19.188" Y="7.05" />
+        <Point X="19.188" Y="10.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="TimeSlots" Type="HaarlemFestival.Model.TimeSlot" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21" Y="6.188" />
+        <Point X="22.007" Y="6.188" />
+        <Point X="22.007" Y="6.537" />
+        <Point X="33.562" Y="6.537" />
+        <Point X="33.562" Y="7.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Questions" Type="HaarlemFestival.Model.Question" FixedFromPoint="true">
+      <Path>
+        <Point X="20.438" Y="5.25" />
+        <Point X="20.438" Y="1.988" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Tickets" Type="HaarlemFestival.Model.Ticket" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21" Y="6.25" />
+        <Point X="21.939" Y="6.25" />
+        <Point X="21.939" Y="6.682" />
+        <Point X="31.062" Y="6.682" />
+        <Point X="31.062" Y="7.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Pages" Type="HaarlemFestival.Model.Page" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.562" Y="5.25" />
+        <Point X="20.562" Y="2.613" />
+        <Point X="24.938" Y="2.613" />
+        <Point X="24.938" Y="2.238" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="PageDescriptions" Type="HaarlemFestival.Model.PageDescription" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.688" Y="5.25" />
+        <Point X="20.688" Y="4.926" />
+        <Point X="24.938" Y="4.926" />
+        <Point X="24.938" Y="4.483" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="OrderHasTickets" Type="HaarlemFestival.Model.OrderHasTickets" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21" Y="6.312" />
+        <Point X="21.847" Y="6.312" />
+        <Point X="21.847" Y="6.803" />
+        <Point X="28.062" Y="6.803" />
+        <Point X="28.062" Y="7.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Locations" Type="HaarlemFestival.Model.Location" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21" Y="6" />
+        <Point X="22.307" Y="6" />
+        <Point X="22.307" Y="6.187" />
+        <Point X="35.042" Y="6.187" Type="JumpStart" />
+        <Point X="35.458" Y="6.187" Type="JumpEnd" />
+        <Point X="35.812" Y="6.187" />
+        <Point X="35.812" Y="5.2" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.92" Y="0.11" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Orders" Type="HaarlemFestival.Model.Order" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21" Y="6.375" />
+        <Point X="21.774" Y="6.375" />
+        <Point X="21.774" Y="6.95" />
+        <Point X="25.062" Y="6.95" />
+        <Point X="25.062" Y="7.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AgUAAAQAAAAAAAAwAAIAAABAGAAAAACEAAAAAoAAAAA=</HashCode>
+      <FileName>Model\DBHF.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Accounts" />
+      <Property Name="Activities" />
+      <Property Name="ActivityDescriptions" />
+      <Property Name="Cuisines" />
+      <Property Name="Customers" />
+      <Property Name="Employees" />
+      <Property Name="TimeSlots" />
+      <Property Name="Questions" />
+      <Property Name="Tickets" />
+      <Property Name="Pages" />
+      <Property Name="PageDescriptions" />
+      <Property Name="OrderHasTickets" />
+      <Property Name="Locations" />
+      <Property Name="Orders" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="HaarlemFestival.Model.Description">
+    <Position X="26.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAQAAACAAAAEAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Model\Description.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HaarlemFestival.Model.Employee">
+    <Position X="19" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Employee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HaarlemFestival.Model.Location">
+    <Position X="34.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAiAAAAAAAgAAAIAAAIAAQAAAAAAAABAAIAAAAAAAA=</HashCode>
+      <FileName>Model\Location.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HaarlemFestival.Model.Order">
+    <Position X="23.75" Y="7.25" Width="1.5" />
+    <AssociationLine Name="Customer" Type="HaarlemFestival.Model.Customer" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="23.875" Y="9.382" />
+        <Point X="23.875" Y="10.687" />
+        <Point X="22.75" Y="10.687" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="OrderHasTickets" Type="HaarlemFestival.Model.OrderHasTickets" FixedToPoint="true">
+      <Path>
+        <Point X="25.25" Y="7.5" />
+        <Point X="26.75" Y="7.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAEDAAAAAAAAAAAAAAAAAAAAAAAAABABAAAAAgAAAAA=</HashCode>
+      <FileName>Model\Order.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Customer" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="OrderHasTickets" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="HaarlemFestival.Model.OrderHasTickets">
+    <Position X="26.75" Y="7.25" Width="1.5" />
+    <AssociationLine Name="Order" Type="HaarlemFestival.Model.Order" FixedFromPoint="true">
+      <Path>
+        <Point X="26.75" Y="7.812" />
+        <Point X="25.25" Y="7.812" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Ticket" Type="HaarlemFestival.Model.Ticket" FixedFromPoint="true">
+      <Path>
+        <Point X="28.25" Y="7.5" />
+        <Point X="29.75" Y="7.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAEAIAAgIIAAAAACAAAAAACAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>Model\OrderHasTickets.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Order" />
+      <Property Name="Ticket" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HaarlemFestival.Model.Page">
+    <Position X="24.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAQAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Page.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HaarlemFestival.Model.PageDescription">
+    <Position X="24.75" Y="3.25" Width="1.5" />
+    <InheritanceLine Type="HaarlemFestival.Model.Description" ManuallyRouted="true">
+      <Path>
+        <Point X="27.5" Y="2.623" />
+        <Point X="27.5" Y="2.997" />
+        <Point X="26.021" Y="2.997" Type="JumpStart" />
+        <Point X="25.854" Y="2.997" Type="JumpEnd" />
+        <Point X="25.5" Y="2.997" />
+        <Point X="25.5" Y="3.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Model\PageDescription.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Page" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HaarlemFestival.Model.Question">
+    <Position X="20.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Model\Question.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HaarlemFestival.Model.Ticket">
+    <Position X="29.75" Y="7.25" Width="1.5" />
+    <AssociationLine Name="OrderHasTickets" Type="HaarlemFestival.Model.OrderHasTickets" FixedToPoint="true">
+      <Path>
+        <Point X="29.75" Y="7.812" />
+        <Point X="28.25" Y="7.812" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="TimeSlot" Type="HaarlemFestival.Model.TimeSlot" FixedFromPoint="true">
+      <Path>
+        <Point X="31.25" Y="7.5" />
+        <Point X="32.25" Y="7.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAQAAAAAAAAAAAABAAAAAAAAAAQAAAggAAAA=</HashCode>
+      <FileName>Model\Ticket.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TimeSlot" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="OrderHasTickets" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="HaarlemFestival.Model.TimeSlot">
+    <Position X="32.25" Y="7.25" Width="1.5" />
+    <AssociationLine Name="Activity" Type="HaarlemFestival.Model.Activity" FixedFromPoint="true">
+      <Path>
+        <Point X="33.75" Y="7.438" />
+        <Point X="35" Y="7.438" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.06" Y="0.055" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Tickets" Type="HaarlemFestival.Model.Ticket" FixedToPoint="true">
+      <Path>
+        <Point X="32.25" Y="7.812" />
+        <Point X="31.25" Y="7.812" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAIAAAAAAAAIAAAAAAIAAgAAAAAAKAAEAAAAA=</HashCode>
+      <FileName>Model\TimeSlot.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Activity" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Tickets" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="HaarlemFestival.Repositories.AccountRepository" BaseTypeListCollapsed="true">
+    <Position X="11" Y="7.75" Width="1.5" />
+    <AssociationLine Name="db" Type="HaarlemFestival.Model.DBHF" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.312" Y="9.238" />
+        <Point X="12.312" Y="9.998" />
+        <Point X="18.606" Y="9.998" />
+        <Point X="18.606" Y="6.375" />
+        <Point X="19.5" Y="6.375" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAABAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Repositories\AccountRepository.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="HaarlemFestival.Repositories.ActivityRepository" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="7.75" Width="1.5" />
+    <AssociationLine Name="db" Type="HaarlemFestival.Model.DBHF" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.812" Y="9.238" />
+        <Point X="8.812" Y="9.831" />
+        <Point X="12.229" Y="9.831" Type="JumpStart" />
+        <Point X="12.396" Y="9.831" Type="JumpEnd" />
+        <Point X="18.41" Y="9.831" />
+        <Point X="18.41" Y="6.375" />
+        <Point X="19.5" Y="6.375" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.09" Y="0.092" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQQAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Repositories\ActivityRepository.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="HaarlemFestival.Repositories.CuisineRepository" BaseTypeListCollapsed="true">
+    <Position X="4" Y="7.75" Width="1.5" />
+    <AssociationLine Name="db" Type="HaarlemFestival.Model.DBHF" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.312" Y="9.046" />
+        <Point X="5.3" Y="9.139" />
+        <Point X="5.3" Y="9.669" />
+        <Point X="6.979" Y="9.669" Type="JumpStart" />
+        <Point X="7.146" Y="9.669" Type="JumpEnd" />
+        <Point X="8.729" Y="9.669" Type="JumpStart" />
+        <Point X="8.896" Y="9.669" Type="JumpEnd" />
+        <Point X="10.479" Y="9.669" Type="JumpStart" />
+        <Point X="10.646" Y="9.669" Type="JumpEnd" />
+        <Point X="12.229" Y="9.669" Type="JumpStart" />
+        <Point X="12.396" Y="9.669" Type="JumpEnd" />
+        <Point X="18.192" Y="9.669" />
+        <Point X="18.192" Y="6.375" />
+        <Point X="19.5" Y="6.375" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.096" Y="0.08" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\CuisineRepository.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="HaarlemFestival.Repositories.OrderRepository" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="7.75" Width="1.5" />
+    <AssociationLine Name="db" Type="HaarlemFestival.Model.DBHF" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.562" Y="9.238" />
+        <Point X="10.562" Y="9.901" />
+        <Point X="12.229" Y="9.901" Type="JumpStart" />
+        <Point X="12.396" Y="9.901" Type="JumpEnd" />
+        <Point X="18.525" Y="9.901" />
+        <Point X="18.525" Y="6.375" />
+        <Point X="19.5" Y="6.375" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.072" Y="0.11" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Repositories\OrderRepository.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="HaarlemFestival.Repositories.PageRepository" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="7.75" Width="1.5" />
+    <AssociationLine Name="db" Type="HaarlemFestival.Model.DBHF" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.062" Y="9.238" />
+        <Point X="7.062" Y="9.753" />
+        <Point X="10.479" Y="9.753" Type="JumpStart" />
+        <Point X="10.646" Y="9.753" Type="JumpEnd" />
+        <Point X="12.229" Y="9.753" Type="JumpStart" />
+        <Point X="12.396" Y="9.753" Type="JumpEnd" />
+        <Point X="18.294" Y="9.753" />
+        <Point X="18.294" Y="6.375" />
+        <Point X="19.5" Y="6.375" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\PageRepository.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="HaarlemFestival.Repositories.QuestionRepository" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="7.75" Width="1.5" />
+    <AssociationLine Name="db" Type="HaarlemFestival.Model.DBHF" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.562" Y="9.046" />
+        <Point X="3.562" Y="9.588" />
+        <Point X="6.979" Y="9.588" Type="JumpStart" />
+        <Point X="7.146" Y="9.588" Type="JumpEnd" />
+        <Point X="8.729" Y="9.588" Type="JumpStart" />
+        <Point X="8.896" Y="9.588" Type="JumpEnd" />
+        <Point X="10.479" Y="9.588" Type="JumpStart" />
+        <Point X="10.646" Y="9.588" Type="JumpEnd" />
+        <Point X="12.229" Y="9.588" Type="JumpStart" />
+        <Point X="12.396" Y="9.588" Type="JumpEnd" />
+        <Point X="18.111" Y="9.588" />
+        <Point X="18.111" Y="6.375" />
+        <Point X="19.5" Y="6.375" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\QuestionRepository.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="HaarlemFestival.Repositories.IAccountRepository">
+    <Position X="11" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Repositories\IAccountRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HaarlemFestival.Repositories.IActivityRepository">
+    <Position X="7.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Repositories\IActivityRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HaarlemFestival.Repositories.ICuisineRepository">
+    <Position X="4" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\ICuisineRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HaarlemFestival.Repositories.IOrderRepository">
+    <Position X="9.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Repositories\IOrderRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HaarlemFestival.Repositories.IPageRepository">
+    <Position X="5.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\IPageRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HaarlemFestival.Repositories.IQuestionRepository">
+    <Position X="2.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\IQuestionRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="HaarlemFestival.Model.EmployeeType">
+    <Position X="26.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Model\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="HaarlemFestival.Model.PaymentMethod">
+    <Position X="32" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAIAAAAAAAAAAEAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Model\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="HaarlemFestival.Model.TicketType">
+    <Position X="33.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAkBBAAAAAIAAAAAAAACAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Model\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="HaarlemFestival.Model.EventType">
+    <Position X="28.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAFAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Model\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="HaarlemFestival.Model.Language">
+    <Position X="30.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

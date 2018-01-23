@@ -13,14 +13,12 @@ namespace HaarlemFestival.Controllers
         private DBHF db;
         private IPageRepository pageRepo;
         private IActivityRepository activityRepo;
-        private IOrderRepository orderRepository;
         private IQuestionRepository questionRepository;
         public TalkingController()
         {
             db = new DBHF();
             pageRepo = new PageRepository(db);
             activityRepo = new ActivityRepository(db);
-            orderRepository = new OrderRepository(db);
             questionRepository = new QuestionRepository(db);
 
         }

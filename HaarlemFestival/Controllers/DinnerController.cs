@@ -12,29 +12,39 @@ namespace HaarlemFestival.Controllers
 {
     public class DinnerController : Controller
     {
-        private DBHF db = new DBHF();
+        private DBHF db;
+        private IPageRepository pageRepository;
+        private IActivityRepository activityRepository;
+        private ICuisineRepository cuisineRepository;
+
+        public DinnerController()
+        {
+            db = new DBHF();
+            pageRepository = new PageRepository(db);
+            activityRepository = new ActivityRepository(db);
+            cuisineRepository = new CuisineRepository(db);
+        }
 
         // GET: Dinner
         public ActionResult Index()
         {
 
-            DBHF db = new DBHF();
 
             PagePlusActivitiesPlusCuisine pagePlusActivitiesPlusCuisine = new PagePlusActivitiesPlusCuisine();
 
-            IPageRepository pageRepo = new PageRepository(db);
-            Page page = pageRepo.GetPage("Dinner", Language.Eng);
+            
+            Page page = pageRepository.GetPage("Dinner", Language.Eng);
 
-            IActivityRepository activityRepo = new ActivityRepository(db);
-            IEnumerable<Activity> activities = activityRepo.GetActivities(EventType.Dinner, Language.Eng);
+            
+            IEnumerable<Activity> activities = activityRepository.GetActivities(EventType.Dinner, Language.Eng);
 
-            ICuisineRepository cuisineRepo = new CuisineRepository(db);
-            IEnumerable<Cuisine> cuisines = cuisineRepo.GetCuisines();
+            
+            IEnumerable<Cuisine> cuisines = cuisineRepository.GetCuisines();
 
 
             foreach (Activity a in activities)
             {
-                a.Cuisines = cuisineRepo.GetCuisines(a);
+                a.Cuisines = cuisineRepository.GetCuisines(a);
             }
 
 
@@ -56,14 +66,12 @@ namespace HaarlemFestival.Controllers
 
             PagePlusActivities pagePlusActivity = new PagePlusActivities(); 
 
-            IPageRepository pageRepo = new PageRepository(db);
-            Page page = pageRepo.GetPage("Dinner Resaurant", Language.Eng);
 
-            IActivityRepository activityRepo = new ActivityRepository(db);
-            Activity activity = activityRepo.GetActivity(id, Language.Eng);
+            Page page = pageRepository.GetPage("Dinner Restaurant", Language.Eng);
 
-            ICuisineRepository cuisineRepo = new CuisineRepository(db);
-            activity.Cuisines = cuisineRepo.GetCuisines(activity);
+            Activity activity = activityRepository.GetActivity(id, Language.Eng);
+
+            activity.Cuisines = cuisineRepository.GetCuisines(activity);
 
             pagePlusActivity.Page = page;
             pagePlusActivity.Activity = activity;
