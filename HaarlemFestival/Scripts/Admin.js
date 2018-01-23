@@ -1,4 +1,5 @@
-﻿var dragStart = null;
+﻿//drag and drop
+var dragStart = null;
 
 $(".HomeHighlight").on("dragstart", function (e) {
     $(this).addClass("dragged");
@@ -27,6 +28,10 @@ $(".HomeHighlight").on("drop", function (e) {
     if (dragStart !== this) {
         dragStart.innerHTML = this.innerHTML;
         this.innerHTML = e.originalEvent.dataTransfer.getData('text/html');
+
+        var section = $(dragStart).find("input[id*='Section']").attr("value");
+        $(dragStart).find("input[id*='Section']").attr("value", $(this).find("input[id*='Section']").attr("value"));
+        $(this).find("input[id*='Section']").attr("value", section);
     }
     return false;
 });
@@ -37,6 +42,7 @@ $(".HomeHighlight").on("dragend", function () {
     });
 });
 
+//image
 $('main img').click(function () {
     var id = $(this).attr("id");
     $(".imgUpload#" + id).click();

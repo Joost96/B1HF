@@ -52,7 +52,7 @@ namespace HaarlemFestival.Repositories
 
         }
 
-        public Activity GetActivity (int? activityId, Language language)
+        public Activity GetActivity(int? activityId, Language language)
         {
             return db.Activities
                 .Include(a => a.Location)
@@ -60,10 +60,19 @@ namespace HaarlemFestival.Repositories
                 .Include(a => a.ActivityDescriptions)
                 .Where(a => a.Id == activityId)
                 .SingleOrDefault();
+        }
 
         
         }
 
-        
+        public void UpdateActivity(Activity activity)
+        {
+            db.Entry(activity).State = EntityState.Modified;
+            foreach (ActivityDescription dp in activity.ActivityDescriptions)
+            {
+                db.Entry(dp).State = EntityState.Modified;
+            }
+            db.SaveChanges();
+        }
     }
 }

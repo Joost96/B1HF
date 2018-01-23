@@ -73,8 +73,16 @@
                         <p class="modaltime">5</p>
                         <p class="modaldatum">6</p>
                         <label>Aantal</label>
-                        <input type="text" id="aantal_text" class="jazz_order_aantal" />
-                        @Html.ActionLink("Place Order", "OrderJazz", "CheckOut", new { id = Model.Activities[i].Id, aantal = 5 }, new { @class = "btn btn-default jazz_order_btn" })
+                        @using (Html.BeginForm("OrderJazz", "Jazz"))
+                        {
+                            @Html.HiddenFor(m => m.OrderTickets.Ticket_TimeSlot_Activity_Id)
+                            @Html.HiddenFor(m => m.OrderTickets.Ticket_TimeSlot_StartTime)
+                            @Html.HiddenFor()
+                            @Html.HiddenFor(m => m.Activities[i].Id)
+                            @Html.EditorFor(m => m.Activities[i].Name)
+                            <input type="submit" value="Order" />
+                        }
+                        
                     </section>
                 
             </section>

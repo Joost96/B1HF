@@ -11,12 +11,20 @@ namespace HaarlemFestival.Controllers
     
     public class ContactController : Controller
     {
+        private DBHF db;
+        private IPageRepository pageRepository;
+
+        public ContactController()
+        {
+            db = new DBHF();
+            pageRepository = new PageRepository(db);
+        }
+
         // GET: Contact
         public ActionResult Index()
         {
-            DBHF db = new DBHF();
-            IPageRepository pageRepo = new PageRepository(db);
-            Page page = pageRepo.GetPage("Contact", Language.Eng);
+            
+            Page page = pageRepository.GetPage("Contact", Language.Eng);
 
             return View(page);
         }
