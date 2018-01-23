@@ -2,6 +2,7 @@
 
 @section AddToScripts{
     <script src="@Url.Content("~/Scripts/ShowHideLocation.js")"></script>
+    <script src="@Url.Content("~/Scripts/ModalHistoric.js")"></script>
 }
 
 @{
@@ -22,7 +23,7 @@
         @Html.Raw(Model.Page.PageDescriptions[0].DescriptionText)
     </p>
 
-    <button>Click here to book now!</button>
+    <button id="HistoricButtonOrder1">Click here to book now!</button>
 </section>
 
 <section>
@@ -75,7 +76,7 @@
 
     <section class="HistoricRouteInfo2">
         <p class="HistoricRouteInfo2">The Grote Markt is the central market square of the city Haarlem.
-
+            <br/> <br/>
             There are several old buildings to visit, for example:
             De Vishal, De Vleeshal and the city hall.</p>
         <img src="/img/Historic/Info2.jpg" alt="" class="HistoricRouteInfo2"/>
@@ -118,6 +119,17 @@ The emphasis is on contemporary photograph and video presentations, with the foc
         <img src="/img/Historic/Info9.jpg" alt="" class="HistoricRouteInfo9"/>
     </section>
 
-    <button class="HistoricButtonBook2">Book now!</button>
+    <button id="HistoricButtonOrder2">Book now!</button>
     
 </section>
+
+<!-- The Modal -->
+<div id="myModalHistoric" class="modalHistoric">
+
+    <!-- Modal content -->
+    <div class="modal-contentHistoric">
+        <span class="closeHistoric">&times;</span>
+        <p>Some text in the Modal..</p>
+    </div>
+
+</div>
