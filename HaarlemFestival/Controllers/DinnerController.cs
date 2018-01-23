@@ -57,7 +57,7 @@ namespace HaarlemFestival.Controllers
             PagePlusActivities pagePlusActivity = new PagePlusActivities(); 
 
             IPageRepository pageRepo = new PageRepository(db);
-            Page page = pageRepo.GetPage("Dinner Restaurant", Language.Eng);
+            Page page = pageRepo.GetPage("Dinner Resaurant", Language.Eng);
 
             IActivityRepository activityRepo = new ActivityRepository(db);
             Activity activity = activityRepo.GetActivity(id, Language.Eng);
