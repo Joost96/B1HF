@@ -56,6 +56,13 @@ namespace HaarlemFestival.Controllers
         public ActionResult Order(PpApOpQ model)
         {
             Order order = (Order)Session["Order"];
+
+            Activity a = activityRepo.GetActivity(model.OHT.Ticket_TimeSlot_Activity_Id, Language.Eng);
+            model.OHT.Ticket_Type = TicketType.free;
+            model.OHT.Ticket_TimeSlot_StartTime = a.Timeslots[0].StartTime;
+            model.OHT.TotalPrice = 0;
+            
+
             
 
             return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());

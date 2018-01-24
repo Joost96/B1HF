@@ -32,7 +32,7 @@ $(".TalkingButtonBook").click(function () {
     var title = $("#" + id).text();
 
     $(".OrderTitle").text(title);
-    $("AvtivityId").attr("value", id);
+    $("#AvtivityId").attr("value", id);
 
     $("#OrderModal").show();
 
