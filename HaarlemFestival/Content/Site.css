@@ -695,9 +695,9 @@ footer {
     border-color: darkslateblue;
 }
 
-#HistoricButtonOrder1:hover, #HistoricButtonOrder1:focus {
-    background-color: lime;
-}
+    #HistoricButtonOrder1:hover, #HistoricButtonOrder1:focus {
+        background-color: lime;
+    }
 
 .HistoricRoute h2 {
     text-align: center;
@@ -874,7 +874,7 @@ section.HistoricRouteInfo {
     margin-left: 5px;
 }
 
-p.HistoricRouteInfo1{
+p.HistoricRouteInfo1 {
     width: 100%;
 }
 
@@ -947,10 +947,10 @@ img.HistoricRouteInfo9 {
     width: 93%;
 }
 
-.HistoricButtonBook2 {
+#HistoricButtonOrder2 {
     position: relative;
-    top: 368px;
-    left: 132px;
+    top: 373px;
+    left: 140px;
 }
 
 /* The Modal (background) */
@@ -973,7 +973,7 @@ img.HistoricRouteInfo9 {
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 32%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */
@@ -991,7 +991,39 @@ img.HistoricRouteInfo9 {
         cursor: pointer;
     }
 
+#numberTicketsHistoric {
+    width: 200px;
+}
+
+#SingleTicketHistoric {
+    float: right;
+    border-style: solid;
+    margin-right: 2px;
+    padding-bottom: 40px;
+}
+
+#GroupTicketHistoric {
+    float: right;
+    border-style: solid;
+    padding-left: 3px;
+}
+
+#ValueHistoric{
+    color: red;
+}
 /*-------------------------------JAZZ---------------------------------*/
+.jazz_page_inhoud{
+    margin-top : 15px;
+}
+
+.jazz_page_activiteit_section{
+    margin-bottom : 15px;
+}
+
+.jazz_page_info_box {
+    margin-top: 40px;
+}
+
 .jazz_page_info_hp {
     width: 100%;
 }
@@ -1034,7 +1066,7 @@ img.HistoricRouteInfo9 {
     border-bottom-style: inset;
     border-top-color: black;
     border-bottom-color: black;
-    margin-top: 3%;
+    margin-top: 2%;
     padding: 15px 0;
 }
 
@@ -1043,7 +1075,7 @@ img.HistoricRouteInfo9 {
     margin: 0;
     margin-right: 6%;
     margin-left: 5%;
-    padding: 10px 0;
+    padding: 3px 0;
 }
 
 .jazz_page_program_thursday {
@@ -1064,7 +1096,7 @@ img.HistoricRouteInfo9 {
 
 .jazz_page_program_passpartout {
     float: right;
-    margin-top: 10px;
+    margin-right : 3%;
 }
 
 .jazz_page_imgsection {
@@ -1127,3 +1159,9 @@ img.HistoricRouteInfo9 {
         text-decoration: none;
         cursor: pointer;
     }
+
+#article-editor {
+    width: 600px;
+    margin-left: -300px;
+    margin-right: -300px;
+}

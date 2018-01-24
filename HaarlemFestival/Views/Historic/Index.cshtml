@@ -8,7 +8,7 @@
 @{
     ViewBag.Title = "Historic";
 }
- 
+
 <section class="HistoricTitle">
 
     <h1>@Model.Page.Title</h1>
@@ -42,7 +42,7 @@
     <h2>@Model.Page.PageDescriptions[1].Title</h2>
     <hr />
     <p>
-        @Html.Raw(Model.Page.PageDescriptions[1].DescriptionText)    
+        @Html.Raw(Model.Page.PageDescriptions[1].DescriptionText)
     </p>
 
     <p>
@@ -51,17 +51,17 @@
     <hr />
 
 
-        <img class="HistoricImageRoute" src="@Html.Raw(Model.Page.PageDescriptions[3].ImageUrl)" alt="" />
+    <img class="HistoricImageRoute" src="@Html.Raw(Model.Page.PageDescriptions[3].ImageUrl)" alt="" />
 
-        <img class="HistoricImageDropMarker1 showhide" id="his1" src="@Html.Raw(Model.Page.PageDescriptions[4].ImageUrl)" alt="The Grote Kerk or St.-Bavokerk" />
-        <img class="HistoricImageDropMarker2 showhide" id="his2" src="@Html.Raw(Model.Page.PageDescriptions[4].ImageUrl)" alt="" />
-        <img class="HistoricImageDropMarker3 showhide" id="his3" src="@Html.Raw(Model.Page.PageDescriptions[4].ImageUrl)" alt="" />
-        <img class="HistoricImageDropMarker4 showhide" id="his4" src="@Html.Raw(Model.Page.PageDescriptions[4].ImageUrl)" alt="" />
-        <img class="HistoricImageDropMarker5 showhide" id="his5" src="@Html.Raw(Model.Page.PageDescriptions[4].ImageUrl)" alt="" />
-        <img class="HistoricImageDropMarker6 showhide" id="his6" src="@Html.Raw(Model.Page.PageDescriptions[4].ImageUrl)" alt="" />
-        <img class="HistoricImageDropMarker7 showhide" id="his7" src="@Html.Raw(Model.Page.PageDescriptions[4].ImageUrl)" alt="" />
-        <img class="HistoricImageDropMarker8 showhide" id="his8" src="@Html.Raw(Model.Page.PageDescriptions[4].ImageUrl)" alt="" />
-        <img class="HistoricImageDropMarker9 showhide" id="his9" src="@Html.Raw(Model.Page.PageDescriptions[4].ImageUrl)" alt="" />
+    <img class="HistoricImageDropMarker1 showhide" id="his1" src="@Html.Raw(Model.Page.PageDescriptions[4].ImageUrl)" alt="The Grote Kerk or St.-Bavokerk" />
+    <img class="HistoricImageDropMarker2 showhide" id="his2" src="@Html.Raw(Model.Page.PageDescriptions[4].ImageUrl)" alt="" />
+    <img class="HistoricImageDropMarker3 showhide" id="his3" src="@Html.Raw(Model.Page.PageDescriptions[4].ImageUrl)" alt="" />
+    <img class="HistoricImageDropMarker4 showhide" id="his4" src="@Html.Raw(Model.Page.PageDescriptions[4].ImageUrl)" alt="" />
+    <img class="HistoricImageDropMarker5 showhide" id="his5" src="@Html.Raw(Model.Page.PageDescriptions[4].ImageUrl)" alt="" />
+    <img class="HistoricImageDropMarker6 showhide" id="his6" src="@Html.Raw(Model.Page.PageDescriptions[4].ImageUrl)" alt="" />
+    <img class="HistoricImageDropMarker7 showhide" id="his7" src="@Html.Raw(Model.Page.PageDescriptions[4].ImageUrl)" alt="" />
+    <img class="HistoricImageDropMarker8 showhide" id="his8" src="@Html.Raw(Model.Page.PageDescriptions[4].ImageUrl)" alt="" />
+    <img class="HistoricImageDropMarker9 showhide" id="his9" src="@Html.Raw(Model.Page.PageDescriptions[4].ImageUrl)" alt="" />
 
     <section class="HistoricRouteInfo">
         <p class="DropMarkerGuide">Please hover over the drop markers on the map to the left</p>
@@ -69,58 +69,66 @@
     </section>
 
     <section class="HistoricRouteInfo1">
-        <p class="HistoricRouteInfo1">The Grote Kerk or St.-Bavokerk is a Protestant church and former Catholic cathedral located on the central market square in the Dutch city of Haarlem.
-        The Cathedral of Saint Bavo now serves as the main cathedral for the Roman Catholic Diocese of Haarlem-Amsterdam.</p>
-        <img src="/img/Historic/Info1.jpg" alt="The Grote Kerk or St.-Bavokerk" class="HistoricRouteInfo1"/>
+        <p class="HistoricRouteInfo1">
+            The Grote Kerk or St.-Bavokerk is a Protestant church and former Catholic cathedral located on the central market square in the Dutch city of Haarlem.
+            The Cathedral of Saint Bavo now serves as the main cathedral for the Roman Catholic Diocese of Haarlem-Amsterdam.
+        </p>
+        <img src="/img/Historic/Info1.jpg" alt="The Grote Kerk or St.-Bavokerk" class="HistoricRouteInfo1" />
     </section>
 
     <section class="HistoricRouteInfo2">
-        <p class="HistoricRouteInfo2">The Grote Markt is the central market square of the city Haarlem.
-            <br/> <br/>
+        <p class="HistoricRouteInfo2">
+            The Grote Markt is the central market square of the city Haarlem.
+            <br /> <br />
             There are several old buildings to visit, for example:
-            De Vishal, De Vleeshal and the city hall.</p>
-        <img src="/img/Historic/Info2.jpg" alt="" class="HistoricRouteInfo2"/>
+            De Vishal, De Vleeshal and the city hall.
+        </p>
+        <img src="/img/Historic/Info2.jpg" alt="" class="HistoricRouteInfo2" />
     </section>
 
     <section class="HistoricRouteInfo3">
-        <p class="HistoricRouteInfo3">The Hallen Haarlem is the name of the exhibition space on the Grote Markt, Haarlem, Netherlands, where modern and contemporary art is on display in alternating presentations.
-The emphasis is on contemporary photograph and video presentations, with the focus on Man and society.</p>
-        <img src="/img/Historic/Info3.jpg" alt="" class="HistoricRouteInfo3"/>
+        <p class="HistoricRouteInfo3">
+            The Hallen Haarlem is the name of the exhibition space on the Grote Markt, Haarlem, Netherlands, where modern and contemporary art is on display in alternating presentations.
+            The emphasis is on contemporary photograph and video presentations, with the focus on Man and society.
+        </p>
+        <img src="/img/Historic/Info3.jpg" alt="" class="HistoricRouteInfo3" />
     </section>
 
     <section class="HistoricRouteInfo4">
-     <p class="HistoricRouteInfo4">The Proveniershof is a hofje and former schutterij on the Grote Houtstraat in Haarlem, Netherlands.
-        The complex of buildings surrounds a rectangular garden taking up a city block that is on the Haarlem hofje route.</p>
-        <img src="/img/Historic/Info4.jpg" alt="" class="HistoricRouteInfo4"/>
+        <p class="HistoricRouteInfo4">
+            The Proveniershof is a hofje and former schutterij on the Grote Houtstraat in Haarlem, Netherlands.
+            The complex of buildings surrounds a rectangular garden taking up a city block that is on the Haarlem hofje route.
+        </p>
+        <img src="/img/Historic/Info4.jpg" alt="" class="HistoricRouteInfo4" />
     </section>
 
     <section class="HistoricRouteInfo5">
         <p class="HistoricRouteInfo5">Jopenkerk Brewery is a Dutch brewery from Haarlem, which originated from the Haarlem Beer Company, founded in 1992, and is owned by Jopen BV since December 1996.</p>
-        <img src="/img/Historic/Info5.jpg" alt="" class="HistoricRouteInfo5"/>
+        <img src="/img/Historic/Info5.jpg" alt="" class="HistoricRouteInfo5" />
     </section>
 
     <section class="HistoricRouteInfo6">
         <p class="HistoricRouteInfo6">The Waalse kerk is a Walloon church that was built in the middle of the 14th century. The church has an upper gallery built for the Beguines who lived there on the courtyard that still bear their name.</p>
-        <img src="/img/Historic/Info6.jpg" alt="" class="HistoricRouteInfo6"/>
+        <img src="/img/Historic/Info6.jpg" alt="" class="HistoricRouteInfo6" />
     </section>
 
     <section class="HistoricRouteInfo7">
         <p class="HistoricRouteInfo7">The Adriaan is a windmill in the Netherlands that burnt down in 1932 and was rebuilt in 2002. The original windmill dates from 1779 and the mill has been a distinctive part of the skyline of Haarlem for centuries.</p>
-        <img src="/img/Historic/Info7.jpg" alt="" class="HistoricRouteInfo7"/>
+        <img src="/img/Historic/Info7.jpg" alt="" class="HistoricRouteInfo7" />
     </section>
 
     <section class="HistoricRouteInfo8">
         <p class="HistoricRouteInfo8">The Amsterdamse Poort is an old city gate of Haarlem, Netherlands. It is located at the end of the old route from Amsterdam to Haarlem and the only gate left from the original twelve city gates.</p>
-        <img src="/img/Historic/Info8.jpg" alt="" class="HistoricRouteInfo8"/>
+        <img src="/img/Historic/Info8.jpg" alt="" class="HistoricRouteInfo8" />
     </section>
 
     <section class="HistoricRouteInfo9">
         <p class="HistoricRouteInfo9">The Hofje van Bakenes or Bakenesserkamer is a hofje in Haarlem, Netherlands, located between the Bakenessergracht and the Wijde Appelaarsteeg. The hofje was founded from the legacy of Dirck van Bakenes (or Dirc van Bakenesse) in 1395. This makes it the oldest hofje in the Netherlands.</p>
-        <img src="/img/Historic/Info9.jpg" alt="" class="HistoricRouteInfo9"/>
+        <img src="/img/Historic/Info9.jpg" alt="" class="HistoricRouteInfo9" />
     </section>
 
     <button id="HistoricButtonOrder2">Book now!</button>
-    
+
 </section>
 
 <!-- The Modal -->
@@ -129,7 +137,35 @@ The emphasis is on contemporary photograph and video presentations, with the foc
     <!-- Modal content -->
     <div class="modal-contentHistoric">
         <span class="closeHistoric">&times;</span>
-        <p>Some text in the Modal..</p>
+        <form>
+            <h1>Order Historic Haarlem Tickets</h1>
+            <p>Choose day</p>
+            <input id="HistoricDayOption1" type="radio" name="day" value="1"/>  <label for="DayChoice1">Thursday 26/07/2018</label>
+            <input id="HistoricDayOption2" type="radio" name="day" value="2"/>  <label for="DayChoice2">Friday 27/07/2018</label>
+            <input id="HistoricDayOption3" type="radio" name="day" value="3"/>  <label for="DayChoice3">Saturday 28/07/2018</label>
+            <p>Choose Time</p>
+            <input id="HistoricTimeOption1" type="radio" name="time" value="1"/> <label for="TimeChoice1">10:00-13:00</label>
+            <input id="HistoricTimeOption2" type="radio" name="time" value="2"/> <label for="TimeChoice2">13:00-16:00</label>
+            <input id="HistoricTimeOption3" type="radio" name="time" value="3"/> <label for="TimeChoice3">16:00-19:00</label>
+            <p>Choose Language</p>
+            <input id="HistoricLangOption1" type="radio" name="language" value="1"/> <label for="LangChoice1">English</label>
+            <input id="HistoricLangOption2" type="radio" name="language" value="2"/> <label for="LangChoice2">Dutch</label>
+            <input id="HistoricLangOption3" type="radio" name="language" value="3"/> <label for="LangChoice3">Chinese</label>
+            <p>Choose Amount of Tickets or select Group Ticket</p>
+            <p id="GroupTicketHistoric">Group Ticket <br /> €60.- for 4 persons <br />(€10,- savings) <br /> <span id="ValueHistoric">BEST VALUE</span></p>
+            <p id="SingleTicketHistoric">Single Ticket <br /> €17.50 each</p>
+            <input id="numberTicketsHistoric" type="number" placeholder="max. 4 tickets" min="1" max="4" list="defaultNumbers"/> <label>Group ticket: </label> <input id="HistoricGroupTicketOption" type="checkbox" />
+            <datalist id="defaultNumbers">
+                <option value="1">
+                <option value="2">
+                <option value="3">
+                <option value="4">
+            </datalist>
+
+            <p>Submit order:</p>
+            <button id="HistoricSubmit">Submit</button>
+            
+        </form>
     </div>
 
 </div>

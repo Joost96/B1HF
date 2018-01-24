@@ -5,15 +5,15 @@ using System.Web;
 
 namespace HaarlemFestival.Model
 {
-    public class PagePlusActivities
+    public class PpApOpQ
     {
         public Page Page { get; set; }
         public List<Activity> Activities { get; set; }
 
         public Question Question { get; set; }
-       
+
         public Activity Activity { get; set; }
 
-        public OrderHasTickets OrderTicket { get; set; }
+        public OrderHasTickets OHT { get; set; }
     }
 }

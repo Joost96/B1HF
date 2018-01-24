@@ -28,7 +28,6 @@ namespace HaarlemFestival.Controllers
             
             Page page = pageRepository.GetPage("Historic", Language.Eng);
 
-            
             IEnumerable<Activity> activities = activityRepository.GetActivities(EventType.Historic, Language.Eng);
 
             pagePlusActivities.Page = page;

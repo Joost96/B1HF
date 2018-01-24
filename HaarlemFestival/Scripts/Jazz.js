@@ -1,12 +1,13 @@
 ﻿var modal = document.getElementById('myModal');
 
 $(".jazz_page_buybtn").click(function () {
-    var idee = $(this).attr("id");
+    var id = $(this).attr("id");
     var title = $("#jazz_activity_title_" + id).text();
     var location = $("#jazz_activity_location_" + id).text();
     var hall = $("#jazz_activity_hall_" + id).text();
     var price = $("#jazz_activity_price_" + id).text();
     var time = $("#jazz_activity_time_" + id).text();
+
     var datum = $("#jazz_activity_datum_" + id).text();
     var prijs = parseFloat($("#jazz_activity_ticket_price_" + id).text());
 
@@ -17,16 +18,31 @@ $(".jazz_page_buybtn").click(function () {
     $(".modaltime").text(time);
     $(".modaldatum").text(datum);
 
-    $("#myModal").show
+    $("#myModal_" + id).show();
+
+    var aantal = $("#textBox_" + id).val();
+    console.log(aantal);
+
+    $("#link").click(function (event) {
+        var actionlinkUrl = $("#link").prop("href");
+
+        var url = actionlinkUrl.replace("xxxx", $("#textBox_" + id).val());
+        $("#link").prop("href", url);
+    });
 });
 
+
 $(".close").click(function () {
-    modal.style.display = "none";
+    $(".modal").each(function () {
+        $(this).hide();
+    });
 });
 
 $(window).click(function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (event.target.className === "modal") {
+        $(".modal").each(function () {
+            $(this).hide();
+        });
     }
 });
 

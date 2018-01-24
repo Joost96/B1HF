@@ -159,6 +159,10 @@
     <Compile Include="Controllers\HistoricController.cs" />
     <Compile Include="Controllers\JazzController.cs" />
     <Compile Include="Controllers\TalkingController.cs" />
+    <Compile Include="Migrations\201712151201499_order paymentmethod.cs" />
+    <Compile Include="Migrations\201712151201499_order paymentmethod.Designer.cs">
+      <DependentUpon>201712151201499_order paymentmethod.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201801042052142_Question toegevoegd.cs" />
     <Compile Include="Migrations\201801042052142_Question toegevoegd.Designer.cs">
       <DependentUpon>201801042052142_Question toegevoegd.cs</DependentUpon>
@@ -243,12 +247,14 @@
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\OrderHasTickets.cs" />
     <Compile Include="Model\OrderLocation.cs" />
+    <Compile Include="Model\OrderTicketJazz.cs" />
     <Compile Include="Model\Page.cs" />
     <Compile Include="Model\PageDescription.cs" />
     <Compile Include="Model\PagePlusActivitiesPlusCuisines.cs" />
     <Compile Include="Model\PagePlusActivities.cs" />
     <Compile Include="Model\PagePlusOrdersPlusOrderLocation.cs" />
     <Compile Include="Model\PagePlusOrders.cs" />
+    <Compile Include="Model\PpApOpQ.cs" />
     <Compile Include="Model\RegisterCheckoutModel.cs" />
     <Compile Include="Model\RegisterModel.cs" />
     <Compile Include="Model\Ticket.cs" />
@@ -524,6 +530,9 @@
     <Content Include="obj\Debug\HaarlemFestival.csproj.CoreCompileInputs.cache" />
     <Content Include="obj\Debug\HaarlemFestival.csproj.GenerateResource.Cache" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <Content Include="ClassDiagram1.cd" />
+    <Content Include="ClassDiagram2.cd" />
+    <Content Include="obj\Debug\HaarlemFestival.csprojResolveAssemblyReference.cache" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\FilterOnCuisine.js" />
@@ -629,6 +638,9 @@
     <EmbeddedResource Include="Migrations\201712131310386_naam bij locatie toegevoegd.resx">
       <DependentUpon>201712131310386_naam bij locatie toegevoegd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712151201499_order paymentmethod.resx">
+      <DependentUpon>201712151201499_order paymentmethod.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801042052142_Question toegevoegd.resx">
       <DependentUpon>201801042052142_Question toegevoegd.cs</DependentUpon>
     </EmbeddedResource>
@@ -651,6 +663,11 @@
     <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.locationupdate.resources" />
     <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.locationupdate2.resources" />
     <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.naambijlocatietoegevoegd.resources" />
+    <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.opnieuwquestion.resources" />
+    <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.questionaangepast - Copy.resources" />
+    <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.questionaangepast.resources" />
+    <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.Questiontoegevoegd - Copy.resources" />
+    <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.Questiontoegevoegd.resources" />
     <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.titleremarksisPayedrating.resources" />
     <EmbeddedResource Include="obj\Debug\HaarlemFestival.Migrations.updateLocation.resources" />
     <EmbeddedResource Include="obj\Debug\HaarlemFestival.Properties.Resources.resources" />
