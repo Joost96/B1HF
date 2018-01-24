@@ -7,6 +7,7 @@ using System.Net;
 using System.Web.Mvc;
 using System.Web.UI.HtmlControls;
 using HaarlemFestival.Model;
+using System;
 
 namespace HaarlemFestival.Controllers
 {
@@ -16,6 +17,7 @@ namespace HaarlemFestival.Controllers
         private IPageRepository pageRepository;
         private IActivityRepository activityRepository;
         private ICuisineRepository cuisineRepository;
+        private ITicketRepository ticketRepository; 
 
         public DinnerController()
         {
@@ -23,22 +25,21 @@ namespace HaarlemFestival.Controllers
             pageRepository = new PageRepository(db);
             activityRepository = new ActivityRepository(db);
             cuisineRepository = new CuisineRepository(db);
+            ticketRepository = new TicketRepository(db); 
         }
 
         // GET: Dinner
         public ActionResult Index()
         {
-
-
             PagePlusActivitiesPlusCuisine pagePlusActivitiesPlusCuisine = new PagePlusActivitiesPlusCuisine();
 
-            
+
             Page page = pageRepository.GetPage("Dinner", Language.Eng);
 
-            
+
             IEnumerable<Activity> activities = activityRepository.GetActivities(EventType.Dinner, Language.Eng);
 
-            
+
             IEnumerable<Cuisine> cuisines = cuisineRepository.GetCuisines();
 
 
@@ -64,7 +65,8 @@ namespace HaarlemFestival.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            PagePlusActivities pagePlusActivity = new PagePlusActivities(); 
+            //PagePlusActivities pagePlusActivity = new PagePlusActivities(); 
+            PagePlusActivityPlusOrder pagePlusActivityPlusOrder = new PagePlusActivityPlusOrder();
 
 
             Page page = pageRepository.GetPage("Dinner Restaurant", Language.Eng);
@@ -73,15 +75,64 @@ namespace HaarlemFestival.Controllers
 
             activity.Cuisines = cuisineRepository.GetCuisines(activity);
 
-            pagePlusActivity.Page = page;
-            pagePlusActivity.Activity = activity;
+            pagePlusActivityPlusOrder.Page = page;
+            pagePlusActivityPlusOrder.Activity = activity;
 
             if (activity == null)
             {
                 return HttpNotFound();
             }
 
-            return View(pagePlusActivity);
+            return View(pagePlusActivityPlusOrder);
         }
+
+
+        [HttpPost]
+        public ActionResult Order(PagePlusActivityPlusOrder model)
+        {
+            Order order = (Order)Session["order"];
+            if (order == null)
+            {
+                order = new Order();
+            }
+
+            DateTime startTime = model.Day.Date + model.Time.TimeOfDay;
+            Activity activity = activityRepository.GetActivity(model.Activity.Id, Language.Eng);          
+            
+            OrderHasTickets ticketOrder = new OrderHasTickets();
+
+            ticketOrder.Ticket_TimeSlot_Activity_Id = model.Activity.Id;
+            ticketOrder.Remarks = model.Order.OrderHasTickets[0].Remarks;
+            ticketOrder.Ticket_TimeSlot_StartTime = model.Day.Date + model.Time.TimeOfDay;
+            ticketOrder.Ticket_Type = TicketType.Single;
+            ticketOrder.Amount = model.NumberOfAdults;
+
+            Ticket ticket = ticketRepository.GetTicket(activity, startTime, ticketOrder.Ticket_Type);
+            ticketOrder.TotalPrice = model.NumberOfAdults * ticket.Price;
+
+            order.OrderHasTickets.Add(ticketOrder);
+
+
+            if (model.NumberOfKids > 0)
+            {
+                OrderHasTickets to = new OrderHasTickets();
+
+                to.Ticket_TimeSlot_Activity_Id = model.Activity.Id;
+                to.Remarks = model.Order.OrderHasTickets[0].Remarks;
+                to.Ticket_TimeSlot_StartTime = model.Day.Date + model.Time.TimeOfDay;
+                to.Ticket_Type = TicketType.Child;
+                to.Amount = model.NumberOfKids;
+
+                ticket = ticketRepository.GetTicket(activity, startTime, to.Ticket_Type);
+                to.TotalPrice = model.NumberOfAdults * ticket.Price;
+                order.OrderHasTickets.Add(to);
+            }
+
+            Session["order"] = order;
+
+            return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
+        }
+
+
     }
 }

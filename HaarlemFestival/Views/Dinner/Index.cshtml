@@ -70,7 +70,7 @@
             </div>
             <div class="left_info">
                 <img src="~/img/Dinner/Summary/001-clock-circular-outline.svg" width="18" height="18" alt="Time icon" />
-                @for (int i = 0; i < 3; i++)
+                @for (int i = 0; i < activity.Timeslots.Where(d => d.StartTime.DayOfWeek == DayOfWeek.Friday).Count(); i++)
                 {
                     <label class="ltime">@activity.Timeslots[i].StartTime.ToShortTimeString() - @activity.Timeslots[i].EndTime.ToShortTimeString()</label>
                 }
