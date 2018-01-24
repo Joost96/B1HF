@@ -684,10 +684,19 @@ footer {
     text-align: center;
 }
 
-.HistoricIntro button {
+#HistoricButtonOrder1 {
     position: relative;
     bottom: 141px;
     left: 450px;
+    padding: 30px 10px 30px 10px;
+    border-radius: 50%;
+    background-color: limegreen;
+    color: white;
+    border-color: darkslateblue;
+}
+
+#HistoricButtonOrder1:hover, #HistoricButtonOrder1:focus {
+    background-color: lime;
 }
 
 .HistoricRoute h2 {
@@ -714,6 +723,7 @@ footer {
     border-width: 1px;
     margin-top: 5px;
     float: left;
+    margin-bottom: 5px;
 }
 
 .HistoricImageDropMarker1 {
@@ -790,7 +800,7 @@ footer {
     margin-top: 135px;
 }
 
-HistoricButtonBook2 {
+#HistoricButtonOrder2 {
     position: relative;
     bottom: 25px;
     left: 778px;
@@ -864,43 +874,6 @@ section.HistoricRouteInfo {
     margin-left: 5px;
 }
 
-/*
-section.HistoricRouteInfo1 {
-    width: 100%;
-}
-
-section.HistoricRouteInfo2 {
-    width: 100%;
-}
-
-section.HistoricRouteInfo3 {
-    width: 100%;
-}
-
-section.HistoricRouteInfo4 {
-    width: 100%;
-}
-
-section.HistoricRouteInfo5 {
-    width: 100%;
-}
-
-section.HistoricRouteInfo6 {
-    width: 100%;
-}
-
-section.HistoricRouteInfo7 {
-    width: 100%;
-}
-
-section.HistoricRouteInfo8 {
-    width: 100%;
-}
-
-section.HistoricRouteInfo9 {
-    width: 100%;
-}
-*/
 p.HistoricRouteInfo1{
     width: 100%;
 }
@@ -980,7 +953,58 @@ img.HistoricRouteInfo9 {
     left: 132px;
 }
 
+/* The Modal (background) */
+.modalHistoric {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-contentHistoric {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.closeHistoric {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .closeHistoric:hover,
+    .closeHistoric:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
 /*-------------------------------JAZZ---------------------------------*/
+.jazz_page_inhoud{
+    margin-top : 15px;
+}
+
+.jazz_page_activiteit_section{
+    margin-bottom : 15px;
+    height : 1000px;
+}
+
+.jazz_page_info_box {
+    margin-top: 40px;
+}
+
 .jazz_page_info_hp {
     width: 100%;
 }
@@ -1023,7 +1047,7 @@ img.HistoricRouteInfo9 {
     border-bottom-style: inset;
     border-top-color: black;
     border-bottom-color: black;
-    margin-top: 3%;
+    margin-top: 2%;
     padding: 15px 0;
 }
 
@@ -1032,7 +1056,7 @@ img.HistoricRouteInfo9 {
     margin: 0;
     margin-right: 6%;
     margin-left: 5%;
-    padding: 10px 0;
+    padding: 3px 0;
 }
 
 .jazz_page_program_thursday {
@@ -1053,7 +1077,7 @@ img.HistoricRouteInfo9 {
 
 .jazz_page_program_passpartout {
     float: right;
-    margin-top: 10px;
+    margin-right : 3%;
 }
 
 .jazz_page_imgsection {
