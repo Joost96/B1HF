@@ -581,6 +581,7 @@
     <Content Include="Views\CheckOut\_CheckOutLayout.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\PaymentMethod.cshtml" />
     <Content Include="Views\ContentManagement\Talking.cshtml" />
+    <Content Include="Views\Shared\_LayoutLoggedIn.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

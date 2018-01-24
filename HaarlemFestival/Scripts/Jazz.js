@@ -7,9 +7,7 @@ $(".jazz_page_buybtn").click(function () {
     var hall = $("#jazz_activity_hall_" + id).text();
     var price = $("#jazz_activity_price_" + id).text();
     var time = $("#jazz_activity_time_" + id).text();
-
     var datum = $("#jazz_activity_datum_" + id).text();
-    var prijs = parseFloat($("#jazz_activity_ticket_price_" + id).text());
 
     $(".modaltitle").text(title);
     $(".modallocation").text(location);
@@ -20,10 +18,22 @@ $(".jazz_page_buybtn").click(function () {
 
     $("#myModal_" + id).show();
 
-    var aantal = $("#textBox_" + id).val();
-    console.log(aantal);
-
     $("#link").click(function (event) {
+        $("#myModal_" + id).hide();
+
+        $("ValidatingBtn").click(function () {
+            
+
+
+        });
+        $("CancelBtn").click(function () {
+            $("#myModal_" + id).show();
+
+
+        });
+
+
+
         var actionlinkUrl = $("#link").prop("href");
 
         var url = actionlinkUrl.replace("xxxx", $("#textBox_" + id).val());

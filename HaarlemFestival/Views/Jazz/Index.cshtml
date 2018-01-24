@@ -52,16 +52,7 @@
                         <p class="modaldatum">6</p>
                         <label>Aantal</label>
                         <input id="textBox_@Model.Activities[i].Id" type="text" />
-                        <a href="@Url.Action("OrderJazz", "Jazz", new { id = Model.Activities[i].Id, aantal = "xxxx"})" id="link">Order Ticket</a>
-
-                        @*@Html.ActionLink("Order Ticket", "OrderJazz", "Jazz", new { id = Model.Activities[i].Id, aantal = 5}, null)*@
-                        @*@using (Html.BeginForm("OrderJazz", "Jazz", FormMethod.Post))
-                        {
-                            @Html.EditorFor(m => m.OrderTicket.Amount)
-                            @Html.HiddenFor(m => m.Activities[i].Id)
-
-                            <input type="submit" value="Submit" />
-                        }*@
+                        <a href="@Url.Action("OrderJazz", "CheckOut", new { id = Model.Activities[i].Id, aantal = "xxxx"})" id="link">Order Ticket</a>
                     </section>
             </section>
 
@@ -87,6 +78,7 @@
                                 }
                                 
                                 <p id="jazz_activity_time_@Model.Activities[i].Id" class="jazz_activiteit_time">@Model.Page.PageDescriptions[12].Title @Model.Activities[i].Timeslots[0].StartTime.ToString("HH:mm") - @Model.Activities[i].Timeslots[0].EndTime.ToString("HH:mm")</p>
+                                <p id="jazz_activity_datum_@Model.Activities[i].Id" style="visibility:hidden">@Model.Activities[i].Timeslots[0].StartTime.ToString("dd/MM/yyyy")</p>
                             </section>
                             <section class="col-md-6">
                                 @if (Model.Activities[i].Timeslots[0].StartTime.ToString("dd/MM/yyyy") != "29-07-2018")
@@ -99,14 +91,27 @@
                         </section>
                     </section>
                 </section>
-
             </section>
-
-            
         }
+
+        <!-- The ValidationBox Modal -->
+        <section id="validationOrderModalId" class="validationOrderModalClass">
+            <!-- Modal content -->
+            <section class="validationOrderModal-content">
+                <span class="validationOrderModalClose">&times;</span>
+                <button></button>
+            </section>
+        </section>
+
+        <!-- The Pass-Partout Modal -->
+        <section id="passPartoutModalId" class="passPartoutModalClass">
+            <!-- Modal content -->
+            <section class="passPartoutModal-content">
+                <span class="passPartoutModalClose">&times;</span>
+                <button></button>
+            </section>
+        </section>
+
     </section>
-
-
-
 </section>
 

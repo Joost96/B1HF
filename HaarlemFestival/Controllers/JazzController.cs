@@ -59,39 +59,5 @@ namespace HaarlemFestival.Controllers
 
             return View(PageDescriptions);
         }
-
-        public ActionResult OrderJazz(int id, int aantal)
-        {
-            Language language = (Language)Session["language"];
-
-            int id1 = id;
-            int aantal1 = aantal;
-
-            DBHF db = new DBHF();
-            IActivityRepository activityRepository = new ActivityRepository(db);
-            Activity activity = activityRepository.GetActivity(id, language);
-
-            OrderHasTickets ticketOrder = new OrderHasTickets();
-            ticketOrder.Ticket_TimeSlot_Activity_Id = activity.Id;
-            ticketOrder.Ticket_TimeSlot_StartTime = activity.Timeslots[0].StartTime;
-            ticketOrder.Ticket_Type = activity.Timeslots[0].Tickets[0].Type;
-            ticketOrder.Amount = aantal;
-            ticketOrder.TotalPrice = aantal * activity.Timeslots[0].Tickets[0].Price;
-
-            Order order = (Order)Session["order"];
-            if (order == null)
-            {
-                order = new Order();
-                order.OrderHasTickets.Add(ticketOrder);
-                Session["order"] = order;
-            }
-            else
-            {
-                order.OrderHasTickets.Add(ticketOrder);
-                Session["order"] = order;
-            }
-
-            return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
-        }
     }
 }
