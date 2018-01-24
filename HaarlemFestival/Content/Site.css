@@ -1012,6 +1012,19 @@ img.HistoricRouteInfo9 {
     color: red;
 }
 /*-------------------------------JAZZ---------------------------------*/
+.jazz_page_inhoud{
+    margin-top : 15px;
+}
+
+.jazz_page_activiteit_section{
+    margin-bottom : 15px;
+    height : 1000px;
+}
+
+.jazz_page_info_box {
+    margin-top: 40px;
+}
+
 .jazz_page_info_hp {
     width: 100%;
 }
@@ -1054,7 +1067,7 @@ img.HistoricRouteInfo9 {
     border-bottom-style: inset;
     border-top-color: black;
     border-bottom-color: black;
-    margin-top: 3%;
+    margin-top: 2%;
     padding: 15px 0;
 }
 
@@ -1063,7 +1076,7 @@ img.HistoricRouteInfo9 {
     margin: 0;
     margin-right: 6%;
     margin-left: 5%;
-    padding: 10px 0;
+    padding: 3px 0;
 }
 
 .jazz_page_program_thursday {
@@ -1084,7 +1097,7 @@ img.HistoricRouteInfo9 {
 
 .jazz_page_program_passpartout {
     float: right;
-    margin-top: 10px;
+    margin-right : 3%;
 }
 
 .jazz_page_imgsection {

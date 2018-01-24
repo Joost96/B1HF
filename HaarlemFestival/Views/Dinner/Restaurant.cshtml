@@ -67,20 +67,22 @@
     {
         <text><span style="color: red">*</span> = required field!*</text>
 
+
+
         <fieldset>
-            <label class="restaurant_form_label" for="rday">For which day?*<span style="color: red">*</span></label>
-            <input type="radio" name="rday" value="@Model.Activity.Timeslots[0]" checked> @Model.Activity.Timeslots[0].StartTime.DayOfWeek @Model.Activity.Timeslots[0].StartTime.ToShortDateString()<br>
-            <input type="radio" name="rday" value="@Model.Activity.Timeslots[3]"> @Model.Activity.Timeslots[3].StartTime.DayOfWeek @Model.Activity.Timeslots[3].StartTime.ToShortDateString()<br>
-            <input type="radio" name="rday" value="@Model.Activity.Timeslots[6]"> @Model.Activity.Timeslots[6].StartTime.DayOfWeek @Model.Activity.Timeslots[6].StartTime.ToShortDateString()<br>
-            <input type="radio" name="rday" value="@Model.Activity.Timeslots[9]"> @Model.Activity.Timeslots[9].StartTime.DayOfWeek @Model.Activity.Timeslots[9].StartTime.ToShortDateString()<br>
+            <label class="restaurant_form_label" for="day">For which day?*<span style="color: red">*</span></label>
+            <input type="radio" name="day" value="@Model.Activity.Timeslots[0]" checked> @Model.Activity.Timeslots[0].StartTime.DayOfWeek @Model.Activity.Timeslots[0].StartTime.ToShortDateString()<br>
+            <input type="radio" name="day" value="@Model.Activity.Timeslots[3]"> @Model.Activity.Timeslots[3].StartTime.DayOfWeek @Model.Activity.Timeslots[3].StartTime.ToShortDateString()<br>
+            <input type="radio" name="day" value="@Model.Activity.Timeslots[6]"> @Model.Activity.Timeslots[6].StartTime.DayOfWeek @Model.Activity.Timeslots[6].StartTime.ToShortDateString()<br>
+            <input type="radio" name="day" value="@Model.Activity.Timeslots[9]"> @Model.Activity.Timeslots[9].StartTime.DayOfWeek @Model.Activity.Timeslots[9].StartTime.ToShortDateString()<br>
 
         </fieldset>
 
         <fieldset>
             <label class="restaurant_form_label" for="rtime">On which timeslot?*<span style="color: red">*</span></label>
-            <input type="radio" name="rtime" value="male" checked>@(Model.Activity.Timeslots[0].StartTime.ToShortTimeString() + " - " + Model.Activity.Timeslots[0].EndTime.ToShortTimeString()) <br>
-            <input type="radio" name="rtime" value="male">@(Model.Activity.Timeslots[1].StartTime.ToShortTimeString() + " - " + Model.Activity.Timeslots[1].EndTime.ToShortTimeString()) <br>
-            <input type="radio" name="rtime" value="male">@(Model.Activity.Timeslots[2].StartTime.ToShortTimeString() + " - " + Model.Activity.Timeslots[2].EndTime.ToShortTimeString()) <br>
+            <input type="radio" name="time" value="male" checked>@(Model.Activity.Timeslots[0].StartTime.ToShortTimeString() + " - " + Model.Activity.Timeslots[0].EndTime.ToShortTimeString()) <br>
+            <input type="radio" name="time" value="male">@(Model.Activity.Timeslots[1].StartTime.ToShortTimeString() + " - " + Model.Activity.Timeslots[1].EndTime.ToShortTimeString()) <br>
+            <input type="radio" name="time" value="male">@(Model.Activity.Timeslots[2].StartTime.ToShortTimeString() + " - " + Model.Activity.Timeslots[2].EndTime.ToShortTimeString()) <br>
         </fieldset>
 
         <fieldset>
@@ -108,6 +110,7 @@
             <textarea class="restaurant_form_txtarea" id="rmisc" placeholder="Example: I am on a gluten-free diet"></textarea>
         </fieldset>
 
+        @Html.HiddenFor(model => model.Activity.Id);
         <input type="submit" value="Order" />
     }
 

@@ -11,16 +11,15 @@ namespace HaarlemFestival.Controllers
     public class JazzController : Controller
     {
         private DBHF db;
-        private IActivityRepository activityRepository;
-        private IPageRepository pageRepository;
+        private IPageRepository pageRepo;
+        private IActivityRepository activityRepo;
 
         public JazzController()
         {
             db = new DBHF();
-            activityRepository = new ActivityRepository(db);
-            pageRepository = new PageRepository(db);
+            activityRepo = new ActivityRepository(db);
+            pageRepo = new PageRepository(db);
         }
-
         // GET: Jazz
         public ActionResult Index(int? id)
         {
@@ -46,10 +45,8 @@ namespace HaarlemFestival.Controllers
             }
 
             PagePlusActivities PageDescriptions = new PagePlusActivities();
-
-            Page page = pageRepository.GetPage("Jazz", Language.Eng); 
-
-            IEnumerable<Activity> activities = activityRepository.GetActivities(EventType.Jazz, Language.Eng, dDay);
+            Page page = pageRepo.GetPage("Jazz", Language.Eng); 
+            IEnumerable<Activity> activities = activityRepo.GetActivities(EventType.Jazz, Language.Eng, dDay);
 
             activities.OrderBy(Activitie => Activitie.Timeslots);
 
@@ -62,26 +59,29 @@ namespace HaarlemFestival.Controllers
         [HttpPost]
         public ActionResult OrderJazz(OrderHasTickets model)
         {
-            Activity activity = activityRepository.GetActivity(model.Ticket_TimeSlot_Activity_Id, Language.Eng);
+            int id = model.Ticket_TimeSlot_Activity_Id;
+            //DBHF db = new DBHF();
+            //IActivityRepository activityRepository = new ActivityRepository(db);
+            //Activity activity = activityRepository.GetActivity(model.Id, Language.Eng);
 
-            OrderHasTickets ticketOrder = new OrderHasTickets();
-            ticketOrder.Ticket_TimeSlot_Activity_Id = activity.Id;
-            ticketOrder.Ticket_TimeSlot_StartTime = activity.Timeslots[0].StartTime;
-            ticketOrder.Ticket_Type = activity.Timeslots[0].Tickets[0].Type;
-            ticketOrder.Amount = 5;
-            ticketOrder.TotalPrice = 5 * activity.Timeslots[0].Tickets[0].Price;
+            //OrderHasTickets ticketOrder = model;
+            //ticketOrder.Ticket_TimeSlot_Activity_Id = activity.Id;
+            //ticketOrder.Ticket_TimeSlot_StartTime = activity.Timeslots[0].StartTime;
+            //ticketOrder.Ticket_Type = activity.Timeslots[0].Tickets[0].Type;
+            //ticketOrder.Amount = 5;
+            //ticketOrder.TotalPrice = 5 * activity.Timeslots[0].Tickets[0].Price;
 
             Order order = (Order)Session["order"];
             if (order == null)
             {
                 order = new Order();
-                order.OrderHasTickets.Add(ticketOrder);
+                order.OrderHasTickets.Add(model);
                 Session["order"] = order;
             }
             else
             {
                 order = (Order)Session["order"];
-                order.OrderHasTickets.Add(ticketOrder);
+                order.OrderHasTickets.Add(model);
                 Session["order"] = order;
             }
 
