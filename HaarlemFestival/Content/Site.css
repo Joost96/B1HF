@@ -998,7 +998,6 @@ img.HistoricRouteInfo9 {
 
 .jazz_page_activiteit_section{
     margin-bottom : 15px;
-    height : 1000px;
 }
 
 .jazz_page_info_box {
@@ -1140,3 +1139,9 @@ img.HistoricRouteInfo9 {
         text-decoration: none;
         cursor: pointer;
     }
+
+#article-editor {
+    width: 600px;
+    margin-left: -300px;
+    margin-right: -300px;
+}

@@ -18,21 +18,31 @@ $(".jazz_page_buybtn").click(function () {
     $(".modaltime").text(time);
     $(".modaldatum").text(datum);
 
+    $("#myModal_" + id).show();
 
-    var test = 5;
+    var aantal = $("#textBox_" + id).val();
+    console.log(aantal);
 
-    $("#activityID").attr("value", test);
+    $("#link").click(function (event) {
+        var actionlinkUrl = $("#link").prop("href");
 
-    $("#myModal").show();
+        var url = actionlinkUrl.replace("xxxx", $("#textBox_" + id).val());
+        $("#link").prop("href", url);
+    });
 });
 
+
 $(".close").click(function () {
-    modal.style.display = "none";
+    $(".modal").each(function () {
+        $(this).hide();
+    });
 });
 
 $(window).click(function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (event.target.className == "modal") {
+        $(".modal").each(function () {
+            $(this).hide();
+        });
     }
 });
 

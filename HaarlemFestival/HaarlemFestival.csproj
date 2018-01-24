@@ -243,6 +243,7 @@
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\OrderHasTickets.cs" />
     <Compile Include="Model\OrderLocation.cs" />
+    <Compile Include="Model\OrderTicketJazz.cs" />
     <Compile Include="Model\Page.cs" />
     <Compile Include="Model\PageDescription.cs" />
     <Compile Include="Model\PagePlusActivitiesPlusCuisines.cs" />

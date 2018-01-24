@@ -181,32 +181,32 @@ namespace HaarlemFestival.Controllers
         }
 
 
-        public ActionResult OrderJazz(int id, int aantal)
-        {
-            Activity activity = activityRepository.GetActivity(id);
+        //public ActionResult OrderJazz(int id, int aantal)
+        //{
+        //    Activity activity = activityRepository.GetActivity(id);
 
-            OrderHasTickets ticketOrder = new OrderHasTickets();
-            ticketOrder.Ticket_TimeSlot_Activity_Id = activity.Id;
-            ticketOrder.Ticket_TimeSlot_StartTime = activity.Timeslots[0].StartTime;
-            ticketOrder.Ticket_Type = activity.Timeslots[0].Tickets[0].Type;
-            ticketOrder.Amount = aantal;
-            ticketOrder.TotalPrice = aantal * activity.Timeslots[0].Tickets[0].Price;
+        //    OrderHasTickets ticketOrder = new OrderHasTickets();
+        //    ticketOrder.Ticket_TimeSlot_Activity_Id = activity.Id;
+        //    ticketOrder.Ticket_TimeSlot_StartTime = activity.Timeslots[0].StartTime;
+        //    ticketOrder.Ticket_Type = activity.Timeslots[0].Tickets[0].Type;
+        //    ticketOrder.Amount = aantal;
+        //    ticketOrder.TotalPrice = aantal * activity.Timeslots[0].Tickets[0].Price;
 
-            Order order = (Order)Session["order"];
-            if (order == null)
-            {
-                order = new Order();
-                order.OrderHasTickets.Add(ticketOrder);
-                Session["order"] = order; 
-            }
-            else
-            {
-                order = (Order)Session["order"];
-                order.OrderHasTickets.Add(ticketOrder);
-                Session["order"] = order;
-            }
+        //    Order order = (Order)Session["order"];
+        //    if (order == null)
+        //    {
+        //        order = new Order();
+        //        order.OrderHasTickets.Add(ticketOrder);
+        //        Session["order"] = order; 
+        //    }
+        //    else
+        //    {
+        //        order = (Order)Session["order"];
+        //        order.OrderHasTickets.Add(ticketOrder);
+        //        Session["order"] = order;
+        //    }
 
-            return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
-        }
+        //    return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
+        //}
     }
 }
