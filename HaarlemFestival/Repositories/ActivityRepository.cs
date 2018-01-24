@@ -13,7 +13,7 @@ namespace HaarlemFestival.Repositories
 
         public ActivityRepository(DBHF db)
         {
-            this.db = db;            
+            this.db = db;
         }
 
         public IEnumerable<Activity> GetActivities(EventType type, Language language)
@@ -22,14 +22,15 @@ namespace HaarlemFestival.Repositories
                 .Include(a => a.Location)
                 .Include(a => a.Cuisines)
                 .Where(a => a.Type == type)
-                .Select(a => new {
+                .Select(a => new
+                {
                     a,
                     //c = .Cuisines,
                     d = a.ActivityDescriptions.Where(ad => ad.Language == language)
                                 .OrderBy(ad => ad.Section),
                     ts = a.Timeslots,
                     ti = a.Timeslots.Select(ts => ts.Tickets)
-                    
+
                 }).AsEnumerable()
                 .Select(x => x.a);
         }
@@ -39,8 +40,9 @@ namespace HaarlemFestival.Repositories
             return db.Activities
                 .Include(a => a.Location)
                 .Where(a => a.Type == type)
-                
-                .Select(a => new {
+
+                .Select(a => new
+                {
                     a,
                     d = a.ActivityDescriptions.Where(ad => ad.Language == language)
                                 .OrderBy(ad => ad.Section),
@@ -61,10 +63,6 @@ namespace HaarlemFestival.Repositories
                 .Where(a => a.Id == activityId)
                 .SingleOrDefault();
         }
-
-        
-        }
-
         public void UpdateActivity(Activity activity)
         {
             db.Entry(activity).State = EntityState.Modified;
@@ -74,5 +72,8 @@ namespace HaarlemFestival.Repositories
             }
             db.SaveChanges();
         }
+
     }
+
+    
 }

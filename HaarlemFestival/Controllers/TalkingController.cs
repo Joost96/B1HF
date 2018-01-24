@@ -25,34 +25,43 @@ namespace HaarlemFestival.Controllers
         // GET: Talking
         public ActionResult Index()
         {
-            PagePlusActivities PagePLusActivities = new PagePlusActivities();
+            PpApOpQ model = new PpApOpQ();
             
             Page page = pageRepo.GetPage("Talking", Language.Eng);            
             IEnumerable<Activity> activities = activityRepo.GetActivities(EventType.Talking, Language.Eng);
 
             activities.OrderBy(Activitie => Activitie.Timeslots);
 
-            PagePLusActivities.Page = page;
-            PagePLusActivities.Activities = activities.ToList();
+            model.Page = page;
+            model.Activities = activities.ToList();
 
-            return View(PagePLusActivities);
+            return View(model);
         }
 
 
         [HttpPost]
-        public ActionResult AskQuestion(PagePlusActivities pagePLusActivities)
+        public ActionResult AskQuestion(PpApOpQ model)
         {
             Question q = new Question();
 
-            q.Message = pagePLusActivities.Question.Message;
-            q.Spreker = pagePLusActivities.Question.Spreker;
+            q.Message = model.Question.Message;
+            q.Spreker = model.Question.Spreker;
 
             questionRepository.CreateQuestion(q);
 
             return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
         }
 
-        
+        [HttpPost]
+        public ActionResult Order(PpApOpQ model)
+        {
+            Order order = (Order)Session["Order"];
+            
+
+            return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
+        }
+
+
 
 
 
