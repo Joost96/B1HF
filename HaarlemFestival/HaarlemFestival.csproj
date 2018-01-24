@@ -223,10 +223,6 @@
     <Compile Include="Migrations\201712131310386_naam bij locatie toegevoegd.Designer.cs">
       <DependentUpon>201712131310386_naam bij locatie toegevoegd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201801191142231_question aangepast.cs" />
-    <Compile Include="Migrations\201801191142231_question aangepast.Designer.cs">
-      <DependentUpon>201801191142231_question aangepast.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201801231219450_timeslot seats change.cs" />
     <Compile Include="Migrations\201801231219450_timeslot seats change.Designer.cs">
       <DependentUpon>201801231219450_timeslot seats change.cs</DependentUpon>
@@ -252,6 +248,7 @@
     <Compile Include="Model\PageDescription.cs" />
     <Compile Include="Model\PagePlusActivitiesPlusCuisines.cs" />
     <Compile Include="Model\PagePlusActivities.cs" />
+    <Compile Include="Model\PagePlusActivityPlusOrderDinner.cs" />
     <Compile Include="Model\PagePlusOrdersPlusOrderLocation.cs" />
     <Compile Include="Model\PagePlusOrders.cs" />
     <Compile Include="Model\PpApOpQ.cs" />
@@ -260,7 +257,6 @@
     <Compile Include="Model\Ticket.cs" />
     <Compile Include="Model\TimeSlot.cs" />
     <Compile Include="Model\Question.cs" />
-    <Compile Include="Model\Orderform.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -647,9 +643,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801042107581_opnieuw question.resx">
       <DependentUpon>201801042107581_opnieuw question.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801191142231_question aangepast.resx">
-      <DependentUpon>201801191142231_question aangepast.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801231219450_timeslot seats change.resx">
       <DependentUpon>201801231219450_timeslot seats change.cs</DependentUpon>
