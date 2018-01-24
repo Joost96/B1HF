@@ -51,7 +51,6 @@ namespace HaarlemFestival.Repositories
                 }).AsEnumerable()
                 .Where(a => a.a.Timeslots[0].StartTime.ToString("dd/MM/yyyy").Equals(dag.ToString("dd/MM/yyyy")))
                 .Select(x => x.a);
-
         }
 
         public Activity GetActivity(int? activityId, Language language)
@@ -63,6 +62,7 @@ namespace HaarlemFestival.Repositories
                 .Where(a => a.Id == activityId)
                 .SingleOrDefault();
         }
+
         public void UpdateActivity(Activity activity)
         {
             db.Entry(activity).State = EntityState.Modified;

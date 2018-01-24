@@ -247,6 +247,7 @@
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\OrderHasTickets.cs" />
     <Compile Include="Model\OrderLocation.cs" />
+    <Compile Include="Model\OrderTicketJazz.cs" />
     <Compile Include="Model\Page.cs" />
     <Compile Include="Model\PageDescription.cs" />
     <Compile Include="Model\PagePlusActivitiesPlusCuisines.cs" />
@@ -532,6 +533,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\FilterOnCuisine.js" />
+    <Content Include="Scripts\ModalHistoric.js" />
     <Content Include="Scripts\Talking.js" />
     <Content Include="Scripts\Jazz.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
@@ -578,7 +580,6 @@
     <Content Include="Views\ContentManagement\Index.cshtml" />
     <Content Include="Views\Dinner\Restaurant.cshtml" />
     <Content Include="Views\Dinner\Index.cshtml" />
-    <Content Include="Views\Historic\Historic.cshtml" />
     <Content Include="Views\Historic\Index.cshtml">
       <BrowseToURL>~/Historic</BrowseToURL>
     </Content>

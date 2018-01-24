@@ -155,9 +155,35 @@ namespace HaarlemFestival.Controllers
             return View(pagePlusOrders);
         }
 
+        [HttpPost]
+        public ActionResult Order(int activityId, DateTime day, DateTime time, int numberOfAdults, int numberOfKids, string remarks)
+        {
+            Activity activity = activityRepository.GetActivity(activityId, Language.Eng);
+            OrderHasTickets ticketOrder = new OrderHasTickets();
+            
+            //Alleen adults
+            if(numberOfKids == 0)
+            {
+                ticketOrder.Ticket_TimeSlot_Activity_Id = activityId;
+                ticketOrder.Ticket_TimeSlot_StartTime = time;
+                ticketOrder.Ticket_Type = TicketType.Single;
+                ticketOrder.Remarks = remarks;
+            }
+            //Adults en kids
+            else
+            {
+                
+            }
+            
+
+
+            return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
+        }
+
+
         //public ActionResult OrderJazz(int id, int aantal)
         //{
-        //    Activity activity = activityRepository.GetActivity(id, Language.Eng);
+        //    Activity activity = activityRepository.GetActivity(id);
 
         //    OrderHasTickets ticketOrder = new OrderHasTickets();
         //    ticketOrder.Ticket_TimeSlot_Activity_Id = activity.Id;

@@ -13,5 +13,7 @@ namespace HaarlemFestival.Model
         public Question Question { get; set; }
        
         public Activity Activity { get; set; }
+
+        public OrderHasTickets OrderTicket { get; set; }
     }
 }
