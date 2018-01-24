@@ -62,9 +62,6 @@ namespace HaarlemFestival.Repositories
                 .SingleOrDefault();
         }
 
-        
-        }
-
         public void UpdateActivity(Activity activity)
         {
             db.Entry(activity).State = EntityState.Modified;

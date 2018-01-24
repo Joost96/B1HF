@@ -695,9 +695,9 @@ footer {
     border-color: darkslateblue;
 }
 
-#HistoricButtonOrder1:hover, #HistoricButtonOrder1:focus {
-    background-color: lime;
-}
+    #HistoricButtonOrder1:hover, #HistoricButtonOrder1:focus {
+        background-color: lime;
+    }
 
 .HistoricRoute h2 {
     text-align: center;
@@ -874,7 +874,7 @@ section.HistoricRouteInfo {
     margin-left: 5px;
 }
 
-p.HistoricRouteInfo1{
+p.HistoricRouteInfo1 {
     width: 100%;
 }
 
@@ -947,10 +947,10 @@ img.HistoricRouteInfo9 {
     width: 93%;
 }
 
-.HistoricButtonBook2 {
+#HistoricButtonOrder2 {
     position: relative;
-    top: 368px;
-    left: 132px;
+    top: 373px;
+    left: 140px;
 }
 
 /* The Modal (background) */
@@ -973,7 +973,7 @@ img.HistoricRouteInfo9 {
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 32%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */
@@ -991,6 +991,26 @@ img.HistoricRouteInfo9 {
         cursor: pointer;
     }
 
+#numberTicketsHistoric {
+    width: 200px;
+}
+
+#SingleTicketHistoric {
+    float: right;
+    border-style: solid;
+    margin-right: 2px;
+    padding-bottom: 40px;
+}
+
+#GroupTicketHistoric {
+    float: right;
+    border-style: solid;
+    padding-left: 3px;
+}
+
+#ValueHistoric{
+    color: red;
+}
 /*-------------------------------JAZZ---------------------------------*/
 .jazz_page_info_hp {
     width: 100%;
