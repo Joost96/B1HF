@@ -1,5 +1,5 @@
 ﻿@using HaarlemFestival.Model;
-@model HaarlemFestival.Model.PagePlusActivities
+@model HaarlemFestival.Model.PpApOpQ
 @section AddToHead{
     <link href="@Url.Content("~/Content/Talking.css")" rel="stylesheet" type="text/css" />
 }
@@ -34,7 +34,7 @@
     <section class="TalkingEvent">
        
         <section class="TalkingEventNameContainer">
-            <header class="TalkingEventName">
+            <header class="TalkingEventName" id="@a.Id">
                 @a.Name
             </header>
         </section>
@@ -55,7 +55,7 @@
 
                 <img class="TalkingSprekerImg" src="@a.ActivityDescriptions[0].ImageUrl" alt="spreker" />
 
-                <button id=@Html.Raw(a.Id) name="AskAQuestion" type="button" class="TalkingButtonSpreker">Ask Question</button>
+                <button id="@Html.Raw(a.Id)" name="AskAQuestion" type="button" class="TalkingButtonSpreker">Ask Question</button>
 
             </section>
 
@@ -107,7 +107,7 @@
 
 }
 
-<section id="myModal" class="modal">
+<section id="QuestionModal" class="TalkingBasicModal">
 
     <!-- Modal content -->
     <section class="modal-content">
@@ -115,15 +115,49 @@
         <p class="modaltitle"> </p>
         <p>What is your question for <label class="modaltitle"> </label>?</p>
 
-        @using (Html.BeginForm("AskQuestion", "Talking", FormMethod.Post))
+        @using (Html.BeginForm("AskQuestion", "Talking", FormMethod.Post, new {id = "TalkingQuestionForm" }))
         {
-            @Html.HiddenFor(model => model.Question.Spreker, new { id = "sprekerNaam"})
-            @Html.EditorFor(model => model.Question.Message, new { @class = "TalkingQuestionMessage" })
+            @Html.HiddenFor(model => model.Question.Spreker , new { id = "sprekerNaam"})
+            @Html.TextAreaFor(model => model.Question.Message, new { @class = "TalkingQuestionMessage" })
 
-            <input type="submit" value="Submit" class="TalkingQuestionButton" />
+            <input type="submit" value="Submit" id="TalkingQuestionButton" />
         }
 
     </section>
 
 </section>
+
+<section id="ThanksModal" class="TalkingBasicModal">
+
+    <!-- Modal content -->
+    <section class="modal-content">
+        <span id="closeThanksModal" class="close">&times;</span>
+        
+        <p>Thank you for submitting a question.</p>
+
+
+    </section>
+
+</section>
+
+<section id="OrderModal" class="TalkingBasicModal">
+
+    <!--Modal content-->
+    <section class="modal-content">
+        <span id="closeOrderModal" class="close">&times;</span>
+
+        @using (Html.BeginForm("Order", "Talking", FormMethod.Post, new { id = "TalkingOrderForm" }))
+        {
+            <p class="OrderTitle"> </p>
+            <p>How many Tickets do you want to Order?</p>
+            @Html.TextBoxFor(m => m.OHT.Amount, new { @type = "number", @min = "1", @max = "2", @data_message = "You can only enter numbers between '1' and '2'" })
+           
+            @Html.HiddenFor(m => m.OHT.Ticket_TimeSlot_Activity_Id, new { @id = "AvtivityId"})
+            <input type="submit" value="Submit" id="TalkingOrderButton" />
+        }
+    </section>
+
+</section>
+
+
 
