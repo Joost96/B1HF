@@ -39,7 +39,7 @@ $(".close").click(function () {
 });
 
 $(window).click(function(event) {
-    if (event.target.className == "modal") {
+    if (event.target.className === "modal") {
         $(".modal").each(function () {
             $(this).hide();
         });
