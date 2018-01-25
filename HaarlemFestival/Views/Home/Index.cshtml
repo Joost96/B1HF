@@ -18,27 +18,28 @@
     <section class="event_summary">
         <h1>@Model.PageDescriptions[0].Title</h1>
         <section class="event_summary_img"><img src=@Model.PageDescriptions[0].ImageUrl width="277" height="300" alt="Jazz" /></section>
-        <button>More info</button>
+        <button input="button" onclick="location.href=@Url.Action("Index", "Jazz", null)">More Info</button>
     </section>
 
     <section class="event_summary">
         <h1>@Model.PageDescriptions[1].Title</h1>
         <section class="event_summary_img"><img src=@Model.PageDescriptions[1].ImageUrl width="277" height="300" alt="Dinner" /></section>
-        <button>More info</button>
+        <button input="button" onclick="location.href=@Url.Action("Index", "Dinner")">More Info</button>
     </section>
 
     <section class="event_summary">
         <h1>@Model.PageDescriptions[2].Title</h1>
         <section class="event_summary_img"><img src=@Model.PageDescriptions[2].ImageUrl width="277" height="300" alt="Talking" /></section>
-        <button>More info</button>
+        <button input="button" onclick="location.href=@Url.Action("Index", "Talking")">More Info</button>
     </section>
 
     <section class="event_summary">
         <h1>@Model.PageDescriptions[3].Title</h1>
         <section class="event_summary_img"><img src=@Model.PageDescriptions[3].ImageUrl width="277" height="300" alt="Historic" /></section>
-        <button>More info</button>
+        <button input="button" onclick="location.href=@Url.Action("Index", "Historic")">More Info</button>
     </section>
 </section>
+
 <section class="wrapper">
     <section class="wrapper_left">
         <article class="info_festival">
