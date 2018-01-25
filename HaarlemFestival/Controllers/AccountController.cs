@@ -40,7 +40,7 @@ namespace HaarlemFestival.Controllers
                 Account account = accountRepository.GetAccount(model.Email, model.Password);
                 if (account != null)
                 {
-                    FormsAuthentication.SetAuthCookie(account.Id.ToString(), false);
+                    FormsAuthentication.SetAuthCookie(account.Email, false);
 
                     Session["loggedin_account"] = account;
 
@@ -75,7 +75,7 @@ namespace HaarlemFestival.Controllers
                     Account account = new Customer(model.Email,model.FirstName,model.LastName,model.Password,model.Country);
                     accountRepository.Register(account);
 
-                    FormsAuthentication.SetAuthCookie(account.Id.ToString(), false);
+                    FormsAuthentication.SetAuthCookie(account.Email, false);
 
                     Session["loggedin_account"] = account;
 

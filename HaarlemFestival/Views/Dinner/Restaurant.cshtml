@@ -1,4 +1,5 @@
-﻿@model HaarlemFestival.Model.PagePlusActivities
+﻿@model HaarlemFestival.Model.PagePlusActivityPlusOrder
+@using System.Web.UI.WebControls
 
 @{
     ViewBag.Title = "Details";
@@ -43,10 +44,12 @@
         }
 
         <label class="lprice">Timeslots for 26, 27, 28 and 29 of May*</label>
-        <h6>@Model.Activity.Timeslots[0].StartTime.ToShortTimeString() - @Model.Activity.Timeslots[0].EndTime.ToShortTimeString()</h6>
-        <h6>@Model.Activity.Timeslots[1].StartTime.ToShortTimeString() - @Model.Activity.Timeslots[1].EndTime.ToShortTimeString()</h6>
-        <h6>@Model.Activity.Timeslots[2].StartTime.ToShortTimeString() - @Model.Activity.Timeslots[2].EndTime.ToShortTimeString()</h6>
 
+        @foreach (var timeslot in Model.Activity.Timeslots.Where(d => d.StartTime.DayOfWeek == DayOfWeek.Friday))
+        {
+            <h6>@timeslot.StartTime.ToShortTimeString() - @timeslot.EndTime.ToShortTimeString()</h6>
+        }
+ 
         <label class="lprice">Practical information*</label>
         <h6>@Model.Activity.Location.Street @Model.Activity.Location.StreetNr, @Model.Activity.Location.ZipCode @Model.Activity.Location.City </h6>
         <h6>www.@(Model.Activity.Name).nl* </h6>
@@ -63,55 +66,54 @@
 
     <h2>Make a reservation</h2>
 
-    @using (Html.BeginForm("Order", "CheckOut", FormMethod.Post))
+    @using (Html.BeginForm("Order", "Dinner", FormMethod.Post))
     {
         <text><span style="color: red">*</span> = required field!*</text>
 
-
-
-        <fieldset>
+        <fieldset >
             <label class="restaurant_form_label" for="day">For which day?*<span style="color: red">*</span></label>
-            <input type="radio" name="day" value="@Model.Activity.Timeslots[0]" checked> @Model.Activity.Timeslots[0].StartTime.DayOfWeek @Model.Activity.Timeslots[0].StartTime.ToShortDateString()<br>
-            <input type="radio" name="day" value="@Model.Activity.Timeslots[3]"> @Model.Activity.Timeslots[3].StartTime.DayOfWeek @Model.Activity.Timeslots[3].StartTime.ToShortDateString()<br>
-            <input type="radio" name="day" value="@Model.Activity.Timeslots[6]"> @Model.Activity.Timeslots[6].StartTime.DayOfWeek @Model.Activity.Timeslots[6].StartTime.ToShortDateString()<br>
-            <input type="radio" name="day" value="@Model.Activity.Timeslots[9]"> @Model.Activity.Timeslots[9].StartTime.DayOfWeek @Model.Activity.Timeslots[9].StartTime.ToShortDateString()<br>
+            @foreach (DateTime timeslot in Model.Activity.Timeslots.Select(d => d.StartTime.Date).Distinct())
+            {
+                <input type="radio" name="Day" value="@timeslot.Date" checked>@timeslot.DayOfWeek  @timeslot.Date.ToShortDateString()<br>
 
+            }
         </fieldset>
 
         <fieldset>
             <label class="restaurant_form_label" for="rtime">On which timeslot?*<span style="color: red">*</span></label>
-            <input type="radio" name="time" value="male" checked>@(Model.Activity.Timeslots[0].StartTime.ToShortTimeString() + " - " + Model.Activity.Timeslots[0].EndTime.ToShortTimeString()) <br>
-            <input type="radio" name="time" value="male">@(Model.Activity.Timeslots[1].StartTime.ToShortTimeString() + " - " + Model.Activity.Timeslots[1].EndTime.ToShortTimeString()) <br>
-            <input type="radio" name="time" value="male">@(Model.Activity.Timeslots[2].StartTime.ToShortTimeString() + " - " + Model.Activity.Timeslots[2].EndTime.ToShortTimeString()) <br>
+            @foreach (var timeslot in Model.Activity.Timeslots.Where(d => d.StartTime.DayOfWeek == DayOfWeek.Friday))   
+            {
+                <input type="radio" name="Time" value="@timeslot.StartTime" checked> @(timeslot.StartTime.ToShortTimeString() + " - " + timeslot.EndTime.ToShortTimeString()) <br>
+            }
         </fieldset>
 
         <fieldset>
             <label class="restaurant_form_label" for="radults">For how many adults?*<span style="color: red">*</span></label>
-            <select class="restaurant_form_select_wide" id="radults">
-                @for (int iAdults = 1; iAdults <= 10; iAdults++)
+            <select class="restaurant_form_select_wide" name="numberOfAdults" id="radults">
+                @for (int i = 1; i <= 10; i++)
                 {
-                    <option value="@iAdults"> @iAdults</option>
+                    <option name="NumberOfAdults" value="@i">@i</option>
                 }
             </select>
         </fieldset>
 
         <fieldset>
             <label class="restaurant_form_label" for="rkids">And how many kids?* (Ages 12 and below)</label>
-            <select class="restaurant_form_select_wide" id="rkids">
-                @for (int iKids = 0; iKids <= 10; iKids++)
+            <select class="restaurant_form_select_wide"  name="numberOfKids" id="radults">
+                @for (int i = 0; i <= 10; i++)
                 {
-                    <option value="@iKids"> @iKids</option>
+                    <option name="NumberOfKids" value="@i">@i</option>
                 }
             </select>
         </fieldset>
 
         <fieldset>
             <label class="restaurant_form_label" for="rmisc">Anything we should know?*</label>
-            <textarea class="restaurant_form_txtarea" id="rmisc" placeholder="Example: I am on a gluten-free diet"></textarea>
+            <textarea class="restaurant_form_txtarea" id="rmisc" name="order.OrderHasTickets[0].Remarks" placeholder="Example: I am on a gluten-free diet"></textarea>
         </fieldset>
 
-        @Html.HiddenFor(model => model.Activity.Id);
-        <input type="submit" value="Order" />
+        <input type="hidden" name="activity.Id" value="@Model.Activity.Id" />
+        <input type="submit" value="Order" class="btn_order" />
     }
 
 </div>

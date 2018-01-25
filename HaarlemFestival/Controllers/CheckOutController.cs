@@ -16,6 +16,7 @@ namespace HaarlemFestival.Controllers
         private IPageRepository pageRepository;
         private IAccountRepository accountRepository;
         private IActivityRepository activityRepository;
+        
 
         public CheckOutController()
         {
@@ -61,7 +62,7 @@ namespace HaarlemFestival.Controllers
                 {
                     if (account is Customer)
                     {
-                        FormsAuthentication.SetAuthCookie(account.Id.ToString(), false);
+                        FormsAuthentication.SetAuthCookie(account.Email, false);
 
                         Session["loggedin_account"] = account;
 
@@ -100,7 +101,7 @@ namespace HaarlemFestival.Controllers
                     Account account = new Customer(model.Email, model.FirstName, model.LastName, model.Password, model.Country);
                     accountRepository.Register(account);
 
-                    FormsAuthentication.SetAuthCookie(account.Id.ToString(), false);
+                    FormsAuthentication.SetAuthCookie(account.Email, false);
 
                     Session["loggedin_account"] = account;
 
@@ -155,58 +156,32 @@ namespace HaarlemFestival.Controllers
             return View(pagePlusOrders);
         }
 
-        [HttpPost]
-        public ActionResult Order(int activityId, DateTime day, DateTime time, int numberOfAdults, int numberOfKids, string remarks)
+        public ActionResult OrderJazz(int id, int aantal)
         {
-            Activity activity = activityRepository.GetActivity(activityId, Language.Eng);
+	    Language language = (Language)Session["language"];
+            Activity activity = activityRepository.GetActivity(id, language);
+
             OrderHasTickets ticketOrder = new OrderHasTickets();
-            
-            //Alleen adults
-            if(numberOfKids == 0)
+            ticketOrder.Ticket_TimeSlot_Activity_Id = activity.Id;
+            ticketOrder.Ticket_TimeSlot_StartTime = activity.Timeslots[0].StartTime;
+            ticketOrder.Ticket_Type = activity.Timeslots[0].Tickets[0].Type;
+            ticketOrder.Amount = aantal;
+            ticketOrder.TotalPrice = aantal * activity.Timeslots[0].Tickets[0].Price;
+
+            Order order = (Order)Session["order"];
+            if (order == null)
             {
-                ticketOrder.Ticket_TimeSlot_Activity_Id = activityId;
-                ticketOrder.Ticket_TimeSlot_StartTime = time;
-                ticketOrder.Ticket_Type = TicketType.Single;
-                ticketOrder.Remarks = remarks;
+                order = new Order();
+                order.OrderHasTickets.Add(ticketOrder);
+                Session["order"] = order; 
             }
-            //Adults en kids
             else
             {
-                
+                order.OrderHasTickets.Add(ticketOrder);
+                Session["order"] = order;
             }
-            
-
 
             return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
         }
-
-
-        //public ActionResult OrderJazz(int id, int aantal)
-        //{
-        //    Activity activity = activityRepository.GetActivity(id);
-
-        //    OrderHasTickets ticketOrder = new OrderHasTickets();
-        //    ticketOrder.Ticket_TimeSlot_Activity_Id = activity.Id;
-        //    ticketOrder.Ticket_TimeSlot_StartTime = activity.Timeslots[0].StartTime;
-        //    ticketOrder.Ticket_Type = activity.Timeslots[0].Tickets[0].Type;
-        //    ticketOrder.Amount = aantal;
-        //    ticketOrder.TotalPrice = aantal * activity.Timeslots[0].Tickets[0].Price;
-
-        //    Order order = (Order)Session["order"];
-        //    if (order == null)
-        //    {
-        //        order = new Order();
-        //        order.OrderHasTickets.Add(ticketOrder);
-        //        Session["order"] = order; 
-        //    }
-        //    else
-        //    {
-        //        order = (Order)Session["order"];
-        //        order.OrderHasTickets.Add(ticketOrder);
-        //        Session["order"] = order;
-        //    }
-
-        //    return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
-        //}
     }
 }
