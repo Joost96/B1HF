@@ -44,14 +44,15 @@
             <!-- Modal content -->
                     <section class="modal-content">
                         <span class="close">&times;</span>
-                        <p class="modaltitle">1</p>
-                        <p class="modallocation">2</p>
-                        <p class="modalhall">3</p>
-                        <p class="modalprice">4</p>
-                        <p class="modaltime">5</p>
-                        <p class="modaldatum">6</p>
+                        <p class="modaltitle"></p>
+                        <p class="modaldescription"></p>
+                        <p class="modallocation"></p>
+                        <p class="modalhall"></p>
+                        <p class="modalprice"></p>
+                        <p class="modaltime"></p>
+                        <p class="modaldatum"></p>
                         <label>Aantal</label>
-                        <input id="textBox_@Model.Activities[i].Id" type="text" />
+                        <input id="textBox_@Model.Activities[i].Id" type="text" required>
                         <a href="@Url.Action("OrderJazz", "CheckOut", new { id = Model.Activities[i].Id, aantal = "xxxx"})" id="link">Order Ticket</a>
                     </section>
             </section>
@@ -64,7 +65,7 @@
                     <section>
                         <section>
                             <h3 id="jazz_activity_title_@Model.Activities[i].Id" class="jazz_activiteit_title">@Model.Activities[i].ActivityDescriptions[0].Title</h3>
-                            @*<p>@Model.Activities[i].ActivityDescriptions[0].DescriptionText</p>*@
+                            <p id="jazz_activity_description_@Model.Activities[i].Id" style="display:none">@Model.Activities[i].ActivityDescriptions[0].DescriptionText</p>
                         </section>
                         <hr class="jazz_page_actinfosection_line" />
                         <section>
@@ -78,7 +79,7 @@
                                 }
                                 
                                 <p id="jazz_activity_time_@Model.Activities[i].Id" class="jazz_activiteit_time">@Model.Page.PageDescriptions[12].Title @Model.Activities[i].Timeslots[0].StartTime.ToString("HH:mm") - @Model.Activities[i].Timeslots[0].EndTime.ToString("HH:mm")</p>
-                                <p id="jazz_activity_datum_@Model.Activities[i].Id" style="visibility:hidden">@Model.Activities[i].Timeslots[0].StartTime.ToString("dd/MM/yyyy")</p>
+                                <p id="jazz_activity_datum_@Model.Activities[i].Id" style="display:none">@Model.Activities[i].Timeslots[0].StartTime.ToString("dd/MM/yyyy")</p>
                             </section>
                             <section class="col-md-6">
                                 @if (Model.Activities[i].Timeslots[0].StartTime.ToString("dd/MM/yyyy") != "29-07-2018")
@@ -99,7 +100,7 @@
             <!-- Modal content -->
             <section class="validationOrderModal-content">
                 <span class="validationOrderModalClose">&times;</span>
-                <button></button>
+                <h3>Order is placed in the bag.</h3>
             </section>
         </section>
 

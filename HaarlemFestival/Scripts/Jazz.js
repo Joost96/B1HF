@@ -3,6 +3,7 @@
 $(".jazz_page_buybtn").click(function () {
     var id = $(this).attr("id");
     var title = $("#jazz_activity_title_" + id).text();
+    var description = $("#jazz_activity_description_" + id).text();
     var location = $("#jazz_activity_location_" + id).text();
     var hall = $("#jazz_activity_hall_" + id).text();
     var price = $("#jazz_activity_price_" + id).text();
@@ -10,6 +11,7 @@ $(".jazz_page_buybtn").click(function () {
     var datum = $("#jazz_activity_datum_" + id).text();
 
     $(".modaltitle").text(title);
+    $(".modaldescription").text(description);
     $(".modallocation").text(location);
     $(".modalhall").text(hall);
     $(".modalprice").text(price);
@@ -21,21 +23,9 @@ $(".jazz_page_buybtn").click(function () {
     $("#link").click(function (event) {
         $("#myModal_" + id).hide();
 
-        $("ValidatingBtn").click(function () {
-            
-
-
-        });
-        $("CancelBtn").click(function () {
-            $("#myModal_" + id).show();
-
-
-        });
-
-
+        $("#validationOrderModalId").show();
 
         var actionlinkUrl = $("#link").prop("href");
-
         var url = actionlinkUrl.replace("xxxx", $("#textBox_" + id).val());
         $("#link").prop("href", url);
     });
