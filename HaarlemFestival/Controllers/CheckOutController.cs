@@ -158,7 +158,8 @@ namespace HaarlemFestival.Controllers
 
         public ActionResult OrderJazz(int id, int aantal)
         {
-	    Language language = (Language)Session["language"];
+
+	        Language language = (Language)Session["language"];
             Activity activity = activityRepository.GetActivity(id, language);
 
             OrderHasTickets ticketOrder = new OrderHasTickets();
