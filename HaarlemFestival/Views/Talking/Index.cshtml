@@ -150,6 +150,11 @@
         {
             <p class="OrderTitle"> </p>
             <p>How many Tickets do you want to Order?</p>
+            <select>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+
             @Html.TextBoxFor(m => m.OHT.Amount, new { @type = "number", @min = "1", @max = "2", @data_message = "You can only enter numbers between '1' and '2'" })
            
             @Html.HiddenFor(m => m.OHT.Ticket_TimeSlot_Activity_Id, new { @id = "AvtivityId"})
