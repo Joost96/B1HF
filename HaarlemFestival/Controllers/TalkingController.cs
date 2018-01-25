@@ -61,18 +61,8 @@ namespace HaarlemFestival.Controllers
             model.OHT.Ticket_Type = TicketType.free;
             model.OHT.Ticket_TimeSlot_StartTime = a.Timeslots[0].StartTime;
             model.OHT.TotalPrice = 0;
-            
-
-            
-
+           
             return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
         }
-
-
-
-
-
-
-
     }
 }
