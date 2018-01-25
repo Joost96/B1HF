@@ -69,12 +69,5 @@ namespace HaarlemFestival.Controllers
 
             return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
         }
-
-
-
-
-
-
-
     }
 }

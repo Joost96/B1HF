@@ -5,7 +5,7 @@ using System.Web;
 
 namespace HaarlemFestival.Model
 {
-    public class PagePlusActivityPlusOrder
+    public class PagePlusActivityPlusOrderDinners
     {
         public Order Order { get; set; }
         public Page Page { get; set; }

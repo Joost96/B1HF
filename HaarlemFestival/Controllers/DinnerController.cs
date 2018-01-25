@@ -66,7 +66,7 @@ namespace HaarlemFestival.Controllers
             }
 
             //PagePlusActivities pagePlusActivity = new PagePlusActivities(); 
-            PagePlusActivityPlusOrder pagePlusActivityPlusOrder = new PagePlusActivityPlusOrder();
+            PagePlusActivityPlusOrderDinners pagePlusActivityPlusOrder = new PagePlusActivityPlusOrderDinners();
 
 
             Page page = pageRepository.GetPage("Dinner Restaurant", Language.Eng);
@@ -88,7 +88,7 @@ namespace HaarlemFestival.Controllers
 
 
         [HttpPost]
-        public ActionResult Order(PagePlusActivityPlusOrder model)
+        public ActionResult Order(PagePlusActivityPlusOrderDinners model)
         {
             Order order = (Order)Session["order"];
             if (order == null)
