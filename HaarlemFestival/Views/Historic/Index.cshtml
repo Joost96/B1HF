@@ -142,23 +142,23 @@
         <form id="formHistoric">
             <h1>Order Historic Haarlem Tickets</h1>
             <p>Choose day</p>
-            <input id="HistoricDayOption1" type="radio" name="day" value="1"/>  <label for="DayChoice1">Thursday 26/07/2018</label>
-            <input id="HistoricDayOption2" type="radio" name="day" value="2"/>  <label for="DayChoice2">Friday 27/07/2018</label>
-            <input id="HistoricDayOption3" type="radio" name="day" value="3"/>  <label for="DayChoice3">Saturday 28/07/2018</label>
+            <input id="HistoricDayOption1" type="radio" name="day" value="1"required/>  <label for="DayChoice1">Thursday 26/07/2018</label>
+            <input id="HistoricDayOption2" type="radio" name="day" value="2"required/>  <label for="DayChoice2">Friday 27/07/2018</label>
+            <input id="HistoricDayOption3" type="radio" name="day" value="3"required/>  <label for="DayChoice3">Saturday 28/07/2018</label>
             @Html.HiddenFor(model => model.OHT.Ticket_TimeSlot_StartTime)
             <p>Choose Time</p>
-            <input id="HistoricTimeOption1" type="radio" name="time" value="1"/> <label for="TimeChoice1">10:00-13:00</label>
-            <input id="HistoricTimeOption2" type="radio" name="time" value="2"/> <label for="TimeChoice2">13:00-16:00</label>
-            <input id="HistoricTimeOption3" type="radio" name="time" value="3"/> <label for="TimeChoice3">16:00-19:00</label>
+            <input id="HistoricTimeOption1" type="radio" name="time" value="1"required/> <label for="TimeChoice1">10:00-13:00</label>
+            <input id="HistoricTimeOption2" type="radio" name="time" value="2"required/> <label for="TimeChoice2">13:00-16:00</label>
+            <input id="HistoricTimeOption3" type="radio" name="time" value="3"required/> <label for="TimeChoice3">16:00-19:00</label>
             <p>Choose Language</p>
-            <input id="HistoricLangOption1" type="radio" name="language" value="1"/> <label for="LangChoice1">English</label>
-            <input id="HistoricLangOption2" type="radio" name="language" value="2"/> <label for="LangChoice2">Dutch</label>
-            <input id="HistoricLangOption3" type="radio" name="language" value="3"/> <label for="LangChoice3">Chinese</label>
+            <input id="HistoricLangOption1" type="radio" name="language" value="1"required/> <label for="LangChoice1">English</label>
+            <input id="HistoricLangOption2" type="radio" name="language" value="2"required/> <label for="LangChoice2">Dutch</label>
+            <input id="HistoricLangOption3" type="radio" name="language" value="3"required/> <label for="LangChoice3">Chinese</label>
             @Html.HiddenFor(model => model.OHT.Ticket_TimeSlot_Activity_Id)
             <p>Choose Amount of Tickets or select Group Ticket</p>
             <p id="GroupTicketHistoric">Group Ticket <br /> €60.- for 4 persons <br />(€10,- savings) <br /> <span id="ValueHistoric">BEST VALUE</span></p>
             <p id="SingleTicketHistoric">Single Ticket <br /> €17.50 each</p>
-            <input id="numberTicketsHistoric" type="number" placeholder="max. 4 tickets" min="1" max="4" list="defaultNumbers"/> <label>Group ticket: </label> <input id="HistoricGroupTicketOption" type="checkbox" />
+            <input id="numberTicketsHistoric" type="number" placeholder="max. 4 tickets" min="1" max="4" list="defaultNumbers" required/> <label>Group ticket: </label> <input id="HistoricGroupTicketOption" type="checkbox" />
             @Html.HiddenFor(model => model.OHT.Ticket_Type)
             <datalist id="defaultNumbers">
                 <option value="1">
