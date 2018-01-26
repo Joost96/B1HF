@@ -7,11 +7,11 @@ namespace HaarlemFestival.Model.Helpers
 {
     public class BasketHelper
     {
-        private BasketHelper uniqueInstance;
+        private static BasketHelper uniqueInstance;
 
         private BasketHelper() { }
 
-        public BasketHelper getInstance()
+        public static BasketHelper getInstance()
         {
             if(uniqueInstance == null)
             {

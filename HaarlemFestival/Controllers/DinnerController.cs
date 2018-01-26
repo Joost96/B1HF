@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using System.Web.UI.HtmlControls;
 using HaarlemFestival.Model;
 using System;
+using HaarlemFestival.Model.Helpers;
 
 namespace HaarlemFestival.Controllers
 {
@@ -126,8 +127,7 @@ namespace HaarlemFestival.Controllers
 
             Session["order"] = order;
 
-            Model.Helpers.BasketHelper basketHelper = new Model.Helpers.BasketHelper();
-            basketHelper.checkCookie(HttpContext);
+            BasketHelper.getInstance().checkCookie(HttpContext);
             return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
         }
     }
