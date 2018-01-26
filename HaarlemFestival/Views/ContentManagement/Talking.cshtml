@@ -51,7 +51,6 @@
                                 @Html.HiddenFor(model => Model.Activities[i].Id)
                                 @Html.HiddenFor(model => Model.Activities[i].Location_Id)
                                 @Html.HiddenFor(model => Model.Activities[i].Type)
-                                @Html.HiddenFor(model => Model.Activities[i].Timeslots)
 
                                 <div class="form-group">
                                     @Html.LabelFor(modelItem => Model.Activities[i].Name, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -91,7 +90,48 @@
                                     @for(int j=0;j<Model.Activities[i].Timeslots.Count;j++)
                                     {
                                         @Html.HiddenFor(model => Model.Activities[i].Timeslots[j].Activity_Id)
-                                        @Html.HiddenFor(model => Model.Activities[i].Timeslots[j].)
+                                        @Html.HiddenFor(model => Model.Activities[i].Timeslots[j].OccupiedSeats)
+                                        <div class="form-group">
+                                            @Html.LabelFor(modelItem => Model.Activities[i].Timeslots[j].StartTime, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="">
+                                                @Html.EditorFor(modelItem => Model.Activities[i].Timeslots[j].StartTime, new { htmlAttributes = new { @class = "form-control datepicker" } })
+                                                @Html.ValidationMessageFor(modelItem => Model.Activities[i].Timeslots[j].StartTime, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(modelItem => Model.Activities[i].Timeslots[j].EndTime, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="">
+                                                @Html.EditorFor(modelItem => Model.Activities[i].Timeslots[j].EndTime, new { htmlAttributes = new { @class = "form-control datepicker" } })
+                                                @Html.ValidationMessageFor(modelItem => Model.Activities[i].Timeslots[j].EndTime, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(modelItem => Model.Activities[i].Timeslots[j].TotalSeats, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="">
+                                                @Html.EditorFor(modelItem => Model.Activities[i].Timeslots[j].TotalSeats, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(modelItem => Model.Activities[i].Timeslots[j].TotalSeats, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        for (int k = 0; k < Model.Activities[i].Timeslots[j].Tickets.Count; k++)
+                                        {
+                                            @Html.HiddenFor(model => Model.Activities[i].Timeslots[j].Tickets[k].TimeSlot_Activity_Id)
+                                            @Html.HiddenFor(model => Model.Activities[i].Timeslots[j].Tickets[k].TimeSlot_StartTime)
+                                            <div class="form-group">
+                                                @Html.LabelFor(modelItem => Model.Activities[i].Timeslots[j].Tickets[k].Type, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="">
+                                                    @Html.EnumDropDownListFor(modelItem => Model.Activities[i].Timeslots[j].Tickets[k].Type, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(modelItem => Model.Activities[i].Timeslots[j].Tickets[k].Type, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(modelItem => Model.Activities[i].Timeslots[j].Tickets[k].Price, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="">
+                                                    @Html.EditorFor(modelItem => Model.Activities[i].Timeslots[j].Tickets[k].Price, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(modelItem => Model.Activities[i].Timeslots[j].Tickets[k].Price, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        }
                                     }
                                 </section>
                             </div>

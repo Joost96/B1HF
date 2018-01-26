@@ -62,6 +62,31 @@ namespace HaarlemFestival.Controllers
             return View(page);
         }
 
+        // GET: Jazz
+        public ActionResult Jazz()
+        {
+            Page page = pageRepository.GetPage("Jazz", Language.Eng);
+            List<Activity> activities = activityRepository.GetActivities(EventType.Jazz, Language.Eng).ToList();
+            PagePlusActivities pagePlusActivities = new PagePlusActivities
+            {
+                Page = page,
+                Activities = activities
+            };
+            return View(pagePlusActivities);
+        }
+        // POST: Jazz
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public ActionResult Jazz([Bind(Include = "Activities,Page")] PagePlusActivities pagePlusActivities)
+        {
+            if (ModelState.IsValid)
+            {
+                //UpdatePagePlusActivities(pagePlusActivities, "Jazz");
+                return RedirectToAction("Jazz");
+            }
+            return View(pagePlusActivities);
+        }
+
         // GET: Talking
         public ActionResult Talking()
         {

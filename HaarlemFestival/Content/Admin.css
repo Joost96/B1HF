@@ -1,4 +1,10 @@
-﻿[draggable] {
+﻿input,
+select,
+textarea {
+    max-width: 100%;
+}
+
+[draggable] {
     -ms-user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -77,4 +83,128 @@
 .admin.sidebar .nav-item a:hover {
     background-color: #696767;
     color: white;
+}
+/* jazz agenda */
+.schedule .events .events-group > ul {
+    position: relative;
+    padding: 0 5%;
+    /* force its children to stay on one line */
+    display: flex;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.schedule .events .single-event {
+    /* force them to stay on one line */
+    flex-shrink: 0;
+    float: left;
+    height: 150px;
+    width: 70%;
+    max-width: 300px;
+}
+
+@media only screen and (min-width: 800px) {
+    .schedule {
+        width: 90%;
+        max-width: 1400px;
+        margin: 2em auto;
+        position : relative;
+    }
+
+    .schedule .events {
+        float: left;
+        width: calc(100% - 60px);
+        margin-left: 60px;
+    }
+
+    .schedule .events .events-group {
+        width: 25%;
+        float: left;
+        border: 1px solid #EAEAEA;
+        margin-bottom: 0;
+    }
+        .schedule .events .events-group > ul {
+            height: 478px;
+            display: block;
+            overflow: visible;
+            padding: 0;
+        }
+    .schedule .events .top-info {
+        display: table;
+        height: 60px;
+        border-bottom: 1px solid #EAEAEA;
+        padding: 0;
+        width: 100%;
+    }
+    .schedule .events .top-info > span {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0 .5em;
+        text-align: center;
+        font-weight: normal;
+        margin-bottom: 0;
+    }
+        .schedule .events .single-event {
+            position: absolute;
+            z-index: 3;
+            /* top position and height will be set using js */
+            width: calc(100% + 2px);
+            left: -1px;
+            border: solid 1px;
+        }
+
+    .schedule .timeline {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        padding-top: 60px;
+    }
+
+        .schedule .timeline li {
+            position: relative;
+            height: 60px;
+        }
+
+        .schedule ul {
+            list-style: none;
+        }
+
+    .schedule .timeline li span {
+        display: inline-block;
+        transform: translateY(-50%);
+    }
+    .schedule .timeline li::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: calc(100% - 50px);
+        left: 50px;
+        height: 1px;
+        background: #EAEAEA;
+    }
+    .schedule .events .events-group a {
+        text-decoration: none;
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+    .schedule .events .events-group .selected {
+        background-color: #87c8ff;
+    } 
+    .schedule .events .events-group .single-event .event-date {
+        color: #4e4949;
+        font-size: 0.7em;
+        display: block;
+        font-weight: bold;
+    }
+    .schedule .events .events-group .single-event .event-name {
+        color: initial;
+        font-size: 0.7em;
+        display: block;
+        font-weight: bold;
+    }
 }
