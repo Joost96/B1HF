@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using HaarlemFestival.Model;
 using HaarlemFestival.Repositories;
+using HaarlemFestival.Model.Helpers;
 
 namespace HaarlemFestival.Controllers
 {
@@ -55,6 +56,7 @@ namespace HaarlemFestival.Controllers
             order.OrderHasTickets.Add(model.OHT);
             Session["Order"] = order;
 
+            BasketHelper.getInstance().checkCookie(HttpContext);
             return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
         }
     }
