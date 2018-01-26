@@ -51,15 +51,14 @@
                         <a class="navbar-right" rel="home" href="@Url.Action("Basket", "CheckOut")" title="Haarlem Festival">
                             <img style="width: 33px; height: 28px; margin-top: -10px; margin-bottom: -10px;"
                                  src="/img/Header/Shopping_cart_header.png">
-
-                            @if (ticketCookie != null)
-                            {
-                                <label> @ticketCookie.Value.ToString()</label>
-                            }
-                            else
-                            {
-                                <label>0</label>
-                            }
+                                @try
+                                {
+                                    <label> @ticketCookie.Value.ToString()</label>
+                                }
+                                catch
+                                {
+                                    <label>0</label>
+                                }
                         </a>
                     </li>
 

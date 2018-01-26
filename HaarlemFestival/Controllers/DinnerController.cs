@@ -129,14 +129,10 @@ namespace HaarlemFestival.Controllers
             Order sessionOrder = (Order)Session["order"];
             HttpCookie ticketCookie = Request.Cookies["userCookie"];
 
-            if (ticketCookie == null && sessionOrder == null)
+            if (sessionOrder != null)
             {
                 ticketCookie = new HttpCookie("userCookie", "0");
-            }
-            else
-            {
                 int ticketValue = sessionOrder.OrderHasTickets.Count;
-                ticketValue += 1;
                 ticketCookie.Value = ticketValue.ToString();
             }
 
