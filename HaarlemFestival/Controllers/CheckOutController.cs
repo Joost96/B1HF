@@ -26,21 +26,29 @@ namespace HaarlemFestival.Controllers
             accountRepository = new AccountRepository(db);
             activityRepository = new ActivityRepository(db);
         }
+
+        public ActionResult Basket()
+        {
+            Order order = (Order)Session["order"];
+            Language language = (Language)Session["Language"];
+            PagePlusOrders pagePlusOrders = new PagePlusOrders { Page = pageRepository.GetPage("PersonalAgenda", language) };
+
+            if (Session["order"] != null)
+            {
+                pagePlusOrders.Orders = orderRepository.GetOrdersCustomer(order.CustomerId).ToList();
+                pagePlusOrders.Orders.Add(order);
+            }
+            return View(pagePlusOrders);
+        }
+
         // GET: CheckOut
         public ActionResult CheckOut1()
         {
             Order order = (Order)Session["order"];
-            if (order == null)
-                order = new Order();
-            order.OrderHasTickets.Add(new OrderHasTickets
-            {
-                Amount = 1,
-                Ticket_TimeSlot_StartTime = new DateTime(2018,7,28,21,0,0),
-                Ticket_Type = TicketType.Single,
-                Ticket_TimeSlot_Activity_Id = 31,
-                TotalPrice = 33
-            });
-            Session["order"] = order;
+            Language language = (Language)Session["language"];
+            pageRepository.GetPage("CheckOut", language);
+
+
             Account account = (Account)(Session["loggedin_account"]);
             if (account is Customer)
             {
@@ -50,11 +58,16 @@ namespace HaarlemFestival.Controllers
                 Session["order"] = order;
                 return RedirectToAction("Checkout3", "Checkout");
             }
-            return View();
+            return View(order);
         }
+
         [HttpPost]
-        public ActionResult CheckOut1(LoginModel model)
+        public ActionResult CheckOut1(PagePlusOrderPlusLogin model)
         {
+            Language language = (Language)Session["language"];
+            pageRepository.GetPage("CheckOut", language);
+
+
             if (ModelState.IsValid)
             {
                 Account account = accountRepository.GetAccount(model.Email, model.Password);
@@ -90,6 +103,7 @@ namespace HaarlemFestival.Controllers
             Order order = (Order)Session["order"];
             return View(order);
         }
+
         [HttpPost]
         public ActionResult Checkout2(RegisterCheckoutModel model)
         {
@@ -140,20 +154,6 @@ namespace HaarlemFestival.Controllers
             if(order.PaymentMethod != null)
                 Session["order"] = null;
             return View(order);
-        }
-
-        public ActionResult Basket()
-        {
-            PagePlusOrders pagePlusOrders = new PagePlusOrders
-            {
-                Page = pageRepository.GetPage("PersonalAganda", Language.Eng),
-                Orders = orderRepository.GetOrdersCustomer(2).ToList()
-            };
-            if(Session["order"] != null)
-            {
-                pagePlusOrders.Orders.Add((Order)Session["order"]);
-            }
-            return View(pagePlusOrders);
         }
 
         public ActionResult OrderJazz(int id, int aantal)

@@ -10,7 +10,7 @@
     <p>By signing up you get the ability to create your own Festival program which is displayed in your agenda.</p>
 
     @Html.ValidationSummary()
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("CheckOut2", "CheckOut"))
     {
         @Html.AntiForgeryToken()
         <form class="CheckOutLogin">
@@ -49,6 +49,6 @@
 
     <form class="CheckOutRegister">
         <h3>Continue without an account</h3>
-        <button>Continue</button>
+        @Html.ActionLink("Continue","CheckOut2", "CheckOut")
     </form>
 </section>
