@@ -1,4 +1,6 @@
-﻿@{
+﻿@model HaarlemFestival.Model.PagePlusOrderPlusLogin
+
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section AddToHead{
@@ -15,7 +17,34 @@
         <li class="col-sm-3 @(ViewBag.Title.Equals("CheckOut4")? "selected" : "") ">Step 4<br>Tickets</li>
     </ul>
 
-    @RenderBody()
-    
+    <section class="orders-container">
+        <ul class="AgendaOrderList">
+            <li class="OrderHeader">
+                <div class="orderItem col-md-4">Name</div>
+                <div class="orderItem col-md-2">Event</div>
+                <div class="orderItem col-md-1">Prijs</div>
+                <div class="orderItem col-md-1">Aantal</div>
+                <div class="orderItem col-md-2">Totaalprijs</div>
+                <div class="orderItem col-md-2">Start tijd/datum</div>
+            </li>
+
+                @foreach (var order in Model.Orders)
+                {
+                    foreach (var OHT in order.OrderHasTickets)
+                    {
+
+                        <li class="AgendaOrder">
+                            <div class="orderItem col-md-4">@OHT.Ticket.TimeSlot.Activity.Name</div>
+                            <div class="orderItem col-md-2">@OHT.Ticket.TimeSlot.Activity.Type</div>
+                            <div class="orderItem col-md-1">@OHT.Ticket.Price</div>
+                            <div class="orderItem col-md-1">@OHT.Amount</div>
+                            <div class="orderItem col-md-2">@OHT.TotalPrice</div>
+                            <div class="orderItem col-md-2">@OHT.Ticket.TimeSlot.StartTime.ToString("hh:mm dd/MM/yyyy")</div>
+                        </li>
+                    }
+                }
+        </ul>
+    </section>
+    @RenderBody()   
 </section>
 

@@ -4,10 +4,12 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.HtmlControls;
 using HaarlemFestival.Model;
 using System;
+using HaarlemFestival.Model.Helpers;
 
 namespace HaarlemFestival.Controllers
 {
@@ -17,8 +19,8 @@ namespace HaarlemFestival.Controllers
         private IPageRepository pageRepository;
         private IActivityRepository activityRepository;
         private ICuisineRepository cuisineRepository;
-        private ITicketRepository ticketRepository; 
-
+        private ITicketRepository ticketRepository;
+         
         public DinnerController()
         {
             db = new DBHF();
@@ -33,27 +35,20 @@ namespace HaarlemFestival.Controllers
         {
             PagePlusActivitiesPlusCuisine pagePlusActivitiesPlusCuisine = new PagePlusActivitiesPlusCuisine();
 
-
             Page page = pageRepository.GetPage("Dinner", Language.Eng);
-
-
             IEnumerable<Activity> activities = activityRepository.GetActivities(EventType.Dinner, Language.Eng);
-
-
             IEnumerable<Cuisine> cuisines = cuisineRepository.GetCuisines();
-
 
             foreach (Activity a in activities)
             {
                 a.Cuisines = cuisineRepository.GetCuisines(a);
             }
 
-
             activities.OrderBy(a => a.Rating);
-
             pagePlusActivitiesPlusCuisine.Cuisines = cuisines.OrderByDescending(c => c.Activities.Count()).ToList();
             pagePlusActivitiesPlusCuisine.Page = page;
             pagePlusActivitiesPlusCuisine.Activities = activities.ToList();
+
             return View(pagePlusActivitiesPlusCuisine);
         }
 
@@ -91,9 +86,10 @@ namespace HaarlemFestival.Controllers
         public ActionResult Order(PagePlusActivityPlusOrderDinners model)
         {
             Order order = (Order)Session["order"];
+
             if (order == null)
             {
-                order = new Order();
+                order = new Order();             
             }
 
             DateTime startTime = model.Day.Date + model.Time.TimeOfDay;
@@ -107,8 +103,9 @@ namespace HaarlemFestival.Controllers
             ticketOrder.Ticket_Type = TicketType.Single;
             ticketOrder.Amount = model.NumberOfAdults;
 
-            Ticket ticket = ticketRepository.GetTicket(activity, startTime, ticketOrder.Ticket_Type);
-            ticketOrder.TotalPrice = model.NumberOfAdults * ticket.Price;
+            ticketOrder.Ticket = ticketRepository.GetTicket(activity, startTime, ticketOrder.Ticket_Type);
+
+            ticketOrder.TotalPrice = model.NumberOfAdults * ticketOrder.Ticket.Price;
 
             order.OrderHasTickets.Add(ticketOrder);
 
@@ -123,16 +120,15 @@ namespace HaarlemFestival.Controllers
                 to.Ticket_Type = TicketType.Child;
                 to.Amount = model.NumberOfKids;
 
-                ticket = ticketRepository.GetTicket(activity, startTime, to.Ticket_Type);
-                to.TotalPrice = model.NumberOfAdults * ticket.Price;
+                to.Ticket = ticketRepository.GetTicket(activity, startTime, to.Ticket_Type);
+                to.TotalPrice = model.NumberOfKids * ticketOrder.Ticket.Price;
                 order.OrderHasTickets.Add(to);
             }
 
             Session["order"] = order;
 
+            BasketHelper.getInstance().checkCookie(HttpContext);
             return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
         }
-
-
     }
 }

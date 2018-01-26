@@ -24,8 +24,8 @@ namespace HaarlemFestival.Controllers
         // GET: Historic
         public ActionResult Index()
         {
-            PagePlusActivities pagePlusActivities = new PagePlusActivities();
-            
+            PpApOpQ pagePlusActivities = new PpApOpQ();
+
             Page page = pageRepository.GetPage("Historic", Language.Eng);
 
             IEnumerable<Activity> activities = activityRepository.GetActivities(EventType.Historic, Language.Eng);
@@ -34,6 +34,22 @@ namespace HaarlemFestival.Controllers
             pagePlusActivities.Activities = activities.ToList();
 
             return View(pagePlusActivities);
+        }
+
+        [HttpPost]
+        public ActionResult Index(PpApOpQ model)
+        {
+            Order order = (Order)Session["Order"];
+            if (order == null)
+            {
+                order = new Order();
+            }
+
+
+            order.OrderHasTickets.Add(model.OHT);
+            Session["Order"] = order;
+
+            return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
         }
     }
 }

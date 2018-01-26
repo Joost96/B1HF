@@ -1,6 +1,4 @@
-﻿var modal = document.getElementById('myModal');
-
-$(".jazz_page_buybtn").click(function () {
+﻿$(".jazz_page_buybtn").click(function () {
     var id = $(this).attr("id");
     var title = $("#jazz_activity_title_" + id).text();
     var description = $("#jazz_activity_description_" + id).text();
@@ -15,22 +13,30 @@ $(".jazz_page_buybtn").click(function () {
     $(".modallocation").text(location);
     $(".modalhall").text(hall);
     $(".modalprice").text(price);
-    $(".modaltime").text(time);
-    $(".modaldatum").text(datum);
+    $(".modaltime").text(time + " - " + datum);
 
     $("#myModal_" + id).show();
 
-    $("#link").click(function (event) {
+    $("#orderlink_" + id).click(function () {
+
+        
+
         $("#myModal_" + id).hide();
 
         $("#validationOrderModalId").show();
 
-        var actionlinkUrl = $("#link").prop("href");
+        var actionlinkUrl = $("#orderlink_" + id).prop("href");
         var url = actionlinkUrl.replace("xxxx", $("#textBox_" + id).val());
-        $("#link").prop("href", url);
+        $("#orderlink_" + id).prop("href", url);
+
+        //setTimeout(function () {
+        //    var actionlinkUrl = $("#orderlink").prop("href");
+        //    var url = actionlinkUrl.replace("xxxx", $("#textBox_" + id).val());
+        //    $("#orderlink").prop("href", url);
+        //}, 3000);
+
     });
 });
-
 
 $(".close").click(function () {
     $(".modal").each(function () {
@@ -47,4 +53,133 @@ $(window).click(function(event) {
 });
 
 
+
+
+
+
+
+var modal1 = document.getElementById('passPartoutModalId');
+
+$(".jazz_page_program_passpartout").click(function () {
+    $("#passPartoutModalId").show();
+
+    $("#passpartoutlink1").click(function (event) {
+        $("#passPartoutModalId").hide();
+        $("#aantalModalId1").show();
+
+    });
+
+    $("#passpartoutlink2").click(function (event) {
+        $("#passPartoutModalId").hide();
+        $("#aantalModalId2").show();
+
+    });
+
+    $("#passpartoutlink3").click(function (event) {
+        $("#passPartoutModalId").hide();
+        $("#aantalModalId3").show();
+
+    });
+
+    $("#passpartoutlink4").click(function (event) {
+        $("#passPartoutModalId").hide();
+        $("#aantalModalId4").show();
+
+    });
+});
+
+$(".passPartoutModalClose").click(function () {
+    modal1.style.display = "none";
+});
+
+$(window).click(function (event) {
+    if (event.target.className === "passPartoutModalClass") {
+        modal1.style.display = "none";
+    }
+});
+
+
+
+
+
+
+
+
+
+var modal2 = document.getElementById('aantalModalId1');
+
+$("#passpartoutorderlink1").click(function () {
+    var actionlinkUrl = $("#passpartoutorderlink1").prop("href");
+    var url = actionlinkUrl.replace("xxxx", $("#textboxaantal1").val());
+    $("#passpartoutorderlink1").prop("href", url);
+});
+
+$(".aantalModalClose1").click(function () {
+    modal2.style.display = "none";
+});
+
+$(window).click(function (event) {
+    if (event.target.className === "aantalModalClass1") {
+        modal2.style.display = "none";
+    }
+});
+
+
+var modal3 = document.getElementById('aantalModalId2');
+
+$("#passpartoutorderlink2").click(function () {
+    var actionlinkUrl = $("#passpartoutorderlink2").prop("href");
+    var url = actionlinkUrl.replace("xxxx", $("#textboxaantal2").val());
+    $("#passpartoutorderlink2").prop("href", url);
+});
+
+$(".aantalModalClose1").click(function () {
+    modal3.style.display = "none";
+});
+
+$(window).click(function (event) {
+    if (event.target.className === "aantalModalClass1") {
+        modal3.style.display = "none";
+    }
+});
+
+
+
+var modal4 = document.getElementById('aantalModalId3');
+
+$("#passpartoutorderlink3").click(function () {
+    var actionlinkUrl = $("#passpartoutorderlink3").prop("href");
+    var url = actionlinkUrl.replace("xxxx", $("#textboxaantal3").val());
+    $("#passpartoutorderlink3").prop("href", url);
+});
+
+$(".aantalModalClose1").click(function () {
+    modal4.style.display = "none";
+});
+
+$(window).click(function (event) {
+    if (event.target.className === "aantalModalClass1") {
+        modal4.style.display = "none";
+    }
+});
+
+
+
+var modal5 = document.getElementById('aantalModalId4');
+
+$("#passpartoutorderlink4").click(function () {
+    var actionlinkUrl = $("#passpartoutorderlink4").prop("href");
+    var url = actionlinkUrl.replace("xxxx", $("#textboxaantal4").val());
+    $("#passpartoutorderlink4").prop("href", url);
+});
+
+$(".aantalModalClose1").click(function () {
+    modal5.style.display = "none";
+});
+
+$(window).click(function (event) {
+    if (event.target.className === "aantalModalClass1") {
+        modal5.style.display = "none";
+    }
+});
 
