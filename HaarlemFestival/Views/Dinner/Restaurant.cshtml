@@ -6,6 +6,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@section AddToHead{
+    <link href="@Url.Content("~/Content/Dinner.css")" rel="stylesheet" type="text/css" />
+}
+
 @section AddToScripts{
     <script src="@Url.Content("~/Scripts/FilterOnCuisine.js")"></script>
 }
@@ -74,8 +78,7 @@
             <label class="restaurant_form_label" for="day">For which day?*<span style="color: red">*</span></label>
             @foreach (DateTime timeslot in Model.Activity.Timeslots.Select(d => d.StartTime.Date).Distinct())
             {
-                <input type="radio" name="Day" value="@timeslot.Date" checked>@timeslot.DayOfWeek  @timeslot.Date.ToShortDateString()<br>
-
+                <input type="radio" name="Day" value="@timeslot.Date" checked>@(timeslot.DayOfWeek + " " + timeslot.Date.ToShortDateString())<br>
             }
         </fieldset>
 
