@@ -97,3 +97,83 @@ $("main .imgUpload").change(function () {
         reader.readAsDataURL(file);
     }
 });
+
+//jazz agenda
+var schedule;
+
+var timeline;
+var timelineStart;
+var timelineSlotDuration;
+
+var eventsWrapper;
+var eventsGroup;
+var singleEvents;
+var eventSlotHeight;
+var eventSlotWidth;
+
+function SchedulePlan(element) {
+    schedule = element;
+    timeline = schedule.find('.timeline');
+    var timelineItems = schedule.find('li');
+    var timelineItemsNumber = timelineItems.length;
+    timelineStart = getScheduleTimestamp(timelineItems.eq(0).text());
+    //need to store delta (in our case half hour) timestamp
+    timelineSlotDuration = getScheduleTimestamp(timelineItems.eq(1).text()) - getScheduleTimestamp(timelineItems.eq(0).text());
+
+    eventsWrapper = schedule.find('.events');
+    eventsGroup = eventsWrapper.find('.events-group');
+    singleEvents = eventsGroup.find('.single-event');
+    eventSlotHeight = eventsGroup.eq(0).children('.top-info').outerHeight();
+    eventSlotWidth = eventsGroup.eq(0).children('.top-info').outerWidth();
+
+    placeEvents()
+}
+function placeEvents() {
+    singleEvents.each(function () {
+        //place each event in the grid
+        var start = getScheduleTimestamp($(this).attr('data-start')),
+            duration = getScheduleTimestamp($(this).attr('data-end')) - start;
+        console.log(duration);
+        var eventTop = eventSlotHeight * (start - timelineStart) / timelineSlotDuration;
+        var eventHeight = eventSlotHeight * duration / timelineSlotDuration;
+        console.log(eventHeight);
+        var sameTime = $(this).parent().find("[data-start='" + $(this).attr('data-start') + "']");
+        var index;
+        for (var i = 0; i < sameTime.length; i++) {
+            if (sameTime[i] == $(this)[0]) {
+                index = i;
+            }
+        }
+        var eventLeft = ((eventSlotWidth) / sameTime.length) * index;
+        $(this).css({
+            width: (100 / sameTime.length) + '%',
+            left: (eventLeft) + 'px',
+            top: (eventTop - 1) + 'px',
+            height: (eventHeight + 1) + 'px'
+            
+        });
+        
+    }); 
+}
+
+function getScheduleTimestamp(time) {
+    //accepts hh:mm format - convert hh:mm to timestamp
+    time = time.replace(/ /g, '');
+    var timeArray = time.split(':');
+    var timeStamp = parseInt(timeArray[0]) * 60 + parseInt(timeArray[1]);
+    return timeStamp;
+}
+
+SchedulePlan($(".schedule"))
+
+//--
+$(".single-event").click(function () {
+    var id = $(this).attr('id');
+    var id = id.split('-')[1];
+    console.log(id);
+    $(".single-event").removeClass("selected");
+    $("li[id*='"+id+"']").addClass("selected");
+})
+$(window).bind('hashchange', function () {
+    //code
+});

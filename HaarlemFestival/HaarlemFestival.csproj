@@ -583,6 +583,7 @@
     <Content Include="Views\CheckOut\_CheckOutLayout.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\PaymentMethod.cshtml" />
     <Content Include="Views\ContentManagement\Talking.cshtml" />
+    <Content Include="Views\ContentManagement\Jazz.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
