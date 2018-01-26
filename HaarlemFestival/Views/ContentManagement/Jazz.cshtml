@@ -1,0 +1,149 @@
+﻿@model HaarlemFestival.Model.PagePlusActivities
+@section AddToHead{
+    <link href=@Url.Content("~/Content/Admin.css") rel="stylesheet" type="text/css" />
+
+}
+@section AddToScripts{
+    <script src=@Url.Content("~/Scripts/Admin.js")></script>
+}
+@{
+    ViewBag.Title = "Jazz management";
+}
+@RenderPage("AdminNav.cshtml")
+<main class="col-sm-9 ml-sm-auto col-md-10 adminMain">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.Page.Name)
+        @Html.HiddenFor(model => model.Page.Title)
+        <section class="adminSection col-md-10">
+            <div class="form-group">
+                @Html.LabelFor(Model => Model.Page.PageDescriptions[0].Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(Model => Model.Page.PageDescriptions[0].Title, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(Model => Model.Page.PageDescriptions[0].Title, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(modelItem => Model.Page.PageDescriptions[0].DescriptionText, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(modelItem => Model.Page.PageDescriptions[0].DescriptionText, 5, 40, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(modelItem => Model.Page.PageDescriptions[0].DescriptionText, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </section>
+        <section class="adminSection col-md-10">
+            <div class="schedule">
+                <div class="timeline">
+                    <ul>
+                        @for (int h = 15; h < 23; h++)
+                        {
+                                <li><span>@Html.Raw(h + ":00")</span></li>
+                         }
+                    </ul>
+                </div>
+
+                <div class="events">
+                    <ul>
+                        <li class="events-group">
+                            <div class="top-info"><span>Thursday</span></div>
+
+                            <ul>
+
+                                @for (int i = 0; i < Model.Activities.Count; i++)
+                                {
+                                    for (int j = 0; j < Model.Activities[i].Timeslots.Count; j++)
+                                    {
+                                        if (Model.Activities[i].Timeslots[j].StartTime.DayOfWeek == DayOfWeek.Thursday)
+                                        {
+                                            <li class="single-event" id="cal-@Model.Activities[i].Id" data-start="@Model.Activities[i].Timeslots[j].StartTime.TimeOfDay" data-end="@Model.Activities[i].Timeslots[j].EndTime.TimeOfDay" data-content="event-abs-circuit" data-event="event-@i-@j">
+                                                <a href="#@Model.Activities[i].Id">
+                                                    <span class="event-date">@Model.Activities[i].Timeslots[j].StartTime.ToString("HH:mm") - @Model.Activities[i].Timeslots[j].EndTime.ToString("HH:mm")</span>
+                                                    <em class="event-name">@Model.Activities[i].Name</em>
+                                                </a>
+                                            </li>
+                                        }
+                                    }
+                                }
+                                <!-- other events here -->
+                            </ul>
+                        </li>
+
+                        <li class="events-group">
+                            <div class="top-info"><span>Friday</span></div>
+
+                            <ul>
+                                @for (int i = 0; i < Model.Activities.Count; i++)
+                                {
+                                    for (int j = 0; j < Model.Activities[i].Timeslots.Count; j++)
+                                    {
+                                        if (Model.Activities[i].Timeslots[j].StartTime.DayOfWeek == DayOfWeek.Friday)
+                                        {
+                                            <li class="single-event" id="cal-@Model.Activities[i].Id" data-start="@Model.Activities[i].Timeslots[j].StartTime.TimeOfDay" data-end="@Model.Activities[i].Timeslots[j].EndTime.TimeOfDay" data-content="event-abs-circuit" data-event="event-@i-@j">
+                                                <a href="#@Model.Activities[i].Id">
+                                                    <span class="event-date">@Model.Activities[i].Timeslots[j].StartTime.ToString("HH:mm") - @Model.Activities[i].Timeslots[j].EndTime.ToString("HH:mm")</span>
+                                                    <em class="event-name">@Model.Activities[i].Name</em>
+                                                </a>
+                                            </li>
+                                        }
+                                    }
+                                }
+                            </ul>
+                        </li>
+
+                        <li class="events-group">
+                            <div class="top-info"><span>Saturday</span></div>
+
+                            <ul>
+                                @for (int i = 0; i < Model.Activities.Count; i++)
+                                {
+                                    for (int j = 0; j < Model.Activities[i].Timeslots.Count; j++)
+                                    {
+                                        if (Model.Activities[i].Timeslots[j].StartTime.DayOfWeek == DayOfWeek.Saturday)
+                                        {
+                                            <li class="single-event" id="cal-@Model.Activities[i].Id" data-start="@Model.Activities[i].Timeslots[j].StartTime.TimeOfDay" data-end="@Model.Activities[i].Timeslots[j].EndTime.TimeOfDay" data-content="event-abs-circuit" data-event="event-@i-@j">
+                                                <a href="#@Model.Activities[i].Id">
+                                                    <span class="event-date">@Model.Activities[i].Timeslots[j].StartTime.ToString("HH:mm") - @Model.Activities[i].Timeslots[j].EndTime.ToString("HH:mm")</span>
+                                                    <em class="event-name">@Model.Activities[i].Name</em>
+                                                </a>
+                                            </li>
+                                        }
+                                    }
+                                }
+                            </ul>
+                        </li>
+
+                        <li class="events-group">
+                            <div class="top-info"><span>Sunday</span></div>
+
+                            <ul>
+                                @for (int i = 0; i < Model.Activities.Count; i++)
+                                {
+                                    for (int j = 0; j < Model.Activities[i].Timeslots.Count; j++)
+                                    {
+                                        if (Model.Activities[i].Timeslots[j].StartTime.DayOfWeek == DayOfWeek.Sunday)
+                                        {
+                                            <li class="single-event" id="cal-@Model.Activities[i].Id" data-start="@Model.Activities[i].Timeslots[j].StartTime.TimeOfDay" data-end="@Model.Activities[i].Timeslots[j].EndTime.TimeOfDay" data-content="event-abs-circuit" data-event="event-@i-@j">
+                                                <a href="#@Model.Activities[i].Id">
+                                                    <span class="event-date">@Model.Activities[i].Timeslots[j].StartTime.ToString("HH:mm") - @Model.Activities[i].Timeslots[j].EndTime.ToString("HH:mm")</span>
+                                                    <em class="event-name">@Model.Activities[i].Name</em>
+                                                </a>
+                                            </li>
+                                        }
+                                    }
+                                }
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            @for(int i=0;i< Model.Activities.Count;i++)
+            {
+                <div id="edit-@Model.Activities[i].Id">
+
+                </div>
+            }
+        </section>
+    }
+</main>

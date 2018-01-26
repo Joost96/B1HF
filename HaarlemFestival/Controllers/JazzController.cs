@@ -50,9 +50,9 @@ namespace HaarlemFestival.Controllers
 
             PagePlusActivities PageDescriptions = new PagePlusActivities();
             Page page = pageRepo.GetPage("Jazz", language); 
-            IEnumerable<Activity> activities = activityRepo.GetActivities(EventType.Jazz, language, dDay);
+            List<Activity> activities = activityRepo.GetActivities(EventType.Jazz, language, dDay).ToList();
 
-            activities.OrderBy(Activitie => Activitie.Timeslots);
+            activities.Sort((x,y) => DateTime.Compare(x.Timeslots[0].StartTime,y.Timeslots[0].StartTime));
 
             PageDescriptions.Page = page;
             PageDescriptions.Activities = activities.ToList();
