@@ -36,5 +36,11 @@ namespace HaarlemFestival.Model.Helpers
             ticketCookie.Expires = DateTime.Now.AddDays(1);
             context.Response.SetCookie(ticketCookie);
         }
+
+        public void checkBasket(HttpContextBase context)
+        {
+            Order sessionOrder = (Order)context.Session["order"];
+            context.Session["BasketAantal"] = sessionOrder.OrderHasTickets.Count;
+        }
     }
 }
