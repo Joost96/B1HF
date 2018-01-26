@@ -125,6 +125,8 @@ $(window).click(function (event) {
 });
 
 
+
+
 var modal3 = document.getElementById('aantalModalId2');
 
 $("#passpartoutorderlink2").click(function () {
@@ -145,6 +147,7 @@ $(window).click(function (event) {
 
 
 
+
 var modal4 = document.getElementById('aantalModalId3');
 
 $("#passpartoutorderlink3").click(function () {
@@ -162,6 +165,7 @@ $(window).click(function (event) {
         modal4.style.display = "none";
     }
 });
+
 
 
 
