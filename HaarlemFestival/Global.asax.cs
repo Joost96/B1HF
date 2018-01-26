@@ -36,7 +36,7 @@ namespace HaarlemFestival
                         string role = "";
                         Account account;
                         IAccountRepository repository = new AccountRepository(new DBHF());
-                        account = repository.GetAccount(int.Parse(id));
+                        account = repository.GetAccount(id);
                         if (account.GetType() == typeof(Employee))
                         {
                             Employee employee = (Employee)account;

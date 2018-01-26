@@ -208,3 +208,7 @@ textarea {
         font-weight: bold;
     }
 }
+
+.jazz-edit {
+    display : none;
+}

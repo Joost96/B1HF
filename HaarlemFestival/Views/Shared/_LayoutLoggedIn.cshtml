@@ -49,11 +49,11 @@
                         <a class="navbar-right" rel="home" href="#" title="Haarlem Festival">
                             <img style="width: 33px; height: 28px; margin-top: -10px; margin-bottom: -10px;"
                                  src="/img/Header/Shopping_cart_header.png">
-                            @if (ticketCookie != null)
+                            @try
                             {
                             <label> @ticketCookie.Value.ToString()</label>
                             }
-                            else
+                            catch
                             {
                             <label>0</label>
                             }
@@ -95,6 +95,7 @@
     </footer>
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryUI")
     @Scripts.Render("~/bundles/bootstrap")
     @if (IsSectionDefined("AddToScripts"))
     {

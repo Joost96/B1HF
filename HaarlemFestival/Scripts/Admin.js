@@ -133,10 +133,8 @@ function placeEvents() {
         //place each event in the grid
         var start = getScheduleTimestamp($(this).attr('data-start')),
             duration = getScheduleTimestamp($(this).attr('data-end')) - start;
-        console.log(duration);
         var eventTop = eventSlotHeight * (start - timelineStart) / timelineSlotDuration;
         var eventHeight = eventSlotHeight * duration / timelineSlotDuration;
-        console.log(eventHeight);
         var sameTime = $(this).parent().find("[data-start='" + $(this).attr('data-start') + "']");
         var index;
         for (var i = 0; i < sameTime.length; i++) {
@@ -166,14 +164,16 @@ function getScheduleTimestamp(time) {
 
 SchedulePlan($(".schedule"))
 
-//--
+//agenda selected
 $(".single-event").click(function () {
     var id = $(this).attr('id');
     var id = id.split('-')[1];
-    console.log(id);
     $(".single-event").removeClass("selected");
-    $("li[id*='"+id+"']").addClass("selected");
+    $("li[id ^='cal-" + id+"']").addClass("selected");
 })
 $(window).bind('hashchange', function () {
-    //code
+    var hash = window.location.hash.replace(/^#/, '');
+    console.log(hash);
+    $(".jazz-edit").hide();
+    $("#edit-" + hash).show();
 });
