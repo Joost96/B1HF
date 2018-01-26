@@ -17,5 +17,8 @@ namespace HaarlemFestival.Model
 
         public Page Page { get; set; }
         public List<Order> Orders { get; set; }
+
+        public PagePlusOrderPlusLogin() =>  Orders = new List<Order>();
+        
     }
 }

@@ -1,4 +1,5 @@
 ﻿using HaarlemFestival.Model;
+using HaarlemFestival.Model.Helpers;
 using HaarlemFestival.Repositories;
 using System;
 using System.Collections.Generic;
@@ -73,6 +74,8 @@ namespace HaarlemFestival.Controllers
             model.OHT.Ticket = ticketRepository.GetTicket(a, model.OHT.Ticket_TimeSlot_StartTime, model.OHT.Ticket_Type);
             order.OrderHasTickets.Add(model.OHT);
             Session["Order"] = order;
+
+            BasketHelper.getInstance().checkBasket(HttpContext);
 
             return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
         }

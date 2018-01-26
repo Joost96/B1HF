@@ -56,13 +56,14 @@ namespace HaarlemFestival
         {
             Session["language"] = Language.Eng;
             Session.Remove("order");
-            
-            if (Request.Cookies["userCookie"] == null)
-            {
-                HttpCookie myCookie = new HttpCookie("userCookie");
-                myCookie.Expires = DateTime.Now.AddDays(-1d);
-                Response.Cookies.Add(myCookie);
-            }
+
+            //HttpCookie myCookie = Request.Cookies["userCookie"];
+            //if (myCookie != null)
+            //{
+
+            //    myCookie.Expires = DateTime.Now.AddDays(-1d);
+            //    Response.Cookies.Add(myCookie);
+            //}
         }
     }
 }

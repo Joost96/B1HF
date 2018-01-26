@@ -60,30 +60,29 @@ namespace HaarlemFestival.Controllers
         // GET: CheckOut
         public ActionResult CheckOut1()
         {
-            Order order = (Order)Session["order"];
-            Language language = (Language)Session["language"];
-            pageRepository.GetPage("CheckOut", language);
+            PagePlusOrderPlusLogin ppp = new PagePlusOrderPlusLogin();
 
+            Order order = (Order)Session["order"];
+            ppp.Orders.Add(order);
+            Language language = (Language)Session["language"];
+
+            ppp.Page = pageRepository.GetPage("CheckOut", language);
 
             Account account = (Account)(Session["loggedin_account"]);
             if (account is Customer)
             {
-                //Order order = (Order)Session["order"];
                 order.CustomerId = account.Id;
                 order.Customer = (Customer)account;
                 Session["order"] = order;
                 return RedirectToAction("Checkout3", "Checkout");
             }
-            return View(order);
+
+            return View(ppp);
         }
 
         [HttpPost]
-        public ActionResult CheckOut1(PagePlusOrderPlusLogin model)
+        public ActionResult CheckOut1(LoginModel model)
         {
-            Language language = (Language)Session["language"];
-            pageRepository.GetPage("CheckOut", language);
-
-
             if (ModelState.IsValid)
             {
                 Account account = accountRepository.GetAccount(model.Email, model.Password);
