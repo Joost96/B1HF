@@ -4,11 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-    
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
-    
+
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
 
     @if (IsSectionDefined("AddToHead"))
@@ -16,6 +16,11 @@
         @RenderSection("AddToHead", required: false)
     }
 </head>
+
+@{
+    var ticketCookie = Request.Cookies["userCookie"];
+}
+
 <body>
     <header class="navbar navbar-inverse navbar-fixed-top">
         <nav class="container">
@@ -27,9 +32,7 @@
                 </button>
                 <a class="navbar-brand" rel="home" href="#" title="Haarlem Festival">
                     <img style="max-width: 130px; margin-top: -12px;"
-                         src="/img/Header/HF_logo_header.png"> 
-                    @* Swap href to actionlink???? *@
-
+                         src="/img/Header/HF_logo_header.png">
                 </a>
             </nav>
 
@@ -45,20 +48,26 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="navbar-right" rel="home" href="#" title="Haarlem Festival">
+                        <a class="navbar-right" rel="home" href="@Url.Action("Basket", "CheckOut")" title="Haarlem Festival">
                             <img style="width: 33px; height: 28px; margin-top: -10px; margin-bottom: -10px;"
                                  src="/img/Header/Shopping_cart_header.png">
+                                @try
+                                {
+                                    <label> @ticketCookie.Value.ToString()</label>
+                                }
+                                catch
+                                {
+                                    <label>0</label>
+                                }
                         </a>
                     </li>
+
                     <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
                     <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-                    <li><a href=@Url.Action("ChangeLanguage", "Home", new { language = 0 })><img src="~/img/Language/gb.svg" alt="eng" width="30" height="20"/></a></li>
 
-                    <li><a href=@Url.Action("ChangeLanguage", "Home", new { language = 1 })><img src="~/img/Language/nl.svg" alt="nl" width="30" height="20"/></a></li>                    
-               </ul>
-
-
-
+                    <li><a href=@Url.Action("ChangeLanguage", "Home", new { language = 0 })><img src="~/img/Language/gb.svg" alt="eng" width="30" height="20" /></a></li>
+                    <li><a href=@Url.Action("ChangeLanguage", "Home", new { language = 1 })><img src="~/img/Language/nl.svg" alt="nl" width="30" height="20" /></a></li>
+                </ul>
             </nav>
         </nav>
     </header>

@@ -1,0 +1,69 @@
+﻿@model HaarlemFestival.Model.PagePlusOrders
+
+@{
+    ViewBag.Title = "Basket";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section AddToHead{
+    <link href="@Url.Content("~/Content/Agenda.css")" rel="stylesheet" type="text/css" />
+}
+
+<h2>Basket</h2>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<section class="AgendaIntro">
+
+    <h2 class="AgendaHeader">@Model.Page.Title</h2>
+
+    <p class="AgendaIntroText">
+        @Model.Page.PageDescriptions[0].DescriptionText
+    </p>
+</section>
+
+<section class="AgendaOrders">
+    <ul class="AgendaOrderList">
+        <li class="OrderHeader">
+            <div class="orderItem col-md-4">Name</div>
+            <div class="orderItem col-md-2">Event</div>
+            <div class="orderItem col-md-1">Prijs</div>
+            <div class="orderItem col-md-1">Aantal</div>
+            <div class="orderItem col-md-2">Totaalprijs</div>
+            <div class="orderItem col-md-2">Start tijd/datum</div>
+        </li>
+
+
+        @if (Model.Orders != null)
+        {
+            foreach (var order in Model.Orders)
+            {
+                foreach (var OHT in order.OrderHasTickets)
+                {
+
+                    <li class="AgendaOrder">
+                        <div class="orderItem col-md-4">@OHT.Ticket.TimeSlot.Activity.Name</div>
+                        <div class="orderItem col-md-2">@OHT.Ticket.TimeSlot.Activity.Type</div>
+                        <div class="orderItem col-md-1">@OHT.Ticket.Price</div>
+                        <div class="orderItem col-md-1">@OHT.Amount</div>
+                        <div class="orderItem col-md-2">@OHT.TotalPrice</div>
+                        <div class="orderItem col-md-2">@OHT.Ticket.TimeSlot.StartTime.ToString("hh:mm dd/MM/yyyy")</div>
+                    </li>
+                }
+            }
+        }
+        else
+        {
+            <text>Empty Cart</text>
+        }
+
+
+        @Html.ActionLink("Afrekenen", "CheckOut1", "CheckOut")
+
+
+    </ul>
+
+</section>
