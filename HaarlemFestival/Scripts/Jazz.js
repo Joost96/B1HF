@@ -17,7 +17,7 @@
 
     $("#myModal_" + id).show();
 
-    $("#orderlink").click(function () {
+    $("#orderlink_" + id).click(function () {
 
         
 
@@ -25,9 +25,9 @@
 
         $("#validationOrderModalId").show();
 
-        var actionlinkUrl = $("#orderlink").prop("href");
+        var actionlinkUrl = $("#orderlink_" + id).prop("href");
         var url = actionlinkUrl.replace("xxxx", $("#textBox_" + id).val());
-        $("#orderlink").prop("href", url);
+        $("#orderlink_" + id).prop("href", url);
 
         //setTimeout(function () {
         //    var actionlinkUrl = $("#orderlink").prop("href");

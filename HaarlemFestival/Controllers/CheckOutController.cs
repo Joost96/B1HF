@@ -167,6 +167,7 @@ namespace HaarlemFestival.Controllers
             ticketOrder.Ticket_TimeSlot_StartTime = activity.Timeslots[0].StartTime;
             ticketOrder.Ticket_Type = activity.Timeslots[0].Tickets[0].Type;
             ticketOrder.Amount = aantal;
+            ticketOrder.Ticket = activity.Timeslots[0].Tickets[0];
             ticketOrder.TotalPrice = aantal * activity.Timeslots[0].Tickets[0].Price;
 
             Order order = (Order)Session["order"];
