@@ -126,24 +126,9 @@ namespace HaarlemFestival.Controllers
 
             Session["order"] = order;
 
-            Order sessionOrder = (Order)Session["order"];
-            HttpCookie ticketCookie = Request.Cookies["userCookie"];
-
-            if (sessionOrder != null)
-            {
-                ticketCookie = new HttpCookie("userCookie", "0");
-                int ticketValue = sessionOrder.OrderHasTickets.Count;
-                ticketCookie.Value = ticketValue.ToString();
-            }
-
-            ticketCookie.Expires = DateTime.Now.AddDays(1);
-            HttpContext.Response.SetCookie(ticketCookie);
-
-
-
+            Model.Helpers.BasketHelper basketHelper = new Model.Helpers.BasketHelper();
+            basketHelper.checkCookie(HttpContext);
             return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
         }
-
-
     }
 }
