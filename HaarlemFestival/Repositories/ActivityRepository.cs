@@ -37,6 +37,7 @@ namespace HaarlemFestival.Repositories
 
         public IEnumerable<Activity> GetActivities(EventType type, Language language, DateTime dag)
         {
+            DateTime dag2 = dag.AddDays(1);
             return db.Activities
                 .Include(a => a.Location)
                 .Where(a => a.Type == type)
@@ -46,9 +47,9 @@ namespace HaarlemFestival.Repositories
                     a,
                     d = a.ActivityDescriptions.Where(ad => ad.Language == language)
                                 .OrderBy(ad => ad.Section),
-                    ts = a.Timeslots,
+                    ts = a.Timeslots.Where(ts => ts.StartTime >= dag).Where(ts => ts.EndTime <= dag2),
                     ti = a.Timeslots.Select(ts => ts.Tickets)
-                }).AsEnumerable()
+                }).AsEnumerable().Where(a => a.ts.Count() > 0)
                 .Where(a => a.a.Timeslots[0].StartTime.ToString("dd/MM/yyyy").Equals(dag.ToString("dd/MM/yyyy")))
                 .Select(x => x.a);
         }

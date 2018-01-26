@@ -259,27 +259,31 @@
     margin-top: 2%;
 }
 
+
 /* Order Modal */
-#OrderModal modal-content{
-   height: 90%;
-    
+#OrderModal modal-content {
+    height: 90%;
+    padding-left: 40px;
+}
+#OrderSelect{
+    margin-left: 5%;
 }
 
-/*#closeOrderModal {
-
-}*/
-
-.OrderTitle {
-    font-size: large;
-
+#OrderMessage {
+    float: left;
 }
 
 #TalkingOrderButton {
     width: 20%;
     border-radius: 0 10px 10px 0;
-    margin-bottom: 3%;
+    margin-top: 5%;
+    margin-left: 12%;
 }
+/*#closeOrderModal {}*/
 
+.OrderTitle {
+    font-size: large;
+}
 
 
 /* The Close Button */

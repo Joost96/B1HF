@@ -391,6 +391,7 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\Agenda.css" />
+    <Content Include="Content\jquery.datetimepicker.min.css" />
     <Content Include="Content\Talking.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -530,9 +531,13 @@
     <Content Include="obj\Debug\HaarlemFestival.csproj.CoreCompileInputs.cache" />
     <Content Include="obj\Debug\HaarlemFestival.csproj.GenerateResource.Cache" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <Content Include="ClassDiagram1.cd" />
+    <Content Include="ClassDiagram2.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\FilterOnCuisine.js" />
+    <Content Include="Scripts\jquery.datetimepicker.full.js" />
+    <Content Include="Scripts\jquery.datetimepicker.full.min.js" />
     <Content Include="Scripts\ModalHistoric.js" />
     <Content Include="Scripts\Talking.js" />
     <Content Include="Scripts\Jazz.js" />
@@ -589,7 +594,9 @@
     <Content Include="Views\CheckOut\_CheckOutLayout.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\PaymentMethod.cshtml" />
     <Content Include="Views\ContentManagement\Talking.cshtml" />
+    <Content Include="Views\ContentManagement\Jazz.cshtml" />
     <Content Include="Views\CheckOut\Basket.cshtml" />
+    <Content Include="Views\Shared\_LayoutLoggedIn.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

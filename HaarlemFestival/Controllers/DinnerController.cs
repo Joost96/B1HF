@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using System.Web.UI.HtmlControls;
 using HaarlemFestival.Model;
 using System;
+using HaarlemFestival.Model.Helpers;
 
 namespace HaarlemFestival.Controllers
 {
@@ -126,24 +127,8 @@ namespace HaarlemFestival.Controllers
 
             Session["order"] = order;
 
-            Order sessionOrder = (Order)Session["order"];
-            HttpCookie ticketCookie = Request.Cookies["userCookie"];
-
-            if (sessionOrder != null)
-            {
-                ticketCookie = new HttpCookie("userCookie", "0");
-                int ticketValue = sessionOrder.OrderHasTickets.Count;
-                ticketCookie.Value = ticketValue.ToString();
-            }
-
-            ticketCookie.Expires = DateTime.Now.AddDays(1);
-            HttpContext.Response.SetCookie(ticketCookie);
-
-
-
+            BasketHelper.getInstance().checkCookie(HttpContext);
             return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
         }
-
-
     }
 }

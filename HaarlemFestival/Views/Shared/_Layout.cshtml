@@ -10,7 +10,7 @@
 
 
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css" type="text/css">
     @if (IsSectionDefined("AddToHead"))
     {
         @RenderSection("AddToHead", required: false)
@@ -95,6 +95,7 @@
     </footer>
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryUI")
     @Scripts.Render("~/bundles/bootstrap")
     @if (IsSectionDefined("AddToScripts"))
     {
