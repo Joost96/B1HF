@@ -239,6 +239,7 @@
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\OrderHasTickets.cs" />
     <Compile Include="Model\OrderLocation.cs" />
+    <Compile Include="Model\OrderTicketJazz.cs" />
     <Compile Include="Model\Page.cs" />
     <Compile Include="Model\PageDescription.cs" />
     <Compile Include="Model\PagePlusActivitiesPlusCuisines.cs" />
@@ -521,6 +522,8 @@
     <Content Include="obj\Debug\HaarlemFestival.csproj.CoreCompileInputs.cache" />
     <Content Include="obj\Debug\HaarlemFestival.csproj.GenerateResource.Cache" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <Content Include="ClassDiagram1.cd" />
+    <Content Include="ClassDiagram2.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\FilterOnCuisine.js" />
