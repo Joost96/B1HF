@@ -1,6 +1,4 @@
-﻿
-
-// Get the modal
+﻿// Get the modal
 var modal = document.getElementById('myModalHistoric');
 
 // Get the button that opens the modal
@@ -105,7 +103,7 @@ time3.onclick = function () {
 
 // groupticket selection
 groupticket.onclick = function () {
-    if ($('#HistoricGroupTicketOption').is(":checked")){
+    if ($('#HistoricGroupTicketOption').is(":checked")) {
         $('#numberTicketsHistoric').val(4);
         $('#numberTicketsHistoric').attr('disabled', true);
     } else {
@@ -117,53 +115,53 @@ submit.onclick = function () {
     var valDay = $('input[name="day"]:checked').val();
     var valTime = $('input[name="time"]:checked').val();
     var valLang = $('input[name="language"]:checked').val();
-    var valTickets = $('#numberTicketsHistoric').val();
+    var valTickets = $('#numberTicketsHistoric');
     var Ticket_TimeSlot_Activity_Id;
     var Ticket_Type;
     var Ticket_TimeSlot_StartTime;
     var Amount;
     var TotalPrice;
 
-    switch (valLang)
-    {
-        case 1:
+    //var valLangChecked = valLang.filter(':checked').val();
+    switch (valLang) {
+        case "1":
             Ticket_TimeSlot_Activity_Id = 43;
             break;
-        case 2:
+        case "2":
             Ticket_TimeSlot_Activity_Id = 42;
             break;
-        case 3:
+        case "3":
             Ticket_TimeSlot_Activity_Id = 44;
             break;
     }
 
-    switch (valDay)
-    {
-        case 1:
+    //var valDayChecked = valDay.filter(':checked').val();
+    switch (valDay) {
+        case "1":
             Ticket_TimeSlot_StartTime = "26/07/2018";
             break;
-        case 2:
+        case "2":
             Ticket_TimeSlot_StartTime = "27/07/2018";
             break;
-        case 3:
+        case "3":
             Ticket_TimeSlot_StartTime = "28/07/2018";
             break;
     }
 
-    switch (valTime)
-    {
-        case 1:
+    //var valtimeChecked = valTime.filter(':checked').val();
+    switch (valTime) {
+        case "1":
             Ticket_TimeSlot_StartTime += " 10:00:00";
             break;
-        case 2:
+        case "2":
             Ticket_TimeSlot_StartTime += " 13:00:00";
             break;
-        case 3:
+        case "3":
             Ticket_TimeSlot_StartTime += " 16:00:00";
             break;
     }
 
-    amount = $('numberTicketsHistoric').val();
+    Amount = $('#numberTicketsHistoric').val();
 
     if ($('#HistoricGroupTicketOption').is(":checked")) {
         Ticket_Type = 1;
@@ -171,8 +169,7 @@ submit.onclick = function () {
         Ticket_Type = 0;
     }
 
-    switch (Ticket_Type)
-    {
+    switch (Ticket_Type) {
         case 0:
             TotalPrice = Amount * 17.5;
             break;
@@ -181,5 +178,9 @@ submit.onclick = function () {
             break;
     }
 
-
+    $("#OHT_Ticket_TimeSlot_StartTime").val(Ticket_TimeSlot_StartTime);
+    $("#OHT_Ticket_TimeSlot_Activity_Id").val(Ticket_TimeSlot_Activity_Id);
+    $("#OHT_Ticket_Type").val(Ticket_Type);
+    $("#OHT_Amount").val(Amount);
+    $("#OHT_TotalPrice").val(TotalPrice);
 };
