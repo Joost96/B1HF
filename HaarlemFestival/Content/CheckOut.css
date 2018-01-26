@@ -3,8 +3,7 @@
     text-align: center;
     border-style: solid;
     border-width: 2px;
-    margin-top: 10%;
-    padding-bottom: 10%;
+    padding: 2em 0;
 }
 
 
@@ -47,4 +46,27 @@
 
 .middenstuk {
     display: inline-block;
+}
+
+.AgendaOrderList{
+    margin-top: 3em;
+    margin-left: 7em;
+    margin-right: 6em;
+    list-style-type: none;    
+}
+
+.OrderHeader {
+    color: firebrick;
+   
+}
+
+.AgendaOrder {
+    margin-top: 3px;
+    color: green;
+    
+}
+
+.orderItem {
+    border-bottom: solid;
+    border-width: thin;
 }

@@ -8,7 +8,7 @@ namespace HaarlemFestival.Model
 
     public enum TicketType { Single, Group, Child, free, DayPasspartout, WeekPasspartout, PasspartoutFree }
 
-    public enum EventType { Jazz, Dinner, Historic, Talking }
+    public enum EventType { Jazz, Dinner, Historic, Talking, JazzPass}
 
     public enum Language { Ned, Eng }
 }

@@ -1,0 +1,70 @@
+﻿
+/*-------------------------------------------agenda intro-----------------------------------------------------*/
+
+.AgendaIntro {
+    background-color: #EDECD8;
+    color: black;
+    font-size: 1em;
+    height: 12em;
+    width: 100%;
+    text-align: center;
+    line-height: 2em;
+    margin-top: 4%;
+    padding: 0;
+    border-top-style: solid;
+    border-color: #F8473E;
+}
+.AgendaHeader {
+    font-weight: bold;
+    margin-left: 6em;
+    margin-right: 6em;
+}
+
+.AgendaIntroText {
+    font-size: 1.5em;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 0;
+}
+
+
+/*-------------------------------------------OrderList-----------------------------------------------------*/
+
+.AgendaOrders {
+    background-color: #EDECD8;
+    color: black;
+    font-size: 1em;
+    min-height: 10em;
+    width: 100%;
+    text-align: center;
+    line-height: 2em;
+    margin-top: 2%;
+    padding: 0;
+    border-top-style: solid;
+    border-color: #F8473E;
+    display: inline-block;
+}
+
+.AgendaOrderList{
+    margin-top: 3em;
+    margin-left: 7em;
+    margin-right: 6em;
+    list-style-type: none;
+    
+}
+
+.OrderHeader {
+    color: firebrick;
+   
+}
+
+.AgendaOrder {
+    margin-top: 3px;
+    color: green;
+    
+}
+
+.orderItem {
+    border-bottom: solid;
+    border-width: thin;
+}

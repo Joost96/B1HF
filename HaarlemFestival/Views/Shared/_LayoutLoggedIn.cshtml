@@ -10,17 +10,15 @@
 
 
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css" type="text/css">
+
     @if (IsSectionDefined("AddToHead"))
     {
         @RenderSection("AddToHead", required: false)
     }
 </head>
-
-@{
+    @{
     var ticketCookie = Request.Cookies["userCookie"];
-}
-
+    }
 <body>
     <header class="navbar navbar-inverse navbar-fixed-top">
         <nav class="container">
@@ -48,26 +46,28 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="navbar-right" rel="home" href="@Url.Action("Basket", "CheckOut")" title="Haarlem Festival">
+                        <a class="navbar-right" rel="home" href="#" title="Haarlem Festival">
                             <img style="width: 33px; height: 28px; margin-top: -10px; margin-bottom: -10px;"
                                  src="/img/Header/Shopping_cart_header.png">
-                                @try
-                                {
-                                    <label> @ticketCookie.Value.ToString()</label>
-                                }
-                                catch
-                                {
-                                    <label>0</label>
-                                }
+                            @if (ticketCookie != null)
+                            {
+                            <label> @ticketCookie.Value.ToString()</label>
+                            }
+                            else
+                            {
+                            <label>0</label>
+                            }
                         </a>
                     </li>
-
-                    <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-                    <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-
+                    <li><a>@User.Identity.Name</a></li>
+                    <li>@Html.ActionLink("SignOut", "LogOff", "Account")</li>
                     <li><a href=@Url.Action("ChangeLanguage", "Home", new { language = 0 })><img src="~/img/Language/gb.svg" alt="eng" width="30" height="20" /></a></li>
+
                     <li><a href=@Url.Action("ChangeLanguage", "Home", new { language = 1 })><img src="~/img/Language/nl.svg" alt="nl" width="30" height="20" /></a></li>
                 </ul>
+
+
+
             </nav>
         </nav>
     </header>
@@ -95,7 +95,6 @@
     </footer>
 
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryUI")
     @Scripts.Render("~/bundles/bootstrap")
     @if (IsSectionDefined("AddToScripts"))
     {

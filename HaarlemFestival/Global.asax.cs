@@ -21,7 +21,7 @@ namespace HaarlemFestival
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-           
+
         }
         // https://www.codeproject.com/Articles/578374/AplusBeginner-splusTutorialplusonplusCustomplusF
         protected void FormsAuthentication_OnAuthenticate(Object sender, FormsAuthenticationEventArgs e)
@@ -54,7 +54,15 @@ namespace HaarlemFestival
 
         void Session_Start(object sender, EventArgs e)
         {
-            Session["language"] = Language.Eng; 
+            Session["language"] = Language.Eng;
+            Session.Remove("order");
+            
+            if (Request.Cookies["userCookie"] == null)
+            {
+                HttpCookie myCookie = new HttpCookie("userCookie");
+                myCookie.Expires = DateTime.Now.AddDays(-1d);
+                Response.Cookies.Add(myCookie);
+            }
         }
     }
 }

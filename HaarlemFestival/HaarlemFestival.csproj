@@ -50,10 +50,14 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
@@ -219,10 +223,6 @@
     <Compile Include="Migrations\201712131310386_naam bij locatie toegevoegd.Designer.cs">
       <DependentUpon>201712131310386_naam bij locatie toegevoegd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201801191142231_question aangepast.cs" />
-    <Compile Include="Migrations\201801191142231_question aangepast.Designer.cs">
-      <DependentUpon>201801191142231_question aangepast.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201801231219450_timeslot seats change.cs" />
     <Compile Include="Migrations\201801231219450_timeslot seats change.Designer.cs">
       <DependentUpon>201801231219450_timeslot seats change.cs</DependentUpon>
@@ -237,18 +237,23 @@
     <Compile Include="Model\Description.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Enums.cs" />
+    <Compile Include="Model\Helpers\BasketHelper.cs" />
     <Compile Include="Model\keyAttribute.cs" />
     <Compile Include="Model\Location.cs" />
     <Compile Include="Model\LoginModel.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\OrderHasTickets.cs" />
     <Compile Include="Model\OrderLocation.cs" />
+    <Compile Include="Model\OrderTicketJazz.cs" />
     <Compile Include="Model\Page.cs" />
     <Compile Include="Model\PageDescription.cs" />
     <Compile Include="Model\PagePlusActivitiesPlusCuisines.cs" />
     <Compile Include="Model\PagePlusActivities.cs" />
+    <Compile Include="Model\PagePlusActivityPlusOrderDinners.cs" />
+    <Compile Include="Model\PagePlusOrderPlusLogin.cs" />
     <Compile Include="Model\PagePlusOrdersPlusOrderLocation.cs" />
     <Compile Include="Model\PagePlusOrders.cs" />
+    <Compile Include="Model\PpApOpQ.cs" />
     <Compile Include="Model\RegisterCheckoutModel.cs" />
     <Compile Include="Model\RegisterModel.cs" />
     <Compile Include="Model\Ticket.cs" />
@@ -267,11 +272,13 @@
     <Compile Include="Repositories\IOrderRepository.cs" />
     <Compile Include="Repositories\ICuisineRepository.cs" />
     <Compile Include="Repositories\IQuestionRepository.cs" />
+    <Compile Include="Repositories\ITicketRepository.cs" />
     <Compile Include="Repositories\OrderRepository.cs" />
     <Compile Include="Repositories\IPageRepository.cs" />
     <Compile Include="Repositories\CuisineRepository.cs" />
     <Compile Include="Repositories\PageRepository.cs" />
     <Compile Include="Repositories\QuestionRepository.cs" />
+    <Compile Include="Repositories\TicketRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Antlr3.Runtime.dll" />
@@ -374,11 +381,13 @@
     <Content Include="bin\System.Web.WebPages.xml" />
     <Content Include="bin\WebGrease.dll" />
     <Content Include="Content\Admin.css" />
+    <Content Include="Content\Basket.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CheckOut.css" />
+    <Content Include="Content\Dinner.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\Agenda.css" />
@@ -522,6 +531,8 @@
     <Content Include="obj\Debug\HaarlemFestival.csproj.CoreCompileInputs.cache" />
     <Content Include="obj\Debug\HaarlemFestival.csproj.GenerateResource.Cache" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <Content Include="ClassDiagram1.cd" />
+    <Content Include="ClassDiagram2.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\FilterOnCuisine.js" />
@@ -584,6 +595,7 @@
     <Content Include="Views\Shared\EditorTemplates\PaymentMethod.cshtml" />
     <Content Include="Views\ContentManagement\Talking.cshtml" />
     <Content Include="Views\ContentManagement\Jazz.cshtml" />
+    <Content Include="Views\CheckOut\Basket.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -635,9 +647,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801042107581_opnieuw question.resx">
       <DependentUpon>201801042107581_opnieuw question.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801191142231_question aangepast.resx">
-      <DependentUpon>201801191142231_question aangepast.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801231219450_timeslot seats change.resx">
       <DependentUpon>201801231219450_timeslot seats change.cs</DependentUpon>

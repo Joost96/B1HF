@@ -23,8 +23,8 @@ namespace HaarlemFestival.Controllers
         // GET: Contact
         public ActionResult Index()
         {
-            
-            Page page = pageRepository.GetPage("Contact", Language.Eng);
+            Language language = (Language)Session["language"];
+            Page page = pageRepository.GetPage("Contact", language);
 
             return View(page);
         }

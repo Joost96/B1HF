@@ -198,11 +198,11 @@
 /*--------------------------------- Modal popup ------------------------------------*/
 
 
-.modal {
+.TalkingBasicModal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    z-index: 1000; /* Sit on top */
+    padding-top: 350px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -211,6 +211,8 @@
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
+
+
 
 /* Modal Content */
 .modal-content {
@@ -231,26 +233,57 @@
 
 
 /* Question field */
-.TalkingQuestionMessage {
-    width: 80%;
-    height: 40%;
-    border-radius: 10px 0 0 10px;
+#Question_Message {
+    width: 100%;
+    height: 5em;
+    border-radius: 10px 0 10px 10px;
+    float: left;
 }
 
-.TalkingQuestionButton {
+#TalkingQuestionButton {
     width: 20%;
     border-radius: 0 10px 10px 0;
+    margin-bottom: 12%;
 }
 
-/* Thank you massage */
+/* Thank you Modal */
+
+.modalBedankBericht{
+    display: none;
+    width: 100%;
+    height: 100%
+}
+
+#ThanksModal p {
+    text-align: center;
+    margin-top: 2%;
+}
 
 
+/* Order Modal */
+#OrderModal modal-content {
+    height: 90%;
+    padding-left: 40px;
+}
+#OrderSelect{
+    margin-left: 5%;
+}
 
+#OrderMessage {
+    float: left;
+}
 
+#TalkingOrderButton {
+    width: 20%;
+    border-radius: 0 10px 10px 0;
+    margin-top: 5%;
+    margin-left: 12%;
+}
+/*#closeOrderModal {}*/
 
-
-
-
+.OrderTitle {
+    font-size: large;
+}
 
 
 /* The Close Button */
