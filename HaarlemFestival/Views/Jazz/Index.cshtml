@@ -41,25 +41,24 @@
         {
             <!-- The Modal -->
             <section id="myModal_@Model.Activities[i].Id" class="modal">
-            <!-- Modal content -->
-                    <section class="modal-content">
-                        <span class="close">&times;</span>
-                        <p class="modaltitle"></p>
-                        <p class="modaldescription"></p>
-                        <p class="modallocation"></p>
-                        <p class="modalhall"></p>
-                        <p class="modalprice"></p>
-                        <p class="modaltime"></p>
-                        <p class="modaldatum"></p>
-                        <label>Aantal</label>
-                        <input id="textBox_@Model.Activities[i].Id" type="text" required>
-                        <a href="@Url.Action("OrderJazz", "CheckOut", new { id = Model.Activities[i].Id, aantal = "xxxx"})" id="link">Order Ticket</a>
-                    </section>
+                <!-- Modal content -->
+                <section class="modal-content">
+                    <span class="close">&times;</span>
+                    <p class="modaltitle"></p>
+                    <p class="modaldescription"></p>
+                    <p class="modallocation"></p>
+                    <p class="modalhall"></p>
+                    <p class="modalprice"></p>
+                    <p class="modaltime"></p>
+                    <label>@Model.Page.PageDescriptions[15].Title</label>
+                    <input id="textBox_@Model.Activities[i].Id" type="text" required />
+                    <a href="@Url.Action("OrderJazz", "CheckOut", new { id = Model.Activities[i].Id, aantal = "xxxx"})" id="orderlink">@Model.Page.PageDescriptions[15].DescriptionText</a>
+                </section>
             </section>
 
             <section class="col-md-4 jazz_page_activiteit_section">
                 <section>
-                    <img src=@Model.Activities[i].ActivityDescriptions[0].ImageUrl width="280" height="280" alt="Jazz @Model.Activities[i].ActivityDescriptions[0].Title" />
+                    <img src=@Model.Activities[i].ActivityDescriptions[0].ImageUrl width="320" height="280" alt="Jazz @Model.Activities[i].ActivityDescriptions[0].Title" />
                 </section>
                 <section>
                     <section>
@@ -71,13 +70,13 @@
                         <section>
                             <section class="col-md-6">
                                 <p id="jazz_activity_location_@Model.Activities[i].Id" class="jazz_activiteit_location">@Model.Page.PageDescriptions[9].Title @Model.Activities[i].Location.Name</p>
-                                
+
                                 @if (Model.Activities[i].Timeslots[0].StartTime.ToString("dd/MM/yyyy") != "29-07-2018")
                                 {
                                     <p id="jazz_activity_hall_@Model.Activities[i].Id" class="jazz_activiteit_hall">@Model.Page.PageDescriptions[10].Title @Model.Activities[i].Timeslots[0].Hall</p>
                                     <p id="jazz_activity_price_@Model.Activities[i].Id" class="jazz_activiteit_price">@Model.Page.PageDescriptions[11].Title €@Model.Activities[i].Timeslots[0].Tickets[0].Price</p>
                                 }
-                                
+
                                 <p id="jazz_activity_time_@Model.Activities[i].Id" class="jazz_activiteit_time">@Model.Page.PageDescriptions[12].Title @Model.Activities[i].Timeslots[0].StartTime.ToString("HH:mm") - @Model.Activities[i].Timeslots[0].EndTime.ToString("HH:mm")</p>
                                 <p id="jazz_activity_datum_@Model.Activities[i].Id" style="display:none">@Model.Activities[i].Timeslots[0].StartTime.ToString("dd/MM/yyyy")</p>
                             </section>
@@ -95,6 +94,8 @@
             </section>
         }
 
+    </section>
+
         <!-- The ValidationBox Modal -->
         <section id="validationOrderModalId" class="validationOrderModalClass">
             <!-- Modal content -->
@@ -109,10 +110,62 @@
             <!-- Modal content -->
             <section class="passPartoutModal-content">
                 <span class="passPartoutModalClose">&times;</span>
-                <button></button>
+                <section class="row"><button class="btn btn-default jazz_btn_passpartout" id="passpartoutlink1">@Model.Page.PageDescriptions[16].Title <br />--------<br />@Model.Page.PageDescriptions[16].DescriptionText</button></section>
+                <section class="row"><button class="btn btn-default jazz_btn_passpartout" id="passpartoutlink2">@Model.Page.PageDescriptions[17].Title <br />--------<br />@Model.Page.PageDescriptions[17].DescriptionText</button></section>
+                <section class="row"><button class="btn btn-default jazz_btn_passpartout" id="passpartoutlink3">@Model.Page.PageDescriptions[18].Title <br />--------<br />@Model.Page.PageDescriptions[18].DescriptionText</button></section>
+                <section class="row"><button class="btn btn-default jazz_btn_passpartout" id="passpartoutlink4">@Model.Page.PageDescriptions[19].Title <br />--------<br />@Model.Page.PageDescriptions[19].DescriptionText</button></section>
             </section>
         </section>
 
-    </section>
+        <!-- The aantal Modal -->
+        <section id="aantalModalId1" class="aantalModalClass1">
+            <!-- Modal content -->
+            <section class="aantalModal-content1">
+                <span class="aantalModalClose1">&times;</span>
+                <h3>@Model.Page.PageDescriptions[16].Title</h3>
+                <label>@Model.Page.PageDescriptions[15].Title</label>
+                <input id="textboxaantal1" type="text" required>
+                <a class="btn btn-default" href="@Url.Action("OrderJazz", "CheckOut", new { id = 52, aantal = "xxxx"})" id="passpartoutorderlink1"></a>
+            </section>
+        </section>
+
+        <!-- The aantal Modal -->
+        <section id="aantalModalId2" class="aantalModalClass1">
+            <!-- Modal content -->
+            <section class="aantalModal-content1">
+                <span class="aantalModalClose1">&times;</span>
+                <h3>@Model.Page.PageDescriptions[17].Title</h3>
+                <label>@Model.Page.PageDescriptions[15].Title</label>
+                <input id="textboxaantal2" type="text" required>
+                <a class="btn btn-default" href="@Url.Action("OrderJazz", "CheckOut", new { id = 53, aantal = "xxxx"})" id="passpartoutorderlink2"></a>
+            </section>
+        </section>
+
+        <!-- The aantal Modal -->
+        <section id="aantalModalId3" class="aantalModalClass1">
+            <!-- Modal content -->
+            <section class="aantalModal-content1">
+                <span class="aantalModalClose1">&times;</span>
+                <h3>@Model.Page.PageDescriptions[18].Title</h3>
+                <label>@Model.Page.PageDescriptions[15].Title</label>
+                <input id="textboxaantal3" type="text" required>
+                <a class="btn btn-default" href="@Url.Action("OrderJazz", "CheckOut", new { id = 56, aantal = "xxxx"})" id="passpartoutorderlink3"></a>
+            </section>
+        </section>
+
+        <!-- The aantal Modal -->
+        <section id="aantalModalId4" class="aantalModalClass1">
+            <!-- Modal content -->
+            <section class="aantalModal-content1">
+                <span class="aantalModalClose1">&times;</span>
+                <h3>@Model.Page.PageDescriptions[19].Title</h3>
+                <label>@Model.Page.PageDescriptions[15].Title</label>
+                <input id="textboxaantal4" type="text" required>
+                <a class="btn btn-default" href="@Url.Action("OrderJazz", "CheckOut", new { id = 57, aantal = "xxxx"})" id="passpartoutorderlink4"></a>
+            </section>
+        </section>
+
+
+    
 </section>
 
