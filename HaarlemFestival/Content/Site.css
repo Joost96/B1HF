@@ -8,6 +8,7 @@ body {
     background-color: #EDECD8;
 }
 
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -30,6 +31,10 @@ textarea {
 
 nav {
     font-weight: bold;
+}
+
+.content {
+    min-height: calc(100vh - 170px);
 }
 
 footer {
