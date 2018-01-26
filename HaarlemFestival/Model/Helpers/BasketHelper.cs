@@ -21,7 +21,7 @@ namespace HaarlemFestival.Model.Helpers
             return uniqueInstance;
         }
 
-        public void checkCookie(HttpContextBase context)
+        public void checkBasket(HttpContextBase context)
         {
             Order sessionOrder = (Order)context.Session["order"];
             HttpCookie ticketCookie = context.Request.Cookies["userCookie"];
