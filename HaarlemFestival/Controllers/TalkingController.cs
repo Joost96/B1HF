@@ -35,7 +35,7 @@ namespace HaarlemFestival.Controllers
 
             PpApOpQ model = new PpApOpQ();
             
-            Page page = pageRepo.GetPage("Talking", Language.Eng);            
+            Page page = pageRepo.GetPage("Talking", language);            
             IEnumerable<Activity> activities = activityRepo.GetActivities(EventType.Talking, language);
 
             activities.OrderBy(Activitie => Activitie.Timeslots);

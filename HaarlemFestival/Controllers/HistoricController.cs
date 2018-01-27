@@ -56,7 +56,7 @@ namespace HaarlemFestival.Controllers
             order.OrderHasTickets.Add(model.OHT);
             Session["Order"] = order;
 
-            BasketHelper.getInstance().checkCookie(HttpContext);
+            BasketHelper.getInstance().checkBasket(HttpContext);
             return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
         }
     }

@@ -146,8 +146,8 @@
         @using (Html.BeginForm("Order", "Talking", FormMethod.Post, new { id = "TalkingOrderForm" }))
         {
             <p class="OrderTitle"> </p>
-            <p id="OrderMessage">@Model.Page.PageDescriptions[4].Title</p>
-            <p id="ThankYouOrderMessage">@Model.Page.PageDescriptions[5].Title</p>
+            <p class="OrderP" id="OrderMessage">@Model.Page.PageDescriptions[4].Title</p>
+            <p class="OrderP" id="ThankYouOrderMessage">@Model.Page.PageDescriptions[5].Title</p>
 
             <select id="OrderSelect">
                 <option value="1" name = "m.OHT.Amount">1</option>
