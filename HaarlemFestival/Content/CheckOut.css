@@ -1,26 +1,81 @@
-﻿.CheckOut {
+﻿/* ALGEMEEN GEDEELTE*/
+.CheckOut {
     position: center;
     text-align: center;
     border-style: solid;
     border-width: 2px;
-    padding: 2em 0;
 }
 
-
-.CheckOut ul {
+.CheckOut ul{
     list-style-type: none;
-    margin: 3em 0px;
     padding: 0;
-    overflow: hidden;
-    border-bottom-style: solid;
-    border-bottom-width: 2px;
 }
 
-.CheckOut1 aside {
+
+.CheckOutSteps {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 2em;
+    overflow: hidden;
+    border-top: solid 2px;
+    border-bottom: solid 2px;
+}
+
+.AgendaOrderList{
+    text-align: left;   
+}
+
+.OrderHeader {
+    color: firebrick;
+   
+}
+
+.AgendaOrder {
+    margin-top: 3px;
+    color: green;   
+}
+
+.orderItem {
+    border-bottom: solid;
+    border-width: thin;
+}
+
+.itemHeader{
+    border-bottom: 1px solid green;
+}
+
+/*CheckOut1*/
+.CheckOut1{
+    border: none;
+    width: 100%;
+    display: flex;
+    align-items:center;
+}
+.loginForm{
+    width: 40%;
+    float: left;    
+    background-color: red;
+    vertical-align: middle;
+}
+
+.middenstuk {
+    float: left;
+    width: 20%;
+    background-color: white;
+}
+
+.middenstuk aside {
     border-left: 1px;
     height: 100px;
     border-left-style: solid;
     margin-left: 22px;
+    vertical-align: middle;
+}
+
+.CheckOutRegister {
+    background-color: blue;
+    float: left;
+    width: 40%;
     vertical-align: middle;
 }
 
@@ -32,45 +87,4 @@
     background-color: #F8473E;
 }
 
-.CheckOutLogin {
-    display: inline-block;
-    margin-right: 10%;
-    vertical-align: middle;
-}
 
-.CheckOutRegister {
-    display: inline-block;
-    margin-left: 10%;
-    vertical-align: middle;
-}
-
-.middenstuk {
-    display: inline-block;
-}
-
-/*.AgendaOrderList{
-    margin-top: 3em;
-    margin-left: 7em;
-    margin-right: 6em;
-    list-style-type: none;    
-}*/
-
-.OrderHeader {
-    color: firebrick;
-   
-}
-
-.AgendaOrder {
-    margin-top: 3px;
-    color: green;
-    
-}
-
-.orderItem {
-    border-bottom: solid;
-    border-width: thin;
-}
-
-.itemHeader{
-    border-bottom: 1px solid green;
-}

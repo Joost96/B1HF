@@ -6,7 +6,7 @@
 }
 
 @section AddToHead{
-    <link href="@Url.Content("~/Content/Agenda.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Basket.css")" rel="stylesheet" type="text/css" />
 }
 
 <h2>Basket</h2>
@@ -65,5 +65,5 @@
         
     </ul>
     <label>Totalprice: @Model.TotalOrderPrice.ToString()</label>
-
+    @Html.ActionLink("Continue to Checkout", "CheckOut1")
 </section>
