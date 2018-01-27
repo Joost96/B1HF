@@ -7,14 +7,19 @@
     <link href=@Url.Content("~/Content/CheckOut.css") rel="stylesheet" type="text/css" />
 
 }
+<section class="checkout_introduction">
+    <h1>Only a few steps away</h1>
+    <p>Pay your fucking shit and visit our festival! </p>
+</section>
+
 
 <section class="CheckOut">
 
     <ul class="CheckOutSteps">
-        <li class="col-sm-3 @(ViewBag.Title.Equals("CheckOut1")? "selected" : "") ">Step 1<br>Login</li>
-        <li class="col-sm-3 @(ViewBag.Title.Equals("CheckOut2")? "selected" : "") ">Step 2<br>Personal info/Register</li>
-        <li class="col-sm-3 @(ViewBag.Title.Equals("CheckOut3")? "selected" : "") ">Step 3<br>Payment</li>
-        <li class="col-sm-3 @(ViewBag.Title.Equals("CheckOut4")? "selected" : "") ">Step 4<br>Tickets</li>
+        <li class="col-sm-3 @(ViewBag.Title.Equals("CheckOut1")? "selected" : "") ">Step 1<br><text>Login</text></li>
+        <li class="col-sm-3 @(ViewBag.Title.Equals("CheckOut2")? "selected" : "") ">Step 2<br><text>Personal Info</text></li>
+        <li class="col-sm-3 @(ViewBag.Title.Equals("CheckOut3")? "selected" : "") ">Step 3<br><text>Payment</text></li>
+        <li class="col-sm-3 @(ViewBag.Title.Equals("CheckOut4")? "selected" : "") ">Step 4<br><text>Login</text></li>
     </ul>
 
     <section class="orders-container">

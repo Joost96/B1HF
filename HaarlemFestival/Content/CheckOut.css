@@ -1,4 +1,15 @@
 ﻿/* ALGEMEEN GEDEELTE*/
+
+.checkout_introduction h1 {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.checkout_introduction p {
+    margin: 0 20% 3% 20%;
+    border-bottom: 1px black solid;
+    text-align: center;
+}
 .CheckOut {
     position: center;
     text-align: center;
@@ -11,23 +22,35 @@
     padding: 0;
 }
 
-
 .CheckOutSteps {
     list-style-type: none;
     padding: 0;
-    margin-bottom: 2em;
+    margin: 0;
     overflow: hidden;
-    border-top: solid 2px;
     border-bottom: solid 2px;
+}
+
+.CheckOutSteps li {
+    font-size: 16px;
+    padding: 10px;
+}
+
+.CheckOutSteps text{
+    font-weight: bold;
 }
 
 .AgendaOrderList{
     text-align: left;   
 }
 
-.OrderHeader {
-    color: firebrick;
-   
+.orders-container{
+    border-bottom: 2px solid black;
+    background-color: white;
+}
+
+.orders-container label{
+    margin: 25px 0px 20px 0px;
+    font-size: 16px;
 }
 
 .AgendaOrder {
@@ -36,12 +59,15 @@
 }
 
 .orderItem {
-    border-bottom: solid;
-    border-width: thin;
+    border-bottom: 0.5px solid green;
+
 }
 
 .itemHeader{
-    border-bottom: 1px solid green;
+    border-bottom: 1px solid black;
+    padding-bottom: 6px;
+    font-weight: 600;
+    color: red;
 }
 
 /*CheckOut1*/
@@ -51,40 +77,67 @@
     display: flex;
     align-items:center;
 }
+
+.p_class {
+    margin: 20px 0;
+}
+
 .loginForm{
     width: 40%;
     float: left;    
-    background-color: red;
     vertical-align: middle;
 }
 
 .middenstuk {
     float: left;
     width: 20%;
-    background-color: white;
 }
 
 .middenstuk aside {
     border-left: 1px;
     height: 100px;
     border-left-style: solid;
-    margin-left: 22px;
     vertical-align: middle;
+    margin: 0px 50%;
 }
 
 .CheckOutRegister {
-    background-color: blue;
     float: left;
     width: 40%;
     vertical-align: middle;
 }
 
-.CheckOut1 p {
-    margin-top: 20px;
-}
-
 .selected {
     background-color: #F8473E;
+    color: white;
 }
 
+.btn_cta{
+    background-color: #1DBF3B;
+    border-color: #1DBF3B;
+    color: white;
+    font-size: 12px;
+    padding: 3px 14px;
+    border-radius: 4px;
+    border-style: solid;
+}
+
+.btn_cta:hover{
+    text-decoration: underline;
+
+}
+
+.btn_default{
+    background-color: white;
+    border-color: white;
+    color: black;
+    font-size: 12px;
+    padding: 3px 14px;
+    border-radius: 4px;
+    border-style: solid;
+}
+
+.btn_default:hover{
+    text-decoration: underline;
+}
 
