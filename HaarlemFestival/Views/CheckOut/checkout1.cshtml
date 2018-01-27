@@ -7,14 +7,14 @@
     Layout = "_CheckOutLayout.cshtml";
 }
 
+<p>By signing up you get the ability to create your own Festival program which is displayed in your agenda.</p>
+
 <section class="CheckOut1">
-    <p>By signing up you get the ability to create your own Festival program which is displayed in your agenda.</p>
 
     @Html.ValidationSummary()
-    @using (Html.BeginForm("CheckOut2", "CheckOut"))
+    @using (Html.BeginForm("CheckOut2", "CheckOut", FormMethod.Post, new { @class = "loginForm" }))
     {
         @Html.AntiForgeryToken()
-        <form class="CheckOutLogin">
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">
                 @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -37,13 +37,11 @@
                     <input type="submit" value="Login" class="btn btn-default" />
                 </div>
             </div>
-        </form>
     }
+
     <section class="middenstuk">
         <aside></aside>
-
         <h2>OR</h2>
-
         <aside></aside>
     </section>
 

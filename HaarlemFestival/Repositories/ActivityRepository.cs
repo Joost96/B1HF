@@ -4,6 +4,8 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using HaarlemFestival.Model;
+using System.Data.SqlClient;
+using System.Data.Entity.Infrastructure;
 
 namespace HaarlemFestival.Repositories
 {
@@ -66,10 +68,54 @@ namespace HaarlemFestival.Repositories
 
         public void UpdateActivity(Activity activity)
         {
+            for(int i=0;i<activity.Timeslots.Count;i++)
+            {
+                if(activity.Timeslots[i].StartTime != activity.Timeslots[i].Tickets[0].TimeSlot_StartTime)
+                {
+                    TimeSlot newSlot = new TimeSlot();
+                    newSlot.Activity_Id = activity.Timeslots[i].Activity_Id;
+                    newSlot.StartTime = activity.Timeslots[i].StartTime;
+                    newSlot.EndTime = activity.Timeslots[i].EndTime;
+                    newSlot.Tickets = new List<Ticket>();
+                    newSlot.TotalSeats = activity.Timeslots[i].TotalSeats;
+                    newSlot.OccupiedSeats = activity.Timeslots[i].OccupiedSeats;
+                    newSlot.Hall = activity.Timeslots[i].Hall;
+                    activity.Timeslots[i].StartTime = activity.Timeslots[i].Tickets[0].TimeSlot_StartTime;
+
+                    int actID = activity.Timeslots[i].Activity_Id;
+                    DateTime startTime = activity.Timeslots[i].StartTime;
+                    db.TimeSlots.Remove(db.TimeSlots.Where(
+                        time => time.Activity_Id == actID && time.StartTime == startTime).SingleOrDefault()
+                        );
+                    db.TimeSlots.Add(newSlot);
+                    foreach (Ticket ti in activity.Timeslots[i].Tickets)
+                    {
+                        Ticket newTicket = new Ticket();
+
+                        newTicket.TimeSlot_Activity_Id = newSlot.Activity_Id;
+                        newTicket.TimeSlot_StartTime = newSlot.StartTime;
+                        newTicket.TimeSlot = newSlot;
+                        newTicket.Price = ti.Price;
+                        newTicket.Type = ti.Type;
+                        newSlot.Tickets.Add(newTicket);
+                        db.Tickets.Add(newTicket);
+                        db.Entry(ti).State = EntityState.Deleted;
+                    }
+                    activity.Timeslots[activity.Timeslots.IndexOf(activity.Timeslots[i])] = newSlot;
+                }
+            }
             db.Entry(activity).State = EntityState.Modified;
             foreach (ActivityDescription dp in activity.ActivityDescriptions)
             {
                 db.Entry(dp).State = EntityState.Modified;
+            }
+            foreach (TimeSlot ts in activity.Timeslots)
+            {
+                db.Entry(ts).State = EntityState.Modified;
+                foreach(Ticket ti in ts.Tickets)
+                {
+                    db.Entry(ti).State = EntityState.Modified;
+                }
             }
             db.SaveChanges();
         }

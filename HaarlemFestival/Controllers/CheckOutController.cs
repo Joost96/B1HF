@@ -38,8 +38,28 @@ namespace HaarlemFestival.Controllers
             {
                 pagePlusOrders.Orders = orderRepository.GetOrdersCustomer(order.CustomerId).ToList();
                 pagePlusOrders.Orders.Add(order);
+                foreach (var item in order.OrderHasTickets)
+                {
+                    pagePlusOrders.TotalOrderPrice += item.TotalPrice;
+                }
             }
+       
             return View(pagePlusOrders);
+        }
+
+        public ActionResult Delete(int ohdId)
+        {
+            Order order = (Order)Session["order"];
+            foreach (var orderhasticket in order.OrderHasTickets)
+            {
+                if (orderhasticket.Ticket_TimeSlot_Activity_Id == ohdId)
+                {
+                    order.OrderHasTickets.Remove(orderhasticket);
+                    break;
+                }
+            }
+            Session["order"] = order;
+            return RedirectToAction("Basket");
         }
 
         // GET: CheckOut
@@ -50,8 +70,12 @@ namespace HaarlemFestival.Controllers
             Order order = (Order)Session["order"];
             ppp.Orders.Add(order);
             Language language = (Language)Session["language"];
-
             ppp.Page = pageRepository.GetPage("CheckOut", language);
+
+            foreach (var item in order.OrderHasTickets)
+            {
+                ppp.TotalOrderPrice += item.TotalPrice;
+            }  
 
             Account account = (Account)(Session["loggedin_account"]);
             if (account is Customer)
@@ -175,15 +199,23 @@ namespace HaarlemFestival.Controllers
             {
                 order = new Order();
                 order.OrderHasTickets.Add(ticketOrder);
-                Session["order"] = order; 
             }
             else
             {
-                order.OrderHasTickets.Add(ticketOrder);
-                Session["order"] = order;
+                OrderHasTickets OHT = order.OrderHasTickets.Where(x => x.Ticket_TimeSlot_Activity_Id == ticketOrder.Ticket_TimeSlot_Activity_Id).SingleOrDefault();
+                if (OHT != null)
+                {
+                    OHT.Amount += ticketOrder.Amount;
+                    OHT.TotalPrice = OHT.Ticket.Price * OHT.Amount;
+                }
+                else {
+                    order.OrderHasTickets.Add(ticketOrder);
+                }
             }
+            Session["order"] = order;
 
-            BasketHelper.getInstance().checkCookie(HttpContext);
+
+            BasketHelper.getInstance().checkBasket(HttpContext);
 
             return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
         }

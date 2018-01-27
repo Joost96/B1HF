@@ -10,7 +10,7 @@
 
 <section class="CheckOut">
 
-    <ul>
+    <ul class="CheckOutSteps">
         <li class="col-sm-3 @(ViewBag.Title.Equals("CheckOut1")? "selected" : "") ">Step 1<br>Login</li>
         <li class="col-sm-3 @(ViewBag.Title.Equals("CheckOut2")? "selected" : "") ">Step 2<br>Personal info/Register</li>
         <li class="col-sm-3 @(ViewBag.Title.Equals("CheckOut3")? "selected" : "") ">Step 3<br>Payment</li>
@@ -20,12 +20,12 @@
     <section class="orders-container">
         <ul class="AgendaOrderList">
             <li class="OrderHeader">
-                <div class="orderItem col-md-4">Name</div>
-                <div class="orderItem col-md-2">Event</div>
-                <div class="orderItem col-md-1">Prijs</div>
-                <div class="orderItem col-md-1">Aantal</div>
-                <div class="orderItem col-md-2">Totaalprijs</div>
-                <div class="orderItem col-md-2">Start tijd/datum</div>
+                <div class="itemHeader col-md-4">Name</div>
+                <div class="itemHeader col-md-2">Event</div>
+                <div class="itemHeader col-md-1">Price</div>
+                <div class="itemHeader col-md-1">Amount</div>
+                <div class="itemHeader col-md-2">Total price</div>
+                <div class="itemHeader col-md-2">Date</div>
             </li>
 
                 @foreach (var order in Model.Orders)
@@ -39,11 +39,12 @@
                             <div class="orderItem col-md-1">@OHT.Ticket.Price</div>
                             <div class="orderItem col-md-1">@OHT.Amount</div>
                             <div class="orderItem col-md-2">@OHT.TotalPrice</div>
-                            <div class="orderItem col-md-2">@OHT.Ticket.TimeSlot.StartTime.ToString("hh:mm dd/MM/yyyy")</div>
+                            <div class="orderItem col-md-2">@OHT.Ticket_TimeSlot_StartTime.ToShortDateString(), @OHT.Ticket_TimeSlot_StartTime.ToShortTimeString()</div>
                         </li>
                     }
                 }
         </ul>
+        <label>Totalprice: @Model.TotalOrderPrice.ToString()</label>
     </section>
     @RenderBody()   
 </section>
