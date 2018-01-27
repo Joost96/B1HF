@@ -20,9 +20,6 @@
 
     <p class="TalkingIntroText">
        @Html.Raw(Model.Page.PageDescriptions[0].DescriptionText + " " + Model.Activities[0].Location.Name + ".")
-        
-        @*misschien van location hierboven een link maken*@
-
     </p>
 
 </section>
@@ -150,14 +147,14 @@
         {
             <p class="OrderTitle"> </p>
             <p id="OrderMessage">@Model.Page.PageDescriptions[4].Title</p>
-           
+            <p id="ThankYouOrderMessage">@Model.Page.PageDescriptions[5].Title</p>
+
             <select id="OrderSelect">
                 <option value="1" name = "m.OHT.Amount">1</option>
                 <option value="2" name = "m.OHT.Amount">2</option>
             </select>
 
-            @*@Html.TextBoxFor(m => m.OHT.Amount, new { @type = "number", @min = "1", @max = "2", @data_message = "You can only enter numbers between '1' and '2'" })*@
-           
+            
             @Html.HiddenFor(m => m.OHT.Ticket_TimeSlot_Activity_Id, new { @id = "AvtivityId"})
             <input type="submit" value="@Model.Page.PageDescriptions[2].Title" id="TalkingOrderButton" />
         }

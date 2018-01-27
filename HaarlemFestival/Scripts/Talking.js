@@ -1,5 +1,6 @@
 ﻿var modal = document.getElementById('QuestionModal');
 var bedankModel = document.getElementById('ThanksModal');
+var waited = false;
 
 $(".TalkingButtonSpreker").click(function () {
     var id = $(this).attr("id");
@@ -64,7 +65,7 @@ $(window).click(function(event) {
 });
 
 
-var waited = false;
+
 $("#TalkingQuestionForm").submit(function () {
 
     $("#ThanksModal").show();
@@ -74,6 +75,22 @@ $("#TalkingQuestionForm").submit(function () {
         
         waited = true;
         $("#TalkingQuestionForm").submit();
+
+    }, 3000);
+    return waited;
+});
+
+$("#TalkingOrderForm").submit(function () {
+
+    $("#ThankYouOrderMessage").show();
+    $("#OrderMessage").hide();
+    $("#OrderSelect").hide();
+    $("#TalkingOrderButton").hide();
+
+    setTimeout(function () {
+
+        waited = true;
+        $("#TalkingOrderForm").submit();
 
     }, 3000);
     return waited;
