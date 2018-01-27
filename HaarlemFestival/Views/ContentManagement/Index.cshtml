@@ -7,19 +7,21 @@
     <script src="@Url.Content("~/Scripts/Admin.js")"></script>
 }
 @{
-    ViewBag.Title = "Èdit Homepage";
+    ViewBag.Title = "HomePage management";
 }
 @RenderPage("AdminNav.cshtml")
-<main class="col-sm-9 ml-sm-auto col-md-10 adminMain">
+<main class="col-sm-9 ml-sm-auto col-md-10 adminMain HomePage">
 
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
         @Html.HiddenFor(model => model.Name)
         @Html.HiddenFor(model => model.Title)
-        <section class="adminSection col-md-10">
+        <section class="adminSection col-md-12">
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <h2>Edit Links</h2>
+            <p class="text-center">Edit the links on top of the homepage linking to each of the events on the festival.</p>
+            <p class="adminInfo">*Click the image to change it.</p>
             @for (int i = 0; i < 4; i++)
             {
                 @Html.HiddenFor(model => model.PageDescriptions[i].Page_Name)
@@ -31,8 +33,8 @@
                         <img src=@Model.PageDescriptions[i].ImageUrl class="editImage" alt=@Model.PageDescriptions[i].Title id=@Html.Raw("PageDescriptions_"+i+ "__ImageUrl") />
                         <input class='imgUpload' type='file' name='afbeelding' id=@Html.Raw("PageDescriptions_"+i+ "__ImageUrl")>
                         <div class="form-group">
-                            @Html.LabelFor(modelItem => Model.PageDescriptions[i].Title, htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="">
+                            <label class="control-label col-md-12">Link Name :</label>
+                            <div class="col-md-12">
                                 @Html.EditorFor(modelItem => Model.PageDescriptions[i].Title, new { htmlAttributes = new { @class = "form-control" } })
                                 @Html.ValidationMessageFor(modelItem => Model.PageDescriptions[i].Title, "", new { @class = "text-danger" })
                             </div>
@@ -40,9 +42,15 @@
                     </section>
                 </section>
             }
+            <div class="form-group">
+                <div class="col-md-offset-10 col-md-2">
+                    <input type="submit" value="Save all" class="btn btn-primary" />
+                </div>
+            </div>
         </section>
-        <section class="adminSection col-md-10">
+        <section class="adminSection col-md-12">
             <h2>Edit HomePage</h2>
+            <p class="text-center">The homepage contains two different pieces of text on the left of the highlights. These can be edited here</p>
             @for (int i = 4; i < 6; i++)
             {
                 @Html.HiddenFor(model => model.PageDescriptions[i].Page_Name)
@@ -51,14 +59,14 @@
                 <section class="col-md-6">
                     <section>
                         <div class="form-group">
-                            @Html.LabelFor(modelItem => Model.PageDescriptions[i].Title, htmlAttributes: new { @class = "control-label col-md-12" })
+                            <label class="control-label col-md-12">Text title :</label>
                             <div class="col-md-12">
                                 @Html.EditorFor(modelItem => Model.PageDescriptions[i].Title, new { htmlAttributes = new { @class = "form-control" } })
                                 @Html.ValidationMessageFor(modelItem => Model.PageDescriptions[i].Title, "", new { @class = "text-danger" })
                             </div>
                         </div>
                         <div class="form-group">
-                            @Html.LabelFor(modelItem => Model.PageDescriptions[i].DescriptionText, htmlAttributes: new { @class = "control-label col-md-12" })
+                            <label class="control-label col-md-12">Text :</label>
                             <div class="col-md-12">
                                 @Html.TextAreaFor(modelItem => Model.PageDescriptions[i].DescriptionText,8,20, new { htmlAttributes = new { @class = "form-control" } })
                                 @Html.ValidationMessageFor(modelItem => Model.PageDescriptions[i].DescriptionText, "", new { @class = "text-danger" })
@@ -67,15 +75,21 @@
                     </section>
                 </section>
             }
+            <div class="form-group">
+                <div class="col-md-offset-10 col-md-2">
+                    <input type="submit" value="Save all" class="btn btn-primary" />
+                </div>
+            </div>
         </section>
-        <section class="adminSection col-md-10">
+        <section class="adminSection col-md-12">
             <section class="col-md-12">
                 <h2>Edit Highlights</h2>
+                <p class="text-center">The homepage has 4 little areas where certain activities can be highlighted for the user.</p>
                 @Html.HiddenFor(model => model.PageDescriptions[6].Page_Name)
                 @Html.HiddenFor(model => model.PageDescriptions[6].Section)
                 @Html.HiddenFor(model => model.PageDescriptions[6].Language)
-                <div class="form-group">
-                    @Html.LabelFor(modelItem => Model.PageDescriptions[6].Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="form-group col-md-12">
+                    <label class="control-label col-md-2">Highlights title :</label>
                     <div class="col-md-10">
                         @Html.EditorFor(modelItem => Model.PageDescriptions[6].Title, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(modelItem => Model.PageDescriptions[6].Title, "", new { @class = "text-danger" })
@@ -90,15 +104,15 @@
                         <span class="fa fa-arrows-v move"></span>
                         <div class="col-md-12">
                             <div class="form-group">
-                                @Html.LabelFor(modelItem => Model.PageDescriptions[i].Title, htmlAttributes: new { @class = "control-label col-md-4" })
-                                <div class="col-md-8">
+                                <label class="control-label col-md-2">Highlight title :</label>
+                                <div class="col-md-10">
                                     @Html.EditorFor(modelItem => Model.PageDescriptions[i].Title, new { htmlAttributes = new { @class = "form-control" } })
                                     @Html.ValidationMessageFor(modelItem => Model.PageDescriptions[i].Title, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="form-group">
-                                @Html.LabelFor(modelItem => Model.PageDescriptions[i].DescriptionText, htmlAttributes: new { @class = "control-label col-md-4" })
-                                <div class="col-md-8">
+                                <label class="control-label col-md-2">Highlight :</label>
+                                <div class="col-md-10">
                                     @Html.EditorFor(modelItem => Model.PageDescriptions[i].DescriptionText, new { htmlAttributes = new { @class = "form-control" } })
                                     @Html.ValidationMessageFor(modelItem => Model.PageDescriptions[i].DescriptionText, "", new { @class = "text-danger" })
                                 </div>
@@ -106,17 +120,14 @@
                         </div>
                     </section>
                 }
+                <p class="adminInfo">*Drag and drop the boxes to change the order.</p>
             </section>
-        </section>
-        <div class="form-horizontal">
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
             <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Save" class="btn btn-default" />
+                <div class="col-md-offset-10 col-md-2">
+                    <input type="submit" value="Save all" class="btn btn-primary" />
                 </div>
             </div>
-        </div>
+        </section>
     }
 </main>
 
