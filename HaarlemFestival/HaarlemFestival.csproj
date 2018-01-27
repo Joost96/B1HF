@@ -596,7 +596,6 @@
     <Content Include="Views\ContentManagement\Talking.cshtml" />
     <Content Include="Views\ContentManagement\Jazz.cshtml" />
     <Content Include="Views\CheckOut\Basket.cshtml" />
-    <Content Include="Views\Shared\_LayoutLoggedIn.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

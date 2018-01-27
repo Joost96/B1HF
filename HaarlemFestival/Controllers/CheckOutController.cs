@@ -38,7 +38,12 @@ namespace HaarlemFestival.Controllers
             {
                 pagePlusOrders.Orders = orderRepository.GetOrdersCustomer(order.CustomerId).ToList();
                 pagePlusOrders.Orders.Add(order);
+                foreach (var item in order.OrderHasTickets)
+                {
+                    pagePlusOrders.TotalOrderPrice += item.TotalPrice;
+                }
             }
+       
             return View(pagePlusOrders);
         }
 
@@ -65,8 +70,12 @@ namespace HaarlemFestival.Controllers
             Order order = (Order)Session["order"];
             ppp.Orders.Add(order);
             Language language = (Language)Session["language"];
-
             ppp.Page = pageRepository.GetPage("CheckOut", language);
+
+            foreach (var item in order.OrderHasTickets)
+            {
+                ppp.TotalOrderPrice += item.TotalPrice;
+            }  
 
             Account account = (Account)(Session["loggedin_account"]);
             if (account is Customer)

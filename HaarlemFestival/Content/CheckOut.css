@@ -9,7 +9,7 @@
 
 .CheckOut ul {
     list-style-type: none;
-    margin: 0;
+    margin: 3em 0px;
     padding: 0;
     overflow: hidden;
     border-bottom-style: solid;
@@ -48,12 +48,12 @@
     display: inline-block;
 }
 
-.AgendaOrderList{
+/*.AgendaOrderList{
     margin-top: 3em;
     margin-left: 7em;
     margin-right: 6em;
     list-style-type: none;    
-}
+}*/
 
 .OrderHeader {
     color: firebrick;
@@ -69,4 +69,8 @@
 .orderItem {
     border-bottom: solid;
     border-width: thin;
+}
+
+.itemHeader{
+    border-bottom: 1px solid green;
 }

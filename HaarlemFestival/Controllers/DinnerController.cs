@@ -127,7 +127,7 @@ namespace HaarlemFestival.Controllers
 
             Session["order"] = order;
 
-            BasketHelper.getInstance().checkCookie(HttpContext);
+            BasketHelper.getInstance().checkBasket(HttpContext);
             return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
         }
     }

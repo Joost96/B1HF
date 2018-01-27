@@ -17,10 +17,6 @@
     }
 </head>
 
-@{
-    var ticketCookie = Request.Cookies["userCookie"];
-}
-
 <body>
     <div class="content">
         <header class="navbar navbar-inverse navbar-fixed-top">
@@ -63,9 +59,16 @@
 
                             </a>
                         </li>
-
-                        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-                        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                            <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                        }
+                        else
+                        {
+                            <li><a>@User.Identity.Name</a></li>
+                            <li>@Html.ActionLink("SignOut", "LogOff", "Account")</li>
+                        }
 
                         <li><a href=@Url.Action("ChangeLanguage", "Home", new { language = 0 })><img src="~/img/Language/gb.svg" alt="eng" width="30" height="20" /></a></li>
                         <li><a href=@Url.Action("ChangeLanguage", "Home", new { language = 1 })><img src="~/img/Language/nl.svg" alt="nl" width="30" height="20" /></a></li>

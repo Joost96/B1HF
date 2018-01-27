@@ -19,6 +19,8 @@ namespace HaarlemFestival.Model
         public List<Order> Orders { get; set; }
 
         public PagePlusOrderPlusLogin() =>  Orders = new List<Order>();
+
+        public decimal TotalOrderPrice { get; set; }
         
     }
 }
