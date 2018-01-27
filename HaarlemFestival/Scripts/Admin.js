@@ -1,4 +1,18 @@
-﻿$('.datepicker').datetimepicker({
+﻿var waited = false;
+$(".Admin-Form").submit(function () {
+
+    $("#Save-Modal").show();
+
+    setTimeout(function () {
+
+        waited = true;
+        $(".Admin-Form").submit();
+
+    }, 3000);
+    return waited;
+});
+
+$('.datepicker').datetimepicker({
     formatTime: 'H:i',
     format: 'd-m-Y H:i',
     //mask: true,
@@ -162,18 +176,33 @@ function getScheduleTimestamp(time) {
     return timeStamp;
 }
 
-SchedulePlan($(".schedule"))
-
 //agenda selected
-$(".single-event").click(function () {
-    var id = $(this).attr('id');
-    var id = id.split('-')[1];
-    $(".single-event").removeClass("selected");
-    $("li[id ^='cal-" + id+"']").addClass("selected");
-})
+//$(".single-event").click(function () {
+//    var id = $(this).attr('id');
+//    var id = id.split('-')[1];
+//    $(".single-event").removeClass("selected");
+//    $("li[id ^='cal-" + id+"']").addClass("selected");
+//})
 $(window).bind('hashchange', function () {
     var hash = window.location.hash.replace(/^#/, '');
     console.log(hash);
+
+    $(".single-event").removeClass("selected");
+    $("li[id ^='cal-" + hash + "']").addClass("selected");
+
     $(".jazz-edit").hide();
     $("#edit-" + hash).show();
+});
+
+//--
+$(document).ready(function () {
+    if (window.location.hash) {
+        var hash = window.location.hash
+        window.location.hash = 0;
+        window.location.hash = hash;
+    } else {
+        window.location.hash = "#6"
+    }
+    //$(window).trigger("hashchange");
+    SchedulePlan($(".schedule"))
 });
