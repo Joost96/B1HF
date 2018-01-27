@@ -2,13 +2,14 @@
 $(".Admin-Form").submit(function () {
 
     $("#Save-Modal").show();
+    if (!waited) {
+        setTimeout(function () {
 
-    setTimeout(function () {
+            waited = true;
+            $(".Admin-Form").submit();
 
-        waited = true;
-        $(".Admin-Form").submit();
-
-    }, 3000);
+        }, 1000);
+    }
     return waited;
 });
 
@@ -77,6 +78,8 @@ $('main img').click(function () {
     console.log("here");
 });
 
+var imgWidth;
+var imgHeight;
 $("main .imgUpload").change(function () {
     var file = event.target.files[0];
     var id = $(this).attr("id");
@@ -94,10 +97,10 @@ $("main .imgUpload").change(function () {
                 var canvas = document.createElement('canvas');
                 var width = image.width;
                 var height = image.height;
-                if (width / 277 < height / 300) {
-                    height = width / 277 * 300;
+                if (width / imgWidth < height / imgHeight) {
+                    height = width / imgWidth * imgHeight;
                 } else {
-                    width = height / 300 * 277;
+                    width = height / imgHeight * imgWidth;
                 }
                 canvas.width = width;
                 canvas.height = height;
@@ -205,4 +208,12 @@ $(document).ready(function () {
     }
     //$(window).trigger("hashchange");
     SchedulePlan($(".schedule"))
+    var main = $("main")
+    if (main.hasClass("HomePage")) {
+        imgHeight = 300;
+        imgWidth = 277;
+    } else if (main.hasClass("Jazz")) {
+        imgHeight = 280;
+        imgWidth = 320;
+    }
 });

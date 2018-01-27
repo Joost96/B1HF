@@ -10,7 +10,7 @@
     ViewBag.Title = "Jazz management";
 }
 @RenderPage("AdminNav.cshtml")
-<main class="col-sm-9 ml-sm-auto col-md-10 adminMain">
+<main class="col-sm-9 ml-sm-auto col-md-10 adminMain Jazz">
     @using (Html.BeginForm("Jazz", "ContentManagement", FormMethod.Post, new { @class = "Admin-Form" }))
     {
         @Html.AntiForgeryToken()
