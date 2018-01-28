@@ -1,5 +1,5 @@
-﻿@model HaarlemFestival.Model.PagePlusOrderPlusLogin
-
+﻿@using HaarlemFestival.Model
+@model HaarlemFestival.Model.Order
 @{
     ViewBag.Title = "CheckOut3";
 }
@@ -10,12 +10,15 @@
 <section class="CheckOut3">
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(m => m.OrderHasTickets);
-    @Html.HiddenFor(m => m.CustomerId);
-    @Html.EditorFor(m => m.PaymentMethod)
-
+    @Html.HiddenFor(model => model.PaymentMethod);
+    
+    <h2>Please select a payment method: </h2>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
+            <button class="PaymentMethod" id="Method1" value="0">Pay at arrival</button>
+            <button class="PaymentMethod" id="Method2" value="1">Visa</button>
+            <button class="PaymentMethod" id="Method3" value="2">Paypal</button>
+            <button class="PaymentMethod" id="Method4" value="3">Ideal</button>
             <input type="submit" value="Continue to payment" class="btn btn-default" />
         </div>
     </div>

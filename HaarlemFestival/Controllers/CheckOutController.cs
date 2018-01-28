@@ -166,17 +166,24 @@ namespace HaarlemFestival.Controllers
 
         public ActionResult CheckOut3()
         {
+
             Order order = (Order)Session["order"];
             return View(order);
         }
+        
+        
         [HttpPost]
         public ActionResult CheckOut3(Order order)
         {
-            order.Date = DateTime.Now;
-            Session["order"] = order;
-            orderRepository.CreateOrder(order);
+            /*
+            foreach (Order order in pagePlusOrders.Orders)
+            {
+                order.PaymentMethod = (Model.PaymentMethod)Int32.Parse(PaymentMethod);
+                order.Date = DateTime.Now;
+            }*/
             return Redirect("CheckOut4");
         }
+        
 
         public ActionResult CheckOut4()
         {
