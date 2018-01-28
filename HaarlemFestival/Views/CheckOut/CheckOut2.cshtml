@@ -17,29 +17,35 @@
         {
             <section class="LinkerColom">
                 <p class="CheckOut2Label">First Name: <label class="Verplicht">*</label></p>
-                <input type="text" value="@Model.Orders[0].Customer.FirstName" />
+                @Html.TextBoxFor(model => model.Orders[0].Customer.FirstName, new { @class = "CheckOut2TBox", @required = "required" })
+                @*<input type="text" value="@Model.Orders[0].Customer.FirstName" />*@
             </section>
             <section class="RechterColom">
                 <p class="CheckOut2Label">Last Name: <label class="Verplicht">*</label></p>
-                <input type="text" value="@Model.Orders[0].Customer.LastName" />
+                @Html.TextBoxFor(model => model.Orders[0].Customer.LastName, new { @class = "CheckOut2TBox", @required = "required" })
+                @*<input type="text" value="@Model.Orders[0].Customer.LastName" />*@
             </section>
             <section class="LinkerColom">
                 <p class="CheckOut2Label">Email: <label class="Verplicht">*</label></p>
-                <input type="text" value="@Model.Orders[0].Customer.Email" />
+                @Html.TextBoxFor(model => model.Orders[0].Customer.Email, new { @class = "CheckOut2TBox", @required = "required" })
+                @*<input type="text" value="@Model.Orders[0].Customer.Email" />*@
             </section>
             <section class="RechterColom">
                 <p class="CheckOut2Label">Qountry: </p>
-                <input type="text" value="@Model.Orders[0].Customer.Country" />
+                @Html.TextBoxFor(model => model.Orders[0].Customer.Country, new { @class = "CheckOut2TBox", })
+                @*<input type="text" value="@Model.Orders[0].Customer.Country" />*@
             </section>
 
+                <input type="radio" name="Would you like to register?"/>
 
-            <section class="LinkerColom">
-                <p id="Password" class="CheckOut2Label">Password : <label class="Verplicht">*</label></p>
-                <input type="text" value="@Model.Orders[0].Customer.Password" />
+            <section id="Password" class="LinkerColom">
+                <p class="CheckOut2Label">Password : <label class="Verplicht">*</label></p>
+                @Html.TextBoxFor(model => model.Orders[0].Customer.Password, new { @class = "CheckOut2TBox", @required = "required", id = "PasswordBox" })
+                @*<input type="text" value="@Model.Orders[0].Customer.Password" />*@
             </section>
-            <section class="LinkerColom">
-                <p id="ConfirmPassword" class="CheckOut2Label">Confirm password : <label class="Verplicht">*</label></p>
-                <input type="text" />
+            <section id="ConfirmPassword" class="LinkerColom">
+                <p  class="CheckOut2Label">Confirm password : <label class="Verplicht">*</label></p>
+                <input id="ConfirmPasswordBox" class = "CheckOut2TBox" type="password" />
             </section>
 
 
