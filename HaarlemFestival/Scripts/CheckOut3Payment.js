@@ -6,4 +6,6 @@ var Method;
 
 $(".PaymentMethod").click(function () {
     Method = $(this).val();
+    $("#Orders_0__PaymentMethod").val(parseInt(Method));
 });
+

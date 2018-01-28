@@ -1,5 +1,5 @@
 ﻿@using HaarlemFestival.Model
-@model HaarlemFestival.Model.Order
+@model HaarlemFestival.Model.PagePlusOrderPlusLogin
 @{
     ViewBag.Title = "CheckOut3";
 }
@@ -10,7 +10,7 @@
 <section class="CheckOut3">
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(model => model.PaymentMethod);
+    @Html.HiddenFor(model => model.Orders[0].PaymentMethod);
     
     <h2>Please select a payment method: </h2>
     <div class="form-group">
