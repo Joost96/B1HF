@@ -1,72 +1,152 @@
-﻿.CheckOut {
+﻿/* ALGEMEEN GEDEELTE*/
+
+.checkout_introduction h1 {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.checkout_introduction p {
+    margin: 0 20% 3% 20%;
+    border-bottom: 1px black solid;
+    text-align: center;
+}
+.CheckOut {
     position: center;
     text-align: center;
     border-style: solid;
     border-width: 2px;
-    padding: 2em 0;
+    background-color: rgb(237, 236, 216);
 }
 
-
-.CheckOut ul {
+.CheckOut ul{
     list-style-type: none;
-    margin: 0;
     padding: 0;
+}
+
+.CheckOutSteps {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
     overflow: hidden;
-    border-bottom-style: solid;
-    border-bottom-width: 2px;
+    border-bottom: solid 2px;
 }
 
-.CheckOut1 aside {
-    border-left: 1px;
-    height: 100px;
-    border-left-style: solid;
-    margin-left: 22px;
-    vertical-align: middle;
+.CheckOutSteps li {
+    font-size: 16px;
+    padding: 10px;
 }
 
-.CheckOut1 p {
-    margin-top: 20px;
-}
-
-.selected {
-    background-color: #F8473E;
-}
-
-.CheckOutLogin {
-    display: inline-block;
-    margin-right: 10%;
-    vertical-align: middle;
-}
-
-.CheckOutRegister {
-    display: inline-block;
-    margin-left: 10%;
-    vertical-align: middle;
-}
-
-.middenstuk {
-    display: inline-block;
+.CheckOutSteps text{
+    font-weight: bold;
 }
 
 .AgendaOrderList{
-    margin-top: 3em;
-    margin-left: 7em;
-    margin-right: 6em;
-    list-style-type: none;    
+    text-align: left;   
 }
 
-.OrderHeader {
-    color: firebrick;
-   
+.orders-container{
+    border-top: 2px solid black;
+    background-color: white;
+}
+
+.orders-container label{
+    margin: 25px 0px 20px 0px;
+    font-size: 16px;
 }
 
 .AgendaOrder {
     margin-top: 3px;
-    color: green;
-    
+    color: green;   
 }
 
 .orderItem {
-    border-bottom: solid;
-    border-width: thin;
+    border-bottom: 0.5px solid green;
+
 }
+
+.itemHeader{
+    border-bottom: 1px solid black;
+    padding-bottom: 6px;
+    font-weight: 600;
+    color: red;
+}
+
+/*CheckOut1*/
+.CheckOut1{
+    border: none;
+    width: 100%;
+    display: flex;
+    align-items:center;
+    margin-bottom: 3em;
+}
+
+.p_class {
+    margin: 20px 0;
+}
+
+.loginForm{
+    width: 40%;
+    float: left;    
+    vertical-align: middle;
+}
+
+.middenstuk {
+    float: left;
+    width: 20%;
+}
+
+.middenstuk aside {
+    border-left: 1px;
+    height: 100px;
+    border-left-style: solid;
+    vertical-align: middle;
+    margin: 0px 50%;
+}
+
+.CheckOutRegister {
+    float: left;
+    width: 40%;
+    vertical-align: middle;
+}
+
+.selected {
+    background-color: #F8473E;
+    color: white;
+}
+
+.btn_cta{
+    background-color: #1DBF3B;
+    border-color: #1DBF3B;
+    color: white;
+    font-size: 14px;
+    padding: 3px 14px;
+    border-radius: 4px;
+    border-style: solid;
+    margin-top: 10px;
+    margin-left: 50%;
+    margin-right: 50%;
+}
+
+.btn_cta:hover{
+    text-decoration: underline;
+
+}
+
+.btn_default{
+    background-color: white;
+    border-color: white;
+    color: black;
+    font-size: 14px;
+    padding: 3px 14px;
+    border-radius: 4px;
+    border-style: solid;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 50%;
+    margin-right: 50%;
+}
+
+.btn_default:hover{
+    text-decoration: underline;
+}
+

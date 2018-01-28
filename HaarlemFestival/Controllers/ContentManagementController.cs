@@ -81,7 +81,7 @@ namespace HaarlemFestival.Controllers
         {
             if (ModelState.IsValid)
             {
-                //UpdatePagePlusActivities(pagePlusActivities, "Jazz");
+                UpdatePagePlusActivities(pagePlusActivities, "Jazz");
                 return RedirectToAction("Jazz");
             }
             return View(pagePlusActivities);

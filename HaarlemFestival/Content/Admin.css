@@ -1,4 +1,10 @@
-﻿input,
+﻿.modal {
+    z-index : 99;
+}
+.save-modal {
+    width : 30%;
+}
+input,
 select,
 textarea {
     max-width: 100%;
@@ -26,7 +32,7 @@ textarea {
     top: 51px;
     bottom: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 50;
     padding: 20px 0;
     overflow-x: hidden;
     overflow-y: auto;
@@ -142,7 +148,6 @@ textarea {
         padding: 0 .5em;
         text-align: center;
         font-weight: normal;
-        margin-bottom: 0;
     }
         .schedule .events .single-event {
             position: absolute;
@@ -207,4 +212,23 @@ textarea {
         display: block;
         font-weight: bold;
     }
+}
+.adminInfo {
+    color: #4e4949;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+.jazz-edit {
+    margin-top : 20px;
+    display: none;
+}
+.jazz-edit .panel-header {
+    border-bottom : solid  1px lightgrey;
+}
+.jazz-edit .panel-header a {
+    text-decoration: none;
+}
+.jazzImg {
+    border: solid 1px black;
+    padding: 15px;
 }

@@ -4,7 +4,6 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!--Mn text is pleb moet nieuwe text is man -->
@@ -84,7 +83,7 @@
         </div>
         <div class="restaurant_img_box"><img class="restaurant_img" src=@Model.Page.PageDescriptions[counter].ImageUrl alt="@activity.Name" /></div>
         <button class="btn_more_info" input="button" onclick="location.href= '@Url.Action("Restaurant", "Dinner", new { id = activity.Id})'" )>More info</button>
-        <button class="btn_booknow" input="button" onclick="location.href= '@Url.Action("Restaurant", "Dinner", new { id = activity.Id})#restaurant_reservation_form'" )>Book now</button>
+        <button class="btn_booknow" input="button" onclick="location.href= '@Url.Action("Restaurant", "Dinner", new { id = activity.Id})#restaurant_description'" )>Book now</button>
     </div>
     counter++;
     id++;

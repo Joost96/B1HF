@@ -110,7 +110,7 @@ $("#radioFilter9").click(function () {
 
 $(".btn_booknow").click(function () {
     $('html,body').animate({
-        scrollTop: $(window.location.hash).offset().top
+        scrollTop: $(window.location.hash).offset()
     },
         1000, 'swing');
 });

@@ -2,7 +2,6 @@
 /*-------------------------------------------agenda intro-----------------------------------------------------*/
 
 .AgendaIntro {
-    background-color: #EDECD8;
     color: black;
     font-size: 1em;
     height: 12em;
@@ -31,7 +30,6 @@
 /*-------------------------------------------OrderList-----------------------------------------------------*/
 
 .AgendaOrders {
-    background-color: #EDECD8;
     color: black;
     font-size: 1em;
     min-height: 10em;

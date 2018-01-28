@@ -9,5 +9,7 @@ namespace HaarlemFestival.Model
     {
         public Page Page { get; set; }
         public List<Order> Orders { get; set; }
+
+        public decimal TotalOrderPrice { get; set; }
     }
 }
