@@ -15,28 +15,28 @@
 }
 
 <section class="event_summarys">
-    <section class="event_summary">
+    <section class="event_summary" onclick="location.href='@Url.Action("Index", "Jazz")'">
         <h1>@Model.PageDescriptions[0].Title</h1>
         <section class="event_summary_img"><img src=@Model.PageDescriptions[0].ImageUrl width="277" height="300" alt="Jazz" /></section>
-        <button input="button" onclick="location.href=@Url.Action("Index", "Jazz", null)">More Info</button>
+        @Html.ActionLink("More info", "Index", "Jazz", null, new { @class = "button" }) 
     </section>
 
-    <section class="event_summary">
+    <section class="event_summary" onclick="location.href='@Url.Action("Index", "Dinner")'">
         <h1>@Model.PageDescriptions[1].Title</h1>
         <section class="event_summary_img"><img src=@Model.PageDescriptions[1].ImageUrl width="277" height="300" alt="Dinner" /></section>
-        <button input="button" onclick="location.href=@Url.Action("Index", "Dinner")">More Info</button>
+        @Html.ActionLink("More info", "Index", "Dinner", null, new { @class = "button" })
     </section>
 
-    <section class="event_summary">
+    <section class="event_summary" onclick="location.href='@Url.Action("Index", "Talking")'">
         <h1>@Model.PageDescriptions[2].Title</h1>
         <section class="event_summary_img"><img src=@Model.PageDescriptions[2].ImageUrl width="277" height="300" alt="Talking" /></section>
-        <button input="button" onclick="location.href=@Url.Action("Index", "Talking")">More Info</button>
+        @Html.ActionLink("More info", "Index", "Talking", null, new { @class = "button" })
     </section>
 
-    <section class="event_summary">
+    <section class="event_summary" onclick="location.href='@Url.Action("Index", "Historic")'">
         <h1>@Model.PageDescriptions[3].Title</h1>
         <section class="event_summary_img"><img src=@Model.PageDescriptions[3].ImageUrl width="277" height="300" alt="Historic" /></section>
-        <button input="button" onclick="location.href=@Url.Action("Index", "Historic")">More Info</button>
+        @Html.ActionLink("More info", "Index", "Historic", null, new { @class = "button" })
     </section>
 </section>
 
@@ -50,8 +50,8 @@
         <article class="register">
             <h1>@Model.PageDescriptions[5].Title</h1>
             <p>@Model.PageDescriptions[5].DescriptionText</p>
-            @Html.ActionLink("Register", "Register", "Account", new { @class = "btn_cta" })
-            <text>@Model.PageDescriptions[11].DescriptionText @Html.ActionLink("Log in", "Log in", "Account")</text>
+            @Html.ActionLink("Register", "Register", "Account", null, new { @class = "btn_cta" })
+            <text>@Model.PageDescriptions[11].DescriptionText @Html.ActionLink("Log in", "Login", "Account")</text>
         </article>
     </section>
 
