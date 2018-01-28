@@ -17,7 +17,7 @@ namespace HaarlemFestival.Controllers
         private IPageRepository pageRepository;
         private IAccountRepository accountRepository;
         private IActivityRepository activityRepository;
-        
+
 
         public CheckOutController()
         {
@@ -43,7 +43,7 @@ namespace HaarlemFestival.Controllers
                     pagePlusOrders.TotalOrderPrice += item.TotalPrice;
                 }
             }
-       
+
             return View(pagePlusOrders);
         }
 
@@ -59,6 +59,9 @@ namespace HaarlemFestival.Controllers
                 }
             }
             Session["order"] = order;
+
+            BasketHelper.getInstance().checkBasket(HttpContext);
+
             return RedirectToAction("Basket");
         }
 
@@ -75,7 +78,7 @@ namespace HaarlemFestival.Controllers
             foreach (var item in order.OrderHasTickets)
             {
                 ppp.TotalOrderPrice += item.TotalPrice;
-            }  
+            }
 
             Account account = (Account)(Session["loggedin_account"]);
             if (account is Customer)
@@ -168,7 +171,7 @@ namespace HaarlemFestival.Controllers
         }
         [HttpPost]
         public ActionResult CheckOut3(Order order)
-        {           
+        {
             order.Date = DateTime.Now;
             Session["order"] = order;
             orderRepository.CreateOrder(order);
@@ -178,7 +181,7 @@ namespace HaarlemFestival.Controllers
         public ActionResult CheckOut4()
         {
             Order order = (Order)Session["order"];
-            if(order.PaymentMethod != null)
+            if (order.PaymentMethod != null)
                 Session["order"] = null;
             return View(order);
         }
@@ -186,7 +189,7 @@ namespace HaarlemFestival.Controllers
         public ActionResult OrderJazz(int id, int aantal)
         {
 
-	        Language language = (Language)Session["language"];
+            Language language = (Language)Session["language"];
             Activity activity = activityRepository.GetActivity(id, language);
 
             OrderHasTickets ticketOrder = new OrderHasTickets();
@@ -211,7 +214,8 @@ namespace HaarlemFestival.Controllers
                     OHT.Amount += ticketOrder.Amount;
                     OHT.TotalPrice = OHT.Ticket.Price * OHT.Amount;
                 }
-                else {
+                else
+                {
                     order.OrderHasTickets.Add(ticketOrder);
                 }
             }
