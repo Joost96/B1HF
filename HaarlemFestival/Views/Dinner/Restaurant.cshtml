@@ -36,46 +36,46 @@
             </label>
         </h1>
 
-        <label class="lprice">Price per menu*</label>
+        <label class="lprice">@Model.Page.PageDescriptions[0].Title</label>
         <h6>Adults: € @Model.Activity.Timeslots[0].Tickets[0].Price</h6>
         <h6>Kids:   € @Model.Activity.Timeslots[0].Tickets[1].Price</h6>
 
 
-        <label class="lprice">Cuisine*</label>
+        <label class="lprice">Cuisine</label>
         @foreach (HaarlemFestival.Model.Cuisine cuisine in Model.Activity.Cuisines)
         {
             <h6>@cuisine.Name</h6>
         }
 
-        <label class="lprice">Timeslots for 26, 27, 28 and 29 of May*</label>
+        <label class="lprice">@Model.Page.PageDescriptions[1].Title</label>
 
         @foreach (var timeslot in Model.Activity.Timeslots.Where(d => d.StartTime.DayOfWeek == DayOfWeek.Friday))
         {
             <h6>@timeslot.StartTime.ToShortTimeString() - @timeslot.EndTime.ToShortTimeString()</h6>
         }
  
-        <label class="lprice">Practical information*</label>
-        <h6>@Model.Activity.Location.Street @Model.Activity.Location.StreetNr, @Model.Activity.Location.ZipCode @Model.Activity.Location.City </h6>
+        <label class="lprice">@Model.Page.PageDescriptions[2].Title</label>
+        <h6 id="restaurant_description">@Model.Activity.Location.Street @Model.Activity.Location.StreetNr, @Model.Activity.Location.ZipCode @Model.Activity.Location.City </h6>
         <h6>www.@(Model.Activity.Name).nl* </h6>
 
     </div>
 </div>
 
 <div class="restaurant_description">
-    <h2>Why we chose @Model.Activity.Name*</h2>
+    <h2>@Model.Page.PageDescriptions[3].Title @Model.Activity.Name</h2>
     <p>@Model.Activity.ActivityDescriptions[0].DescriptionText </p>
 </div>
 
-<div id="restaurant_reservation_form" class="restaurant_reservation_form">
+<div class="restaurant_reservation_form">
 
-    <h2>Make a reservation</h2>
+    <h2>@Model.Page.PageDescriptions[4].Title</h2>
 
     @using (Html.BeginForm("Order", "Dinner", FormMethod.Post))
     {
-        <text><span style="color: red">*</span> = required field!*</text>
+        <label class="required"><span style="color: red">*</span>@Model.Page.PageDescriptions[4].DescriptionText</label>
 
         <fieldset >
-            <label class="restaurant_form_label" for="day">For which day?*<span style="color: red">*</span></label>
+            <label class="restaurant_form_label" for="Day">@Model.Page.PageDescriptions[5].Title<span style="color: red">*</span></label>
             @foreach (DateTime timeslot in Model.Activity.Timeslots.Select(d => d.StartTime.Date).Distinct())
             {
                 <input type="radio" name="Day" value="@timeslot.Date" checked>@(timeslot.DayOfWeek + " " + timeslot.Date.ToShortDateString())<br>
@@ -83,7 +83,7 @@
         </fieldset>
 
         <fieldset>
-            <label class="restaurant_form_label" for="rtime">On which timeslot?*<span style="color: red">*</span></label>
+            <label class="restaurant_form_label" for="rtime">@Model.Page.PageDescriptions[5].DescriptionText<span style="color: red">*</span></label>
             @foreach (var timeslot in Model.Activity.Timeslots.Where(d => d.StartTime.DayOfWeek == DayOfWeek.Friday))   
             {
                 <input type="radio" name="Time" value="@timeslot.StartTime" checked> @(timeslot.StartTime.ToShortTimeString() + " - " + timeslot.EndTime.ToShortTimeString()) <br>
@@ -91,7 +91,7 @@
         </fieldset>
 
         <fieldset>
-            <label class="restaurant_form_label" for="radults">For how many adults?*<span style="color: red">*</span></label>
+            <label class="restaurant_form_label" for="radults">@Model.Page.PageDescriptions[6].Title<span style="color: red">*</span></label>
             <select class="restaurant_form_select_wide" name="numberOfAdults" id="radults">
                 @for (int i = 1; i <= 10; i++)
                 {
@@ -101,7 +101,7 @@
         </fieldset>
 
         <fieldset>
-            <label class="restaurant_form_label" for="rkids">And how many kids?* (Ages 12 and below)</label>
+            <label class="restaurant_form_label" for="rkids">@Model.Page.PageDescriptions[6].DescriptionText</label>
             <select class="restaurant_form_select_wide"  name="numberOfKids" id="radults">
                 @for (int i = 0; i <= 10; i++)
                 {
@@ -111,8 +111,8 @@
         </fieldset>
 
         <fieldset>
-            <label class="restaurant_form_label" for="rmisc">Anything we should know?*</label>
-            <textarea class="restaurant_form_txtarea" id="rmisc" name="order.OrderHasTickets[0].Remarks" placeholder="Example: I am on a gluten-free diet"></textarea>
+            <label class="restaurant_form_label" for="rmisc">@Model.Page.PageDescriptions[7].Title</label>
+            <textarea class="restaurant_form_txtarea" id="rmisc" name="order.OrderHasTickets[0].Remarks" placeholder="@Model.Page.PageDescriptions[5].DescriptionText.ToString()"></textarea>
         </fieldset>
 
         <input type="hidden" name="activity.Id" value="@Model.Activity.Id" />

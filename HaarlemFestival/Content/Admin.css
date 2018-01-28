@@ -148,7 +148,6 @@ textarea {
         padding: 0 .5em;
         text-align: center;
         font-weight: normal;
-        margin-bottom: 0;
     }
         .schedule .events .single-event {
             position: absolute;
@@ -216,7 +215,7 @@ textarea {
 }
 .adminInfo {
     color: #4e4949;
-    font-size: 0.7em;
+    font-size: 0.9em;
     font-weight: bold;
 }
 .jazz-edit {

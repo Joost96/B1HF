@@ -128,8 +128,10 @@ namespace HaarlemFestival.Controllers
 
         public ActionResult CheckOut2()
         {
+            PagePlusOrderPlusLogin ppp = new PagePlusOrderPlusLogin();
+
             Order order = (Order)Session["order"];
-            return View(order);
+            return View(ppp);
         }
 
         [HttpPost]

@@ -7,8 +7,7 @@
     Layout = "_CheckOutLayout.cshtml";
 }
 
-<p>By signing up you get the ability to create your own Festival program which is displayed in your agenda.</p>
-
+<p class="p_class">By signing up you get the ability to create your own Festival program which is displayed in your agenda.</p>
 <section class="CheckOut1">
 
     @Html.ValidationSummary()
@@ -33,9 +32,8 @@
             </div>
 
             <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Login" class="btn btn-default" />
-                </div>
+                <input type="submit" value="Login" class="btn_default" />
+                @Html.ActionLink("Register", "CheckOut2", "CheckOut", new { @class = "btn_cta"})
             </div>
     }
 
@@ -48,6 +46,6 @@
 
     <form class="CheckOutRegister">
         <h3>Continue without an account</h3>
-        @Html.ActionLink("Continue","CheckOut2", "CheckOut")
+        @Html.ActionLink("Continue","CheckOut2", "CheckOut", new { @class = "btn_default" })
     </form>
 </section>

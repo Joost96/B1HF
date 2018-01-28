@@ -64,7 +64,7 @@ namespace HaarlemFestival.Controllers
             PagePlusActivityPlusOrderDinners pagePlusActivityPlusOrder = new PagePlusActivityPlusOrderDinners();
 
 
-            Page page = pageRepository.GetPage("Dinner Restaurant", Language.Eng);
+            Page page = pageRepository.GetPage("Dinner resaurant", Language.Eng);
 
             Activity activity = activityRepository.GetActivity(id, Language.Eng);
 

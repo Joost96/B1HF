@@ -2,22 +2,12 @@
 /*-------------------------------------------agenda intro-----------------------------------------------------*/
 
 .AgendaIntro {
-    background-color: #EDECD8;
     color: black;
     font-size: 1em;
-    height: 12em;
     width: 100%;
     text-align: center;
-    line-height: 2em;
     margin-top: 4%;
     padding: 0;
-    border-top-style: solid;
-    border-color: #F8473E;
-}
-.AgendaHeader {
-    font-weight: bold;
-    margin-left: 6em;
-    margin-right: 6em;
 }
 
 .AgendaIntroText {
@@ -27,11 +17,24 @@
     padding: 0;
 }
 
+.btn_cta{
+    margin: 0;
+    background-color: #1DBF3B;
+    border-color: #1DBF3B;
+    color: white;
+    font-size: 16px;
+    padding: 3px 14px;
+    border-radius: 4px;
+    border-style: solid;
+}
+
+    .btn_booknow:hover {
+        text-decoration: underline;
+    }
 
 /*-------------------------------------------OrderList-----------------------------------------------------*/
 
 .AgendaOrders {
-    background-color: #EDECD8;
     color: black;
     font-size: 1em;
     min-height: 10em;
@@ -40,8 +43,6 @@
     line-height: 2em;
     margin-top: 2%;
     padding: 0;
-    border-top-style: solid;
-    border-color: #F8473E;
     display: inline-block;
 }
 
@@ -53,9 +54,11 @@
     
 }
 
-.OrderHeader {
-    color: firebrick;
-   
+.itemHeader{
+    border-bottom: 1px solid black;
+    padding-bottom: 6px;
+    font-weight: 600;
+    color: red;
 }
 
 .AgendaOrder {
@@ -68,11 +71,10 @@
     border-bottom: solid;
     border-width: thin;
 }
-/*---------------------------------------De rest?------------------------------------------*/
 
-#BasketTotalPrice{
-    margin-top: 3%;
-    margin-right: 3%;
-    margin-left: 4%;
-
+.totalPrice{
+    width: 100%;
+    font-size: 14px;
+    margin-top: 40px;
+    margin-bottom: 8px;
 }
