@@ -27,9 +27,15 @@ namespace HaarlemFestival.Controllers
         public ActionResult Index()
         {
             PagePlusOrdersPlusOrderLocation pagePlusOrdersPlusOrderLocation = new PagePlusOrdersPlusOrderLocation();
+            Account account = (Account)Session["loggedin_user"];
 
             pagePlusOrdersPlusOrderLocation.Page = pageRepository.GetPage("PersonalAgenda", Language.Eng);
-            pagePlusOrdersPlusOrderLocation.Orders = orderRepository.GetOrdersCustomer(2).ToList();
+
+            if (account != null)
+            {
+                pagePlusOrdersPlusOrderLocation.Orders = orderRepository.GetOrdersCustomer(account.Id).ToList();
+            }
+
             pagePlusOrdersPlusOrderLocation.orderLoctions = CalculatePosition(pagePlusOrdersPlusOrderLocation.Orders);
             
             return View(pagePlusOrdersPlusOrderLocation);
