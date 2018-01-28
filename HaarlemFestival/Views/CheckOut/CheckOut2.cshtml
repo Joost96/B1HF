@@ -1,6 +1,5 @@
 ﻿@model HaarlemFestival.Model.PagePlusOrderPlusLogin
 
-
 @{
     ViewBag.Title = "CheckOut2";
 }
@@ -9,6 +8,43 @@
     Layout = "_CheckOutLayout.cshtml";
 }
 
-<section class="CheckOut2">
 
+
+<section class="CheckOut2">
+    <section class="CheckOut2Content">
+
+        @using (Html.BeginForm("Checkout2", "CheckOut", FormMethod.Post, new { id = "CheckOut2Form" }))
+        {
+            <section class="LinkerColom">
+                <p class="CheckOut2Label">First Name: <label class="Verplicht">*</label></p>
+                <input type="text" value="@Model.Orders[0].Customer.FirstName" />
+            </section>
+            <section class="RechterColom">
+                <p class="CheckOut2Label">Last Name: <label class="Verplicht">*</label></p>
+                <input type="text" value="@Model.Orders[0].Customer.LastName" />
+            </section>
+            <section class="LinkerColom">
+                <p class="CheckOut2Label">Email: <label class="Verplicht">*</label></p>
+                <input type="text" value="@Model.Orders[0].Customer.Email" />
+            </section>
+            <section class="RechterColom">
+                <p class="CheckOut2Label">Qountry: </p>
+                <input type="text" value="@Model.Orders[0].Customer.Country" />
+            </section>
+
+
+            <section class="LinkerColom">
+                <p id="Password" class="CheckOut2Label">Password : <label class="Verplicht">*</label></p>
+                <input type="text" value="@Model.Orders[0].Customer.Password" />
+            </section>
+            <section class="LinkerColom">
+                <p id="ConfirmPassword" class="CheckOut2Label">Confirm password : <label class="Verplicht">*</label></p>
+                <input type="text" />
+            </section>
+
+
+            <button id="Step2ButttonStep1" onclick="location.href = '@Url.Action("Checkout1", "CheckOut")' ">Step 1</button>
+            <button id="Step2ButttonContinue" onclick="location.href = '@Url.Action("Checkout3", "CheckOut")' " type="submit">Continue</button>
+        }
+    </section>
 </section>

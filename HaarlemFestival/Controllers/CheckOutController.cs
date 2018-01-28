@@ -68,16 +68,16 @@ namespace HaarlemFestival.Controllers
         // GET: CheckOut
         public ActionResult CheckOut1()
         {
-            PagePlusOrderPlusLogin ppp = new PagePlusOrderPlusLogin();
+            PagePlusOrderPlusLogin model = new PagePlusOrderPlusLogin();
 
             Order order = (Order)Session["order"];
-            ppp.Orders.Add(order);
+            model.Orders.Add(order);
             Language language = (Language)Session["language"];
-            ppp.Page = pageRepository.GetPage("CheckOut", language);
+            model.Page = pageRepository.GetPage("CheckOut", language);
 
             foreach (var item in order.OrderHasTickets)
             {
-                ppp.TotalOrderPrice += item.TotalPrice;
+                model.TotalOrderPrice += item.TotalPrice;
             }
 
             Account account = (Account)(Session["loggedin_account"]);
@@ -89,7 +89,7 @@ namespace HaarlemFestival.Controllers
                 return RedirectToAction("Checkout3", "Checkout");
             }
 
-            return View(ppp);
+            return View(model);
         }
 
         [HttpPost]
@@ -131,18 +131,21 @@ namespace HaarlemFestival.Controllers
             PagePlusOrderPlusLogin ppp = new PagePlusOrderPlusLogin();
 
             Order order = (Order)Session["order"];
+
+            ppp.Orders.Add(order);
+
             return View(ppp);
         }
 
         [HttpPost]
-        public ActionResult Checkout2(RegisterCheckoutModel model)
+        public ActionResult Checkout2(PagePlusOrderPlusLogin model)
         {
             if (ModelState.IsValid)
             {
                 Account checkAccount = accountRepository.GetAccount(model.Email);
                 if (checkAccount == null)
                 {
-                    Account account = new Customer(model.Email, model.FirstName, model.LastName, model.Password, model.Country);
+                    Account account = new Customer(model.Customer.Email, model.Customer.FirstName, model.Customer.LastName, model.Customer.Password, model.Customer.Country);
                     accountRepository.Register(account);
 
                     FormsAuthentication.SetAuthCookie(account.Email, false);
