@@ -250,6 +250,7 @@
     <Compile Include="Model\PagePlusActivitiesPlusCuisines.cs" />
     <Compile Include="Model\PagePlusActivities.cs" />
     <Compile Include="Model\PagePlusActivityPlusOrderDinners.cs" />
+    <Compile Include="Model\PagePlusOrder.cs" />
     <Compile Include="Model\PagePlusOrderPlusLogin.cs" />
     <Compile Include="Model\PagePlusOrdersPlusOrderLocation.cs" />
     <Compile Include="Model\PagePlusOrders.cs" />
@@ -536,6 +537,7 @@
     <Content Include="ClassDiagram2.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="Scripts\CheckOut3Payment.js" />
     <Content Include="Scripts\FilterOnCuisine.js" />
     <Content Include="Scripts\jquery.datetimepicker.full.js" />
     <Content Include="Scripts\jquery.datetimepicker.full.min.js" />

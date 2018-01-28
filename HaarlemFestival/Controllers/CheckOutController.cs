@@ -140,6 +140,7 @@ namespace HaarlemFestival.Controllers
         [HttpPost]
         public ActionResult Checkout2(PagePlusOrderPlusLogin model)
         {
+            
             if (ModelState.IsValid)
             {
                 Account checkAccount = accountRepository.GetAccount(model.Email);
@@ -169,17 +170,23 @@ namespace HaarlemFestival.Controllers
 
         public ActionResult CheckOut3()
         {
+            PagePlusOrderPlusLogin pagePlusOrderPlusLogin = new PagePlusOrderPlusLogin();
+
             Order order = (Order)Session["order"];
-            return View(order);
+
+            pagePlusOrderPlusLogin.Orders.Add(order);
+            return View(pagePlusOrderPlusLogin);
         }
+        
+        
         [HttpPost]
-        public ActionResult CheckOut3(Order order)
+        public ActionResult CheckOut3(PagePlusOrderPlusLogin order)
         {
-            order.Date = DateTime.Now;
-            Session["order"] = order;
-            orderRepository.CreateOrder(order);
-            return Redirect("CheckOut4");
+            order.Orders[0].Date = DateTime.Now;
+
+            return RedirectToAction("Checkout4", "CheckOut");
         }
+        
 
         public ActionResult CheckOut4()
         {

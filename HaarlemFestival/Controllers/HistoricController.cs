@@ -29,9 +29,9 @@ namespace HaarlemFestival.Controllers
         {
             PpApOpQ pagePlusActivities = new PpApOpQ();
 
-            Page page = pageRepository.GetPage("Historic", Language.Eng);
+            Page page = pageRepository.GetPage("Historic", (Language)Session["language"]);
 
-            IEnumerable<Activity> activities = activityRepository.GetActivities(EventType.Historic, Language.Eng);
+            IEnumerable<Activity> activities = activityRepository.GetActivities(EventType.Historic, (Language)Session["language"]);
 
             pagePlusActivities.Page = page;
             pagePlusActivities.Activities = activities.ToList();
