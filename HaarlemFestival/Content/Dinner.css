@@ -26,7 +26,7 @@
 
 .filter label {
     display: inline-block;
-    background-color: cornsilk;
+    background-color:white /*rgb(237, 236, 216)*/;
     color: black; /*rgba(0, 0, 0, 0.6);*/
     font-size: 14px;
     font-weight: normal;
@@ -238,9 +238,10 @@
 
 .restaurant_reservation_form {
     /*background: linear-gradient(to top, #f8473e 0%, #f69494 100%);*/
-    box-shadow: 3px 5px red;
+    background-color: rgb(237, 236, 216);
     width: 60%;
     margin: 20px auto 30px auto;
+    border: 1px solid black;
 }
 
     .restaurant_reservation_form form {
@@ -321,4 +322,8 @@
 
     .btn_order:hover {
         text-decoration: underline;
+    }
+
+    .required{
+        float: right;
     }

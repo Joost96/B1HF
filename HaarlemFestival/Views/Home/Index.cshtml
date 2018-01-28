@@ -50,7 +50,7 @@
         <article class="register">
             <h1>@Model.PageDescriptions[5].Title</h1>
             <p>@Model.PageDescriptions[5].DescriptionText</p>
-            <button>@Html.ActionLink("Register", "Register", "Account", new { @class = "register_link_makeup" })</button>
+            @Html.ActionLink("Register", "Register", "Account", new { @class = "btn_cta" })
             <text>@Model.PageDescriptions[11].DescriptionText @Html.ActionLink("Log in", "Log in", "Account")</text>
         </article>
     </section>

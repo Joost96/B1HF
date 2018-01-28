@@ -15,6 +15,7 @@
     text-align: center;
     border-style: solid;
     border-width: 2px;
+    background-color: rgb(237, 236, 216);
 }
 
 .CheckOut ul{
@@ -44,7 +45,7 @@
 }
 
 .orders-container{
-    border-bottom: 2px solid black;
+    border-top: 2px solid black;
     background-color: white;
 }
 
@@ -76,6 +77,7 @@
     width: 100%;
     display: flex;
     align-items:center;
+    margin-bottom: 3em;
 }
 
 .p_class {
@@ -116,10 +118,13 @@
     background-color: #1DBF3B;
     border-color: #1DBF3B;
     color: white;
-    font-size: 12px;
+    font-size: 14px;
     padding: 3px 14px;
     border-radius: 4px;
     border-style: solid;
+    margin-top: 10px;
+    margin-left: 50%;
+    margin-right: 50%;
 }
 
 .btn_cta:hover{
@@ -131,10 +136,14 @@
     background-color: white;
     border-color: white;
     color: black;
-    font-size: 12px;
+    font-size: 14px;
     padding: 3px 14px;
     border-radius: 4px;
     border-style: solid;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 50%;
+    margin-right: 50%;
 }
 
 .btn_default:hover{

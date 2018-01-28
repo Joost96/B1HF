@@ -5,7 +5,9 @@
 
 body {
     padding-top: 50px;
-    background-color: #EDECD8;
+    background-image: url("../img/bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 
@@ -13,6 +15,8 @@ body {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    padding-bottom: 20px;
+    background-color: rgba(237, 236, 216, 0.9);
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -43,7 +47,6 @@ footer {
     right: 0;
     bottom: 0;
     height: 150px;
-    margin-top: 4em;
 }
 
     footer li {
@@ -83,6 +86,7 @@ footer {
     height: 358px;
     padding-top: 8px;
     margin-bottom: 8px;
+    margin-top: 15px;
 }
 
 .event_summary {
@@ -137,12 +141,8 @@ footer {
     float: left;
     width: 50%;
     height: inherit;
-    margin: 0 4px 0 0;
 }
 
-    .wrapper_left h1 {
-        margin-top: 0;
-    }
 
 
 /*--------------Info section-----------------*/
@@ -176,20 +176,23 @@ footer {
     }
 
 
-    .register button {
-        display: block;
-        margin: 0 auto;
-        margin: 0 auto 10px auto;
-        color: white;
-        background-color: #1DBF3B;
-        width: 100px;
-        height: 35px;
-    }
+.btn_cta{
+    background-color: #1DBF3B;
+    border-color: #1DBF3B;
+    color: white;
+    font-size: 14px;
+    padding: 3px 14px;
+    border-radius: 4px;
+    border-style: solid;
+    margin-top: 10px;
+    margin-left: 44%;
+    margin-right: 50%;
+}
 
-        .register button:hover {
-            background-color: #137F28;
-        }
+.btn_cta:hover{
+    text-decoration: underline;
 
+}
 .register_link_makeup {
     color: white;
 }
@@ -199,7 +202,6 @@ footer {
     float: left;
     width: 49%;
     margin: 0 0 0 4px;
-    height: inherit;
 }
 
 .event_highlight {

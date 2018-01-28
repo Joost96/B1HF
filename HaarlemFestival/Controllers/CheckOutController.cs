@@ -109,7 +109,8 @@ namespace HaarlemFestival.Controllers
                         Session["order"] = order;
 
                         return RedirectToAction("CheckOut3", "CheckOut");
-                    } else
+                    }
+                    else
                     {
                         ModelState.AddModelError("login-error", "The account is not a customer");
                     }
@@ -124,8 +125,10 @@ namespace HaarlemFestival.Controllers
 
         public ActionResult CheckOut2()
         {
+            PagePlusOrderPlusLogin ppp = new PagePlusOrderPlusLogin();
+
             Order order = (Order)Session["order"];
-            return View(order);
+            return View(ppp);
         }
 
         [HttpPost]
