@@ -140,7 +140,7 @@ namespace HaarlemFestival.Controllers
         [HttpPost]
         public ActionResult Checkout2(PagePlusOrderPlusLogin model)
         {
-            /*
+            
             if (ModelState.IsValid)
             {
                 Account checkAccount = accountRepository.GetAccount(model.Email);
@@ -164,7 +164,7 @@ namespace HaarlemFestival.Controllers
                 {
                     ModelState.AddModelError("register-error", "The email is already taken");
                 }
-            }*/
+            }
             return View(model);
         }
 
