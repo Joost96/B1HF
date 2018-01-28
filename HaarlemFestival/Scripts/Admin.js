@@ -155,14 +155,14 @@ function placeEvents() {
         var sameTime = $(this).parent().find("[data-start='" + $(this).attr('data-start') + "']");
         var index;
         for (var i = 0; i < sameTime.length; i++) {
-            if (sameTime[i] == $(this)[0]) {
+            if (sameTime[i] === $(this)[0]) {
                 index = i;
             }
         }
         var eventLeft = ((eventSlotWidth) / sameTime.length) * index;
         $(this).css({
             width: (100 / sameTime.length) + '%',
-            left: (eventLeft) + 'px',
+            left: (eventLeft+index) + 'px',
             top: (eventTop - 1) + 'px',
             height: (eventHeight + 1) + 'px'
             
@@ -179,13 +179,6 @@ function getScheduleTimestamp(time) {
     return timeStamp;
 }
 
-//agenda selected
-//$(".single-event").click(function () {
-//    var id = $(this).attr('id');
-//    var id = id.split('-')[1];
-//    $(".single-event").removeClass("selected");
-//    $("li[id ^='cal-" + id+"']").addClass("selected");
-//})
 $(window).bind('hashchange', function () {
     var hash = window.location.hash.replace(/^#/, '');
     console.log(hash);
