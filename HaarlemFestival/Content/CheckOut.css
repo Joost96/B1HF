@@ -156,3 +156,38 @@
     text-decoration: underline;
 }
 
+
+/*------------------------------------------Checkout 2------------------------------------------------*/
+.LinkerColom {
+    width: 25%;
+    margin: 0 0 0 20%;
+}
+
+.RechterColom {
+    width: 25%;
+    margin: 0 0 0 5%;
+}
+
+.CheckOut2Label {
+    margin:0;
+}
+
+#Step2ButttonStep1 {
+    display: block;
+    float: left;
+    margin: 0;
+    margin-left: 10%;
+}
+
+#Step2ButttonContinue {
+    display: block;
+    float: right;
+    margin: 0;
+}
+
+.CheckOut2Content {
+    display: block;
+    width: 100%;
+    height: 80%;
+    min-height: 100px;
+}

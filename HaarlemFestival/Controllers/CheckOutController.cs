@@ -131,18 +131,21 @@ namespace HaarlemFestival.Controllers
             PagePlusOrderPlusLogin ppp = new PagePlusOrderPlusLogin();
 
             Order order = (Order)Session["order"];
+
+            ppp.Orders.Add(order);
+
             return View(ppp);
         }
 
         [HttpPost]
-        public ActionResult Checkout2(RegisterCheckoutModel model)
+        public ActionResult Checkout2(PagePlusOrderPlusLogin model)
         {
             if (ModelState.IsValid)
             {
                 Account checkAccount = accountRepository.GetAccount(model.Email);
                 if (checkAccount == null)
                 {
-                    Account account = new Customer(model.Email, model.FirstName, model.LastName, model.Password, model.Country);
+                    Account account = new Customer(model.Customer.Email, model.Customer.FirstName, model.Customer.LastName, model.Customer.Password, model.Customer.Country);
                     accountRepository.Register(account);
 
                     FormsAuthentication.SetAuthCookie(account.Email, false);

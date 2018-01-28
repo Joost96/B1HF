@@ -15,6 +15,8 @@ namespace HaarlemFestival.Model
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
+        public Customer Customer { get; set; }
+
         public Page Page { get; set; }
         public List<Order> Orders { get; set; }
 
