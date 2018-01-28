@@ -115,7 +115,8 @@
         @using (Html.BeginForm("AskQuestion", "Talking", FormMethod.Post, new {id = "TalkingQuestionForm" }))
         {
             @Html.HiddenFor(model => model.Question.Spreker , new { id = "sprekerNaam"})
-            @Html.TextAreaFor(model => model.Question.Message, new { @class = "TalkingQuestionMessage" })
+            @Html.TextAreaFor(model => model.Question.Message, new { @class = "TalkingQuestionMessage", @required = "required" })
+            
 
             <input type="submit" value="@Model.Page.PageDescriptions[1].Title" id="TalkingQuestionButton" />
         }
