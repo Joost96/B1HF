@@ -68,16 +68,16 @@ namespace HaarlemFestival.Controllers
         // GET: CheckOut
         public ActionResult CheckOut1()
         {
-            PagePlusOrderPlusLogin ppp = new PagePlusOrderPlusLogin();
+            PagePlusOrderPlusLogin model = new PagePlusOrderPlusLogin();
 
             Order order = (Order)Session["order"];
-            ppp.Orders.Add(order);
+            model.Orders.Add(order);
             Language language = (Language)Session["language"];
-            ppp.Page = pageRepository.GetPage("CheckOut", language);
+            model.Page = pageRepository.GetPage("CheckOut", language);
 
             foreach (var item in order.OrderHasTickets)
             {
-                ppp.TotalOrderPrice += item.TotalPrice;
+                model.TotalOrderPrice += item.TotalPrice;
             }
 
             Account account = (Account)(Session["loggedin_account"]);
@@ -89,7 +89,7 @@ namespace HaarlemFestival.Controllers
                 return RedirectToAction("Checkout3", "Checkout");
             }
 
-            return View(ppp);
+            return View(model);
         }
 
         [HttpPost]
