@@ -122,6 +122,16 @@ footer {
         color: white;
     }
 
+        .event_summary a {
+        position: absolute;
+        bottom: 1%;
+        left: 37%;
+        background-color: transparent;
+        border: none;
+        font-weight: bold;
+        color: white;
+    }
+
 .event_summary_img {
     width: auto;
     text-align: center;

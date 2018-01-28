@@ -20,7 +20,7 @@ namespace HaarlemFestival.Controllers
         }
         public ActionResult Index()
         {
-            Page page = pageRepository.GetPage("Home" , Language.Eng);
+            Page page = pageRepository.GetPage("Home", (Language)Session["language"]);
             
             return View(page);
         }
