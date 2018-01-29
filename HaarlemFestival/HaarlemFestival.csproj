@@ -162,6 +162,7 @@
     <Compile Include="Controllers\DinnerController.cs" />
     <Compile Include="Controllers\HistoricController.cs" />
     <Compile Include="Controllers\JazzController.cs" />
+    <Compile Include="Controllers\SalesController.cs" />
     <Compile Include="Controllers\TalkingController.cs" />
     <Compile Include="Migrations\201801042052142_Question toegevoegd.cs" />
     <Compile Include="Migrations\201801042052142_Question toegevoegd.Designer.cs">
@@ -256,6 +257,7 @@
     <Compile Include="Model\PpApOpQ.cs" />
     <Compile Include="Model\RegisterCheckoutModel.cs" />
     <Compile Include="Model\RegisterModel.cs" />
+    <Compile Include="Model\SalesInfo.cs" />
     <Compile Include="Model\Ticket.cs" />
     <Compile Include="Model\TimeSlot.cs" />
     <Compile Include="Model\Question.cs" />
@@ -535,10 +537,15 @@
     <Content Include="ClassDiagram2.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="Scripts\Chart.bundle.js" />
+    <Content Include="Scripts\Chart.bundle.min.js" />
+    <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\Chart.min.js" />
     <Content Include="Scripts\FilterOnCuisine.js" />
     <Content Include="Scripts\jquery.datetimepicker.full.js" />
     <Content Include="Scripts\jquery.datetimepicker.full.min.js" />
     <Content Include="Scripts\ModalHistoric.js" />
+    <Content Include="Scripts\Sales.js" />
     <Content Include="Scripts\Talking.js" />
     <Content Include="Scripts\Jazz.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
@@ -596,6 +603,9 @@
     <Content Include="Views\ContentManagement\Talking.cshtml" />
     <Content Include="Views\ContentManagement\Jazz.cshtml" />
     <Content Include="Views\CheckOut\Basket.cshtml" />
+    <Content Include="Views\Sales\Index.cshtml" />
+    <Content Include="Views\Sales\AdminNav.cshtml" />
+    <Content Include="Views\Sales\Event.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
