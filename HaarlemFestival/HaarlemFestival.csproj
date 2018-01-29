@@ -159,6 +159,7 @@
     <Compile Include="Controllers\CheckOutController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ContentManagementController.cs" />
+    <Compile Include="Controllers\CsvActionResult.cs" />
     <Compile Include="Controllers\DinnerController.cs" />
     <Compile Include="Controllers\HistoricController.cs" />
     <Compile Include="Controllers\JazzController.cs" />

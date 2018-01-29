@@ -1,4 +1,17 @@
-﻿var Model;
+﻿$(".export-btn").click(function () {
+    $("#export-Modal").show();
+});
+
+$("#export-Modal").click(function () {
+    $("#export-Modal").hide();
+
+});
+
+$(".close").click(function () {
+    $("#export-Modal").hide();
+    });
+
+var Model;
 function init(json) {
     Model = json;
     console.log(Model);

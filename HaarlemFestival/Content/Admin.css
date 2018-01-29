@@ -1,6 +1,10 @@
 ﻿.modal {
     z-index : 99;
 }
+.modal-content {
+    width : 50%;
+    padding-bottom : 50px;
+}
 .save-modal {
     width : 30%;
 }
@@ -37,7 +41,7 @@ textarea {
     overflow-x: hidden;
     overflow-y: auto;
     border: 1px solid #bba8a8;
-    background: #f7f344;
+    background: #f8473e;
 }
 .adminSection {
     border: 1px solid #bba8a8;
@@ -76,7 +80,7 @@ textarea {
     width: 100%;
 }
 .adminMain {
-    top: 51px;
+    margin-top: 51px;
 }
 .admin.sidebar .nav-item {
     width: 100%;
@@ -84,11 +88,10 @@ textarea {
 .admin.sidebar .nav-item a {
     display: block;
     padding: .5rem 1rem;
-    color: black;
+    color: white;
 }
 .admin.sidebar .nav-item a:hover {
-    background-color: #696767;
-    color: white;
+    color: black;
 }
 /* jazz agenda */
 .schedule .events .events-group > ul {
@@ -233,4 +236,17 @@ textarea {
 }
 .Daily-sale {
     height: 100px;
+}
+
+.panel-header .accordion-toggle:before {
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings'; /* essential for enabling glyphicon */
+    content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+    float: left; /* adjust as needed */
+    color: grey; /* adjust as needed */
+}
+
+.panel-header .accordion-toggle.collapsed:before {
+    /* symbol for "collapsed" panels */
+    content: "\e080"; /* adjust as needed, taken from bootstrap.css */
 }

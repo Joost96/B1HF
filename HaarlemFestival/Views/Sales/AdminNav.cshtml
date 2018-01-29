@@ -5,12 +5,17 @@
         <li class="nav-item">@Html.ActionLink("Dinner", "Event", new { id = 1 })</li>
         <li class="nav-item">@Html.ActionLink("Talking", "Event", new { id = 3 })</li>
         <li class="nav-item">@Html.ActionLink("Historic", "Event", new { id = 2 })</li>
+        <li class="nav-item export-btn"><a>Export</a></li>
     </ul> 
 </nav>
-<!--
-<section id="Save-Modal" class="modal">
-    <section class="modal-content save-modal">
-        <h4 class="text-center">Saving..</h4>
+<section id="export-Modal" class="modal">
+    <section class="modal-content">
+        <span class="close">&times;</span>
+        <h4 class="text-center">Export</h4>
+        <p class="text-center">There are 4 types on CSV files you can export for futher examination</p>
+        <div class="col-sm-3">@Html.ActionLink("Activity Sales", "Export", new { id = 0 }, new { @class = "btn btn-primary" })</div>
+        <div class="col-sm-3">@Html.ActionLink("Timeslot Sales", "Export", new { id = 1 }, new { @class = "btn btn-primary" })</div>
+        <div class="col-sm-3">@Html.ActionLink("Country Sales", "Export", new { id = 2 }, new { @class = "btn btn-primary" })</div>
+        <div class="col-sm-3">@Html.ActionLink("Daily Sales", "Export", new { id = 3 }, new { @class = "btn btn-primary" })</div>
     </section>
-</section> 
--->
+</section>
