@@ -146,6 +146,7 @@ namespace HaarlemFestival.Controllers
                 Account checkAccount = accountRepository.GetAccount(model.Email);
                 if (checkAccount == null)
                 {
+
                     Account account = new Customer(model.Orders[0].Customer.Email, model.Orders[0].Customer.FirstName, model.Orders[0].Customer.LastName, model.Orders[0].Customer.Password, model.Orders[0].Customer.Country);
                     accountRepository.Register(account);
 
