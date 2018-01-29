@@ -251,6 +251,7 @@
     <Compile Include="Model\PagePlusActivitiesPlusCuisines.cs" />
     <Compile Include="Model\PagePlusActivities.cs" />
     <Compile Include="Model\PagePlusActivityPlusOrderDinners.cs" />
+    <Compile Include="Model\PagePlusOrder.cs" />
     <Compile Include="Model\PagePlusOrderPlusLogin.cs" />
     <Compile Include="Model\PagePlusOrdersPlusOrderLocation.cs" />
     <Compile Include="Model\PagePlusOrders.cs" />
@@ -389,6 +390,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CheckOut.css" />
+    <Content Include="Content\CheckOutStep2.css" />
     <Content Include="Content\Dinner.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
@@ -541,6 +543,7 @@
     <Content Include="Scripts\Chart.bundle.min.js" />
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\Chart.min.js" />
+    <Content Include="Scripts\CheckOut3Payment.js" />
     <Content Include="Scripts\FilterOnCuisine.js" />
     <Content Include="Scripts\jquery.datetimepicker.full.js" />
     <Content Include="Scripts\jquery.datetimepicker.full.min.js" />

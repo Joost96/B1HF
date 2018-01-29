@@ -131,18 +131,22 @@ namespace HaarlemFestival.Controllers
             PagePlusOrderPlusLogin ppp = new PagePlusOrderPlusLogin();
 
             Order order = (Order)Session["order"];
+
+            ppp.Orders.Add(order);
+
             return View(ppp);
         }
 
         [HttpPost]
-        public ActionResult Checkout2(RegisterCheckoutModel model)
+        public ActionResult Checkout2(PagePlusOrderPlusLogin model)
         {
+            
             if (ModelState.IsValid)
             {
                 Account checkAccount = accountRepository.GetAccount(model.Email);
                 if (checkAccount == null)
                 {
-                    Account account = new Customer(model.Email, model.FirstName, model.LastName, model.Password, model.Country);
+                    Account account = new Customer(model.Orders[0].Customer.Email, model.Orders[0].Customer.FirstName, model.Orders[0].Customer.LastName, model.Orders[0].Customer.Password, model.Orders[0].Customer.Country);
                     accountRepository.Register(account);
 
                     FormsAuthentication.SetAuthCookie(account.Email, false);
@@ -166,17 +170,23 @@ namespace HaarlemFestival.Controllers
 
         public ActionResult CheckOut3()
         {
+            PagePlusOrderPlusLogin pagePlusOrderPlusLogin = new PagePlusOrderPlusLogin();
+
             Order order = (Order)Session["order"];
-            return View(order);
+
+            pagePlusOrderPlusLogin.Orders.Add(order);
+            return View(pagePlusOrderPlusLogin);
         }
+        
+        
         [HttpPost]
-        public ActionResult CheckOut3(Order order)
+        public ActionResult CheckOut3(PagePlusOrderPlusLogin order)
         {
-            order.Date = DateTime.Now;
-            Session["order"] = order;
-            orderRepository.CreateOrder(order);
-            return Redirect("CheckOut4");
+            order.Orders[0].Date = DateTime.Now;
+
+            return RedirectToAction("Checkout4", "CheckOut");
         }
+        
 
         public ActionResult CheckOut4()
         {

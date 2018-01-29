@@ -101,6 +101,7 @@
 
 
     </section>
+ 
 
 }
 
@@ -131,7 +132,9 @@
     <section class="modal-content">
         <span id="closeThanksModal" class="close">&times;</span>
         
-        <p>@Model.Page.PageDescriptions[3].Title</p>
+        <p>@Model.Page.PageDescriptions[4].Title</p>
+       
+        
 
 
     </section>
@@ -147,8 +150,8 @@
         @using (Html.BeginForm("Order", "Talking", FormMethod.Post, new { id = "TalkingOrderForm" }))
         {
             <p class="OrderTitle"> </p>
-            <p class="OrderP" id="OrderMessage">@Model.Page.PageDescriptions[4].Title</p>
-            <p class="OrderP" id="ThankYouOrderMessage">@Model.Page.PageDescriptions[5].Title</p>
+            <p class="OrderP" id="OrderMessage">@Model.Page.PageDescriptions[5].Title</p>
+            <p class="OrderP" id="ThankYouOrderMessage">@Model.Page.PageDescriptions[6].Title</p>
 
             <select id="OrderSelect">
                 <option value="1" name = "m.OHT.Amount">1</option>
