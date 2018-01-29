@@ -23,6 +23,8 @@ var lang = document.getElementsByName("language");
 var amountticket = document.getElementById("numberTicketsHistoric");
 var groupticket = document.getElementById("HistoricGroupTicketOption");
 var submit = document.getElementById("HistoricSubmit");
+var waited = false;
+
 // When the user clicks on the button, open the modal 
 btn.onclick = function () {
     modal.style.display = "block";
@@ -39,7 +41,7 @@ span.onclick = function () {
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
-    if (event.target === modal) {
+    if (event.target === modal || event.target === modal2) {
         modal.style.display = "none";
     }
 };
@@ -122,6 +124,8 @@ submit.onclick = function () {
     var Amount;
     var TotalPrice;
 
+    var ordertxt = $("#ordertxt").text();
+    setTimeout(alert(ordertxt, 100));
     //var valLangChecked = valLang.filter(':checked').val();
     switch (valLang) {
         case "1":

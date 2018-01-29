@@ -9,6 +9,10 @@
 }
 
 <section class="CheckOut4">
+    <h3>Your tickets have been successfully booked!</h3><br />
 
-   The selected payment method is @Model.Orders[0].PaymentMethod
+    <h4>We have sent your tickets to @Model.Orders[0].Customer.Email</h4>
+    <h4><b>Date:</b> @Model.Orders[0].Date.ToShortDateString()</h4>
+    <h4><b>Customer:</b> @Model.Orders[0].Customer.FirstName @Model.Orders[0].Customer.LastName</h4>
+    <h4><b>Payment method:</b> @Model.Orders[0].PaymentMethod</h4>
 </section>

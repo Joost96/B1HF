@@ -354,8 +354,6 @@ footer {
 
 .HistoricRoute h2 {
     text-align: center;
-    display: inline;
-    margin-left: 412px;
 }
 
 .HistoricRoute p {
@@ -602,8 +600,12 @@ img.HistoricRouteInfo9 {
 
 #HistoricButtonOrder2 {
     position: relative;
-    top: 373px;
+    top: 372px;
     left: 140px;
+    background-color: limegreen;
+    color: white;
+    border-color: darkslateblue;
+    font-size: 15px;
 }
 
 /* The Modal (background) */
@@ -663,6 +665,10 @@ img.HistoricRouteInfo9 {
 
 #ValueHistoric{
     color: red;
+}
+
+#ordertxt{
+    display: none;
 }
 /*-------------------------------JAZZ---------------------------------*/
 .jazz_page_inhoud{

@@ -8,7 +8,7 @@
 @{
     ViewBag.Title = "Historic";
 }
-
+<p id="ordertxt">@Html.Raw(Model.Page.PageDescriptions[28].Title)</p>
 <section class="HistoricTitle">
 
     <h1>@Model.Page.Title</h1>
@@ -182,9 +182,11 @@
 </div>
 }
 
+
+
 <section class="row">
     <section class="col-md-12 sugestionview">
-        <h5>AANPASSEN</h5>
+        <h5>@Html.Raw(Model.Page.PageDescriptions[29].Title)</h5>
     </section>
 </section>
 
