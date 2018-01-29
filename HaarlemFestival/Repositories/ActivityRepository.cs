@@ -81,7 +81,7 @@ namespace HaarlemFestival.Repositories
                     newSlot.Activity_Id = activity.Timeslots[i].Activity_Id;
                     newSlot.StartTime = activity.Timeslots[i].StartTime;
                     newSlot.EndTime = activity.Timeslots[i].EndTime;
-                    newSlot.Tickets = new List<Ticket>();
+                    newSlot.Tickets = activity.Timeslots[i].Tickets;
                     newSlot.TotalSeats = activity.Timeslots[i].TotalSeats;
                     newSlot.OccupiedSeats = activity.Timeslots[i].OccupiedSeats;
                     newSlot.Hall = activity.Timeslots[i].Hall;
@@ -93,20 +93,21 @@ namespace HaarlemFestival.Repositories
                         time => time.Activity_Id == actID && time.StartTime == startTime).SingleOrDefault()
                         );
                     db.TimeSlots.Add(newSlot);
-                    foreach (Ticket ti in activity.Timeslots[i].Tickets)
+                    activity.Timeslots[i] = newSlot;
+                    for (int j=0;j<activity.Timeslots[i].Tickets.Count;j++)
                     {
                         Ticket newTicket = new Ticket();
 
                         newTicket.TimeSlot_Activity_Id = newSlot.Activity_Id;
                         newTicket.TimeSlot_StartTime = newSlot.StartTime;
-                        newTicket.TimeSlot = newSlot;
-                        newTicket.Price = ti.Price;
-                        newTicket.Type = ti.Type;
-                        newSlot.Tickets.Add(newTicket);
+                        newTicket.Price = activity.Timeslots[i].Tickets[j].Price;
+                        newTicket.Type = activity.Timeslots[i].Tickets[j].Type;
+                        TicketType type = activity.Timeslots[i].Tickets[j].Type;
+                        db.Tickets.Remove(db.Tickets.Where(
+                            ti => ti.TimeSlot_Activity_Id == actID && ti.TimeSlot_StartTime == startTime && ti.Type == type).SingleOrDefault());
+                        activity.Timeslots[i].Tickets[j] = newTicket;
                         db.Tickets.Add(newTicket);
-                        db.Entry(ti).State = EntityState.Deleted;
                     }
-                    activity.Timeslots[activity.Timeslots.IndexOf(activity.Timeslots[i])] = newSlot;
                 }
             }
             db.Entry(activity).State = EntityState.Modified;
@@ -116,10 +117,12 @@ namespace HaarlemFestival.Repositories
             }
             foreach (TimeSlot ts in activity.Timeslots)
             {
-                db.Entry(ts).State = EntityState.Modified;
-                foreach(Ticket ti in ts.Tickets)
+                if(db.Entry(ts).State != EntityState.Added)
+                    db.Entry(ts).State = EntityState.Modified;
+                foreach (Ticket ti in ts.Tickets)
                 {
-                    db.Entry(ti).State = EntityState.Modified;
+                    if (db.Entry(ti).State != EntityState.Added)
+                        db.Entry(ti).State = EntityState.Modified;
                 }
             }
             db.SaveChanges();

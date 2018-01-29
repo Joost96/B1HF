@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace HaarlemFestival.Controllers
 {
-    [Authorize(Roles = "contentManager")]
+    [Authorize(Roles = "salesManager")]
     public class SalesController : Controller
     {
         private DBHF db;
@@ -55,6 +55,37 @@ namespace HaarlemFestival.Controllers
             return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
         }
 
+        public ActionResult Export(int? id)
+        {
+            if (id != null)
+            {
+                SalesInfo info = new SalesInfo();
+                foreach (EventType type in Enum.GetValues(typeof(EventType)))
+                {
+                    if (type != EventType.JazzPass)
+                    {
+                        AddToInfo(type, info);
+                    }
+                }
+                switch(id)
+                {
+                    case 0:
+                        return new CsvActionResult<KeyValuePair<string, int>>
+                            (info.ActivitySales, "ActivitySales.csv", new string[] { "Activty","Amount" });
+                    case 1:
+                        return new CsvActionResult<KeyValuePair<string, int>>
+                            (info.Timeslots, "TimeslotSales.csv", new string[] { "Timeslot", "Amount" });
+                    case 2:
+                        return new CsvActionResult<KeyValuePair<string, int>>
+                            (info.CountryCount, "CountrySales.csv", new string[] { "Country", "Amount" });
+                    case 3:
+                        return new CsvActionResult<KeyValuePair<string, int>>
+                            (info.DailySales, "DailySales.csv", new string[] { "Day", "Amount" });
+                }
+            }
+            return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        }
+
         public void AddToInfo(EventType type , SalesInfo info)
         {
             List<TimeSlot> timeslots = activityRepository.GetTimeslots(type).ToList();
@@ -65,6 +96,7 @@ namespace HaarlemFestival.Controllers
 
             //country stats
             List<OrderHasTickets> ohts = orderRepository.getOrdersFromEvent(type).ToList();
+
             var countries = ohts
                 .GroupBy(oht => oht.Order.Customer.Country)
                 .Select(x => new { Country = x.Key, count = x.Count(), amount = x.Average(y => y.Amount) })
@@ -85,7 +117,7 @@ namespace HaarlemFestival.Controllers
             }
 
             //DailySales
-            for(int i =0;i<14;i++)
+            for (int i = 0; i < (DateTime.Now - DateTime.Parse("01/01/18 00:00")).TotalDays; i++)
             {
                 DateTime date = DateTime.Now.AddDays(-i);
                 DateTime date2 = date.AddDays(1);
@@ -93,14 +125,6 @@ namespace HaarlemFestival.Controllers
 
                 info.AddDailySale(date, amount);
             }
-            //var DailySales = ohts
-            //    .GroupBy(oht => oht.Order.Date.Date)
-            //    .Select(x => new { date = x.Key, count = x.Count(), amount = x.Average(y => y.Amount) })
-            //    .OrderByDescending(x => x.count);
-            //foreach (var day in DailySales)
-            //{
-            //    info.AddDailySale(day.date, (int)Math.Floor(day.count * day.amount));
-            //}
 
             //timeslots
             foreach (TimeSlot ts in timeslots)

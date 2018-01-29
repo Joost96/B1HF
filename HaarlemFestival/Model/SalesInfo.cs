@@ -95,10 +95,15 @@ namespace HaarlemFestival.Model
         }
         public void GetTop10()
         {
-            CountryCount = CountryCount.OrderBy(x => x.Value).Take(10).ToList();
-            ActivitySales = ActivitySales.OrderBy(x => x.Value).Take(10).ToList();
-            Timeslots = Timeslots.OrderBy(x => x.Value).Take(10).ToList();
-            DailySales = DailySales.OrderBy(x => x.Key).Take(14).ToList();
+            if(CountryCount.Count >= 10)
+                CountryCount = CountryCount.OrderByDescending(x => x.Value).ToList().GetRange(0,10);
+            if (ActivitySales.Count >= 10)
+                ActivitySales = ActivitySales.OrderByDescending(x => x.Value).ToList().GetRange(0, 10);
+            if (Timeslots.Count >= 10)
+                Timeslots = Timeslots.OrderByDescending(x => x.Value).ToList().GetRange(0, 10);
+            if (DailySales.Count >= 14)
+                DailySales = DailySales.ToList().GetRange(0, 14);
+            DailySales.Reverse();
         }
     }
 }
