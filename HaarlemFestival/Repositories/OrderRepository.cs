@@ -20,6 +20,11 @@ namespace HaarlemFestival.Repositories
         {
             db.Orders.Add(order);
             db.OrderHasTickets.AddRange(order.OrderHasTickets);
+            foreach(OrderHasTickets oht in order.OrderHasTickets)
+            {
+                oht.Ticket.TimeSlot.OccupiedSeats += oht.Amount;
+                db.Entry(oht.Ticket.TimeSlot).State = EntityState.Modified;
+            }
             db.SaveChanges();
         }
 
