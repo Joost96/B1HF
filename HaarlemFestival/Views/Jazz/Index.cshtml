@@ -12,7 +12,7 @@
     <section class="row jazz_page_info">
         <section class="col-md-6 jazz_pagina_header">
             <h3 class="jazz_page_header_text">@Model.Page.PageDescriptions[0].Title</h3>
-            <hr style="border-color : black;"/>
+            <hr style="border-color : #F8473E; border-width : 1px; border-style:solid;"/>
             <p>@Model.Page.PageDescriptions[0].DescriptionText</p>
         </section>
         <section class="col-md-3 jazz_page_info_box">
@@ -64,8 +64,7 @@
             <section id="myModal_@Model.Activities[i].Id" class="modal">
                 <section class="modal-content">
                     <span class="close">&times;</span>
-                    <p class="modaltitle"></p>
-                    <p class="modaldescription"></p>
+                    <h2 class="modaltitle"></h2>
                     <p class="modallocation"></p>
                     <p class="modalhall"></p>
                     <p class="modalprice"></p>
@@ -80,7 +79,7 @@
             <section id="infoModal_@Model.Activities[i].Id" class="infomodal">
                 <section class="infomodal-content">
                     <span class="infomodalclose">&times;</span>
-                    <p class="infomodaltitle"></p>
+                    <h2 class="infomodaltitle"></h2>
                     <p class="infomodaldescription"></p>
                     @if (Model.Activities[i].Timeslots[0].StartTime.ToString("dd/MM/yyyy") == "29-07-2018")
                     {
@@ -102,7 +101,7 @@
                         </section>
                         <hr class="jazz_page_actinfosection_line" />
                         <section>
-                            <section class="col-md-6">
+                            <section class="col-md-6 jazz_activity_extra">
                                 <p id="jazz_activity_location_@Model.Activities[i].Id" class="jazz_activiteit_location">@Model.Page.PageDescriptions[9].Title @Model.Activities[i].Location.Name</p>
 
                                 @if (Model.Activities[i].Timeslots[0].StartTime.ToString("dd/MM/yyyy") != "29-07-2018")
@@ -143,10 +142,21 @@
             <!-- Modal content -->
             <section class="passPartoutModal-content">
                 <span class="passPartoutModalClose">&times;</span>
-                <section class="row"><button class="btn btn-default jazz_btn_passpartout" id="passpartoutlink1">@Model.Page.PageDescriptions[16].Title <br />--------<br />@Model.Page.PageDescriptions[16].DescriptionText</button></section>
-                <section class="row"><button class="btn btn-default jazz_btn_passpartout" id="passpartoutlink2">@Model.Page.PageDescriptions[17].Title <br />--------<br />@Model.Page.PageDescriptions[17].DescriptionText</button></section>
-                <section class="row"><button class="btn btn-default jazz_btn_passpartout" id="passpartoutlink3">@Model.Page.PageDescriptions[18].Title <br />--------<br />@Model.Page.PageDescriptions[18].DescriptionText</button></section>
-                <section class="row"><button class="btn btn-default jazz_btn_passpartout" id="passpartoutlink4">@Model.Page.PageDescriptions[19].Title <br />--------<br />@Model.Page.PageDescriptions[19].DescriptionText</button></section>
+                <h2 style="text-align: center;">@Model.Page.PageDescriptions[24].Title</h2>
+                <p>@Model.Page.PageDescriptions[25].Title</p>
+                <ul>
+                    <li>@Model.Page.PageDescriptions[26].Title</li>
+                    <li>@Model.Page.PageDescriptions[27].Title</li>
+                    <li>@Model.Page.PageDescriptions[28].Title</li>
+                    <li>@Model.Page.PageDescriptions[29].Title</li>
+                </ul>
+                <section class="row"><button class="btn btn-primary jazz_btn_passpartout" id="passpartoutlink1">@Model.Page.PageDescriptions[16].Title <br />--------<br />@Model.Page.PageDescriptions[16].DescriptionText</button></section>
+                <br />
+                <section class="row"><button class="btn btn-primary jazz_btn_passpartout" id="passpartoutlink2">@Model.Page.PageDescriptions[17].Title <br />--------<br />@Model.Page.PageDescriptions[17].DescriptionText</button></section>
+                <br />
+                <section class="row"><button class="btn btn-primary jazz_btn_passpartout" id="passpartoutlink3">@Model.Page.PageDescriptions[18].Title <br />--------<br />@Model.Page.PageDescriptions[18].DescriptionText</button></section>
+                <br />
+                <section class="row"><button class="btn btn-primary jazz_btn_passpartout" id="passpartoutlink4">@Model.Page.PageDescriptions[19].Title <br />--------<br />@Model.Page.PageDescriptions[19].DescriptionText</button></section>
             </section>
         </section>
 
