@@ -12,7 +12,7 @@
 @RenderPage("AdminNav.cshtml")
 <main class="col-sm-9 ml-sm-auto col-md-10 adminMain HomePage">
 
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("Index", "ContentManagement", FormMethod.Post, new { @class = "Admin-Form" }))
     {
         @Html.AntiForgeryToken()
         @Html.HiddenFor(model => model.Name)

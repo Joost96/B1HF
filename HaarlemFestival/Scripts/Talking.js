@@ -76,7 +76,7 @@ $("#TalkingQuestionForm").submit(function () {
         waited = true;
         $("#TalkingQuestionForm").submit();
 
-    }, 3000);
+    }, 2000);
     return waited;
 });
 
@@ -92,7 +92,7 @@ $("#TalkingOrderForm").submit(function () {
         waited = true;
         $("#TalkingOrderForm").submit();
 
-    }, 3000);
+    }, 2000);
     return waited;
 });
 

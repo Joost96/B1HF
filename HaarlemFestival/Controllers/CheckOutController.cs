@@ -131,7 +131,10 @@ namespace HaarlemFestival.Controllers
             PagePlusOrderPlusLogin ppp = new PagePlusOrderPlusLogin();
 
             Order order = (Order)Session["order"];
-
+            foreach (var item in order.OrderHasTickets)
+            {
+                ppp.TotalOrderPrice += item.TotalPrice;
+            }
             ppp.Orders.Add(order);
 
             return View(ppp);
@@ -140,32 +143,37 @@ namespace HaarlemFestival.Controllers
         [HttpPost]
         public ActionResult Checkout2(PagePlusOrderPlusLogin model)
         {
-            
-            if (ModelState.IsValid)
+
+            //if (ModelState.IsValid)
+            //{
+            Account checkAccount = accountRepository.GetAccount(model.Email);
+            if (checkAccount == null)
             {
-                Account checkAccount = accountRepository.GetAccount(model.Email);
-                if (checkAccount == null)
+                if (model.Orders[0].Customer.Password == null)
                 {
-                    Account account = new Customer(model.Orders[0].Customer.Email, model.Orders[0].Customer.FirstName, model.Orders[0].Customer.LastName, model.Orders[0].Customer.Password, model.Orders[0].Customer.Country);
-                    accountRepository.Register(account);
-
-                    FormsAuthentication.SetAuthCookie(account.Email, false);
-
-                    Session["loggedin_account"] = account;
-
-                    Order order = (Order)Session["order"];
-                    order.Customer = (Customer)account;
-                    order.CustomerId = account.Id;
-                    Session["order"] = order;
-
-                    return RedirectToAction("Checkout3", "CheckOut");
+                    model.Orders[0].Customer.Password = "oke";
                 }
-                else
-                {
-                    ModelState.AddModelError("register-error", "The email is already taken");
-                }
+
+                Account account = new Customer(model.Orders[0].Customer.Email, model.Orders[0].Customer.FirstName, model.Orders[0].Customer.LastName, model.Orders[0].Customer.Password, model.Orders[0].Customer.Country);
+                accountRepository.Register(account);
+
+                FormsAuthentication.SetAuthCookie(account.Email, false);
+
+                Session["loggedin_account"] = account;
+
+                Order order = (Order)Session["order"];
+                order.Customer = (Customer)account;
+                order.CustomerId = account.Id;
+                Session["order"] = order;
+
+                return RedirectToAction("Checkout3", "CheckOut");
             }
-            return View(model);
+            else
+            {
+                ModelState.AddModelError("register-error", "The email is already taken");
+            }
+
+            return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
         }
 
         public ActionResult CheckOut3()
@@ -175,11 +183,16 @@ namespace HaarlemFestival.Controllers
             order.Date = DateTime.Now;
 
             ppp.Orders.Add(order);
-            
+
+            foreach (var item in order.OrderHasTickets)
+            {
+                ppp.TotalOrderPrice += item.TotalPrice;
+            }
+
             return View(ppp);
         }
-        
-        
+
+
         [HttpPost]
         public ActionResult CheckOut3(PaymentMethod paymentMethod)
         {
@@ -192,13 +205,18 @@ namespace HaarlemFestival.Controllers
 
             return RedirectToAction("Checkout4", "CheckOut");
         }
-        
+
 
         public ActionResult CheckOut4()
         {
             PagePlusOrderPlusLogin model = new PagePlusOrderPlusLogin();
             Order order = (Order)Session["order"];
             model.Orders.Add(order);
+
+            foreach (var item in order.OrderHasTickets)
+            {
+                model.TotalOrderPrice += item.TotalPrice;
+            }
 
             if (order.PaymentMethod != null)
                 Session["order"] = null;

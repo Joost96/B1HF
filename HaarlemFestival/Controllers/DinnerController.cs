@@ -36,8 +36,8 @@ namespace HaarlemFestival.Controllers
             Language language = (Language)Session["language"];
             PagePlusActivitiesPlusCuisine pagePlusActivitiesPlusCuisine = new PagePlusActivitiesPlusCuisine();
 
-            Page page = pageRepository.GetPage("Dinner", (Language)Session["language"]);
-            IEnumerable<Activity> activities = activityRepository.GetActivities(EventType.Dinner, (Language)Session["language"]);
+            Page page = pageRepository.GetPage("Dinner", language);
+            IEnumerable<Activity> activities = activityRepository.GetActivities(EventType.Dinner, language);
             IEnumerable<Cuisine> cuisines = cuisineRepository.GetCuisines();
 
             foreach (Activity a in activities)
@@ -71,9 +71,9 @@ namespace HaarlemFestival.Controllers
             PagePlusActivityPlusOrderDinners pagePlusActivityPlusOrder = new PagePlusActivityPlusOrderDinners();
             
 
-            Page page = pageRepository.GetPage("Dinner resaurant", (Language)Session["language"]);
+            Page page = pageRepository.GetPage("Dinner resaurant", language);
 
-            Activity activity = activityRepository.GetActivity(id, (Language)Session["language"]);
+            Activity activity = activityRepository.GetActivity(id, language);
 
             activity.Cuisines = cuisineRepository.GetCuisines(activity);
 

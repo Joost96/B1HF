@@ -30,21 +30,27 @@
             <div class="orderItem col-md-2">Totaalprijs</div>
             <div class="orderItem col-md-2">Start tijd/datum</div>
         </li>
-
-        @foreach (Order order in Model.Orders)
+        
+        @if (Model.Orders != null)
         {
-            foreach (OrderHasTickets OHT in order.OrderHasTickets)
+            foreach (Order order in Model.Orders)
             {
 
+                foreach (OrderHasTickets OHT in order.OrderHasTickets)
+                {
+                    if (OHT != null)
+                    {
 
-                <li class="AgendaOrder">
-                    <div class="orderItem col-md-4">@OHT.Ticket.TimeSlot.Activity.Name</div>
-                    <div class="orderItem col-md-2">@OHT.Ticket.TimeSlot.Activity.Type</div>
-                    <div class="orderItem col-md-1">@OHT.Ticket.Price</div>
-                    <div class="orderItem col-md-1">@OHT.Amount</div>
-                    <div class="orderItem col-md-2">@OHT.TotalPrice</div>
-                    <div class="orderItem col-md-2">@OHT.Ticket.TimeSlot.StartTime.ToString("HH:mm dd/MM/yyyy")</div>
-                </li>
+                        <li class="AgendaOrder">
+                            <div class="orderItem col-md-4">@OHT.Ticket.TimeSlot.Activity.Name</div>
+                            <div class="orderItem col-md-2">@OHT.Ticket.TimeSlot.Activity.Type</div>
+                            <div class="orderItem col-md-1">@OHT.Ticket.Price</div>
+                            <div class="orderItem col-md-1">@OHT.Amount</div>
+                            <div class="orderItem col-md-2">@OHT.TotalPrice</div>
+                            <div class="orderItem col-md-2">@OHT.Ticket.TimeSlot.StartTime.ToString("HH:mm dd/MM/yyyy")</div>
+                        </li>
+                    }
+                }
             }
         }
 
@@ -74,7 +80,7 @@
     <section class="AgendaRaster">
         <img class="AgendaFoto" src="@Model.Page.PageDescriptions[0].ImageUrl" alt="agenda" />
 
-        @if (Model.Orders[0].OrderHasTickets != null)
+        @if (Model.Orders != null)
         {
             foreach (Order order in Model.Orders)
             {
