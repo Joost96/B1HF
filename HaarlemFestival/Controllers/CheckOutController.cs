@@ -143,32 +143,36 @@ namespace HaarlemFestival.Controllers
         [HttpPost]
         public ActionResult Checkout2(PagePlusOrderPlusLogin model)
         {
-            
+
             //if (ModelState.IsValid)
             //{
-                Account checkAccount = accountRepository.GetAccount(model.Email);
-                if (checkAccount == null)
+            Account checkAccount = accountRepository.GetAccount(model.Email);
+            if (checkAccount == null)
+            {
+                if (model.Orders[0].Customer.Password == null)
                 {
-
-                    Account account = new Customer(model.Orders[0].Customer.Email, model.Orders[0].Customer.FirstName, model.Orders[0].Customer.LastName, model.Orders[0].Customer.Password, model.Orders[0].Customer.Country);
-                    accountRepository.Register(account);
-
-                    FormsAuthentication.SetAuthCookie(account.Email, false);
-
-                    Session["loggedin_account"] = account;
-
-                    Order order = (Order)Session["order"];
-                    order.Customer = (Customer)account;
-                    order.CustomerId = account.Id;
-                    Session["order"] = order;
-
-                    return RedirectToAction("Checkout3", "CheckOut");
+                    model.Orders[0].Customer.Password = "oke";
                 }
-                else
-                {
-                    ModelState.AddModelError("register-error", "The email is already taken");
-                }
-            
+
+                Account account = new Customer(model.Orders[0].Customer.Email, model.Orders[0].Customer.FirstName, model.Orders[0].Customer.LastName, model.Orders[0].Customer.Password, model.Orders[0].Customer.Country);
+                accountRepository.Register(account);
+
+                FormsAuthentication.SetAuthCookie(account.Email, false);
+
+                Session["loggedin_account"] = account;
+
+                Order order = (Order)Session["order"];
+                order.Customer = (Customer)account;
+                order.CustomerId = account.Id;
+                Session["order"] = order;
+
+                return RedirectToAction("Checkout3", "CheckOut");
+            }
+            else
+            {
+                ModelState.AddModelError("register-error", "The email is already taken");
+            }
+
             return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
         }
 
@@ -187,8 +191,8 @@ namespace HaarlemFestival.Controllers
 
             return View(ppp);
         }
-        
-        
+
+
         [HttpPost]
         public ActionResult CheckOut3(PaymentMethod paymentMethod)
         {
@@ -204,7 +208,7 @@ namespace HaarlemFestival.Controllers
 
             return RedirectToAction("Checkout4", "CheckOut");
         }
-        
+
 
         public ActionResult CheckOut4()
         {

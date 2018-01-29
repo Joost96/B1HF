@@ -34,9 +34,10 @@ namespace HaarlemFestival.Controllers
             if (account != null)
             {
                 pagePlusOrdersPlusOrderLocation.Orders = orderRepository.GetOrdersCustomer(account.Id).ToList();
+                pagePlusOrdersPlusOrderLocation.orderLoctions = CalculatePosition(pagePlusOrdersPlusOrderLocation.Orders);
             }
 
-            pagePlusOrdersPlusOrderLocation.orderLoctions = CalculatePosition(pagePlusOrdersPlusOrderLocation.Orders);
+            
             
             return View(pagePlusOrdersPlusOrderLocation);
         }

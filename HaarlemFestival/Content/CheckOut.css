@@ -163,8 +163,12 @@
     display: block;
     width: 100%;
     height: 80%;
-    min-height: 32em;
+    
 }
+
+.buttonDiv{
+    height: 4em;
+} 
 
 .LinkerColom {
     width: 25%;

@@ -545,6 +545,7 @@
     <Content Include="Scripts\Chart.bundle.min.js" />
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\Chart.min.js" />
+    <Content Include="Scripts\CheckOut2.js" />
     <Content Include="Scripts\CheckOut3Payment.js" />
     <Content Include="Scripts\FilterOnCuisine.js" />
     <Content Include="Scripts\jquery.datetimepicker.full.js" />

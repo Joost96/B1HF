@@ -36,7 +36,9 @@
                 @*<input type="text" value="@Model.Orders[0].Customer.Country" />*@
             </section>
 
-                <input type="radio" name="Would you like to register?"/>
+                <input id="CheckOut2RegisterCheck" type="checkbox" name="Would you like to register?"/>
+                <label>Would you like to register?</label>
+
 
             <section id="Password" class="LinkerColom">
                 <p class="CheckOut2Label">Password : <label class="Verplicht">*</label></p>
@@ -48,9 +50,10 @@
                 <input id="ConfirmPasswordBox" class = "CheckOut2TBox" type="password" />
             </section>
 
-
-            <button id="Step2ButttonStep1" onclick="location.href = '@Url.Action("Checkout1", "CheckOut")' ">Step 1</button>
-            <button id="Step2ButttonContinue" @*onclick="location.href = '@Url.Action("Checkout3", "CheckOut")'*@  type="submit">Continue</button>
+            <section class="buttonDiv">
+                <button id="Step2ButttonStep1" onclick="location.href = '@Url.Action("Checkout1", "CheckOut")' ">Step 1</button>
+                <button id="Step2ButttonContinue" @*onclick="location.href = '@Url.Action("Checkout3", "CheckOut")'*@ type="submit">Continue</button>
+            </section>
         }
     </section>
 </section>
