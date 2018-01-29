@@ -600,8 +600,12 @@ img.HistoricRouteInfo9 {
 
 #HistoricButtonOrder2 {
     position: relative;
-    top: 373px;
+    top: 372px;
     left: 140px;
+    background-color: limegreen;
+    color: white;
+    border-color: darkslateblue;
+    font-size: 15px;
 }
 
 /* The Modal (background) */
