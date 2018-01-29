@@ -162,5 +162,51 @@
 
 </section>
 
+<section class="row">
+    <section class="col-md-12 sugestionview">
+        <h5>AANPASSEN</h5>
+    </section>
+</section>
 
-
+<section class="row">
+    <section class="col-md-3 sugestionactivities">
+        <img src=@Model.SugestionActivityJazz.ActivityDescriptions[0].ImageUrl style="width:100%; height:250px;" alt="Jazz @Model.SugestionActivityJazz.ActivityDescriptions[0].Title" />
+        <section class="sugestiontitle">@Model.SugestionActivityJazz.Name</section>
+        <section class="sugestiontext">@Model.SugestionActivityJazz.ActivityDescriptions[0].DescriptionText.Substring(0, 170)...</section>
+        <a href="@Url.Action("Index", "Jazz")">
+            <section class="overlay">
+                <section class="text">More info</section>
+            </section>
+        </a>
+    </section>
+    <section class="col-md-3 sugestionactivities">
+        <img src=@Model.SugestionActivityDinner.ActivityDescriptions[0].ImageUrl style="width : 100%; height:250px;" alt="Dinner @Model.SugestionActivityDinner.ActivityDescriptions[0].Title" />
+        <section class="sugestiontitle">@Model.SugestionActivityDinner.Name</section>
+        <section class="sugestiontext">@Model.SugestionActivityDinner.ActivityDescriptions[0].DescriptionText.Substring(0, 170)...</section>
+        <a href="@Url.Action("Restaurant", "Dinner", new { id = Model.SugestionActivityDinner.Id})">
+            <section class="overlay2">
+                <section class="text">More info</section>
+            </section>
+        </a>
+    </section>
+    <section class="col-md-3 sugestionactivities">
+        <img src=@Model.SugestionActivityHistoric.ActivityDescriptions[0].ImageUrl style="width : 100%; height:250px;" alt="Historic @Model.SugestionActivityHistoric.ActivityDescriptions[0].Title" />
+        <section class="sugestiontitle">@Model.SugestionActivityHistoric.Name</section>
+        <section class="sugestiontext">@Model.SugestionActivityHistoric.ActivityDescriptions[0].DescriptionText.Substring(0, 170)...</section>
+        <a href="@Url.Action("Index", "Historic")">
+            <section class="overlay3">
+                <section class="text">More info</section>
+            </section>
+        </a>
+    </section>
+    <section class="col-md-3 sugestionactivities">
+        <img src=@Model.SugestionActivityTalking.ActivityDescriptions[0].ImageUrl style="width : 100%; height:250px;" alt="Talking @Model.SugestionActivityTalking.ActivityDescriptions[0].Title" />
+        <section class="sugestiontitle">@Model.SugestionActivityTalking.Name</section>
+        <section class="sugestiontext">@Model.SugestionActivityTalking.ActivityDescriptions[0].DescriptionText.Substring(0, 170)...</section>
+        <a href="@Url.Action("Index", "Talking")">
+            <section class="overlay4">
+                <section class="text">More info</section>
+            </section>
+        </a>
+    </section>
+</section>

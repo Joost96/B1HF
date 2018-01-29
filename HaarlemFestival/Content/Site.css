@@ -233,6 +233,10 @@ footer {
     color: white;
 }
 
+.contact_header {
+    color: #333;
+}
+
 .contact_info {
     float: left;
     background-color: #CC6666;
@@ -285,6 +289,7 @@ footer {
 
 .contact_name_label {
     padding-top: 20px;
+    margin-right : 24px;
 }
 
 .contact_name_field {
@@ -656,6 +661,10 @@ img.HistoricRouteInfo9 {
 
 .jazz_page_activiteit_section{
     margin-bottom : 15px;
+    border-width : 1px;
+    border-color : black;
+    border-style : solid;
+    padding-top : 20px;
 }
 
 .jazz_page_info_box {
@@ -700,12 +709,11 @@ img.HistoricRouteInfo9 {
 
 .jazz_page_program_days {
     border-width: 1px;
-    border-top-style: inset;
-    border-bottom-style: inset;
-    border-top-color: black;
-    border-bottom-color: black;
+    border-top-style:solid;
+    border-bottom-style: solid;
     margin-top: 2%;
     padding: 15px 0;
+    border-color: black;
 }
 
 .jazz_page_program_days_header {
@@ -720,16 +728,44 @@ img.HistoricRouteInfo9 {
     margin-right: 4%;
 }
 
+.jazz_page_program_thursday_active {
+    margin-right: 4%;
+    background-color: #F8473E;
+    color: white;
+    opacity: 0.5;
+}
+
 .jazz_page_program_friday {
     margin-right: 4%;
+}
+
+.jazz_page_program_friday_active {
+    margin-right: 4%;
+    background-color: #F8473E;
+    color: white;
+    opacity: 0.5;
 }
 
 .jazz_page_program_saturday {
     margin-right: 4%;
 }
 
+.jazz_page_program_saturday_active {
+    margin-right: 4%;
+    background-color: #F8473E;
+    color: white;
+    opacity: 0.5;
+}
+
 .jazz_page_program_sunday {
     margin-right: 4%;
+}
+
+.jazz_page_program_sunday_active {
+    margin-right: 4%;
+    background-color: #F8473E;
+    color: white;
+    opacity : 0.5;
 }
 
 .jazz_page_program_passpartout {
@@ -755,10 +791,14 @@ img.HistoricRouteInfo9 {
     border-bottom-color: black;
 }
 
-.jazz_page_buybtn {
-    float: right;
+.jazz_pagina_header{
+    padding-left : 30px;
 }
 
+.jazz_activity_btns{
+    padding-left : 50px;
+    padding-top : 10px;
+}
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -780,7 +820,7 @@ img.HistoricRouteInfo9 {
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 25%;
 }
 
 /* The Close Button */
@@ -798,8 +838,7 @@ img.HistoricRouteInfo9 {
 
 }
 
-/* The Modal validation (background) */
-.validationOrderModalClass {
+.infomodal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -814,28 +853,29 @@ img.HistoricRouteInfo9 {
 }
 
 /* Modal Content */
-.validationOrderModal-content {
+.infomodal-content {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 25%;
 }
 
 /* The Close Button */
-.validationOrderModalClose {
+.infomodalclose {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.validationOrderModalClose:hover,
-.validationOrderModalClose:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
+    .infomodalclose:hover, .infomodalclose:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+
 
 /* The Modal (background) */
 .passPartoutModalClass {
@@ -858,7 +898,7 @@ img.HistoricRouteInfo9 {
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 20%;
 }
 
 /* The Close Button */
@@ -900,7 +940,7 @@ img.HistoricRouteInfo9 {
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 26%;
 }
 
 /* The Close Button */
@@ -918,4 +958,123 @@ img.HistoricRouteInfo9 {
     }
 
 
+.sugestionactivities {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin-top : 20px;
+    max-width : 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 263px;
+    opacity: 0;
+    background-color: black;
+}
+
+.sugestionactivities:hover .overlay {
+    opacity: 0.5;
+}
+
+.overlay2 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 263px;
+    opacity: 0;
+    background-color: black;
+}
+
+.sugestionactivities:hover .overlay2 {
+    opacity: 0.5;
+}
+
+.overlay3 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 263px;
+    opacity: 0;
+    background-color: black;
+}
+
+.sugestionactivities:hover .overlay3 {
+    opacity: 0.5;
+}
+
+.overlay4 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 263px;
+    opacity: 0;
+    background-color: black;
+}
+
+.sugestionactivities:hover .overlay4 {
+    opacity: 0.5;
+}
+
+.text {
+    color: white;
+    font-size: 18px;
+    font-weight : 600;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.sugestiontitle {
+    position: absolute;
+    top: 0px;
+    width: 263px;
+    background-color: #F8473E;
+    font-weight: 600;
+    font-size : 16px;
+    height : 30px;
+    padding-top : 4px;
+}
+
+.sugestiontext {
+    position: absolute;
+    bottom: 0px;
+    background-color: #F8473E;
+    width: 263px;
+    font-size : 12px;
+    text-align : left;
+    padding-left : 4px;
+    padding-right : 4px;
+}
+
+.sugestionview {
+    background-color: #F8473E;
+    color: white;
+}
+
+.sugestionview h5 {
+    font-weight: 600;
+}
+
+    .sugestionactivities h5 {
+        text-align: center;
+        font-weight: 600;
+    }
+
+.sugestioncentreimg {
+    margin-left : 60px;
+}
+
+.jazz_page_header_text{
+    font-weight : 600;
+}
 

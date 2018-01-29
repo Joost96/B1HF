@@ -13,28 +13,23 @@
     $(".modallocation").text(location);
     $(".modalhall").text(hall);
     $(".modalprice").text(price);
-    $(".modaltime").text(time + " - " + datum);
+    $(".modaltime").text(time + " on " + datum);
 
     $("#myModal_" + id).show();
 
     $("#orderlink_" + id).click(function () {
 
-        
-
         $("#myModal_" + id).hide();
 
-        $("#validationOrderModalId").show();
+        var ordertxt = $(".ordertext").text();
 
         var actionlinkUrl = $("#orderlink_" + id).prop("href");
         var url = actionlinkUrl.replace("xxxx", $("#textBox_" + id).val());
         $("#orderlink_" + id).prop("href", url);
 
-        //setTimeout(function () {
-        //    var actionlinkUrl = $("#orderlink").prop("href");
-        //    var url = actionlinkUrl.replace("xxxx", $("#textBox_" + id).val());
-        //    $("#orderlink").prop("href", url);
-        //}, 3000);
-
+        setTimeout(function () {
+            alert(ordertxt);
+        }, 100);
     });
 });
 
@@ -47,6 +42,33 @@ $(".close").click(function () {
 $(window).click(function(event) {
     if (event.target.className === "modal") {
         $(".modal").each(function () {
+            $(this).hide();
+        });
+    }
+});
+
+
+
+$(".jazz_page_infobtn").click(function () {
+    var id = $(this).attr("id");
+    var title = $("#jazz_activity_title_" + id).text();
+    var description = $("#jazz_activity_description_" + id).text();
+
+    $(".infomodaltitle").text(title);
+    $(".infomodaldescription").text(description);
+
+    $("#infoModal_" + id).show();
+});
+
+$(".infomodalclose").click(function () {
+    $(".infomodal").each(function () {
+        $(this).hide();
+    });
+});
+
+$(window).click(function (event) {
+    if (event.target.className === "infomodal") {
+        $(".infomodal").each(function () {
             $(this).hide();
         });
     }
@@ -112,6 +134,11 @@ $("#passpartoutorderlink1").click(function () {
     var actionlinkUrl = $("#passpartoutorderlink1").prop("href");
     var url = actionlinkUrl.replace("xxxx", $("#textboxaantal1").val());
     $("#passpartoutorderlink1").prop("href", url);
+
+    var ordertxt = $(".ordertext").text();
+    setTimeout(function () {
+        alert(ordertxt);
+    }, 100);
 });
 
 $(".aantalModalClose1").click(function () {
@@ -130,9 +157,15 @@ $(window).click(function (event) {
 var modal3 = document.getElementById('aantalModalId2');
 
 $("#passpartoutorderlink2").click(function () {
+
     var actionlinkUrl = $("#passpartoutorderlink2").prop("href");
     var url = actionlinkUrl.replace("xxxx", $("#textboxaantal2").val());
     $("#passpartoutorderlink2").prop("href", url);
+
+    var ordertxt = $(".ordertext").text();
+    setTimeout(function () {
+        alert(ordertxt);
+    }, 100);
 });
 
 $(".aantalModalClose1").click(function () {
@@ -154,6 +187,11 @@ $("#passpartoutorderlink3").click(function () {
     var actionlinkUrl = $("#passpartoutorderlink3").prop("href");
     var url = actionlinkUrl.replace("xxxx", $("#textboxaantal3").val());
     $("#passpartoutorderlink3").prop("href", url);
+
+    var ordertxt = $(".ordertext").text();
+    setTimeout(function () {
+        alert(ordertxt);
+    }, 100);
 });
 
 $(".aantalModalClose1").click(function () {
@@ -175,6 +213,11 @@ $("#passpartoutorderlink4").click(function () {
     var actionlinkUrl = $("#passpartoutorderlink4").prop("href");
     var url = actionlinkUrl.replace("xxxx", $("#textboxaantal4").val());
     $("#passpartoutorderlink4").prop("href", url);
+
+    var ordertxt = $(".ordertext").text();
+    setTimeout(function () {
+        alert(ordertxt);
+    }, 100);
 });
 
 $(".aantalModalClose1").click(function () {

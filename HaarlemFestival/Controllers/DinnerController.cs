@@ -17,7 +17,7 @@ namespace HaarlemFestival.Controllers
     {
         private DBHF db;
         private IPageRepository pageRepository;
-        private IActivityRepository activityRepository;
+        private static IActivityRepository activityRepository;
         private ICuisineRepository cuisineRepository;
         private ITicketRepository ticketRepository;
          
@@ -33,6 +33,7 @@ namespace HaarlemFestival.Controllers
         // GET: Dinner
         public ActionResult Index()
         {
+            Language language = (Language)Session["language"];
             PagePlusActivitiesPlusCuisine pagePlusActivitiesPlusCuisine = new PagePlusActivitiesPlusCuisine();
 
             Page page = pageRepository.GetPage("Dinner", Language.Eng);
@@ -49,12 +50,18 @@ namespace HaarlemFestival.Controllers
             pagePlusActivitiesPlusCuisine.Page = page;
             pagePlusActivitiesPlusCuisine.Activities = activities.ToList();
 
+            pagePlusActivitiesPlusCuisine.SugestionActivityJazz = SuggestieActivity(EventType.Jazz, language);
+            pagePlusActivitiesPlusCuisine.SugestionActivityDinner = SuggestieActivity(EventType.Dinner, language);
+            pagePlusActivitiesPlusCuisine.SugestionActivityHistoric = SuggestieActivity(EventType.Historic, language);
+            pagePlusActivitiesPlusCuisine.SugestionActivityTalking = SuggestieActivity(EventType.Talking, language);
+
             return View(pagePlusActivitiesPlusCuisine);
         }
 
         // GET: Dinner/Details/5
         public ActionResult Restaurant(int? id)
         {
+            Language language = (Language)Session["language"];
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -77,6 +84,11 @@ namespace HaarlemFestival.Controllers
             {
                 return HttpNotFound();
             }
+
+            pagePlusActivityPlusOrder.SugestionActivityJazz = SuggestieActivity(EventType.Jazz, language);
+            pagePlusActivityPlusOrder.SugestionActivityDinner = SuggestieActivity(EventType.Dinner, language);
+            pagePlusActivityPlusOrder.SugestionActivityHistoric = SuggestieActivity(EventType.Historic, language);
+            pagePlusActivityPlusOrder.SugestionActivityTalking = SuggestieActivity(EventType.Talking, language);
 
             return View(pagePlusActivityPlusOrder);
         }
@@ -129,6 +141,28 @@ namespace HaarlemFestival.Controllers
 
             BasketHelper.getInstance().checkBasket(HttpContext);
             return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
+        }
+
+        public static Activity SuggestieActivity(EventType type, Language language)
+        {
+            IEnumerable<Activity> activities = activityRepository.GetActivities(type, language);
+
+            int tts = 0;
+            Activity activity = new Activity();
+
+            foreach (var act in activities)
+            {
+                foreach (var slot in act.Timeslots)
+                {
+                    if (slot.TotalSeats > tts)
+                    {
+                        activity = act;
+                        tts = slot.TotalSeats;
+                    }
+                }
+            }
+
+            return activity;
         }
     }
 }

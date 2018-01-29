@@ -10,9 +10,9 @@
 
 <section class="jazz_page_section">
     <section class="row jazz_page_info">
-        <section class="col-md-6">
-            <h3>@Model.Page.PageDescriptions[0].Title</h3>
-            <hr/>
+        <section class="col-md-6 jazz_pagina_header">
+            <h3 class="jazz_page_header_text">@Model.Page.PageDescriptions[0].Title</h3>
+            <hr style="border-color : black;"/>
             <p>@Model.Page.PageDescriptions[0].DescriptionText</p>
         </section>
         <section class="col-md-3 jazz_page_info_box">
@@ -27,21 +27,41 @@
 
     <section class="jazz_page_program_days">
         <h3 class="jazz_page_program_days_header">@Model.Page.PageDescriptions[3].Title</h3>
-
-        @Html.ActionLink(Model.Page.PageDescriptions[4].Title, "Index", "Jazz", new { id = 1}, new { @class = "btn btn-default jazz_page_program_thursday" })
-        @Html.ActionLink(Model.Page.PageDescriptions[5].Title, "Index", "Jazz", new { id = 2 }, new { @class = "btn btn-default jazz_page_program_friday" })
-        @Html.ActionLink(Model.Page.PageDescriptions[6].Title, "Index", "Jazz", new { id = 3 }, new { @class = "btn btn-default jazz_page_program_saturday" })
-        @Html.ActionLink(Model.Page.PageDescriptions[7].Title, "Index", "Jazz", new { id = 4 }, new { @class = "btn btn-default jazz_page_program_sunday" })
-
-        <button name="passpartout" type="submit" class="btn btn-default jazz_page_program_passpartout" tabindex="5">@Model.Page.PageDescriptions[8].Title</button>
+        @switch (Model.Activities[0].Timeslots[0].StartTime.ToString("dd/MM/yyyy"))
+        {
+            case "26-07-2018":
+                @Html.ActionLink(Model.Page.PageDescriptions[4].Title, "Index", "Jazz", new { id = 1 }, new { @class = "btn btn-default jazz_page_program_thursday_active" })
+                @Html.ActionLink(Model.Page.PageDescriptions[5].Title, "Index", "Jazz", new { id = 2 }, new { @class = "btn btn-default jazz_page_program_friday" })
+                @Html.ActionLink(Model.Page.PageDescriptions[6].Title, "Index", "Jazz", new { id = 3 }, new { @class = "btn btn-default jazz_page_program_saturday" })
+                @Html.ActionLink(Model.Page.PageDescriptions[7].Title, "Index", "Jazz", new { id = 4 }, new { @class = "btn btn-default jazz_page_program_sunday" })
+                break;
+            case "27-07-2018":
+                @Html.ActionLink(Model.Page.PageDescriptions[4].Title, "Index", "Jazz", new { id = 1 }, new { @class = "btn btn-default jazz_page_program_thursday" })
+                @Html.ActionLink(Model.Page.PageDescriptions[5].Title, "Index", "Jazz", new { id = 2 }, new { @class = "btn btn-default jazz_page_program_friday_active" })
+                @Html.ActionLink(Model.Page.PageDescriptions[6].Title, "Index", "Jazz", new { id = 3 }, new { @class = "btn btn-default jazz_page_program_saturday" })
+                @Html.ActionLink(Model.Page.PageDescriptions[7].Title, "Index", "Jazz", new { id = 4 }, new { @class = "btn btn-default jazz_page_program_sunday" })
+                break;
+            case "28-07-2018":
+                @Html.ActionLink(Model.Page.PageDescriptions[4].Title, "Index", "Jazz", new { id = 1 }, new { @class = "btn btn-default jazz_page_program_thursday" })
+                @Html.ActionLink(Model.Page.PageDescriptions[5].Title, "Index", "Jazz", new { id = 2 }, new { @class = "btn btn-default jazz_page_program_friday" })
+                @Html.ActionLink(Model.Page.PageDescriptions[6].Title, "Index", "Jazz", new { id = 3 }, new { @class = "btn btn-default jazz_page_program_saturday_active" })
+                @Html.ActionLink(Model.Page.PageDescriptions[7].Title, "Index", "Jazz", new { id = 4 }, new { @class = "btn btn-default jazz_page_program_sunday" })
+                break;
+            case "29-07-2018":
+                @Html.ActionLink(Model.Page.PageDescriptions[4].Title, "Index", "Jazz", new { id = 1 }, new { @class = "btn btn-default jazz_page_program_thursday" })
+                @Html.ActionLink(Model.Page.PageDescriptions[5].Title, "Index", "Jazz", new { id = 2 }, new { @class = "btn btn-default jazz_page_program_friday" })
+                @Html.ActionLink(Model.Page.PageDescriptions[6].Title, "Index", "Jazz", new { id = 3 }, new { @class = "btn btn-default jazz_page_program_saturday" })
+                @Html.ActionLink(Model.Page.PageDescriptions[7].Title, "Index", "Jazz", new { id = 4 }, new { @class = "btn btn-default jazz_page_program_sunday_active" })
+                break;
+        }
+        <button name="passpartout" type="submit" class="btn btn-success jazz_page_program_passpartout" tabindex="5">@Model.Page.PageDescriptions[8].Title</button>
     </section>
 
     <section class="jazz_page_inhoud">
         @for (int i = 0; i < Model.Activities.Count; i++)
         {
-            <!-- The Modal -->
+            <!-- The buy ticket Modal -->
             <section id="myModal_@Model.Activities[i].Id" class="modal">
-                <!-- Modal content -->
                 <section class="modal-content">
                     <span class="close">&times;</span>
                     <p class="modaltitle"></p>
@@ -52,13 +72,27 @@
                     <p class="modaltime"></p>
                     <label>@Model.Page.PageDescriptions[15].Title</label>
                     <input id="textBox_@Model.Activities[i].Id" type="text" required />
-                    <a href="@Url.Action("OrderJazz", "CheckOut", new { id = Model.Activities[i].Id, aantal = "xxxx"})" id="orderlink_@Model.Activities[i].Id">@Model.Page.PageDescriptions[15].DescriptionText</a>
+                    <a class="btn btn-success" href="@Url.Action("OrderJazz", "CheckOut", new { id = Model.Activities[i].Id, aantal = "xxxx"})" id="orderlink_@Model.Activities[i].Id">@Model.Page.PageDescriptions[15].DescriptionText</a>
+                </section>
+            </section>
+
+            <!-- The more info Modal -->
+            <section id="infoModal_@Model.Activities[i].Id" class="infomodal">
+                <section class="infomodal-content">
+                    <span class="infomodalclose">&times;</span>
+                    <p class="infomodaltitle"></p>
+                    <p class="infomodaldescription"></p>
+                    @if (Model.Activities[i].Timeslots[0].StartTime.ToString("dd/MM/yyyy") == "29-07-2018")
+                    {
+                        <p class="infomodalprice">@Model.Page.PageDescriptions[22].Title</p>
+                    }
+                    
                 </section>
             </section>
 
             <section class="col-md-4 jazz_page_activiteit_section">
                 <section>
-                    <img src=@Model.Activities[i].ActivityDescriptions[0].ImageUrl width="320" height="280" alt="Jazz @Model.Activities[i].ActivityDescriptions[0].Title" />
+                    <img src=@Model.Activities[i].ActivityDescriptions[0].ImageUrl width="340" height="280" alt="Jazz @Model.Activities[i].ActivityDescriptions[0].Title" />
                 </section>
                 <section>
                     <section>
@@ -80,14 +114,20 @@
                                 <p id="jazz_activity_time_@Model.Activities[i].Id" class="jazz_activiteit_time">@Model.Page.PageDescriptions[12].Title @Model.Activities[i].Timeslots[0].StartTime.ToString("HH:mm") - @Model.Activities[i].Timeslots[0].EndTime.ToString("HH:mm")</p>
                                 <p id="jazz_activity_datum_@Model.Activities[i].Id" style="display:none">@Model.Activities[i].Timeslots[0].StartTime.ToString("dd/MM/yyyy")</p>
                             </section>
-                            <section class="col-md-6">
+                            
+                            <section class="col-md-6 jazz_activity_btns">
+                                <section>
+                                    <button id=@Model.Activities[i].Id class="btn btn-default jazz_page_infobtn" type="button">@Model.Page.PageDescriptions[14].Title</button>
+                                </section>
                                 @if (Model.Activities[i].Timeslots[0].StartTime.ToString("dd/MM/yyyy") != "29-07-2018")
                                 {
-                                    <button class="jazz_page_buybtn" type="button">@Model.Page.PageDescriptions[14].Title</button>
-                                    <br />
-                                    <button id=@Model.Activities[i].Id class="jazz_page_buybtn" type="button">@Model.Page.PageDescriptions[13].Title</button>
+                                        <br />
+                                        <section>
+                                            <button id=@Model.Activities[i].Id class="btn btn-success jazz_page_buybtn" type="button">@Model.Page.PageDescriptions[13].Title</button>
+                                        </section>
                                 }
                             </section>
+
                         </section>
                     </section>
                 </section>
@@ -96,14 +136,7 @@
 
     </section>
 
-        <!-- The ValidationBox Modal -->
-        <section id="validationOrderModalId" class="validationOrderModalClass">
-            <!-- Modal content -->
-            <section class="validationOrderModal-content">
-                <span class="validationOrderModalClose">&times;</span>
-                <h3>Order is placed in the bag.</h3>
-            </section>
-        </section>
+    <p class="ordertext" style="display:none">@Model.Page.PageDescriptions[21].DescriptionText</p>
 
         <!-- The Pass-Partout Modal -->
         <section id="passPartoutModalId" class="passPartoutModalClass">
@@ -125,7 +158,7 @@
                 <h3>@Model.Page.PageDescriptions[16].Title</h3>
                 <label>@Model.Page.PageDescriptions[15].Title</label>
                 <input id="textboxaantal1" type="text" required>
-                <a class="btn btn-default" href="@Url.Action("OrderJazz", "CheckOut", new { id = 52, aantal = "xxxx"})" id="passpartoutorderlink1">@Model.Page.PageDescriptions[20].Title</a>
+                <a class="btn btn-success" href="@Url.Action("OrderJazz", "CheckOut", new { id = 52, aantal = "xxxx"})" id="passpartoutorderlink1">@Model.Page.PageDescriptions[20].Title</a>
             </section>
         </section>
 
@@ -137,7 +170,7 @@
                 <h3>@Model.Page.PageDescriptions[17].Title</h3>
                 <label>@Model.Page.PageDescriptions[15].Title</label>
                 <input id="textboxaantal2" type="text" required>
-                <a class="btn btn-default" href="@Url.Action("OrderJazz", "CheckOut", new { id = 53, aantal = "xxxx"})" id="passpartoutorderlink2">@Model.Page.PageDescriptions[20].Title</a>
+                <a class="btn btn-success" href="@Url.Action("OrderJazz", "CheckOut", new { id = 53, aantal = "xxxx"})" id="passpartoutorderlink2">@Model.Page.PageDescriptions[20].Title</a>
             </section>
         </section>
 
@@ -149,7 +182,7 @@
                 <h3>@Model.Page.PageDescriptions[18].Title</h3>
                 <label>@Model.Page.PageDescriptions[15].Title</label>
                 <input id="textboxaantal3" type="text" required>
-                <a class="btn btn-default" href="@Url.Action("OrderJazz", "CheckOut", new { id = 56, aantal = "xxxx"})" id="passpartoutorderlink3">@Model.Page.PageDescriptions[20].Title</a>
+                <a class="btn btn-success" href="@Url.Action("OrderJazz", "CheckOut", new { id = 56, aantal = "xxxx"})" id="passpartoutorderlink3">@Model.Page.PageDescriptions[20].Title</a>
             </section>
         </section>
 
@@ -161,11 +194,56 @@
                 <h3>@Model.Page.PageDescriptions[19].Title</h3>
                 <label>@Model.Page.PageDescriptions[15].Title</label>
                 <input id="textboxaantal4" type="text" required>
-                <a class="btn btn-default" href="@Url.Action("OrderJazz", "CheckOut", new { id = 57, aantal = "xxxx"})" id="passpartoutorderlink4">@Model.Page.PageDescriptions[20].Title</a>
+                <a class="btn btn-success" href="@Url.Action("OrderJazz", "CheckOut", new { id = 57, aantal = "xxxx"})" id="passpartoutorderlink4">@Model.Page.PageDescriptions[20].Title</a>
             </section>
         </section>
-
-
-    
 </section>
 
+<section class="row">
+    <section class="col-md-12 sugestionview">
+        <h5>@Model.Page.PageDescriptions[23].Title</h5>
+    </section>
+</section>
+
+<section class="row">
+    <section class="col-md-3 sugestionactivities">
+        <img src=@Model.SugestionActivityJazz.ActivityDescriptions[0].ImageUrl style="width:100%; height:250px;" alt="Jazz @Model.SugestionActivityJazz.ActivityDescriptions[0].Title" />
+        <section class="sugestiontitle">@Model.SugestionActivityJazz.Name</section>
+        <section class="sugestiontext">@Model.SugestionActivityJazz.ActivityDescriptions[0].DescriptionText.Substring(0, 170)...</section>
+        <a href="@Url.Action("Index", "Jazz")">
+            <section class="overlay">
+                <section class="text">More info</section>
+            </section>
+        </a>
+    </section>
+    <section class="col-md-3 sugestionactivities">
+        <img src=@Model.SugestionActivityDinner.ActivityDescriptions[0].ImageUrl style="width : 100%; height:250px;" alt="Dinner @Model.SugestionActivityDinner.ActivityDescriptions[0].Title" />
+        <section class="sugestiontitle">@Model.SugestionActivityDinner.Name</section>
+        <section class="sugestiontext">@Model.SugestionActivityDinner.ActivityDescriptions[0].DescriptionText.Substring(0, 170)...</section>
+        <a href="@Url.Action("Restaurant", "Dinner", new { id = Model.SugestionActivityDinner.Id})">
+            <section class="overlay2">
+                <section class="text">More info</section>
+            </section>
+        </a>
+</section>
+    <section class="col-md-3 sugestionactivities">
+        <img src=@Model.SugestionActivityHistoric.ActivityDescriptions[0].ImageUrl style="width : 100%; height:250px;" alt="Historic @Model.SugestionActivityHistoric.ActivityDescriptions[0].Title" />
+        <section class="sugestiontitle">@Model.SugestionActivityHistoric.Name</section>
+        <section class="sugestiontext">@Model.SugestionActivityHistoric.ActivityDescriptions[0].DescriptionText.Substring(0, 170)...</section>
+        <a href="@Url.Action("Index", "Historic")">
+            <section class="overlay3">
+                <section class="text">More info</section>
+            </section>
+        </a>
+</section>
+    <section class="col-md-3 sugestionactivities">
+        <img src=@Model.SugestionActivityTalking.ActivityDescriptions[0].ImageUrl style="width : 100%; height:250px;" alt="Talking @Model.SugestionActivityTalking.ActivityDescriptions[0].Title" />
+        <section class="sugestiontitle">@Model.SugestionActivityTalking.Name</section>
+        <section class="sugestiontext">@Model.SugestionActivityTalking.ActivityDescriptions[0].DescriptionText.Substring(0, 170)...</section>
+        <a href="@Url.Action("Index", "Talking")">
+            <section class="overlay4">
+                <section class="text">More info</section>
+            </section>
+        </a>
+</section>
+</section>

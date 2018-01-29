@@ -12,7 +12,7 @@ namespace HaarlemFestival.Controllers
     {
         private DBHF db;
         private IPageRepository pageRepo;
-        private IActivityRepository activityRepo;
+        private static IActivityRepository activityRepo;
         
 
         public JazzController()
@@ -46,18 +46,41 @@ namespace HaarlemFestival.Controllers
                 }
             }
 
-            
-
             PagePlusActivities PageDescriptions = new PagePlusActivities();
             Page page = pageRepo.GetPage("Jazz", language); 
-            List<Activity> activities = activityRepo.GetActivities(EventType.Jazz, language, dDay).ToList();
-
-            activities.Sort((x,y) => DateTime.Compare(x.Timeslots[0].StartTime,y.Timeslots[0].StartTime));
+            List<Activity> activities = activityRepo.GetActivities(EventType.Jazz, language, dDay).ToList();    
 
             PageDescriptions.Page = page;
             PageDescriptions.Activities = activities.ToList();
 
+            PageDescriptions.SugestionActivityJazz = SuggestieActivity(EventType.Jazz, language);
+            PageDescriptions.SugestionActivityDinner = SuggestieActivity(EventType.Dinner, language);
+            PageDescriptions.SugestionActivityHistoric = SuggestieActivity(EventType.Historic, language);
+            PageDescriptions.SugestionActivityTalking = SuggestieActivity(EventType.Talking, language);
+
             return View(PageDescriptions);
+        }
+
+        public static Activity SuggestieActivity(EventType type, Language language)
+        {
+            IEnumerable<Activity> activities = activityRepo.GetActivities(type,language);
+
+            int tts = 0;
+            Activity activity = new Activity();
+
+            foreach (var act in activities)
+            {
+                foreach (var slot in act.Timeslots)
+                {
+                    if (slot.TotalSeats > tts)
+                    {
+                        activity = act;
+                        tts = slot.TotalSeats;
+                    }
+                }
+            }
+            
+            return activity;
         }
     }
 }
