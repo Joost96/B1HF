@@ -85,25 +85,25 @@ var modal1 = document.getElementById('passPartoutModalId');
 $(".jazz_page_program_passpartout").click(function () {
     $("#passPartoutModalId").show();
 
-    $("#passpartoutlink1").click(function (event) {
+    $("#passpartoutlink1").click(function () {
         $("#passPartoutModalId").hide();
         $("#aantalModalId1").show();
 
     });
 
-    $("#passpartoutlink2").click(function (event) {
+    $("#passpartoutlink2").click(function () {
         $("#passPartoutModalId").hide();
         $("#aantalModalId2").show();
 
     });
 
-    $("#passpartoutlink3").click(function (event) {
+    $("#passpartoutlink3").click(function () {
         $("#passPartoutModalId").hide();
         $("#aantalModalId3").show();
 
     });
 
-    $("#passpartoutlink4").click(function (event) {
+    $("#passpartoutlink4").click(function () {
         $("#passPartoutModalId").hide();
         $("#aantalModalId4").show();
 
