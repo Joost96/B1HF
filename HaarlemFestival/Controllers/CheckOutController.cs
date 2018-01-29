@@ -131,7 +131,10 @@ namespace HaarlemFestival.Controllers
             PagePlusOrderPlusLogin ppp = new PagePlusOrderPlusLogin();
 
             Order order = (Order)Session["order"];
-
+            foreach (var item in order.OrderHasTickets)
+            {
+                ppp.TotalOrderPrice += item.TotalPrice;
+            }
             ppp.Orders.Add(order);
 
             return View(ppp);
@@ -141,11 +144,12 @@ namespace HaarlemFestival.Controllers
         public ActionResult Checkout2(PagePlusOrderPlusLogin model)
         {
             
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+            //{
                 Account checkAccount = accountRepository.GetAccount(model.Email);
                 if (checkAccount == null)
                 {
+
                     Account account = new Customer(model.Orders[0].Customer.Email, model.Orders[0].Customer.FirstName, model.Orders[0].Customer.LastName, model.Orders[0].Customer.Password, model.Orders[0].Customer.Country);
                     accountRepository.Register(account);
 
@@ -164,8 +168,8 @@ namespace HaarlemFestival.Controllers
                 {
                     ModelState.AddModelError("register-error", "The email is already taken");
                 }
-            }
-            return View(model);
+            
+            return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
         }
 
         public ActionResult CheckOut3()
@@ -175,7 +179,12 @@ namespace HaarlemFestival.Controllers
             order.Date = DateTime.Now;
 
             ppp.Orders.Add(order);
-            
+
+            foreach (var item in order.OrderHasTickets)
+            {
+                ppp.TotalOrderPrice += item.TotalPrice;
+            }
+
             return View(ppp);
         }
         
@@ -190,6 +199,9 @@ namespace HaarlemFestival.Controllers
 
             Session["order"] = order;
 
+
+
+
             return RedirectToAction("Checkout4", "CheckOut");
         }
         
@@ -199,6 +211,11 @@ namespace HaarlemFestival.Controllers
             PagePlusOrderPlusLogin model = new PagePlusOrderPlusLogin();
             Order order = (Order)Session["order"];
             model.Orders.Add(order);
+
+            foreach (var item in order.OrderHasTickets)
+            {
+                model.TotalOrderPrice += item.TotalPrice;
+            }
 
             if (order.PaymentMethod != null)
                 Session["order"] = null;

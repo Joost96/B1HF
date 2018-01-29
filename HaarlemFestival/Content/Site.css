@@ -1045,7 +1045,7 @@ img.HistoricRouteInfo9 {
 
 .sugestiontitle {
     position: absolute;
-    top: 0px;
+    top: 0;
     width: 263px;
     background-color: #F8473E;
     font-weight: 600;
@@ -1056,7 +1056,7 @@ img.HistoricRouteInfo9 {
 
 .sugestiontext {
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     background-color: #F8473E;
     width: 263px;
     font-size : 12px;
