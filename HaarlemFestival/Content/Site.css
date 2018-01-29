@@ -354,8 +354,6 @@ footer {
 
 .HistoricRoute h2 {
     text-align: center;
-    display: inline;
-    margin-left: 412px;
 }
 
 .HistoricRoute p {
@@ -663,6 +661,10 @@ img.HistoricRouteInfo9 {
 
 #ValueHistoric{
     color: red;
+}
+
+#ordertxt{
+    display: none;
 }
 /*-------------------------------JAZZ---------------------------------*/
 .jazz_page_inhoud{
