@@ -31,7 +31,7 @@ namespace HaarlemFestival.Controllers
         // GET: Talking
         public ActionResult Index()
         {
-            Language language = (Language)Session["language"];
+            language = (Language)Session["language"];
 
             PpApOpQ model = new PpApOpQ();
             

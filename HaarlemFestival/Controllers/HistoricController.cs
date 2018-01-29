@@ -68,7 +68,7 @@ namespace HaarlemFestival.Controllers
 
         public static Activity SuggestieActivity(EventType type, Language language)
         {
-            IEnumerable<Activity> activities = activityRepo.GetActivities(type, language);
+            IEnumerable<Activity> activities = activityRepository.GetActivities(type, language);
 
             int tts = 100;
             Activity activity = new Activity();
