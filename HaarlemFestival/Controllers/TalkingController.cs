@@ -13,7 +13,7 @@ namespace HaarlemFestival.Controllers
     {
         private DBHF db;
         private IPageRepository pageRepo;
-        private IActivityRepository activityRepo;
+        private static IActivityRepository activityRepo;
         private IQuestionRepository questionRepository;
         private ITicketRepository ticketRepository;
         private Language language;
@@ -42,6 +42,11 @@ namespace HaarlemFestival.Controllers
 
             model.Page = page;
             model.Activities = activities.ToList();
+
+            model.SugestionActivityJazz = SuggestieActivity(EventType.Jazz, language);
+            model.SugestionActivityDinner = SuggestieActivity(EventType.Dinner, language);
+            model.SugestionActivityHistoric = SuggestieActivity(EventType.Historic, language);
+            model.SugestionActivityTalking = SuggestieActivity(EventType.Talking, language);
 
             return View(model);
         }
@@ -78,6 +83,28 @@ namespace HaarlemFestival.Controllers
             BasketHelper.getInstance().checkBasket(HttpContext);
 
             return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
+        }
+
+        public static Activity SuggestieActivity(EventType type, Language language)
+        {
+            IEnumerable<Activity> activities = activityRepo.GetActivities(type, language);
+
+            int tts = 100;
+            Activity activity = new Activity();
+
+            foreach (var act in activities)
+            {
+                foreach (var slot in act.Timeslots)
+                {
+                    if (slot.OccupiedSeats < tts)
+                    {
+                        activity = act;
+                        tts = slot.TotalSeats;
+                    }
+                }
+            }
+
+            return activity;
         }
     }
 }

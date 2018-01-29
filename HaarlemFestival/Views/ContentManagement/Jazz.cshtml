@@ -169,19 +169,19 @@
                         <p class="adminInfo">*Click the image to change it.</p>
                     </section>
 
-                    <section id="accordion" class="col-md-12">
+                    <section id="accordion-@Model.Activities[i].Id" class="col-md-12">
                         @for (int j = 0; j < Model.Activities[i].Timeslots.Count; j++)
                         {
                             <div class="panel col-md-12">
                                 <div class="panel-header" id="@Html.Raw("act"+i+"time"+j)-header">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#@Html.Raw("act"+i+"time"+j)-body">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-@Model.Activities[i].Id" href="#@Html.Raw("act"+i+"time"+j)-body">
                                             <span class="col-md-2">@Model.Activities[i].Timeslots[j].StartTime.DayOfWeek</span> @Model.Activities[i].Timeslots[j].StartTime.ToString("HH:mm") - @Model.Activities[i].Timeslots[j].EndTime.ToString("HH:mm")
                                         </a>
                                     </h4>
                                 </div>
 
-                                <div id="@Html.Raw("act"+i+"time"+j)-body" class="panel-collapse collapse" aria-labelledby="@Html.Raw("act"+i+"time"+j)-header" data-parent="#accordion">
+                                <div id="@Html.Raw("act"+i+"time"+j)-body" class="panel-collapse collapse" aria-labelledby="@Html.Raw("act"+i+"time"+j)-header" data-parent="#accordion-@Model.Activities[i].Id">
                                     <div class="panel-body">
                                         @Html.HiddenFor(model => Model.Activities[i].Timeslots[j].Activity_Id)
                                         @Html.HiddenFor(model => Model.Activities[i].Timeslots[j].OccupiedSeats)

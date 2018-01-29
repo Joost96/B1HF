@@ -13,7 +13,7 @@ namespace HaarlemFestival.Controllers
     {
         private DBHF db;
         private IPageRepository pageRepository;
-        private IActivityRepository activityRepository;
+        private static IActivityRepository activityRepository;
         private ITicketRepository ticketRepository;
 
         public HistoricController()
@@ -27,6 +27,7 @@ namespace HaarlemFestival.Controllers
         // GET: Historic
         public ActionResult Index()
         {
+            Language language = (Language)Session["language"];
             PpApOpQ pagePlusActivities = new PpApOpQ();
 
             Page page = pageRepository.GetPage("Historic", (Language)Session["language"]);
@@ -35,6 +36,11 @@ namespace HaarlemFestival.Controllers
 
             pagePlusActivities.Page = page;
             pagePlusActivities.Activities = activities.ToList();
+
+            pagePlusActivities.SugestionActivityJazz = SuggestieActivity(EventType.Jazz, language);
+            pagePlusActivities.SugestionActivityDinner = SuggestieActivity(EventType.Dinner, language);
+            pagePlusActivities.SugestionActivityHistoric = SuggestieActivity(EventType.Historic, language);
+            pagePlusActivities.SugestionActivityTalking = SuggestieActivity(EventType.Talking, language);
 
             return View(pagePlusActivities);
         }
@@ -58,6 +64,28 @@ namespace HaarlemFestival.Controllers
 
             BasketHelper.getInstance().checkBasket(HttpContext);
             return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
+        }
+
+        public static Activity SuggestieActivity(EventType type, Language language)
+        {
+            IEnumerable<Activity> activities = activityRepository.GetActivities(type, language);
+
+            int tts = 100;
+            Activity activity = new Activity();
+
+            foreach (var act in activities)
+            {
+                foreach (var slot in act.Timeslots)
+                {
+                    if (slot.OccupiedSeats < tts)
+                    {
+                        activity = act;
+                        tts = slot.TotalSeats;
+                    }
+                }
+            }
+
+            return activity;
         }
     }
 }

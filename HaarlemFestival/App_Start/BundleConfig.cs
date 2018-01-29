@@ -15,6 +15,9 @@ namespace HaarlemFestival
                         "~/Scripts/jquery.datetimepicker.full.js",
                         "~/Scripts/jquery.datetimepicker.min.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/chartjs").Include(
+                        "~/Scripts/Chart*"));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 

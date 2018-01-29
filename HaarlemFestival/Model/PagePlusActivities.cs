@@ -15,5 +15,10 @@ namespace HaarlemFestival.Model
         public Activity Activity { get; set; }
 
         public OrderHasTickets OrderTicket { get; set; }
+
+        public Activity SugestionActivityJazz { get; set; }
+        public Activity SugestionActivityHistoric { get; set; }
+        public Activity SugestionActivityDinner { get; set; }
+        public Activity SugestionActivityTalking { get; set; }
     }
 }
