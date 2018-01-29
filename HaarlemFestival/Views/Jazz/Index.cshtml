@@ -157,7 +157,7 @@
                 <span class="aantalModalClose1">&times;</span>
                 <h3>@Model.Page.PageDescriptions[16].Title</h3>
                 <label>@Model.Page.PageDescriptions[15].Title</label>
-                <input id="textboxaantal1" type="text" required>
+                <input id="textboxaantal1" type="text" required/>
                 <a class="btn btn-success" href="@Url.Action("OrderJazz", "CheckOut", new { id = 52, aantal = "xxxx"})" id="passpartoutorderlink1">@Model.Page.PageDescriptions[20].Title</a>
             </section>
         </section>
@@ -169,7 +169,7 @@
                 <span class="aantalModalClose1">&times;</span>
                 <h3>@Model.Page.PageDescriptions[17].Title</h3>
                 <label>@Model.Page.PageDescriptions[15].Title</label>
-                <input id="textboxaantal2" type="text" required>
+                <input id="textboxaantal2" type="text" required/>
                 <a class="btn btn-success" href="@Url.Action("OrderJazz", "CheckOut", new { id = 53, aantal = "xxxx"})" id="passpartoutorderlink2">@Model.Page.PageDescriptions[20].Title</a>
             </section>
         </section>
@@ -181,7 +181,7 @@
                 <span class="aantalModalClose1">&times;</span>
                 <h3>@Model.Page.PageDescriptions[18].Title</h3>
                 <label>@Model.Page.PageDescriptions[15].Title</label>
-                <input id="textboxaantal3" type="text" required>
+                <input id="textboxaantal3" type="text" required/>
                 <a class="btn btn-success" href="@Url.Action("OrderJazz", "CheckOut", new { id = 56, aantal = "xxxx"})" id="passpartoutorderlink3">@Model.Page.PageDescriptions[20].Title</a>
             </section>
         </section>
@@ -193,7 +193,7 @@
                 <span class="aantalModalClose1">&times;</span>
                 <h3>@Model.Page.PageDescriptions[19].Title</h3>
                 <label>@Model.Page.PageDescriptions[15].Title</label>
-                <input id="textboxaantal4" type="text" required>
+                <input id="textboxaantal4" type="text" required/>
                 <a class="btn btn-success" href="@Url.Action("OrderJazz", "CheckOut", new { id = 57, aantal = "xxxx"})" id="passpartoutorderlink4">@Model.Page.PageDescriptions[20].Title</a>
             </section>
         </section>
@@ -225,7 +225,7 @@
                 <section class="text">More info</section>
             </section>
         </a>
-</section>
+    </section>
     <section class="col-md-3 sugestionactivities">
         <img src=@Model.SugestionActivityHistoric.ActivityDescriptions[0].ImageUrl style="width : 100%; height:250px;" alt="Historic @Model.SugestionActivityHistoric.ActivityDescriptions[0].Title" />
         <section class="sugestiontitle">@Model.SugestionActivityHistoric.Name</section>
@@ -235,7 +235,7 @@
                 <section class="text">More info</section>
             </section>
         </a>
-</section>
+    </section>
     <section class="col-md-3 sugestionactivities">
         <img src=@Model.SugestionActivityTalking.ActivityDescriptions[0].ImageUrl style="width : 100%; height:250px;" alt="Talking @Model.SugestionActivityTalking.ActivityDescriptions[0].Title" />
         <section class="sugestiontitle">@Model.SugestionActivityTalking.Name</section>
@@ -245,5 +245,5 @@
                 <section class="text">More info</section>
             </section>
         </a>
-</section>
+    </section>
 </section>

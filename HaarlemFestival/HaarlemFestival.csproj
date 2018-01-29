@@ -253,6 +253,7 @@
     <Compile Include="Model\PagePlusActivities.cs" />
     <Compile Include="Model\PagePlusActivityPlusOrderDinners.cs" />
     <Compile Include="Model\PagePlusOrder.cs" />
+    <Compile Include="Model\PagePlusOrderPlusCustomer.cs" />
     <Compile Include="Model\PagePlusOrderPlusLogin.cs" />
     <Compile Include="Model\PagePlusOrdersPlusOrderLocation.cs" />
     <Compile Include="Model\PagePlusOrders.cs" />

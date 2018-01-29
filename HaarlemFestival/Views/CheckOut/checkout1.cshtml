@@ -11,7 +11,7 @@
 <section class="CheckOut1">
 
     @Html.ValidationSummary()
-    @using (Html.BeginForm("CheckOut3", "CheckOut", FormMethod.Post, new { @class = "loginForm" }))
+    @using (Html.BeginForm("CheckOut1", "CheckOut", FormMethod.Post, new { @class = "loginForm" }))
     {
         @Html.AntiForgeryToken()
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
