@@ -199,9 +199,6 @@ namespace HaarlemFestival.Controllers
 
             Session["order"] = order;
 
-
-
-
             return RedirectToAction("Checkout4", "CheckOut");
         }
         

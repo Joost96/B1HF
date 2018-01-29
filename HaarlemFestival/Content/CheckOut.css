@@ -220,4 +220,23 @@
 
 .paymentMethods{
     width: 100%;
+    margin: 30px 0;
+}
+.btn_fta{
+    background-color: #1DBF3B;
+    border-color: #1DBF3B;
+    color: white;
+    font-size: 14px;
+    padding: 3px 14px;
+    border-radius: 4px;
+    border-style: solid;
+    margin-top: 10px;
+    margin-left: 42%;
+    margin-right: 50%;
+    margin-bottom: 20px;
+}
+
+.CheckOut4{
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
