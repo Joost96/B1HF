@@ -14,7 +14,7 @@
     <h2 class="AgendaHeader">@Model.Page.Title</h2>
 
     <p class="AgendaIntroText">
-       @Model.Page.PageDescriptions[0].DescriptionText
+        @Model.Page.PageDescriptions[0].DescriptionText
     </p>
 </section>
 
@@ -31,22 +31,22 @@
             <div class="orderItem col-md-2">Start tijd/datum</div>
         </li>
 
-        
+        @foreach (Order order in Model.Orders)
+        {
+            foreach (OrderHasTickets OHT in order.OrderHasTickets)
+            {
 
-        @foreach (Order order in Model.Orders) {
-            foreach (OrderHasTickets OHT in order.OrderHasTickets) {
-                
 
-        <li class="AgendaOrder">
-            <div class="orderItem col-md-4">@OHT.Ticket.TimeSlot.Activity.Name</div>
-            <div class="orderItem col-md-2">@OHT.Ticket.TimeSlot.Activity.Type</div>
-            <div class="orderItem col-md-1">@OHT.Ticket.Price</div>
-            <div class="orderItem col-md-1">@OHT.Amount</div>
-            <div class="orderItem col-md-2">@OHT.TotalPrice</div>
-            <div class="orderItem col-md-2">@OHT.Ticket.TimeSlot.StartTime.ToString("hh:mm dd/MM/yyyy")</div>
-        </li>
-                }
+                <li class="AgendaOrder">
+                    <div class="orderItem col-md-4">@OHT.Ticket.TimeSlot.Activity.Name</div>
+                    <div class="orderItem col-md-2">@OHT.Ticket.TimeSlot.Activity.Type</div>
+                    <div class="orderItem col-md-1">@OHT.Ticket.Price</div>
+                    <div class="orderItem col-md-1">@OHT.Amount</div>
+                    <div class="orderItem col-md-2">@OHT.TotalPrice</div>
+                    <div class="orderItem col-md-2">@OHT.Ticket.TimeSlot.StartTime.ToString("HH:mm dd/MM/yyyy")</div>
+                </li>
             }
+        }
 
 
     </ul>
@@ -60,7 +60,7 @@
         <h2 class="AgendaKopHeader">Agenda</h2>
     </section>
     <section class="AgendaDagen">
-        
+
         <h2 class="Dag1">Thursday <br /> 26-07-2018</h2>
         <h2 class="Dagen">Friday <br /> 27-07-2018</h2>
         <h2 class="Dagen">Saturday <br /> 28-07-2018</h2>
@@ -74,14 +74,15 @@
     <section class="AgendaRaster">
         <img class="AgendaFoto" src="@Model.Page.PageDescriptions[0].ImageUrl" alt="agenda" />
 
-
-        @foreach (Order order in Model.Orders)
+        @if (Model.Orders[0].OrderHasTickets != null)
         {
-            foreach (OrderHasTickets OHT in order.OrderHasTickets)
+            foreach (Order order in Model.Orders)
             {
+                foreach (OrderHasTickets OHT in order.OrderHasTickets)
+                {
 
-                <div class="AgendaItem"
-                     style="
+                    <div class="AgendaItem"
+                         style="
                  position: absolute;
                  left: @Model.orderLoctions.Where(l => l.id == OHT.Ticket_TimeSlot_Activity_Id).SingleOrDefault().left.ToString().Replace(",", ".")%;
                  bottom: @Model.orderLoctions.Where(l => l.id == OHT.Ticket_TimeSlot_Activity_Id).SingleOrDefault().bottom.ToString().Replace(",", ".")%;
@@ -89,14 +90,15 @@
                  z-index: @OHT.Ticket_TimeSlot_Activity_Id;
                  ">
 
-                    <h2 class="AgendaItemEvent">@OHT.Ticket.TimeSlot.Activity.Type</h2>
+                        <h2 class="AgendaItemEvent">@OHT.Ticket.TimeSlot.Activity.Type</h2>
 
-                    <h2 class="AgendaItemAantal">Tickets: @OHT.Amount</h2>
+                        <h2 class="AgendaItemAantal">Tickets: @OHT.Amount</h2>
 
-                    <h2 class="AgendaItemName">@OHT.Ticket.TimeSlot.Activity.Name</h2>
+                        <h2 class="AgendaItemName">@OHT.Ticket.TimeSlot.Activity.Name</h2>
 
-                </div>
+                    </div>
 
+                }
             }
         }
 
@@ -104,4 +106,3 @@
 
 
 </section>
-

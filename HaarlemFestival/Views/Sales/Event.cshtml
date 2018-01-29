@@ -1,0 +1,88 @@
+﻿@model HaarlemFestival.Model.SalesInfo
+@section AddToHead{
+    <link href="@Url.Content("~/Content/Admin.css")" rel="stylesheet" type="text/css" />
+
+}
+@section AddToScripts{
+    <script src="@Url.Content("~/Scripts/Sales.js")"></script>
+    <script>
+        init(@Html.Raw(Json.Encode(Model)));
+    </script>
+}
+@{
+    ViewBag.Title = "Sales " + Model.PageName;
+}
+@RenderPage("AdminNav.cshtml")
+<main class="col-sm-9 ml-sm-auto col-md-10 adminMain">
+    <section class="adminSection col-md-12">
+        <h3 class="text-center">Sales @Model.PageName</h3>
+        <p class="text-center">This page contains an overview of the sales made by the website for the Event "@Model.PageName".
+        Here is de data displayed into the tables and graphs and where they show the top 10 most selling.</p>
+    </section>
+
+    <section class="adminSection col-md-12">
+        <h3 class="text-center">Daily sales</h3>
+        <canvas id="Daily-sale" height="100"></canvas>
+    </section>
+    <section class="adminSection col-md-4">
+        <h4>Sales by activity and time</h4>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Event and Time</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var sale in Model.Timeslots)
+                {
+                    <tr>
+                        <td>@Html.Raw(sale.Key)</td>
+                        <td>@sale.Value</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </section>
+    <section class="adminSection col-md-4">
+        <h4>Sales by activity</h4>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var sale in Model.ActivitySales)
+                {
+                    <tr>
+                        <td>@sale.Key</td>
+                        <td>@sale.Value</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </section>
+    <section class="adminSection col-md-4">
+        <h4>Where are tickets ordered</h4>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var sale in Model.CountryCount)
+                {
+                    <tr>
+                        <td>@sale.Key</td>
+                        <td>@sale.Value</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </section>
+
+</main>

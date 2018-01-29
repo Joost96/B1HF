@@ -112,11 +112,11 @@
 
         <fieldset>
             <label class="restaurant_form_label" for="rmisc">@Model.Page.PageDescriptions[7].Title</label>
-            <textarea class="restaurant_form_txtarea" id="rmisc" name="order.OrderHasTickets[0].Remarks" placeholder="@Model.Page.PageDescriptions[5].DescriptionText.ToString()"></textarea>
+            <textarea class="restaurant_form_txtarea" id="rmisc" name="order.OrderHasTickets[0].Remarks" placeholder="@Model.Page.PageDescriptions[7].DescriptionText.ToString()"></textarea>
         </fieldset>
 
         <input type="hidden" name="activity.Id" value="@Model.Activity.Id" />
-        <input type="submit" value="Order" class="btn_order" />
+        <input type="submit" value="Add to basket" class="btn_order" />
     }
 
 </div>

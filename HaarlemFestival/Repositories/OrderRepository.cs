@@ -31,5 +31,11 @@ namespace HaarlemFestival.Repositories
                         .Select(t => t.TimeSlot.Activity))
                 .Where(o => o.CustomerId == customerId);
         }
+        public IEnumerable<OrderHasTickets> getOrdersFromEvent(EventType type)
+        {
+            return db.OrderHasTickets.Include(oht => oht.Ticket.TimeSlot.Activity)
+                .Include(oht => oht.Order.Customer)
+                .Where(oht => oht.Ticket.TimeSlot.Activity.Type == type);//.Include(oht => oht.Ticket.TimeSlot)
+        }
     }
 }

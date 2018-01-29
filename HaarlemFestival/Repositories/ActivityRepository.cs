@@ -27,7 +27,6 @@ namespace HaarlemFestival.Repositories
                 .Select(a => new
                 {
                     a,
-                    //c = .Cuisines,
                     d = a.ActivityDescriptions.Where(ad => ad.Language == language)
                                 .OrderBy(ad => ad.Section),
                     ts = a.Timeslots,
@@ -64,6 +63,12 @@ namespace HaarlemFestival.Repositories
                 .Include(a => a.ActivityDescriptions)
                 .Where(a => a.Id == activityId)
                 .SingleOrDefault();
+        }
+
+        public IEnumerable<TimeSlot> GetTimeslots(EventType type)
+        {
+            return db.TimeSlots.Include(ts => ts.Activity)
+                .Where(ts => ts.Activity.Type == type);
         }
 
         public void UpdateActivity(Activity activity)

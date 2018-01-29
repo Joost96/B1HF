@@ -24,11 +24,11 @@
 <section class="AgendaOrders">
     <ul class="AgendaOrderList">
         <li class="OrderHeader">
-            <div class="itemHeader col-md-3">Name</div>
+            <div class="itemHeader col-md-4">Name</div>
             <div class="itemHeader col-md-2">Event</div>
             <div class="itemHeader col-md-1">Prijs</div>
             <div class="itemHeader col-md-1">Aantal</div>
-            <div class="itemHeader col-md-2">Totaalprijs</div>
+            <div class="itemHeader col-md-1">Totaalprijs</div>
             <div class="itemHeader col-md-2">Start tijd/datum</div>
         </li>
 
@@ -41,24 +41,25 @@
                 {
 
                     <li class="AgendaOrder">
-                        <div class="orderItem col-md-3">@OHT.Ticket.TimeSlot.Activity.Name</div>
+                        <div class="orderItem col-md-4">@OHT.Ticket.TimeSlot.Activity.Name</div>
                         <div class="orderItem col-md-2">@OHT.Ticket.TimeSlot.Activity.Type</div>
                         <div class="orderItem col-md-1">@OHT.Ticket.Price</div>
                         <div class="orderItem col-md-1">@OHT.Amount</div>
-                        <div class="orderItem col-md-2">@OHT.TotalPrice</div>
-                        <div class="orderItem col-md-2">@OHT.Ticket.TimeSlot.StartTime.ToString("hh:mm dd/MM/yyyy")</div>
+                        <div class="orderItem col-md-1">@OHT.TotalPrice</div>
+                        <div class="orderItem col-md-2">@OHT.Ticket.TimeSlot.StartTime.ToString("HH:mm dd/MM/yyyy")</div>
                         <div class="col-md-1">@Html.ActionLink("Delete", "Delete", new { ohdId = OHT.Ticket_TimeSlot_Activity_Id })</div>
                     </li>
 
                 }
             }
+
+
         }
         else
         {
-            <text>Empty Cart</text>
+            /*iets anders*/
         }
 
-        
     </ul>
     <label class="totalPrice">Totalprice: @Model.TotalOrderPrice.ToString()</label>
     @Html.ActionLink("Continue to Checkout", "CheckOut1", null, new { @class= "btn_cta" })

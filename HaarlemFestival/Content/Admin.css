@@ -185,7 +185,6 @@ textarea {
         content: '';
         position: absolute;
         bottom: 0;
-        left: 0;
         width: calc(100% - 50px);
         left: 50px;
         height: 1px;
@@ -231,4 +230,7 @@ textarea {
 .jazzImg {
     border: solid 1px black;
     padding: 15px;
+}
+.Daily-sale {
+    height: 100px;
 }

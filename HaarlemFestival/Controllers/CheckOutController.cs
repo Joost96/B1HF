@@ -17,7 +17,7 @@ namespace HaarlemFestival.Controllers
         private IPageRepository pageRepository;
         private IAccountRepository accountRepository;
         private IActivityRepository activityRepository;
-        
+
 
         public CheckOutController()
         {
@@ -43,7 +43,7 @@ namespace HaarlemFestival.Controllers
                     pagePlusOrders.TotalOrderPrice += item.TotalPrice;
                 }
             }
-       
+
             return View(pagePlusOrders);
         }
 
@@ -59,23 +59,26 @@ namespace HaarlemFestival.Controllers
                 }
             }
             Session["order"] = order;
+
+            BasketHelper.getInstance().checkBasket(HttpContext);
+
             return RedirectToAction("Basket");
         }
 
         // GET: CheckOut
         public ActionResult CheckOut1()
         {
-            PagePlusOrderPlusLogin ppp = new PagePlusOrderPlusLogin();
+            PagePlusOrderPlusLogin model = new PagePlusOrderPlusLogin();
 
             Order order = (Order)Session["order"];
-            ppp.Orders.Add(order);
+            model.Orders.Add(order);
             Language language = (Language)Session["language"];
-            ppp.Page = pageRepository.GetPage("CheckOut", language);
+            model.Page = pageRepository.GetPage("CheckOut", language);
 
             foreach (var item in order.OrderHasTickets)
             {
-                ppp.TotalOrderPrice += item.TotalPrice;
-            }  
+                model.TotalOrderPrice += item.TotalPrice;
+            }
 
             Account account = (Account)(Session["loggedin_account"]);
             if (account is Customer)
@@ -86,7 +89,7 @@ namespace HaarlemFestival.Controllers
                 return RedirectToAction("Checkout3", "Checkout");
             }
 
-            return View(ppp);
+            return View(model);
         }
 
         [HttpPost]
@@ -128,18 +131,22 @@ namespace HaarlemFestival.Controllers
             PagePlusOrderPlusLogin ppp = new PagePlusOrderPlusLogin();
 
             Order order = (Order)Session["order"];
+
+            ppp.Orders.Add(order);
+
             return View(ppp);
         }
 
         [HttpPost]
-        public ActionResult Checkout2(RegisterCheckoutModel model)
+        public ActionResult Checkout2(PagePlusOrderPlusLogin model)
         {
+            
             if (ModelState.IsValid)
             {
                 Account checkAccount = accountRepository.GetAccount(model.Email);
                 if (checkAccount == null)
                 {
-                    Account account = new Customer(model.Email, model.FirstName, model.LastName, model.Password, model.Country);
+                    Account account = new Customer(model.Orders[0].Customer.Email, model.Orders[0].Customer.FirstName, model.Orders[0].Customer.LastName, model.Orders[0].Customer.Password, model.Orders[0].Customer.Country);
                     accountRepository.Register(account);
 
                     FormsAuthentication.SetAuthCookie(account.Email, false);
@@ -163,22 +170,28 @@ namespace HaarlemFestival.Controllers
 
         public ActionResult CheckOut3()
         {
+            PagePlusOrderPlusLogin pagePlusOrderPlusLogin = new PagePlusOrderPlusLogin();
+
             Order order = (Order)Session["order"];
-            return View(order);
+
+            pagePlusOrderPlusLogin.Orders.Add(order);
+            return View(pagePlusOrderPlusLogin);
         }
+        
+        
         [HttpPost]
-        public ActionResult CheckOut3(Order order)
-        {           
-            order.Date = DateTime.Now;
-            Session["order"] = order;
-            orderRepository.CreateOrder(order);
-            return Redirect("CheckOut4");
+        public ActionResult CheckOut3(PagePlusOrderPlusLogin order)
+        {
+            order.Orders[0].Date = DateTime.Now;
+
+            return RedirectToAction("Checkout4", "CheckOut");
         }
+        
 
         public ActionResult CheckOut4()
         {
             Order order = (Order)Session["order"];
-            if(order.PaymentMethod != null)
+            if (order.PaymentMethod != null)
                 Session["order"] = null;
             return View(order);
         }
@@ -186,7 +199,7 @@ namespace HaarlemFestival.Controllers
         public ActionResult OrderJazz(int id, int aantal)
         {
 
-	        Language language = (Language)Session["language"];
+            Language language = (Language)Session["language"];
             Activity activity = activityRepository.GetActivity(id, language);
 
             OrderHasTickets ticketOrder = new OrderHasTickets();
@@ -211,7 +224,8 @@ namespace HaarlemFestival.Controllers
                     OHT.Amount += ticketOrder.Amount;
                     OHT.TotalPrice = OHT.Ticket.Price * OHT.Amount;
                 }
-                else {
+                else
+                {
                     order.OrderHasTickets.Add(ticketOrder);
                 }
             }

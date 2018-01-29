@@ -143,7 +143,7 @@ function SchedulePlan(element) {
     eventSlotHeight = eventsGroup.eq(0).children('.top-info').outerHeight();
     eventSlotWidth = eventsGroup.eq(0).children('.top-info').outerWidth();
 
-    placeEvents()
+    placeEvents();
 }
 function placeEvents() {
     singleEvents.each(function () {
@@ -159,12 +159,12 @@ function placeEvents() {
                 index = i;
             }
         }
-        var eventLeft = ((eventSlotWidth) / sameTime.length) * index;
+        var eventLeft = eventSlotWidth / sameTime.length * index;
         $(this).css({
-            width: (100 / sameTime.length) + '%',
-            left: (eventLeft+index) + 'px',
-            top: (eventTop - 1) + 'px',
-            height: (eventHeight + 1) + 'px'
+            width: 100 / sameTime.length + '%',
+            left: eventLeft+index + 'px',
+            top: eventTop - 1 + 'px',
+            height: eventHeight + 1 + 'px'
             
         });
         
@@ -193,15 +193,15 @@ $(window).bind('hashchange', function () {
 //--
 $(document).ready(function () {
     if (window.location.hash) {
-        var hash = window.location.hash
+        var hash = window.location.hash;
         window.location.hash = 0;
         window.location.hash = hash;
     } else {
-        window.location.hash = "#6"
+        window.location.hash = "#6";
     }
     //$(window).trigger("hashchange");
-    SchedulePlan($(".schedule"))
-    var main = $("main")
+    SchedulePlan($(".schedule"));
+    var main = $("main");
     if (main.hasClass("HomePage")) {
         imgHeight = 300;
         imgWidth = 277;
