@@ -89,14 +89,14 @@ namespace HaarlemFestival.Controllers
         {
             IEnumerable<Activity> activities = activityRepo.GetActivities(type, language);
 
-            int tts = 0;
+            int tts = 100;
             Activity activity = new Activity();
 
             foreach (var act in activities)
             {
                 foreach (var slot in act.Timeslots)
                 {
-                    if (slot.TotalSeats > tts)
+                    if (slot.OccupiedSeats < tts)
                     {
                         activity = act;
                         tts = slot.TotalSeats;
