@@ -1,8 +1,8 @@
-﻿$("#Password").hide();
+﻿$("#Password1").hide();
 $("#ConfirmPassword").hide();
 
 $("#CheckOut2RegisterCheck").click(function() {
-    $("#Password").toggle();
+    $("#Password1").toggle();
     $("#ConfirmPassword").toggle();
     console.log("halo");
 });
