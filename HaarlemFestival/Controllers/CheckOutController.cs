@@ -170,19 +170,25 @@ namespace HaarlemFestival.Controllers
 
         public ActionResult CheckOut3()
         {
-            PagePlusOrderPlusLogin pagePlusOrderPlusLogin = new PagePlusOrderPlusLogin();
-
+            PagePlusOrderPlusLogin ppp = new PagePlusOrderPlusLogin();
             Order order = (Order)Session["order"];
+            order.Date = DateTime.Now;
 
-            pagePlusOrderPlusLogin.Orders.Add(order);
-            return View(pagePlusOrderPlusLogin);
+            ppp.Orders.Add(order);
+            
+            return View(ppp);
         }
         
         
         [HttpPost]
-        public ActionResult CheckOut3(PagePlusOrderPlusLogin order)
+        public ActionResult CheckOut3(PaymentMethod paymentMethod)
         {
-            order.Orders[0].Date = DateTime.Now;
+            Order order = (Order)Session["order"];
+            order.Customer = (Customer)Session["loggedin_account"];
+            order.PaymentMethod = paymentMethod;
+            order.Date = DateTime.Now;
+
+            Session["order"] = order;
 
             return RedirectToAction("Checkout4", "CheckOut");
         }
@@ -190,10 +196,14 @@ namespace HaarlemFestival.Controllers
 
         public ActionResult CheckOut4()
         {
+            PagePlusOrderPlusLogin model = new PagePlusOrderPlusLogin();
             Order order = (Order)Session["order"];
+            model.Orders.Add(order);
+
             if (order.PaymentMethod != null)
                 Session["order"] = null;
-            return View(order);
+
+            return View(model);
         }
 
         public ActionResult OrderJazz(int id, int aantal)

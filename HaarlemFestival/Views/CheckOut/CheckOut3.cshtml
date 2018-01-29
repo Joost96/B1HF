@@ -1,5 +1,5 @@
-﻿@using HaarlemFestival.Model
-@model HaarlemFestival.Model.PagePlusOrderPlusLogin
+﻿@model HaarlemFestival.Model.PagePlusOrderPlusLogin
+@using HaarlemFestival.Model
 @{
     ViewBag.Title = "CheckOut3";
 }
@@ -8,19 +8,29 @@
 }
 
 <section class="CheckOut3">
-@using (Html.BeginForm())
+@using (Html.BeginForm("CheckOut3", "CheckOut", FormMethod.Post, new { @class = "paymentForm" }))
 {
-    @Html.HiddenFor(model => model.Orders[0].PaymentMethod);
+    @*@Html.HiddenFor(model => model.Orders[0].PaymentMethod);*@
     
-    <h2>Please select a payment method: </h2>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <button class="PaymentMethod" id="Method1" value="0">Pay at arrival</button>
-            <button class="PaymentMethod" id="Method2" value="1">Visa</button>
-            <button class="PaymentMethod" id="Method3" value="2">Paypal</button>
-            <button class="PaymentMethod" id="Method4" value="3">Ideal</button>
-            <input type="submit" value="Continue to payment" class="btn btn-default" />
+    <p>Please select a payment method.</p>
+        <div class="paymentMethods">
+            <label for="@PaymentMethod.cash"><img src="~/img/Checkout/001-cash.png" /> </label>
+            <input type="radio" name="paymentMethod" value="@PaymentMethod.cash" /> Pay at arrival 
+
+            <label for="@PaymentMethod.visa"><img src="~/img/Checkout/004-visa.png" /></label>
+            <input type="radio" name="paymentMethod" value="@PaymentMethod.visa" /> Visa
+
+            <label for="@PaymentMethod.paypal"><img src="~/img/Checkout/003-paypal.png" /></label>
+            <input type="radio" name="paymentMethod" value="@PaymentMethod.paypal" /> PayPal
+
+            <label for="@PaymentMethod.pin"><img src="~/img/Checkout/002-ideal.png" /></label>
+            <input type="radio" name="paymentMethod" value="@PaymentMethod.pin" /> Ideal
+
+            @*<button type="button" class="PaymentMethod" id="Method1" name ="Orders[0].PaymentMethod" value="1">Pay at arrival</button>
+            <button type="button" class="PaymentMethod" id="Method2" name ="order.Orders[0].PaymentMethod" value="2">Visa</button>
+            <button type="button" class="PaymentMethod" id="Method3" name ="order.Orders[0].PaymentMethod" value="3">Paypal</button>
+            <button type="button" class="PaymentMethod" id="Method4" name ="order.Orders[0].PaymentMethod" value="4">Ideal</button>*@
         </div>
-    </div>
+        <input type="submit" value="Continue to payment" class="btn btn-default" />
 }
 </section>
